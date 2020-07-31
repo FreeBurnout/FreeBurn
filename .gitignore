@@ -1,0 +1,6 @@
+.vs/
+Debug/
+Release/
+FreeBurn/Debug
+FreeBurn/Release
+*.vcxproj.user
