@@ -5,13 +5,13 @@
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|Win32">
-      <Configuration>Release</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|x64">
       <Configuration>Debug</Configuration>
       <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|x64">
       <Configuration>Release</Configuration>
@@ -32,17 +32,17 @@
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -57,27 +57,27 @@
   </ImportGroup>
   <ImportGroup Label="Shared">
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>false</LinkIncremental>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -86,13 +86,39 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
+      <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)ThirdParty\SDL2\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>rplogo.lib;rpltmap.lib;rpmatfx.lib;rpmipkl.lib;rpmorph.lib;rpnormmap.lib;rpnormmapskin.lib;rppatch.lib;rppatchmatfx.lib;rppatchskin.lib;rppatchskinmatfx.lib;rpprtstd.lib;rpptank.lib;rppvs.lib;rprandom.lib;rpskin.lib;rpskinmatfx.lib;rpspline.lib;rpusrdat.lib;rpuvanim.lib;rpworld.lib;rt2d.lib;rt2danim.lib;rtanim.lib;rtbary.lib;rtbezpat.lib;rtbmp.lib;rtcharse.lib;rtcmpkey.lib;rtdict.lib;rtfsyst.lib;rtgcond.lib;rtgncpip.lib;rtimport.lib;rtintsec.lib;rtltmap.lib;rtltmapcnv.lib;rtmipk.lib;rtmipkmatfx.lib;rtmipkpatch.lib;rtmipkpatchmatfx.lib;rtpick.lib;rtpitexd.lib;rtpng.lib;rtpngcw.lib;rtquat.lib;rtras.lib;rtray.lib;rtskinsp.lib;rtslerp.lib;rtsplpvs.lib;rttiff.lib;rttilerd.lib;rttoc.lib;rtvcat.lib;rtwing.lib;rtworld.lib;rwcore.lib;rpadc.lib;rpanisot.lib;rpcollis.lib;rpdmorph.lib;rpenv.lib;rphanim.lib;rplodatm.lib;SDL2.lib;SDL2main.lib;SDL2test.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /d "$(SolutionDir)ThirdParty\SDL2\lib\x86\SDL2.dll" $(TargetDir)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)ThirdParty\SDL2\lib\x64;$(RWGSDK)/lib/opengl/debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>rwcore.lib;SDL2.lib;SDL2main.lib;SDL2test.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /d "$(SolutionDir)ThirdParty\SDL2\lib\x64\SDL2.dll" $(TargetDir)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -100,27 +126,22 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
+      <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)ThirdParty\SDL2\lib\x86;$(RWGSDK)/lib/opengl/release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>rplogo.lib;rpltmap.lib;rpmatfx.lib;rpmipkl.lib;rpmorph.lib;rpnormmap.lib;rpnormmapskin.lib;rppatch.lib;rppatchmatfx.lib;rppatchskin.lib;rppatchskinmatfx.lib;rpprtstd.lib;rpptank.lib;rppvs.lib;rprandom.lib;rpskin.lib;rpskinmatfx.lib;rpspline.lib;rpusrdat.lib;rpuvanim.lib;rpworld.lib;rt2d.lib;rt2danim.lib;rtanim.lib;rtbary.lib;rtbezpat.lib;rtbmp.lib;rtcharse.lib;rtcmpkey.lib;rtdict.lib;rtfsyst.lib;rtgcond.lib;rtgncpip.lib;rtimport.lib;rtintsec.lib;rtltmap.lib;rtltmapcnv.lib;rtmipk.lib;rtmipkmatfx.lib;rtmipkpatch.lib;rtmipkpatchmatfx.lib;rtpick.lib;rtpitexd.lib;rtpng.lib;rtpngcw.lib;rtquat.lib;rtras.lib;rtray.lib;rtskinsp.lib;rtslerp.lib;rtsplpvs.lib;rttiff.lib;rttilerd.lib;rttoc.lib;rtvcat.lib;rtwing.lib;rtworld.lib;rwcore.lib;rpadc.lib;rpanisot.lib;rpcollis.lib;rpdmorph.lib;rpenv.lib;rphanim.lib;rplodatm.lib;SDL2.lib;SDL2main.lib;SDL2test.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-    </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /d "$(SolutionDir)ThirdParty\SDL2\lib\x86\SDL2.dll" $(TargetDir)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -129,35 +150,23 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)ThirdParty\SDL2\lib\x64;$(RWGSDK)/lib/opengl/release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>rplogo.lib;rpltmap.lib;rpmatfx.lib;rpmipkl.lib;rpmorph.lib;rpnormmap.lib;rpnormmapskin.lib;rppatch.lib;rppatchmatfx.lib;rppatchskin.lib;rppatchskinmatfx.lib;rpprtstd.lib;rpptank.lib;rppvs.lib;rprandom.lib;rpskin.lib;rpskinmatfx.lib;rpspline.lib;rpusrdat.lib;rpuvanim.lib;rpworld.lib;rt2d.lib;rt2danim.lib;rtanim.lib;rtbary.lib;rtbezpat.lib;rtbmp.lib;rtcharse.lib;rtcmpkey.lib;rtdict.lib;rtfsyst.lib;rtgcond.lib;rtgncpip.lib;rtimport.lib;rtintsec.lib;rtltmap.lib;rtltmapcnv.lib;rtmipk.lib;rtmipkmatfx.lib;rtmipkpatch.lib;rtmipkpatchmatfx.lib;rtpick.lib;rtpitexd.lib;rtpng.lib;rtpngcw.lib;rtquat.lib;rtras.lib;rtray.lib;rtskinsp.lib;rtslerp.lib;rtsplpvs.lib;rttiff.lib;rttilerd.lib;rttoc.lib;rtvcat.lib;rtwing.lib;rtworld.lib;rwcore.lib;rpadc.lib;rpanisot.lib;rpcollis.lib;rpdmorph.lib;rpenv.lib;rphanim.lib;rplodatm.lib;SDL2.lib;SDL2main.lib;SDL2test.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /d "$(SolutionDir)ThirdParty\SDL2\lib\x64\SDL2.dll" $(TargetDir)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CodeSDKs\Allocator\1.4.0\include\allocator\iallocator.h" />
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\include\Apt\Apt.h" />
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\include\Apt\AptExtObject.h" />
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\include\Apt\AptSharedPtr.h" />
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\include\Apt\AptValue\AptBoolean.h" />
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\include\Apt\AptValue\AptFloat.h" />
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\include\Apt\AptValue\AptInteger.h" />
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\include\Apt\AptValue\AptString.h" />
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\include\Apt\AptValue\AptValue.h" />
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\Source\Apt\AptCIH.h" />
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\Source\Apt\AptObject\AptNativeFunction.h" />
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\Source\Apt\AptObject\AptObject.h" />
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\Source\Apt\_AptBasePtrStack.h" />
-    <ClInclude Include="CodeSDKs\realcore\6.26.00\include\common\realcore\system.h" />
-    <ClInclude Include="CodeSDKs\realmemcard\3.03.01-layer2\include\common\realmemcard\memcard_interface.h" />
-    <ClInclude Include="CodeSDKs\realmemcard\3.03.01-layer2\include\common\realmemcard\memcard_system.h" />
-    <ClInclude Include="CodeSDKs\realmemcard\4.01.01\include\common\realmemcard\memcard_interface.h" />
-    <ClInclude Include="CodeSDKs\realmemcard\4.01.01\include\common\realmemcard\memcard_system.h" />
-    <ClInclude Include="CodeSDKs\Rws36\framework\core\streamhandler\streamhandler.h" />
     <ClInclude Include="Core\GameSource\Common\Camera\Behaviours\BoBehaviourAttachCam.h" />
     <ClInclude Include="Core\GameSource\Common\Camera\Behaviours\BoBehaviourCameraCarCam.h" />
     <ClInclude Include="Core\GameSource\Common\Camera\Behaviours\BoBehaviourCluster.h" />
@@ -231,6 +240,7 @@
     <ClInclude Include="Core\GameSource\Common\Game\Logic\BoDominationChallengeLogic.h" />
     <ClInclude Include="Core\GameSource\Common\Game\Logic\BoMultiplayerRoadRageLogic.h" />
     <ClInclude Include="Core\GameSource\Common\Game\Logic\BoRecklessLogic.h" />
+    <ClInclude Include="Core\GameSource\Common\Game\Logic\BoSecondaryRewardsManager.h" />
     <ClInclude Include="Core\GameSource\Common\Game\Logic\BoSigShortcutManager.h" />
     <ClInclude Include="Core\GameSource\Common\Game\Logic\BoStageLogic.h" />
     <ClInclude Include="Core\GameSource\Common\Game\Logic\BoTakedownManager.h" />
@@ -364,6 +374,8 @@
     <ClInclude Include="Core\GameSource\Common\Menu\Apt\source\Apt\_AptValuePtrStack.h" />
     <ClInclude Include="Core\GameSource\Common\Menu\Apt\source\Apt\_AptVector.h" />
     <ClInclude Include="Core\GameSource\Common\Menu\BoAptManager.h" />
+    <ClInclude Include="Core\GameSource\Common\Menu\BoFlashEffectManager.h" />
+    <ClInclude Include="Core\GameSource\Common\Menu\BoFlashMovieManager.h" />
     <ClInclude Include="Core\GameSource\Common\Menu\BoFlashTextureManager.h" />
     <ClInclude Include="Core\GameSource\Common\Menu\BoMenuChoices.h" />
     <ClInclude Include="Core\GameSource\Common\Menu\BoMenuSelectionData.h" />
@@ -733,15 +745,6 @@
     <ClInclude Include="GameShared\PC\System\Networking\GtVoIPManagerPC.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="CodeSDKs\Apt\0.19.02\include\Apt\AptValue\AptString.inl" />
-    <None Include="CodeSDKs\Apt\0.19.02\Source\Apt\AptActionInterpreter.inl" />
-    <None Include="CodeSDKs\Apt\0.19.02\Source\Apt\AptValue\AptBoolean.inl" />
-    <None Include="CodeSDKs\Apt\0.19.02\Source\Apt\AptValue\AptFloat.inl" />
-    <None Include="CodeSDKs\Apt\0.19.02\Source\Apt\AptValue\AptInteger.inl" />
-    <None Include="CodeSDKs\Apt\0.19.02\Source\Apt\AptValue\AptValue.inl" />
-    <None Include="CodeSDKs\Apt\0.19.02\Source\Apt\AptValue\AptValueVector.inl" />
-    <None Include="CodeSDKs\Apt\0.19.02\Source\Apt\SDK\AptExtObject.inl" />
-    <None Include="CodeSDKs\Apt\0.19.02\Source\Apt\string\EAString.inl" />
     <None Include="Core\GameSource\Common\Menu\Apt\source\Apt\Apt.inl" />
     <None Include="Core\GameSource\Common\Menu\Apt\source\Apt\AptActionInterpreter.inl" />
     <None Include="Core\GameSource\Common\Menu\Apt\source\Apt\AptCharacterInst.inl" />
@@ -758,9 +761,6 @@
     <None Include="Core\GameSource\Common\Menu\Apt\source\Apt\string\StringPool.inl" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CodeSDKs\Rws36\framework\core\netstream\nettools.cpp" />
-    <ClCompile Include="CodeSDKs\Rws36\framework\core\netstream\psx\PCnetstrm.cpp" />
-    <ClCompile Include="CodeSDKs\Rws36\framework\core\streamhandler\streamhandler.cpp" />
     <ClCompile Include="Core\GameSource\Common\Camera\Behaviours\BoBehaviourAftertouch.cpp" />
     <ClCompile Include="Core\GameSource\Common\Camera\Behaviours\BoBehaviourAttachCam.cpp" />
     <ClCompile Include="Core\GameSource\Common\Camera\Behaviours\BoBehaviourCameraCarCam.cpp" />
@@ -1055,7 +1055,6 @@
     <ClCompile Include="Core\GameSource\Common\Menu\Apt\source\Apt\string\EAString.cpp" />
     <ClCompile Include="Core\GameSource\Common\Menu\Apt\source\Apt\string\StringPool.cpp" />
     <ClCompile Include="Core\GameSource\Common\Menu\Apt\source\Apt\TextFormat.cpp" />
-    <ClCompile Include="Core\GameSource\Common\Menu\BoAptManager.cpp" />
     <ClCompile Include="Core\GameSource\Common\Menu\BoFlashEffectManager.cpp" />
     <ClCompile Include="Core\GameSource\Common\Menu\BoFlashMovieManager.cpp" />
     <ClCompile Include="Core\GameSource\Common\Menu\BoFlashTextureManager.cpp" />
@@ -1449,7 +1448,6 @@
     <ClCompile Include="Core\GameSource\PC\Game\BoGamePC.cpp" />
     <ClCompile Include="Core\GameSource\PC\Game\BoInputManagerPC.cpp" />
     <ClCompile Include="Core\GameSource\PC\Game\BoMemoryManagerPC.cpp" />
-    <ClCompile Include="Core\GameSource\PC\Graphics\2D\BoBitmapFont.cpp" />
     <ClCompile Include="Core\GameSource\PC\Graphics\Bloom\BoBloomPC.cpp" />
     <ClCompile Include="Core\GameSource\PC\Graphics\BoGraphicsManagerPC.cpp" />
     <ClCompile Include="Core\GameSource\PC\Graphics\BoSkyDomeRenderer\BoSkyDomeRendererPC.cpp" />

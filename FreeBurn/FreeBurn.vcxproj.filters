@@ -15,63 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CodeSDKs\Allocator\1.4.0\include\allocator\iallocator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\include\Apt\AptValue\AptBoolean.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\include\Apt\AptValue\AptFloat.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\include\Apt\AptValue\AptInteger.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\include\Apt\AptValue\AptString.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\include\Apt\AptValue\AptValue.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\include\Apt\Apt.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\include\Apt\AptExtObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\include\Apt\AptSharedPtr.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\Source\Apt\AptObject\AptNativeFunction.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\Source\Apt\AptObject\AptObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\Source\Apt\_AptBasePtrStack.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CodeSDKs\Apt\0.19.02\Source\Apt\AptCIH.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CodeSDKs\realcore\6.26.00\include\common\realcore\system.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CodeSDKs\realmemcard\3.03.01-layer2\include\common\realmemcard\memcard_interface.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CodeSDKs\realmemcard\3.03.01-layer2\include\common\realmemcard\memcard_system.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CodeSDKs\realmemcard\4.01.01\include\common\realmemcard\memcard_interface.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CodeSDKs\realmemcard\4.01.01\include\common\realmemcard\memcard_system.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CodeSDKs\Rws36\framework\core\streamhandler\streamhandler.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Core\GameSource\Common\Camera\Behaviours\BoBehaviourAttachCam.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -1791,35 +1734,17 @@
     <ClInclude Include="GameShared\PC\System\GtThreadMgrPC.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Core\GameSource\Common\Menu\BoFlashMovieManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\GameSource\Common\Menu\BoFlashEffectManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\GameSource\Common\Game\Logic\BoSecondaryRewardsManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="CodeSDKs\Apt\0.19.02\include\Apt\AptValue\AptString.inl">
-      <Filter>Header Files</Filter>
-    </None>
-    <None Include="CodeSDKs\Apt\0.19.02\Source\Apt\AptValue\AptBoolean.inl">
-      <Filter>Header Files</Filter>
-    </None>
-    <None Include="CodeSDKs\Apt\0.19.02\Source\Apt\AptValue\AptFloat.inl">
-      <Filter>Header Files</Filter>
-    </None>
-    <None Include="CodeSDKs\Apt\0.19.02\Source\Apt\AptValue\AptInteger.inl">
-      <Filter>Header Files</Filter>
-    </None>
-    <None Include="CodeSDKs\Apt\0.19.02\Source\Apt\AptValue\AptValue.inl">
-      <Filter>Header Files</Filter>
-    </None>
-    <None Include="CodeSDKs\Apt\0.19.02\Source\Apt\AptValue\AptValueVector.inl">
-      <Filter>Header Files</Filter>
-    </None>
-    <None Include="CodeSDKs\Apt\0.19.02\Source\Apt\SDK\AptExtObject.inl">
-      <Filter>Header Files</Filter>
-    </None>
-    <None Include="CodeSDKs\Apt\0.19.02\Source\Apt\string\EAString.inl">
-      <Filter>Header Files</Filter>
-    </None>
-    <None Include="CodeSDKs\Apt\0.19.02\Source\Apt\AptActionInterpreter.inl">
-      <Filter>Header Files</Filter>
-    </None>
     <None Include="Core\GameSource\Common\Menu\Apt\source\Apt\AptObject\AptGlobalExtensionObject.inl">
       <Filter>Header Files</Filter>
     </None>
@@ -1864,15 +1789,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CodeSDKs\Rws36\framework\core\netstream\psx\PCnetstrm.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CodeSDKs\Rws36\framework\core\netstream\nettools.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CodeSDKs\Rws36\framework\core\streamhandler\streamhandler.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Core\GameSource\Common\Camera\Behaviours\BoBehaviourAftertouch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -3244,9 +3160,6 @@
     <ClCompile Include="Core\GameSource\Common\Menu\States\BoVideoState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Core\GameSource\Common\Menu\BoAptManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Core\GameSource\Common\Menu\BoFlashEffectManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -3932,9 +3845,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Core\GameSource\PC\Game\BoMemoryManagerPC.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\GameSource\PC\Graphics\2D\BoBitmapFont.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Core\GameSource\PC\Graphics\Bloom\BoBloomPC.cpp">

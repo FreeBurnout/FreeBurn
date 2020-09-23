@@ -1,12 +1,16 @@
+#include <SDL.h>
 #include "Graphics/BoGraphicsManagerPC.h"
 #include "../Common/Game/BoGame.h"
 #include "../../../GameShared/PC/System/GtThreadMgrPC.h"
+
+SDL_Window * win = SDL_CreateWindow("FreeBurn", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_OPENGL);
+SDL_Renderer * renderer = SDL_CreateRenderer(win, -1, SDL_RendererFlags::SDL_RENDERER_ACCELERATED);
 
 void __main() {
 
 }
 
-int main() {
+int main(int argc, char * argv[]) {
     __main();
 
     gGame.Construct();
@@ -37,5 +41,6 @@ int main() {
 
     gGame.Release();
     gGame.Destruct();
+
     return 0;
 }

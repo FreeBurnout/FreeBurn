@@ -1,8 +1,5 @@
 #include "BoGame.h"
-
-void CBoGame::Construct() {
-
-}
+#include "../../../../GameShared/Common/System/GtFSM.h"
 
 void CBoGame::Destruct() {
 
@@ -16,6 +13,12 @@ bool CBoGame::Prepare() {
 	return false;
 }
 
-bool CBoGame::Update() {
-	return false;
+void CGtRandom::SetSeed(RwUInt32 luSeed) {
+
 }
+
+void CBoMemoryManager::Construct() {
+
+}
+
+CBoGame gGame;

@@ -3,5 +3,6 @@ Debug/
 Release/
 FreeBurn/Debug
 FreeBurn/Release
+FreeBurn/x64
+x64/
 *.vcxproj.user
-FreeBurn/CodeSDKs/
