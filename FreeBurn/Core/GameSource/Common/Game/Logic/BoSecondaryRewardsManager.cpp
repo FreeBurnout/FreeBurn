@@ -1,4 +1,5 @@
-#include "BoSecondaryRewardsManager.h"
+#include "../BoGame.h"
 
 void CBoSecondaryRewardsManager::Construct() {
+
 }

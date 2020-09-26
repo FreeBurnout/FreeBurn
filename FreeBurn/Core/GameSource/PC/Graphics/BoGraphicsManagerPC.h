@@ -20,4 +20,4 @@ public:
 	RwUInt32 GetVBlankCount();
 };
 
-static CBoGraphicsManager gGraphicsManager;
+extern CBoGraphicsManager gGraphicsManager;

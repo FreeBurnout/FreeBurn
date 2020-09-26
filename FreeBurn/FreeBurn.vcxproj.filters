@@ -1740,9 +1740,6 @@
     <ClInclude Include="Core\GameSource\Common\Menu\BoFlashEffectManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Core\GameSource\Common\Game\Logic\BoSecondaryRewardsManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Core\GameSource\Common\Menu\Apt\source\Apt\AptObject\AptGlobalExtensionObject.inl">

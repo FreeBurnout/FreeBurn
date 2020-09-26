@@ -5,4 +5,5 @@
 class CBoFrontEnd : CBoGameMode {
 public:
 	void Construct();
+	virtual void $vf();
 };

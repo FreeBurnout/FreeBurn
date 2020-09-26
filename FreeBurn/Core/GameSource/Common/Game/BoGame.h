@@ -5,6 +5,7 @@
 #include "../../../../GameShared/Common/System/GtFramerateManager.h"
 #include "../../../../GameShared/Common/System/FileSystem/GTFileSystem.h"
 #include "../../../../GameShared/Common/Development/CommsTool/GtCommsDatabase.h"
+#include "../../../../GameShared/Common/Containers/GtArray.h"
 #include "BoAsyncDataLoader.h"
 #include "BoFrontEnd.h"
 #include "BoGameMode.h"
@@ -17,7 +18,6 @@
 #include "Logic/BoCarViewerLogic.h"
 #include "Logic/BoCrashModeLogic.h"
 #include "Logic/BoMultiplayerRoadRageLogic.h"
-#include "Logic/BoSecondaryRewardsManager.h"
 #include "Logic/Single/BoSingleRaceLogic.h"
 #include "Logic/Single/BoSingleRevengeLogic.h"
 #include "Logic/Single/BoSingleRoadRageLogic.h"
@@ -26,6 +26,7 @@
 #include "Logic/Online/BoOnlineSingleRaceLogic.h"
 
 #include <rwcore.h>
+
 
 enum class EGtGameUpdateState {
 	Constructed = 0,
@@ -41,6 +42,11 @@ enum class EGtGameUpdateState {
 	RestartGameModeWithNewConfigInit = 10,
 	RestartGameModeWithNewConfigRestarting = 11,
 	StartReplay = 12
+};
+
+class CBoSecondaryRewardsManager {
+public:
+	void Construct();
 };
 
 class CBoGame {
@@ -121,6 +127,7 @@ public:
 	void Render();
 	bool Prepare();
 	bool IsSimulationPaused();
+	bool ResetGameMode();
 	void Update();
 	void DisplayInsertControllerMessage();
 	void SetDemoPath(RwChar *);
@@ -141,3 +148,8 @@ public:
 };
 
 extern CBoMemoryManager gMemoryManager;
+
+class CBoStrings {
+public:
+	CGtStringArrayUnicode * mpStringsArray;
+};

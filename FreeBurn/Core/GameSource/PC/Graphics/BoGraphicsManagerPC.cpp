@@ -1,13 +1,6 @@
 #include "BoGraphicsManagerPC.h"
 
-void CBoGraphicsManagerBase::DrawBootLoadingScreen(float lrProgress) {
-	SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
-	SDL_RenderClear(renderer);
-}
 
-void CBoGraphicsManagerBase::CloseViewport() {
-
-}
 
 void CBoGraphicsManager::Construct() {
 	
@@ -28,3 +21,5 @@ void CBoGraphicsManager::RenderFullScreenPass(CGtV4d lColour, EBoFullScreenPassB
 RwUInt32 CBoGraphicsManager::GetVBlankCount() {
 	return RwUInt32();
 }
+
+CBoGraphicsManager gGraphicsManager;

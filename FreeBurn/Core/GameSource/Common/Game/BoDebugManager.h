@@ -1,8 +1,23 @@
 #pragma once
 
+#include <rwcore.h>
+
 class CBoDebugManager {
 public:
+	static bool gmbRequestStopAll;
+	static bool gmbRequestStopUpdate;
+	static bool gmbRequestStepAll;
+	static bool gmbRequestStepCameras;
+	static bool gmbRequestPlayAll;
+	static bool gmbRequestPlayCameras;
+	static RwReal gmrGpuMonitorOpacity;
+	static bool gmbDrawGpuTextAsTable;
+	static RwReal gmrGpuTextTableOffset;
+
 	bool mbPlay;
+	bool mbPlayCameras;
+	bool mbStepping;
+	bool mbSteppingCameras;
 
 	void Construct();
 	void Update();

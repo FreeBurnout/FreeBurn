@@ -240,7 +240,6 @@
     <ClInclude Include="Core\GameSource\Common\Game\Logic\BoDominationChallengeLogic.h" />
     <ClInclude Include="Core\GameSource\Common\Game\Logic\BoMultiplayerRoadRageLogic.h" />
     <ClInclude Include="Core\GameSource\Common\Game\Logic\BoRecklessLogic.h" />
-    <ClInclude Include="Core\GameSource\Common\Game\Logic\BoSecondaryRewardsManager.h" />
     <ClInclude Include="Core\GameSource\Common\Game\Logic\BoSigShortcutManager.h" />
     <ClInclude Include="Core\GameSource\Common\Game\Logic\BoStageLogic.h" />
     <ClInclude Include="Core\GameSource\Common\Game\Logic\BoTakedownManager.h" />

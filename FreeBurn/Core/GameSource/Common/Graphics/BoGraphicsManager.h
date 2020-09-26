@@ -1,7 +1,12 @@
+#include <SDL.h>
+
+extern SDL_Renderer * renderer;
+
 class CBoGraphicsManagerBase {
 public:
 	void DrawBootLoadingScreen(float lrProgress);
 	void CloseViewport();
+    void Update();
 };
 
 enum class EBoFullScreenPassBlendMode {
