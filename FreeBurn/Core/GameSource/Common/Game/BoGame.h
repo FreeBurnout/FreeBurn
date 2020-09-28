@@ -24,7 +24,7 @@
 #include "Logic/Online/BoOnlineCrashModeLogic.h"
 #include "Logic/Online/BoOnlineRevengeLogic.h"
 #include "Logic/Online/BoOnlineSingleRaceLogic.h"
-
+#include "../../../../GameShared/Common/System/GtUnicodeBuffer.h"
 #include <rwcore.h>
 
 
@@ -51,6 +51,7 @@ public:
 
 class CBoGame {
 public:
+	char mpacDemoPath[256];
 	CBoVehicleList mVehicleList;
 	CBoTrackList mTrackList;
 	CGtRandom mNonDeterministicRNG;
@@ -78,8 +79,10 @@ public:
 	RwInt32 mnRequestResume;
 	RwInt32 mnSimulationUpdateCount;
 	bool mbWorldPrepared;
+	bool mbForceHalfFramerate;
 	bool mbInputManagerPrepared;
 	bool mbIsRoadRageMode;
+	RwReal mrCameraTimeStep;
 	bool mbIsTrafficAttackMode;
 	CGtRGBA mClearFrameBufferColour;
 	bool mbRequestForceHalfFramerate;
@@ -130,6 +133,7 @@ public:
 	bool ResetGameMode();
 	void Update();
 	void DisplayInsertControllerMessage();
+	RwChar * GetDemoPath();
 	void SetDemoPath(RwChar *);
 	void UpdatePreSimulation();
 	void UpdatePostSimulation();

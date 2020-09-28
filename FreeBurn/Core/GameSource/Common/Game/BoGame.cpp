@@ -10,7 +10,7 @@ void CBoGame::Release() {
 }
 
 bool CBoGame::Prepare() {
-	return false;
+	return true;
 }
 
 void CGtRandom::SetSeed(RwUInt32 luSeed) {

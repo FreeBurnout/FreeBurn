@@ -12,5 +12,6 @@ public:
 	void Construct(RwReal lrSimulationTimeStep, RwReal lrFramerateToleranceTimeMs);
 	void Prepare();
 	void StartUpdateFrame(EGtFramerateType leFramerateType, bool a);
+	RwInt32 UpdatePostRenderWait(RwInt32 lnMinSimulationSteps, RwInt32 lnMaxSimulationSteps);
 	RwInt32 mnPrevNumSimulationStepsRequired;
 };

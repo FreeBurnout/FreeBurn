@@ -1,5 +1,6 @@
 #include "BoControllerMapping.h"
 #include "../../../../GameShared/PC/System/Input/GtInputDevicePCPad2.h"
+#include <rwcore.h>
 
 class CBoInputManager {
 public:
@@ -11,6 +12,7 @@ public:
 	void SetPause(bool lbPaused);
 	void StopRumble();
 	void StopPlayerRumble(signed char ln8PlayerIndex);
+	RwInt8 GetLockedPlayersPort(signed char ln8Player);
 	void UpdateRumble();
 	void GetAvailableControllers(CBoControllerMapping ** lapControllerMappingsOut, signed char ln8PortIndex);
 	void Update();

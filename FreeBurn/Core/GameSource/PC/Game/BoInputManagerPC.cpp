@@ -41,6 +41,10 @@ void CBoInputManager::StopPlayerRumble(signed char ln8PlayerIndex) {
     }
 }
 
+RwInt8 CBoInputManager::GetLockedPlayersPort(signed char ln8Player) {
+    return RwInt8();
+}
+
 void CBoInputManager::UpdateRumble() {
 
 }

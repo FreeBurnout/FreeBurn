@@ -2,6 +2,8 @@
 
 #include <rwcore.h>
 
+#include "BoCarViewerDebug.h"
+
 class CBoDebugManager {
 public:
 	static bool gmbRequestStopAll;
@@ -18,6 +20,7 @@ public:
 	bool mbPlayCameras;
 	bool mbStepping;
 	bool mbSteppingCameras;
+	CBoCarViewerDebug mCarViewerDebug;
 
 	void Construct();
 	void Update();

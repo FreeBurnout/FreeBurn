@@ -8,4 +8,6 @@ public:
 
 	bool PrepareTimerServices(int lnBaseFrameRate);
 	void NextFrame();
+	void Start();
+	void Stop();
 };

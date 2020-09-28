@@ -7,3 +7,9 @@ bool CGtTimer::PrepareTimerServices(int lnBaseFrameRate) {
 void CGtTimer::NextFrame() {
 
 }
+
+void CGtTimer::Start() {
+}
+
+void CGtTimer::Stop() {
+}
