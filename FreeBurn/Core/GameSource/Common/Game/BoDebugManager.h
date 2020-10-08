@@ -30,6 +30,31 @@ public:
 
 extern CBoDebugManager gDebugManager;
 
+class CBoNetworkCPUMonitors {
+public:
+	RwInt32 mnNetCarPhysicsUpdate;
+	RwInt32 mnB4NetManagerUpdate;
+	RwInt32 mnB4NetManagerPostUpdate;
+	RwInt32 mnGtNetPlayerManagerUpdate;
+	RwInt32 mnGtNetAdapterUpdate;
+	RwInt32 mnB4NetPlayersUpdate;
+	RwInt32 mnGtLobbyUpdate;
+	RwInt32 mnGtBuddiesUpdate;
+	RwInt32 mnVoIPUpdate;
+	RwInt32 mnNATUpdate;
+	RwInt32 mnAddCrashTrafficMonitor;
+	RwInt32 mnCheckForMessagesMonitor;
+	RwInt32 mnApplyDataMonitor;
+	RwInt32 mnApplyTrafficMonitor;
+	RwInt32 mnGtNetPlayerMonitor;
+	RwInt32 mnApplyNetCarDataMonitor;
+	RwInt32 mnApplyTrafficDataMonitor;
+	RwInt32 mnCalcTrafficDiffsMonitor;
+	RwInt32 mnApplyTrafficDiffsMonitor;
+
+	void Construct();
+};
+
 class CBoCPUMonitors {
 public:
 	void Construct();

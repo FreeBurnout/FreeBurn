@@ -1,0 +1,40 @@
+#include "BoNetworkingService.h"
+
+char kaaacB4StandingHeadingStringID[6][4][48] = {
+	{ 
+		"$OnlineStandingsHeadingName", 
+		"$OnlineStandingsHeadingLastRoundRace", 
+		"$OnlineStandingsHeadingTotalRace",
+		""
+	},
+	{
+		"$OnlineStandingsHeadingName",
+		"$OnlineStandingsHeadingLastRoundRoadRage",
+		"$OnlineStandingsHeadingTotalRoadRage",
+		""
+	},
+	{
+		"$OnlineStandingsHeadingName",
+		"$OnlineStandingsHeadingLastRoundCrash",
+		"$OnlineStandingsHeadingHoleTotalCrash",
+		"$OnlineStandingsHeadingTotalCrash"
+	},
+	{
+		"$OnlineStandingsHeadingName",
+		"$OnlineStandingsHeadingLastRoundCrash",
+		"$OnlineStandingsHeadingTotalCrash",
+		""
+	},
+	{
+		"$OnlineStandingsHeadingName",
+		"$OnlineStandingsHeadingLastRoundCrash",
+		"$OnlineStandingsHeadingTotalCrash",
+		""
+	},
+	{
+		"$OnlineStandingsHeadingName",
+		"$OnlineStandingsHeadingLastRoundRevenge",
+		"$OnlineStandingsHeadingTotalRevenge"
+		""
+	},
+};

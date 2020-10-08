@@ -22,3 +22,4 @@ void CBoMemoryManager::Construct() {
 }
 
 CBoGame gGame;
+CGtRandom gRandom;

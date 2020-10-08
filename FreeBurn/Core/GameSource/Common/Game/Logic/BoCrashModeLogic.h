@@ -7,6 +7,13 @@ public:
 	void Construct();
 };
 
+class CBoCrashModeWind {
+public:
+	bool mbPrepared;
+
+	void Construct();
+};
+
 class CBoCompCrashModeLogic : CBoCrashModeLogic {
 public:
 	void Construct();

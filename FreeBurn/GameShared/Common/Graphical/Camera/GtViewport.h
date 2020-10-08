@@ -2,7 +2,8 @@
 
 class CGtViewport {
 public:
-
+	RwReal mrNearClipDistance;
+	RwReal mrFarClipDistance;
 };
 
 class CGtScreenCentre {

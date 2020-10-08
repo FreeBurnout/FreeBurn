@@ -1,18 +1,16 @@
-#include "../../Common/Graphics/BoGraphicsManager.h"
 #include <SDL.h>
 #include <rwcore.h>
+#include "../../Common/Graphics/BoGraphicsManager.h"
 #include "../../../../GameShared/PC/Numeric/GtV4dPC.h"
 
 extern SDL_Renderer * renderer;
 
-enum class EBoViewportSelection {
-	Main = 0,
-	Player1 = 1,
-	Player2 = 2
-};
-
 class CBoGraphicsManager : public CBoGraphicsManagerBase {
 public:
+	CBoViewport mMainViewport = CBoViewport(); // get rid of this initializer asap
+	EBoRenderableCamera meCurrentRenderableCamera;
+	int manSpheremapFaceHeights_Pow2[5];
+
 	void Construct();
 	void PresentDrawBuffer();
 	void OpenViewport(EBoViewportSelection leViewportSelection);

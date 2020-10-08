@@ -15,6 +15,7 @@ public:
 	RwInt8 GetLockedPlayersPort(signed char ln8Player);
 	void UpdateRumble();
 	void GetAvailableControllers(CBoControllerMapping ** lapControllerMappingsOut, signed char ln8PortIndex);
+	void UnlockPlayerPort(signed char ln8Player);
 	void Update();
 	void UpdateFE();
 };

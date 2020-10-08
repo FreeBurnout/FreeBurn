@@ -1,11 +1,7 @@
-#include "../Camera/BoPlayerCameraManager.h"
-#include "../../../SharedClasses/BoDataLists.h"
-#include "../../../../GameShared/Common/Graphical/GtColour.h"
-#include "../../../../GameShared/Common/Numeric/GtRandom.h"
-#include "../../../../GameShared/Common/System/GtFramerateManager.h"
-#include "../../../../GameShared/Common/System/FileSystem/GTFileSystem.h"
-#include "../../../../GameShared/Common/Development/CommsTool/GtCommsDatabase.h"
-#include "../../../../GameShared/Common/Containers/GtArray.h"
+#pragma once
+
+#include <rwcore.h>
+
 #include "BoAsyncDataLoader.h"
 #include "BoFrontEnd.h"
 #include "BoGameMode.h"
@@ -14,7 +10,6 @@
 #include "BoPlayer.h"
 #include "BoSettings.h"
 #include "BoTimer.h"
-#include "Challenge/BoTurnBasedCrashChallenge.h"
 #include "Logic/BoCarViewerLogic.h"
 #include "Logic/BoCrashModeLogic.h"
 #include "Logic/BoMultiplayerRoadRageLogic.h"
@@ -24,9 +19,33 @@
 #include "Logic/Online/BoOnlineCrashModeLogic.h"
 #include "Logic/Online/BoOnlineRevengeLogic.h"
 #include "Logic/Online/BoOnlineSingleRaceLogic.h"
+#include "Challenge/BoTurnBasedCrashChallenge.h"
+#include "../Camera/BoPlayerCameraManager.h"
+#include "../../../SharedClasses/BoDataLists.h"
+#include "../../../../GameShared/Common/Graphical/GtColour.h"
+#include "../../../../GameShared/Common/Numeric/GtRandom.h"
+#include "../../../../GameShared/Common/System/GtFramerateManager.h"
 #include "../../../../GameShared/Common/System/GtUnicodeBuffer.h"
-#include <rwcore.h>
+#include "../../../../GameShared/Common/System/FileSystem/GTFileSystem.h"
+#include "../../../../GameShared/Common/Development/CommsTool/GtCommsDatabase.h"
+#include "../../../../GameShared/Common/Containers/GtArray.h"
 
+extern CBoGame gGame;
+extern CBoMemoryManager gMemoryManager;
+
+enum class EBoTrackLocale {
+	Invalid = -1,
+	Detroit = 0,
+	Tokyo = 1,
+	Rome = 2,
+	LosAngeles = 3,
+	Montana = 4,
+	Florida = 5,
+	Switzerland = 6,
+	HongKong = 7,
+	Count = 8,
+	None = 8
+}; 
 
 enum class EGtGameUpdateState {
 	Constructed = 0,
@@ -108,14 +127,13 @@ public:
 	CBoCarViewerLogic mCarViewerLogic;
 	CBoTurnBasedCrashParty mTurnBasedCrashPartyChallenge;
 	CBoTurnBasedCrashTour mTurnBasedCrashTourChallenge;
-
 	CBoSecondaryRewardsManager mSecondaryRewardsManager;
 	EGtPrepareState mePrepareState;
 	EGtGameUpdateState meUpdateState;
 	EGtGameUpdateState meRequestedUpdateState;
 	CBoTimer mTimer;
 	CBoPlayer maPlayers[2];
-	CBoPlayerCamera maPlayerCamera[2];
+	CBoPlayerCameraManager maPlayerCamera[2];
 	EGtPrepareState meHardwarePrepareState;
 	GtComms::CGtCommsToolBase mCommsManager;
 	CBoAsyncDataLoader mAsyncDataLoader;
@@ -143,15 +161,11 @@ public:
 	void SleepToAllowWorkerThreadsToRun();
 };
 
-extern CBoGame gGame;
-
 class CBoMemoryManager {
 public:
 	void Construct();
 	void Update();
 };
-
-extern CBoMemoryManager gMemoryManager;
 
 class CBoStrings {
 public:

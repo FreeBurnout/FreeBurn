@@ -97,7 +97,7 @@
       <PreprocessorDefinitions>WIN32;DEBUG;TRACE</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
       <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
-      <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\spdlog\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\spdlog\include;$(SolutionDir)ThirdParty\</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
@@ -124,7 +124,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);DEBUG;TRACE</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
       <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
-      <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\spdlog\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\spdlog\include;$(SolutionDir)ThirdParty\</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
@@ -153,7 +153,7 @@
       <PreprocessorDefinitions>WIN32</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
       <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
-      <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\spdlog\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\spdlog\include;$(SolutionDir)ThirdParty\</AdditionalIncludeDirectories>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <Link>
@@ -182,7 +182,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
       <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
-      <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\spdlog\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\spdlog\include;$(SolutionDir)ThirdParty\</AdditionalIncludeDirectories>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <Link>
@@ -641,7 +641,6 @@
     <ClInclude Include="Core\SharedClasses\BoCollisionTag.h" />
     <ClInclude Include="Core\SharedClasses\BoConvexHull.h" />
     <ClInclude Include="Core\SharedClasses\BoDataLists.h" />
-    <ClInclude Include="Core\SharedClasses\BoLegacySharedConstants.h" />
     <ClInclude Include="Core\SharedClasses\BoNormalGameModes.h" />
     <ClInclude Include="Core\SharedClasses\BoParticleEmitterData.h" />
     <ClInclude Include="Core\SharedClasses\BoPlayListData.h" />

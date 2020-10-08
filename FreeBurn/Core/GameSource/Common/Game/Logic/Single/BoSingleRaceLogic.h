@@ -2,7 +2,7 @@
 
 #include "../BoStageLogic.h"
 
-class CBoSingleRaceLogic : CBoStageLogic {
+class CBoSingleRaceLogic : protected CBoStageLogic {
 public:
 	void Construct();
 };

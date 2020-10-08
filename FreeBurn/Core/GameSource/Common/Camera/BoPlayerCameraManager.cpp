@@ -1,16 +1,25 @@
+#include <vcruntime_string.h>
+
 #include "BoPlayerCameraManager.h"
+#include "../World/BoPlayerCar.h"
 
-void CBoPlayerCamera::Construct() {
+// DONE
+void CBoPlayerCameraManager::SetCutThisFrame(bool lbCutThisFrame) {
+	mbCutThisFrame = lbCutThisFrame;
 }
 
-void CBoPlayerCamera::SetCutThisFrame(bool lbCutThisFrame) {
+// DONE
+void CBoPlayerCameraManager::Update() {
+	CGtFSM::Update();
+}
+
+void CBoPlayerCameraManager::Update(float) {
 
 }
 
-void CBoPlayerCamera::Update() {
-
+// DONE
+bool CBoFlags::Prepare() {
+	memset(&maxBits, 0, sizeof(maxBits));
+	return true;
 }
 
-void CBoPlayerCamera::Update(float) {
-
-}

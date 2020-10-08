@@ -5,6 +5,7 @@ public:
 	static RwUInt32 muFrameCount;
 
 	bool mbIsOnline;
+	bool mbIsOnlineMenus;
 	bool mbUppingInterface;
 
 	void Construct();

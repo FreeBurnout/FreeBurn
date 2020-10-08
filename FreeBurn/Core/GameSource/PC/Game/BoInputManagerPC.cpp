@@ -53,6 +53,10 @@ void CBoInputManager::GetAvailableControllers(CBoControllerMapping ** lapControl
 
 }
 
+void CBoInputManager::UnlockPlayerPort(signed char ln8Player) {
+
+}
+
 void CBoInputManager::Update() {
 
 }

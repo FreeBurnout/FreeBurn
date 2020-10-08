@@ -1,7 +1,10 @@
+#pragma once
+
 #include "BoChallenge.h"
 
 class CBoTurnBasedCrashChallenge : CBoChallenge {
-
+public:
+	void Construct();
 };
 
 class CBoTurnBasedCrashParty : CBoTurnBasedCrashChallenge {

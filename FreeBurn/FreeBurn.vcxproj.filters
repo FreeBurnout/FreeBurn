@@ -1323,9 +1323,6 @@
     <ClInclude Include="Core\SharedClasses\BoDataLists.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Core\SharedClasses\BoLegacySharedConstants.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Core\SharedClasses\BoNormalGameModes.h">
       <Filter>Header Files</Filter>
     </ClInclude>

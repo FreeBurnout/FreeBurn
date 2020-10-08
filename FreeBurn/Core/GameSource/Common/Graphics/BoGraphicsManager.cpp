@@ -2,6 +2,10 @@
 
 #include <SDL.h>
 
+void CBoGraphicsManagerBase::Construct() {
+
+}
+
 // DONE
 void CBoGraphicsManagerBase::Update() {
     if (
@@ -16,6 +20,7 @@ void CBoGraphicsManagerBase::Update() {
     }
 }
 
+// DONE
 void CBoGraphicsManagerBase::CloseViewport() {
     RwCameraEndUpdate(mpCurrentViewport->mpRwCamera);
     mpCurrentViewportParams = nullptr;
