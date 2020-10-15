@@ -1,4 +1,5 @@
 #include <cstdint>
+
 class CGtLinearMalloc {
 public:
 	bool mbCreated;
@@ -13,4 +14,5 @@ public:
 	//mCachedMemoryFuncs:/0236:_15CGtLinearMalloc$mCachedMemoryFuncs;
 
 	void Construct();
+	void SetAlignment(size_t lnAlignment);
 };

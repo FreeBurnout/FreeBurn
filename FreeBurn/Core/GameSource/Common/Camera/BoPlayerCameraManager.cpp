@@ -3,6 +3,9 @@
 #include "BoPlayerCameraManager.h"
 #include "../World/BoPlayerCar.h"
 
+void CBoPlayerCameraManager::Construct() {
+}
+
 // DONE
 void CBoPlayerCameraManager::SetCutThisFrame(bool lbCutThisFrame) {
 	mbCutThisFrame = lbCutThisFrame;

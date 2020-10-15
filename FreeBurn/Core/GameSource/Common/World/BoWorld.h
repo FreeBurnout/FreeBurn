@@ -12,7 +12,7 @@ public:
 	bool mbRequestReplay;
 
 	void Construct();
-	void Prepare(bool lbQuickPrepare);
+	bool Prepare(bool lbQuickPrepare);
 	void Release();
 	void Update();
 	void UpdateSound();
@@ -33,6 +33,10 @@ public:
 	CBoStartPositionStruct * mpStartPositionStruct;
 
 	void Construct();
+};
+
+struct CBoPlanarTriggerStruct {
+
 };
 
 class CBoSpatialTrigger {

@@ -1,6 +1,9 @@
+#pragma once
+
+#include <rwcore.h>
+
 #include "BoControllerMapping.h"
 #include "../../../../GameShared/PC/System/Input/GtInputDevicePCPad2.h"
-#include <rwcore.h>
 
 class CBoInputManager {
 public:

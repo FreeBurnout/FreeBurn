@@ -9,6 +9,9 @@ void CBoGame::Release() {
 
 }
 
+void CBoGame::Render() {
+}
+
 bool CBoGame::Prepare() {
 	return true;
 }

@@ -9,5 +9,5 @@ void CGtVideoDecoder::Construct() {
 };
 
 bool CGtVideoDecoder::ViBufIsEmpty() {
-
+	return false;
 }

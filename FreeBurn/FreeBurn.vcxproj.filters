@@ -3991,9 +3991,6 @@
     <ClCompile Include="Core\SharedClasses\BoDataLists.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Core\SharedClasses\BODetourDataStruct.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Core\SharedClasses\BoMPSeriesList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -4481,6 +4478,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameShared\Common\System\GtUnicodeBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\SharedClasses\BoDetourDataStruct.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

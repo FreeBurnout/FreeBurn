@@ -1,5 +1,7 @@
 #pragma once
 
+#include <rwcore.h>
+
 #include "../Core/GtID.h"
 
 enum class EGtStateAction {
@@ -26,5 +28,6 @@ public:
 
 class CGtStateOffset {
 public:
-	
+	GtID mID;
+	RwInt32 mnOffset;
 };

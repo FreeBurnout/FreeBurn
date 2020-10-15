@@ -1,13 +1,28 @@
-#include "BoCarViewerDebug.h"
-
 #include <rwcore.h>
 
+#include "BoCarViewerDebug.h"
 
 bool CBoCarViewerDebug::IsActive() {
 	return false;
 }
 
+void CBoCarViewerDebug::SetColour(RwInt32 lnColour) {
+
+}
+
+void CBoCarViewerDebug::ViewRaceCar() {
+
+}
+
 void CBoCarViewerDebug::UpdateCamera(RwReal mrTimeStep) {
+
+}
+
+void CBoCarViewerDebug::ViewTrafficCar() {
+
+}
+
+void CBoCarViewerDebug::ViewNextPayload(CBoVehiclePhysics * param_1) {
 
 }
 

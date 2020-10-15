@@ -1,11 +1,9 @@
 #pragma once 
 
 #include "Online/BoOnlineCarSelectState.h"
-#include "../Interaction/Services/Online/BoNetworkingService.h"
 #include "../../../../../GameShared/Common/System/GtFSM.h"
 #include "../../../../../GameShared/Common/System/GtTimer.h"
-
-extern CBoMenuFlowManager gMenuFlowManager;
+#include "Online/DirtySock/BoOpenInterfaceMenuStateDS.h"
 
 extern GtID kB4MainMenuStateID;
 
@@ -25,7 +23,9 @@ enum class EBoTrackLocale {
 
 class CBoMenuFlowManager : public CGtFSM {
 public:
-	CBoOpenInterfaceService mOpenInterfaceMenuState;
+	static CGtStateOffset maOffsetTable[58];
+
+	CBoOpenInterfaceMenuState mOpenInterfaceMenuState;
 
 	void Construct(void * lpOwner, CGtStateOffset * lpOffsetTable, CGtTimer * lpStateTimer);
 	CGtStateOffset * GetOffsetTable();
@@ -41,10 +41,12 @@ public:
 };
 
 class CBoMainMenuState : CGtState {
-	void Action(EGtStateAction param_1, /*void * param_3,*/ int param_4); // param_2 is not used.
+	void Action(EGtStateAction param_1, int param_4);
 	void InitiateConfirm(GtID lDestinationState);
 };
 
 class CBoPreviewEventState : CGtState {
 
 };
+
+extern CBoMenuFlowManager gMenuFlowManager;

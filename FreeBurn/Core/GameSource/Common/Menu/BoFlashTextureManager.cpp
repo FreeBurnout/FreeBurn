@@ -11,13 +11,13 @@ char * gapcTextureDictionaryNames[4] = {
 CBoFlashTextureManager gFlashTextureManager;
 
 char * CBoFlashTextureManager::SetTextureDictionary(ETextureDictionary leDictionary) {
-    char * ret = "HUDCrashTourTurnTitle";
+    char * cpy = "HUDCrashTourTurnTitle";
     if (leDictionary != meTextureDictionary) {
         meTextureDictionary = leDictionary;
-        ret = strcpy(macFlashTextureFileName, gapcTextureDictionaryNames[(int)leDictionary]);
+        cpy = strcpy(macFlashTextureFileName, gapcTextureDictionaryNames[(int)leDictionary]);
         meFlashTexturePrepareState = EGtPrepareState::PreparedStage1;
     }
-    return ret;
+    return cpy;
 }
 
 bool CBoFlashTextureManager::PrepareTextureDictionary() {

@@ -1,8 +1,10 @@
+#pragma once
+
 #include <rwcore.h>
 
-extern char * gapcTextureDictionaryNames[4];
+#include "../../../../GameShared/Common/System/FileSystem/GTFileSystem.h"
 
-extern CBoFlashTextureManager gFlashTextureManager;
+extern char * gapcTextureDictionaryNames[4];
 
 enum class ETextureDictionary {
 	World = 0,
@@ -21,3 +23,5 @@ public:
 	char * SetTextureDictionary(ETextureDictionary leDictionary);
 	bool PrepareTextureDictionary();
 };
+
+extern CBoFlashTextureManager gFlashTextureManager;

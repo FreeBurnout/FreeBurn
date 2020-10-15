@@ -1,7 +1,7 @@
 #include "../../Common/World/BoWorld.h"
 
-void CBoWorld::Prepare(bool lbQuickPrepare) {
-
+bool CBoWorld::Prepare(bool lbQuickPrepare) {
+	return false;
 }
 
 CBoWorld gWorld;

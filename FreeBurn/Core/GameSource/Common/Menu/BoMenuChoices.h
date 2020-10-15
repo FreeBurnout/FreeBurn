@@ -1,8 +1,10 @@
-#include "../Game/BoGame.h"
+#pragma once
 
-extern CBoMenuChoices gMenuChoices;
+#include "../Menu/States/BoMenuFlowManager.h"
 
 class CBoMenuChoices {
 public:
 	EBoTrackLocale GetChosenCity();
 };
+
+extern CBoMenuChoices gMenuChoices;

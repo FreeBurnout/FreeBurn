@@ -5,17 +5,9 @@
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug|x64">
-      <Configuration>Debug</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|x64">
-      <Configuration>Release</Configuration>
-      <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -32,20 +24,7 @@
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
@@ -60,22 +39,11 @@
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(OutDir)</OutDir>
-    <IntDir>$(OutDir)/obj</IntDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(OutDir)</OutDir>
     <IntDir>$(OutDir)/obj</IntDir>
@@ -85,19 +53,14 @@
     <OutDir>$(OutDir)</OutDir>
     <IntDir>$(OutDir)/obj</IntDir>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(OutDir)</OutDir>
-    <IntDir>$(OutDir)/obj</IntDir>
-  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;DEBUG;TRACE</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;DEBUG;TRACE;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
       <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
-      <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\spdlog\include;$(SolutionDir)ThirdParty\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\spdlog\include</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
@@ -112,33 +75,6 @@
     </Link>
     <PostBuildEvent>
       <Command>xcopy /y /d "$(SolutionDir)ThirdParty\SDL2\lib\x86\SDL2.dll" $(TargetDir)</Command>
-    </PostBuildEvent>
-    <PreBuildEvent>
-      <Command>xcopy /d /y "$(SolutionDir)ThirdParty\SDL2\lib\$(PlatformTargetAsMSBuildArchitecture)\SDL2.dll" $(OutDir)</Command>
-    </PreBuildEvent>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);DEBUG;TRACE</PreprocessorDefinitions>
-      <ConformanceMode>false</ConformanceMode>
-      <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
-      <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\spdlog\include;$(SolutionDir)ThirdParty\</AdditionalIncludeDirectories>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-    </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>$(RWGSDK)/lib/opengl/debug;$(SolutionDir)ThirdParty\SDL2\lib\$(PlatformTargetAsMSBuildArchitecture)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>legacy_stdio_definitions.lib;rphanim.lib;rplodatm.lib;rplogo.lib;rpltmap.lib;rpmatfx.lib;rpmipkl.lib;rpmorph.lib;rpnormmap.lib;rpnormmapskin.lib;rppatch.lib;rppatchmatfx.lib;rppatchskin.lib;rppatchskinmatfx.lib;rpprtstd.lib;rpptank.lib;rppvs.lib;rprandom.lib;rpskin.lib;rpskinmatfx.lib;rpspline.lib;rpusrdat.lib;rpuvanim.lib;rpworld.lib;rt2d.lib;rt2danim.lib;rtanim.lib;rtbary.lib;rtbezpat.lib;rtbmp.lib;rtcharse.lib;rtcmpkey.lib;rtdict.lib;rtfsyst.lib;rtgcond.lib;rtgncpip.lib;rtimport.lib;rtintsec.lib;rtltmap.lib;rtltmapcnv.lib;rtmipk.lib;rtmipkmatfx.lib;rtmipkpatch.lib;rtmipkpatchmatfx.lib;rtpick.lib;rtpitexd.lib;rtpng.lib;rtpngcw.lib;rtquat.lib;rtras.lib;rtray.lib;rtskinsp.lib;rtslerp.lib;rtsplpvs.lib;rttiff.lib;rttilerd.lib;rttoc.lib;rtvcat.lib;rtwing.lib;rtworld.lib;rwcore.lib;rpadc.lib;rpanisot.lib;rpcollis.lib;rpdmorph.lib;rpenv.lib;SDL2.lib;SDL2main.lib;SDL2test.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AssemblyDebug>true</AssemblyDebug>
-      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <ForceFileOutput>
-      </ForceFileOutput>
-    </Link>
-    <PostBuildEvent>
-      <Command>xcopy /y /d "$(SolutionDir)ThirdParty\SDL2\lib\x64\SDL2.dll" $(TargetDir)</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>xcopy /d /y "$(SolutionDir)ThirdParty\SDL2\lib\$(PlatformTargetAsMSBuildArchitecture)\SDL2.dll" $(OutDir)</Command>
@@ -150,10 +86,10 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
       <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
-      <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\spdlog\include;$(SolutionDir)ThirdParty\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\spdlog\include</AdditionalIncludeDirectories>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <Link>
@@ -168,35 +104,6 @@
     </Link>
     <PostBuildEvent>
       <Command>xcopy /y /d "$(SolutionDir)ThirdParty\SDL2\lib\x86\SDL2.dll" $(TargetDir)</Command>
-    </PostBuildEvent>
-    <PreBuildEvent>
-      <Command>xcopy /d /y "$(SolutionDir)ThirdParty\SDL2\lib\$(PlatformTargetAsMSBuildArchitecture)\SDL2.dll" $(OutDir)</Command>
-    </PreBuildEvent>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>false</ConformanceMode>
-      <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
-      <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\spdlog\include;$(SolutionDir)ThirdParty\</AdditionalIncludeDirectories>
-      <ObjectFileName>$(IntDir)</ObjectFileName>
-    </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(RWGSDK)/lib/opengl/debug;$(SolutionDir)ThirdParty\SDL2\lib\$(PlatformTargetAsMSBuildArchitecture)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>legacy_stdio_definitions.lib;rphanim.lib;rplodatm.lib;rplogo.lib;rpltmap.lib;rpmatfx.lib;rpmipkl.lib;rpmorph.lib;rpnormmap.lib;rpnormmapskin.lib;rppatch.lib;rppatchmatfx.lib;rppatchskin.lib;rppatchskinmatfx.lib;rpprtstd.lib;rpptank.lib;rppvs.lib;rprandom.lib;rpskin.lib;rpskinmatfx.lib;rpspline.lib;rpusrdat.lib;rpuvanim.lib;rpworld.lib;rt2d.lib;rt2danim.lib;rtanim.lib;rtbary.lib;rtbezpat.lib;rtbmp.lib;rtcharse.lib;rtcmpkey.lib;rtdict.lib;rtfsyst.lib;rtgcond.lib;rtgncpip.lib;rtimport.lib;rtintsec.lib;rtltmap.lib;rtltmapcnv.lib;rtmipk.lib;rtmipkmatfx.lib;rtmipkpatch.lib;rtmipkpatchmatfx.lib;rtpick.lib;rtpitexd.lib;rtpng.lib;rtpngcw.lib;rtquat.lib;rtras.lib;rtray.lib;rtskinsp.lib;rtslerp.lib;rtsplpvs.lib;rttiff.lib;rttilerd.lib;rttoc.lib;rtvcat.lib;rtwing.lib;rtworld.lib;rwcore.lib;rpadc.lib;rpanisot.lib;rpcollis.lib;rpdmorph.lib;rpenv.lib;SDL2.lib;SDL2main.lib;SDL2test.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <ForceFileOutput>
-      </ForceFileOutput>
-    </Link>
-    <PostBuildEvent>
-      <Command>xcopy /y /d "$(SolutionDir)ThirdParty\SDL2\lib\x64\SDL2.dll" $(TargetDir)</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>xcopy /d /y "$(SolutionDir)ThirdParty\SDL2\lib\$(PlatformTargetAsMSBuildArchitecture)\SDL2.dll" $(OutDir)</Command>
@@ -1531,7 +1438,7 @@
     <ClCompile Include="Core\SharedClasses\BoConvexHull.cpp" />
     <ClCompile Include="Core\SharedClasses\BoCrashTrafficGenerationStruct.cpp" />
     <ClCompile Include="Core\SharedClasses\BoDataLists.cpp" />
-    <ClCompile Include="Core\SharedClasses\BODetourDataStruct.cpp" />
+    <ClCompile Include="Core\SharedClasses\BoDetourDataStruct.cpp" />
     <ClCompile Include="Core\SharedClasses\BoMPSeriesList.cpp" />
     <ClCompile Include="Core\SharedClasses\BoNormalGameModes.cpp" />
     <ClCompile Include="Core\SharedClasses\BoParticleEmitterData.cpp" />

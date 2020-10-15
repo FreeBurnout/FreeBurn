@@ -1,12 +1,17 @@
-namespace GtComms {
-	class CGtCommsToolBase {
-	public:
-		CGtCommsToolBase * mpToolBase;
+#pragma once
 
-		void Construct(const char * lpcFileServerRoot);
+namespace GtComms {
+	class CGtCommsDatabase {
+	public:
+		void AddEntry(int *,   const char *, const char *, const char *, int, int,   int,   int);
+		void AddEntry(float *, const char *, const char *, const char *, int, float, float, int);
 	};
 
-	class CGtCommsDatabase {
+	class CGtCommsToolBase {
+	public:
+		static CGtCommsToolBase * mpToolBase;
+		CGtCommsDatabase mDatabase;
 
+		void Construct(const char * lpcFileServerRoot);
 	};
 }

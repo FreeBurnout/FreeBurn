@@ -1,8 +1,8 @@
 #include "BoAITarget.h"
 
 void CBoAITarget::Construct() {
-	if (_gnAITargetMonitorID == &_heap_size) {
-		_gnAITargetMonitorID = (undefined *)0x0;
+	if (_gnAITargetMonitorID == -1) {
+		_gnAITargetMonitorID = 0;
 	}
 	mSpline.Construct();
 	mAggression.Construct();
