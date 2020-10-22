@@ -4,6 +4,8 @@
 
 class CBoMenuChoices {
 public:
+	RwInt8 mn8ContrastFilterOn;
+
 	EBoTrackLocale GetChosenCity();
 };
 

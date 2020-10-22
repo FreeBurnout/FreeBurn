@@ -4,4 +4,7 @@ void CBoSoundManager::StopAll() {
 
 }
 
+void CBoSoundManager::Destruct() {
+}
+
 

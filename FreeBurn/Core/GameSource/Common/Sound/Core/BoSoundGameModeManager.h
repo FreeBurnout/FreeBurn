@@ -3,4 +3,6 @@
 class CBoSoundGameModeManager {
 public:
 	CBoSoundRadio mRadio;
+
+	void Update();
 };

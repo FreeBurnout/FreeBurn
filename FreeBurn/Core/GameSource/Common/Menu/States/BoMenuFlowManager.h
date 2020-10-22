@@ -28,6 +28,7 @@ public:
 	CBoOpenInterfaceMenuState mOpenInterfaceMenuState;
 
 	void Construct(void * lpOwner, CGtStateOffset * lpOffsetTable, CGtTimer * lpStateTimer);
+	void Destruct();
 	CGtStateOffset * GetOffsetTable();
 	void Update();
 };

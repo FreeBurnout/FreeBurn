@@ -104,7 +104,9 @@ public:
 class CBoFlashMovieManager {
 public:
 	void Construct();
+	void Destruct();
 	void PlayMovie(EFlashMovie leFlashMovie, bool lbPlayThroughMain);
+	void Release();
 };
 
 extern CBoFlashMovieManager gFlashMovieManager;

@@ -1,3 +1,5 @@
+#include <cstdint>
+
 #include "BoMemoryCardManager.h"
 
 RwInt32 CBoMemoryCardManager::GetSelection() {
@@ -26,6 +28,9 @@ void CBoMemoryCardManager::StartLoadProfileFlow() {
 
 void CBoMemoryCardManager::Construct() {
 
+}
+
+void CBoMemoryCardManager::Release() {
 
 }
 
@@ -38,55 +43,41 @@ void CBoMemoryCardManager::SetOptions(RwChar * lpOptions0, RwChar * lpOptions1, 
 }
 
 void CBoMemoryCardManager::UpdateDebugFlow() {
-    int uVar2;
-    EDebugSubstate iVar1 = meDebugSubstate;
-    if (iVar1 == EDebugSubstate::DisplayChoiceMessage) {
+    RwInt32 lnRetVal;
+    if (meDebugSubstate == EDebugSubstate::DisplayChoiceMessage) {
         SetMessage("Memory Card Debug\nSelect Appropriate Flow");
         SetOptions("Bootup Check", "Bootup Load/Create", "Manual Save Profile", "Manual Load Profile");
-        uVar2 = 2;
+        lnRetVal = 2;
     }
     else {
         if (meDebugSubstate < EDebugSubstate::Poll) {
-            if (iVar1 == EDebugSubstate::Init) {
+            if (meDebugSubstate == EDebugSubstate::Init) {
                 meDebugSubstate = EDebugSubstate::DisplayChoiceMessage;
-                return;
+            } else {
+                meDebugSubstate = EDebugSubstate::Finished;
+            }
+            return;
+        }
+        if (meDebugSubstate != EDebugSubstate::Poll) {
+            if (meDebugSubstate == EDebugSubstate::Finished) {
+                mbIsFinished = true;
             }
             meDebugSubstate = EDebugSubstate::Finished;
             return;
         }
-        if (iVar1 != EDebugSubstate::Poll) {
-            if (iVar1 != EDebugSubstate::Finished) {
-                meDebugSubstate = EDebugSubstate::Finished;
-                return;
+        lnRetVal = GetSelection();
+        if (lnRetVal >= 0 && lnRetVal <= 3) {
+            ClearMessage();
+            switch (lnRetVal) {
+                case 0: StartBootCheckFlow(); break;
+                case 1: StartBootLoadProfileFlow(); break;
+                case 2: StartSaveProfileFlow(); break;
+                case 3: StartLoadProfileFlow(); break;
             }
-            mbIsFinished = true;
-            return;
-        }
-        uVar2 = GetSelection();
-        switch (uVar2) {
-        case 0:
-            ClearMessage();
-            StartBootCheckFlow();
-            uVar2 = 3;
-            break;
-        case 1:
-            ClearMessage();
-            StartBootLoadProfileFlow();
-            uVar2 = 3;
-            break;
-        case 2:
-            ClearMessage();
-            StartSaveProfileFlow();
-            uVar2 = 3;
-            break;
-        case 3:
-            ClearMessage();
-            StartLoadProfileFlow();
-            uVar2 = 3;
-            break;
-        default:
+            lnRetVal = 3;
+        } else {
             return;
         }
     }
-    meDebugSubstate = (EDebugSubstate)uVar2;
+    meDebugSubstate = (EDebugSubstate)lnRetVal;
 }

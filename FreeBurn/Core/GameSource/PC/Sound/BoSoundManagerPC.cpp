@@ -2,6 +2,10 @@
 
 CBoSoundManager gSoundManager;
 
+void CBoSoundManager::Release() {
+
+}
+
 void CBoSoundManager::Update() {
 
 }

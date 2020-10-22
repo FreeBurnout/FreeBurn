@@ -1,8 +1,8 @@
 #pragma once
 
 enum class EGtAspectRatio {
-	Standard,
-	Widescreen
+	Standard = 0,
+	Widescreen = 1
 };
 
 class CGtSysConfig {

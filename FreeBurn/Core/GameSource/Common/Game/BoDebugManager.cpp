@@ -4,6 +4,10 @@ void CBoDebugManager::Construct() {
 
 }
 
+void CBoDebugManager::Destruct() {
+
+}
+
 void CBoDebugManager::Update() {
 
 }

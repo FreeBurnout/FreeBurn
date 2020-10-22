@@ -43,6 +43,7 @@ public:
 	char mn8ScreenOffsetY;
 
 	void Activate();
+	void Destruct();
 	void Construct();
 	void InGameActivate();
 };

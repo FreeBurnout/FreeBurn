@@ -22,6 +22,7 @@ public:
 	void StartSaveProfileFlow();
 	void StartLoadProfileFlow();
 	void Construct();
+	void Release();
 	void SetMessage(RwChar * lpMessage);
 	void SetOptions(RwChar * lpOptions0, RwChar * lpOptions1, RwChar * lpOptions2, RwChar * lpOptions3);
 	void UpdateDebugFlow();

@@ -5,4 +5,5 @@ FreeBurn/Debug
 FreeBurn/Release
 FreeBurn/x64
 x64/
+ThirdParty/boost/
 *.vcxproj.user

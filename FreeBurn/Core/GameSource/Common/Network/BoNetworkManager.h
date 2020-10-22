@@ -9,6 +9,8 @@ public:
 	bool mbUppingInterface;
 
 	void Construct();
+	void Destruct();
+	void Release();
 	void Update();
 	void PostUpdate();
 };

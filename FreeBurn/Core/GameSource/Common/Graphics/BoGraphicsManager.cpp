@@ -6,6 +6,10 @@ void CBoGraphicsManagerBase::Construct() {
 
 }
 
+void CBoGraphicsManagerBase::Destruct() {
+
+}
+
 // DONE
 void CBoGraphicsManagerBase::Update() {
     if (

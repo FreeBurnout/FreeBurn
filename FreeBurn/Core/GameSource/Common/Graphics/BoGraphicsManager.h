@@ -1,3 +1,5 @@
+#pragma once
+
 #include <SDL.h>
 #include <rwcore.h>
 
@@ -6,7 +8,7 @@
 #include "../../../../GameShared/PC/Graphical/GtTexturePC.h"
 
 extern SDL_Renderer * renderer;
-extern "C" void _RpSkyRenderStateSet(RwRenderState, void *);
+extern SDL_Window * window;
 
 enum class EBoVideoMode {
     NTSC = 0,
@@ -23,12 +25,15 @@ enum class EBoViewportSelection {
 
 class CBoViewport : public CGtViewport {
 public:
+    RwInt32 mnDisplayHeight;
     RwCamera * mpRwCamera;
 };
 
 class CBoViewportParams {
 public:
+    RwReal mrBrightness;
     RwReal mrFogDistance;
+    RwReal mrMotionBlur;
 };
 
 class CBoDebugMipMaps {
@@ -61,15 +66,18 @@ public:
     CBoViewportParams maPlayerViewportParams[2];
     CBoViewportParams * mpCurrentViewportParams;
     CBoViewport * mpCurrentViewport;
+    CBoViewport mMainViewport;
     CGtScreenCentre mScreenPosition;
     CGtV2d mScreenPositionData;
     CGtV2d mScreenPositionDataOld;
     RwInt32 mnScreenWidth;
+    RwInt32 mnDisplayHeight;
     RwInt32 mnScreenHeight;
     EBoVideoMode meCurrentVideoMode;
     bool mbWidescreen;
 
     void Construct();
+    void Destruct();
 	void DrawBootLoadingScreen(float lrProgress);
 	void CloseViewport();
     void Update();

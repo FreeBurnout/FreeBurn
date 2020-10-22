@@ -5,6 +5,11 @@
 #include "BoControllerMapping.h"
 #include "../../../../GameShared/PC/System/Input/GtInputDevicePCPad2.h"
 
+class CBoRumbleAttribs {
+public:
+	static void UnregisterStaticVariables();
+};
+
 class CBoInputManager {
 public:
 	bool mbIsPaused;
@@ -21,6 +26,7 @@ public:
 	void UnlockPlayerPort(signed char ln8Player);
 	void Update();
 	void UpdateFE();
+	void ResetDeadInputTime(char);
 };
 
 extern CBoInputManager gInputManager;

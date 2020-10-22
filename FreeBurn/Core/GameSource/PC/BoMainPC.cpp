@@ -5,8 +5,8 @@
 #include "../../../GameShared/PC/System/GtThreadMgrPC.h"
 #include <spdlog\spdlog.h>
 
-SDL_Window * win = SDL_CreateWindow("FreeBurn", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_OPENGL);
-SDL_Renderer * renderer = SDL_CreateRenderer(win, -1, SDL_RendererFlags::SDL_RENDERER_ACCELERATED);
+SDL_Window * window = SDL_CreateWindow("FreeBurn", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_OPENGL);
+SDL_Renderer * renderer = SDL_CreateRenderer(window, -1, SDL_RendererFlags::SDL_RENDERER_ACCELERATED);
 
 void __main() {
     

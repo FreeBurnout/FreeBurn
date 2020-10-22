@@ -20,6 +20,10 @@ void CBoSettings::Activate() {
     InGameActivate();
 }
 
+void CBoSettings::Destruct() {
+
+}
+
 void CBoSettings::Construct() {
     mgb50Hz = false;
     mgbProgressiveScan = false;

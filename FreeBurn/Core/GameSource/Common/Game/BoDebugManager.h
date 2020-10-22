@@ -23,6 +23,7 @@ public:
 	CBoCarViewerDebug mCarViewerDebug;
 
 	void Construct();
+	void Destruct();
 	void Update();
 	void UpdateStartOfFrame();
 	void RenderOverlays();

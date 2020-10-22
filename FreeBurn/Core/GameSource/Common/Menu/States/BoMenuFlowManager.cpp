@@ -67,6 +67,10 @@ void CBoMenuFlowManager::Construct(void* lpOwner, CGtStateOffset* lpOffsetTable,
 
 }
 
+void CBoMenuFlowManager::Destruct() {
+
+}
+
 void CBoMenuFlowManager::Update() {
 
 }

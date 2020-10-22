@@ -60,7 +60,7 @@
       <PreprocessorDefinitions>WIN32;DEBUG;TRACE;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
       <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
-      <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\spdlog\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\spdlog\include;$(SolutionDir)ThirdParty\boost</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
@@ -89,7 +89,7 @@
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
       <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
-      <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\spdlog\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\spdlog\include;$(SolutionDir)ThirdParty\boost</AdditionalIncludeDirectories>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <Link>

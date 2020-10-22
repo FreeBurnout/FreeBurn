@@ -1,17 +1,40 @@
 #include <rwcore.h>
 
+enum class EBoShockwaveType {
+	Race0 = 0,
+	Race1 = 1,
+	Race2 = 2,
+	Race3 = 3,
+	Crash0 = 4,
+	Crash1 = 5,
+	Crash2 = 6,
+	Crash3 = 7,
+	Crash4 = 8,
+	Crash5 = 9,
+	Num = 10
+};
+
 class CBoBurn {
 public:
-	RwReal gmrMinimumBoostTime = 1.0;
-	RwReal gmrMinimumBoostRecoveryTime = 0.5;
-	RwReal gmrPowerBoostDepletionMultiplier = 1.4;
-	RwReal gmarBoostBarSizes[4] = {
-		100.0, 200.0, 300.0, 400.0
-	};
-	RwReal gmarBurnoutBoostMultipliers[4] = {
-		1.0, 2.0, 3.0, 4.0
-	};
-	RwReal gmarBoostRate[4] = {
-		10.0, 10.0, 10.0, 10.0
-	};
+	static RwReal gmrMinimumBoostTime;
+	static RwReal gmrMinimumBoostRecoveryTime;
+	static RwReal gmrPowerBoostDepletionMultiplier;
+	static RwReal gmarBoostBarSizes[4];
+	static RwReal gmarBurnoutBoostMultipliers[4];
+	static RwReal gmarBoostRate[4];
+
+	static void RegisterStaticVariables();
+	static void UnregisterStaticVariables();
+	static void SetNumExtraBoostBarSegments(RwInt32 lnNumSegments);
+	static void AddSegment();
+	static void RemoveSegment();
+	EBoShockwaveType CalcCrashbreakerType();
+
+private:
+	static RwInt32 mnNumExtraSegments;
+	static RwReal mrCurrentBoost;
+	static RwReal mrMaxBoost;
+	static RwReal mrBoostRate;
+	static RwReal mrBoostMultiplier;
+	static RwReal mrMinimumBoostUsed;
 };

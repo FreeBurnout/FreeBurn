@@ -1,7 +1,15 @@
 #include "../../Common/Game/BoGame.h"
 
-CBoMemoryManager gMemoryManager;
+CBoMemoryManagerPC gMemoryManager;
 
-void CBoMemoryManager::Update() {
+void CBoManagedMemoryBlock::Construct(void * lpMemoryBlock, RwInt32 lnMemoryLayout, RwInt32 lnSize) {
+
+}
+
+void CBoMemoryManagerPC::Construct() {
+
+}
+
+void CBoMemoryManagerPC::Destruct() {
 
 }

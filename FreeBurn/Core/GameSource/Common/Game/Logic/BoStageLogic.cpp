@@ -3,3 +3,7 @@
 void CBoStageLogic::Construct() {
 
 }
+
+void CBoStageLogic::UnRegisterStaticVariables() {
+
+}

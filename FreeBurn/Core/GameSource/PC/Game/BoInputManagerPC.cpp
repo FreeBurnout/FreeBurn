@@ -65,3 +65,6 @@ void CBoInputManager::UpdateFE() {
 
 }
 
+void CBoInputManager::ResetDeadInputTime(char) {
+}
+
