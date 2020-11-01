@@ -1,13 +1,57 @@
-#include "BoWorld.h"
-#include "../Sound/BoSoundManager.h"
-#include "../../../../GameShared/Common/System/FileSystem/GTFileSystem.h"
-#include "../Physics/BoVehiclePhysics.h"
-#include "../Game/BoGame.h"
-#include "../Physics/BoRaceCarPhysics.h"
+#include "BoPlayerCar.h"
 #include "BoRaceCar.h"
-#include "BoEffectsManager.h"
+#include "BoWorld.h"
+#include "../../Common/World/BoWrongWayWall.h"
+#include "../../Common/World/BoPropManager.h"
+#include "../../Common/World/AI/BoAIArbitrator.h"
+#include "../../Common/World/AI/BoAITarget.h"
+#include "../../Common/World/Traffic/BoTrafficSystem.h"
+#include "../../Common/Physics/BoCheckedTrafficPhysics.h"
+#include "../../Common/Physics/BoCollidingBody.h"
+#include "../../Common/Physics/BoPhysicsManager.h"
+#include "../../Common/Physics/BoVehicleParams.h"
 
 void CBoWorld::Construct() {
+
+}
+
+bool CBoWorld::Prepare(bool lbQuickPrepare) {
+	return false;
+}
+
+bool CBoWorld::LoadRaceCarData(GtID lnID, RwInt32 lnBufferIndex) {
+	return false;
+}
+
+CBoVehicleData CBoWorld::GetRaceCarData(GtID lnID, RwInt32 lnBufferIndex) {
+	return CBoVehicleData();
+}
+
+CBoVehiclePhysics CBoWorld::GetRaceCar(ERaceCarIndex) {
+	return CBoVehiclePhysics();
+}
+
+void CBoWorld::SetUpTrackExtents() {
+
+}
+
+void CBoWorld::Update() {
+
+}
+
+void CBoWorld::UpdateTrack() {
+
+}
+
+void CBoWorld::Release() {
+
+}
+
+void CBoWorld::SetTrackID(GtID lnID) {
+
+}
+
+void CBoWorld::UnLoadRaceCarData(GtID lnID, RwInt32 lnBufferIndex) {
 
 }
 
@@ -15,120 +59,202 @@ void CBoWorld::Destruct() {
 
 }
 
+void CBoWorld::SetCarNumbers(RwInt32 lnNumPlayerCars, RwInt32 lnNumAICars, RwInt32 lnNumNetworkCars, RwInt32 lnNumAdjustedAICars) {
+
+}
+
 void CBoWorld::UpdateSound() {
-	if (gSoundManager.mePrepareState == EGtPrepareState::PreparedFully) {
-		gSoundManager.mGameModeManager.Update();
-	}
-}
-
-void CBoWorld::UpdateTrack() {
-}
-
-void CBoWorld::Release() {
 
 }
 
-void CBoWorld::Update() {/*
-    bool bVar1;
-    int iVar2;
-    int iVar3;
-    CBoRaceCarPhysics * pCVar4;
-    CBoCheckedTrafficPhysics * pCVar5;
-    long lVar6;
-    CBoVehiclePhysics * pCVar7;
-    int iVar8;
-    ERaceCarIndex EVar9;
-    CBoVehiclePhysics ** ppCVar10;
-
-    bVar1 = mbPausedForStreamSync || mbPausedForNetworkSync;
-
-    if (bVar1) {
-        gGame.mInputManager.ResetDeadInputTime(0);
-        gGame.mInputManager.ResetDeadInputTime(1);
-    }
-    else {
-        gEnvironmentManager.Update(mTimer.mrTimeStep);
-        mStaticTrack.Update();
-    }
-    if (*(long *)(this + 0x177418) != 0) {
-        if (gGame.mnGamePausedByPlayer == -1) {
-            UpdateTrack();
-        }
-        if (mbPausedForStreamSync == false) {
-            bVar1 = true;
-            if (mbPausedForNetworkSync == false) {
-                bVar1 = false;
-            }
-        }
-        else {
-            bVar1 = true;
-        }
-        if (!bVar1) {
-            lVar6 = IsActive();
-            if ((lVar6 == 0) && (iVar8 = 0, mnNumRaceCars > 0)) {
-                while (iVar8 < mnNumRaceCars) {
-                    iVar2 = iVar8 * 4;
-                    iVar8++;
-                    iVar3 = *(int *)(*(int *)(this + iVar2 + 0x177430) + 0x2c90);
-                    (**(code **)(iVar3 + 0x14))(*(int *)(this + iVar2 + 0x177430) + (int)*(short *)(iVar3 + 0x10));
-                } ;
-            }
-            Update((CBoRacePosition *)(this + 0x1680d0));
-            Update((CBoTrafficSystem *)(this + 0x4ff0));
-            gCrashVehicleStreamManager.Update();
-            Update((CBoPropManager *)(this + 0x16a230));
-            Update((CBoGameData *)(this + 0x167a40));
-            mPhysicsManager.Update(mTimer.mrTimeStep);
-            lVar6 = IsActive();
-            if ((lVar6 == 0) && (iVar8 = 0, 0 < mnNumRaceCars)) {
-                while (iVar8 < mnNumRaceCars) {
-                    iVar3 = iVar8 * 4;
-                    iVar8++;
-                    UpdateAILaneSegment(*(CBoRaceCar **)(this + iVar3 + 0x177430));
-                } ;
-            }
-            EVar9 = ERaceCarIndex::RaceCar0;
-            gEffectsManager.BeginUpdate();
-            if (mnNumRaceCars > 0) {
-                while ((int)EVar9 < mnNumRaceCars) {
-                    EVar9 = (ERaceCarIndex)((int)EVar9 + 1);
-                    pCVar4 = (CBoRaceCarPhysics *)mPhysicsManager.GetRaceCarPhysics(EVar9);
-                    gEffectsManager.UpdateRaceCarEffects((CBoEffectsManager *), pCVar4);
-                    // EVar9 = EVar9;
-                }
-            }
-            iVar8 = 0;
-            if (mPhysicsManager.mnNumCheckedTrafficBodies > 0) {
-                while (iVar8 < mPhysicsManager.mnNumCheckedTrafficBodies) {
-                    pCVar5 = &mPhysicsManager.GetCheckedTrafficPhysics(iVar8);
-                    iVar8++;
-                    gEffectsManager.UpdateCheckedTrafficEffects(pCVar5);
-                }
-            }
-            iVar8 = 0;
-            if (mPhysicsManager.mnNumTrafficBodies > 0) {
-                ppCVar10 = (CBoVehiclePhysics **)(this + 0x1674b8);
-                pCVar7 = *ppCVar10;
-                while (true) {
-                    iVar8++;
-                    ppCVar10 = ppCVar10 + 1;
-                    gEffectsManager.UpdateCrashingTrafficEffects(pCVar7);
-                    if (mPhysicsManager.mnNumTrafficBodies <= iVar8) {
-                        break;
-                    }
-                    pCVar7 = *ppCVar10;
-                }
-            }
-            gEffectsManager.UpdateCollisionEffects();
-            UpdateEmitterEffects();
-            gEffectsManager.EndUpdate();
-            maPlayerCrashAnalysers[0].Update(mTimer.mrTimeStep);
-            maPlayerCrashAnalysers[1].Update(mTimer.mrTimeStep);
-            UpdateCollidingPairs();
-            PostEffectsUpdate();
-            gInGameRatingManager.Update();
-        }
-    }*/
+RwInt32 _VehicleDistanceQSortCallback(const void * lpData1, const void * lpData2) {
+	return 0;
 }
 
+void CBoWorld::RenderRaceCars(EPlayerCarIndex, EPlayerCarIndex) {
+	
+}
 
+void CBoWorld::RenderFullScreenPoly(EPlayerCarIndex) {
+
+}
+
+void BoWorldResetPlayerDetourInfo() {
+
+}
+
+void CBoWorld::RenderCarUnlockEffects() {
+
+}
+
+CBoVehicleParams::CBoVehicleParams() {
+
+}
+
+CBoTrafficSystem::CBoTrafficSystem() {
+
+}
+
+CBoCollidingBody::CBoCollidingBody() {
+
+}
+
+CBoVehiclePhysics::CBoVehiclePhysics() {
+
+}
+
+CBoWrongWayWall::CBoWrongWayWall() {
+
+}
+
+CBoCheckedTrafficPhysics::CBoCheckedTrafficPhysics() {
+
+}
+
+CBoPhysicsManager::CBoPhysicsManager() {
+
+}
+
+CBoPropManager::CBoPropManager() {
+
+}
+
+CBoRaceCar::CBoRaceCar() {
+
+}
+
+CBoAITargetSpline::CBoAITargetSpline() {
+
+}
+
+CBoAIArbitrator::CBoAIArbitrator() {
+
+}
+
+CBoWorld::CBoWorld() {
+
+}
+
+GtID CBoWorld::GetTrackID() {
+	return GtID();
+}
+
+ERaceCarIndex CBoWorld::GetNumRaceCars() {
+	return ERaceCarIndex();
+}
+
+RwInt32 CBoWorld::GetNumActiveRaceCars() {
+	return RwInt32();
+}
+
+EPlayerCarIndex CBoWorld::GetNumPlayerCars() {
+	return EPlayerCarIndex();
+}
+
+EPlayerCarIndex CBoWorld::GetNumAICars() {
+	return EPlayerCarIndex();
+}
+
+EPlayerCarIndex CBoWorld::GetNumNetworkCars() {
+	return EPlayerCarIndex();
+}
+
+RwInt32 CBoWorld::GetNumAdjustedAICars() {
+	return RwInt32();
+}
+
+void CBoWorld::DecrementNumAdjustedAICars() {
+
+}
+
+RwInt32 CBoWorld::GetLeadingAdjustedAICar() {
+	return RwInt32();
+}
+
+void CBoWorld::IncrementLeadingAdjustedAICar() {
+
+}
+
+void CBoWorld::DecrementLeadingAdjustedAICar() {
+
+}
+
+void CBoWorld::SetNumLeadingCars(int) {
+
+}
+
+CBoPlayerCar * CBoWorld::GetPlayerCar(EPlayerCarIndex) {
+	return nullptr;
+}
+
+CBoAICar * CBoWorld::GetAICar(EAICarIndex) {
+	return nullptr;
+}
+
+CBoNetworkCar * CBoWorld::GetNetworkCar(ENetworkCarIndex) {
+	return nullptr;
+}
+
+bool CBoWorld::IsPointToPoint() {
+	return false;
+}
+
+bool CBoWorld::IsMarathon() {
+	return false;
+}
+
+bool CBoWorld::IsRightHandDrive() {
+	return false;
+}
+
+GtMathPC::CGtV3d CBoWorld::GetTrackCentre() {
+	return GtMathPC::CGtV3d();
+}
+
+void CBoWorld::GetTrackExtents(GtMathPC::CGtV3d *, GtMathPC::CGtV3d *) {
+
+}
+
+void CBoWorld::SetNumActiveRaceCars(int) {
+
+}
+
+void CBoWorld::DecrementNumActiveRaceCars() {
+
+}
+
+bool CBoWorld::IsCrashIntro() const {
+	return false;
+}
+
+void CBoWorld::SetCrashIntro(bool) {
+
+}
+
+bool CBoWorld::IsCrashAftermath() const {
+	return false;
+}
+
+void CBoWorld::SetCrashAftermath(bool) {
+
+}
+
+RwReal CBoWorld::GetTimeBeforeAutomaticTimeout() {
+	return RwReal();
+}
+
+RwInt32 CBoWorld::GetInitialWorldFrame() {
+	return RwInt32();
+}
+
+RwInt32 CBoWorld::GetMaxRaceCarStreams() const {
+	return RwInt32();
+}
+
+bool CBoWorld::IsMultiPlayer() {
+	return false;
+}
+
+bool CBoWorld::IsSinglePlayer() {
+	return false;
+}

@@ -1,6 +1,10 @@
-#pragma once
+#ifndef BOSINGLEREVENGELOGIC_H
+#define BOSINGLEREVENGELOGIC_H
 
-class CBoSingleRevengeLogic {
-public:
-	void Construct();
-};
+#include "BoSingleRaceLogic.h"
+
+class CBoSingleRevengeLogic : CBoSingleRaceLogic {
+
+}; 
+
+#endif // !BOSINGLEREVENGELOGIC_H

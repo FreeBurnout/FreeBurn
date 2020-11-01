@@ -1,11 +1,18 @@
-#pragma once
+#ifndef BOCHALLENGE_H
+#define BOCHALLENGE_H
 
 class CBoChallenge {
-public:
-	void Construct();
+
 };
 
-class CBoChampionshipChallenge {
-public:
-	void Update();
+class CBoSingleChallenge : CBoChallenge {
+
 };
+
+class CBoChampionshipChallenge : CBoChallenge {
+
+};
+
+#endif // !BOCHALLENGE_H
+
+

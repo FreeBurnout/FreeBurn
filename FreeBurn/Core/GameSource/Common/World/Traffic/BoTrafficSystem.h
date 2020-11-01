@@ -1,10 +1,4 @@
-class CBoTrafficParam {
+class CBoTrafficSystem {
 public:
-	void Construct();
-	void ResetMemberVariables();
-};
-
-class CBoTrafficAxle {
-public:
-	void Construct();
+	CBoTrafficSystem();
 };

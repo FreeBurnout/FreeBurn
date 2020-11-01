@@ -1,1 +1,0 @@
-char kacProtoMangleGameName[18] = "burnout3-ps2-2004";

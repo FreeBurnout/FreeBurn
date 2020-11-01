@@ -1,3 +1,4 @@
 class CBoVehiclePhysics {
-
+public:
+	CBoVehiclePhysics();
 };

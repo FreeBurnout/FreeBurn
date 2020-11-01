@@ -1,11 +1,4 @@
-#include <rwcore.h>
-
-class CBoPayloadPropManager {
+class CBoPropManager {
 public:
-	RwUInt16 mu16NumTotalPayloads;
-	RwUInt16 mu16NextIndex;
-	RwUInt16 mu16NumPropTypes;
-	RwUInt16 mu16FirstPayloadPropType;
-
-	void Construct();
+	CBoPropManager();
 };

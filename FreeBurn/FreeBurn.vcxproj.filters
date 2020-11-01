@@ -1092,9 +1092,6 @@
     <ClInclude Include="Core\GameSource\Common\Sound\Traffic\BoSoundTrafficManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Core\GameSource\Common\Sound\BoSoundDSPBlock.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Core\GameSource\Common\Sound\BoSoundManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -3524,9 +3521,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Core\GameSource\Common\Sound\Traffic\BoSoundTrafficVehicle.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\GameSource\Common\Sound\BoSoundDSPBlock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Core\GameSource\Common\Sound\BoSoundHelicopter.cpp">

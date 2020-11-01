@@ -1,3 +1,6 @@
-#include <rwcore.h>
+typedef unsigned short * GtUTF16;
 
-typedef RwUInt16 GtUTF16;
+class CGtUnicode {
+	template <typename ... T>
+	unsigned short * PrintStringN(int, GtUTF16 *, const GtUTF16 *, const T& ... args);
+};

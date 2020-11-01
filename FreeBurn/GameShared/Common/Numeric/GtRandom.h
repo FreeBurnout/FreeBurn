@@ -1,11 +1,9 @@
-#include <rwcore.h>
+#ifndef GTRANDOM_H
+#define GTRANDOM_H
 
 class CGtRandom {
 public:
-	RwInt32 mnHigh;
-	RwInt32 mnLow;
-
-	void SetSeed(RwUInt32 luSeed);
+	void SetSeed(unsigned int);
 };
 
-extern CGtRandom gRandom;
+#endif // !#define GTRANDOM_H

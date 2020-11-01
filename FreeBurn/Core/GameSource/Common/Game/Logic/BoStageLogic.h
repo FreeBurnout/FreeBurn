@@ -1,7 +1,10 @@
-#pragma once
+#ifndef BOSTAGELOGIC_H
+#define BOSTAGELOGIC_H
 
 class CBoStageLogic {
-public:
-	void Construct();
-	static void UnRegisterStaticVariables();
+
 };
+
+
+
+#endif // !BOSTAGELOGIC_H

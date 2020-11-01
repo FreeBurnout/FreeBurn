@@ -1,0 +1,4 @@
+class CBoCollidingBody {
+public:
+	CBoCollidingBody();
+};

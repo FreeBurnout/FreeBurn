@@ -1,290 +1,194 @@
-#pragma once
-
 #include <rwcore.h>
 
-#include "BoAsyncDataLoader.h"
-#include "BoFrontEnd.h"
 #include "BoGameMode.h"
-#include "BoInputManager.h"
-#include "BoOnlineStage.h"
+#include "BoAsyncDataLoader.h"
 #include "BoPlayer.h"
 #include "BoSettings.h"
+#include "BoFrontEnd.h"
+#include "BoOnlineStage.h"
+#include "BoInputManager.h"
 #include "BoTimer.h"
-#include "Logic/BoCarViewerLogic.h"
+#include "Challenge/BoChallenge.h"
+#include "Challenge/BoTurnBasedCrashChallenge.h"
 #include "Logic/BoCrashModeLogic.h"
-#include "Logic/BoMultiplayerRoadRageLogic.h"
 #include "Logic/Single/BoSingleRaceLogic.h"
 #include "Logic/Single/BoSingleRevengeLogic.h"
 #include "Logic/Single/BoSingleRoadRageLogic.h"
-#include "Logic/Online/BoOnlineCrashModeLogic.h"
+#include "Logic/BoMultiplayerRoadRageLogic.h"
 #include "Logic/Online/BoOnlineSingleRaceLogic.h"
 #include "Logic/Online/BoOnlineRevengeLogic.h"
-#include "Challenge/BoTurnBasedCrashChallenge.h"
+#include "Logic/Online/BoOnlineRoadRageLogic.h"
+#include "Logic/Online/BoOnlineCrashModeLogic.h"
+#include "Logic/BoCarViewerLogic.h"
 #include "../Camera/BoPlayerCameraManager.h"
+#include "../Game/Logic/BoStageLogic.h"
+#include "../../../SharedClasses/BoProgressionDataStruct.h"
 #include "../../../SharedClasses/BoDataLists.h"
-#include "../../../../GameShared/Common/Containers/GtArray.h"
-#include "../../../../GameShared/Common/Development/CommsTool/GtCommsDatabase.h"
-#include "../../../../GameShared/Common/Graphical/GtColour.h"
+#include "../../../../GameShared/PC/Numeric/GtMathPC.h"
+#include "../../../../GameShared/PC/Graphical/GtTexturePC.h"
 #include "../../../../GameShared/Common/Numeric/GtRandom.h"
 #include "../../../../GameShared/Common/System/GtFramerateManager.h"
 #include "../../../../GameShared/Common/System/FileSystem/GTFileSystem.h"
-#include "../../../SharedClasses/BoProgressionDataStruct.h"
+#include "../../../../GameShared/Common/System/GtMemoryCardManager.h"
+#include "../../../../GameShared/Common/Development/CommsTool/GtCommsDatabase.h"
 
-struct CBoPCCommonMemoryBuffers {
-public:
-	char mPersistentLobbyBuffer[81920];
-	char mGlobalTexdicDataBuffer[945152];
-	char mMainStringsBuffer[204800];
-	char mProgressionDataBuffer[75776];
-	char mSoundWaveObjectBuffer[71680];
-	char mSoundRwaBuffer[76800];
-	char mCameraBuffer[65536];
-	char mDMABuffer[1310720];
-	char mSphereMapBuffer[22528];
-	char mGinsuDistillerBuffer[1024];
-	char mFlashMoviesLoadingScreensBuffer[184320];
-	char mBigFontBuffer[40960];
-	char mSmallFontBuffer[16384];
-	char mDigitalFontBuffer[6144];
-}; 
-
-struct CBoPCGameMemoryBuffers2P {
-
-};
-
-struct CBoPCMemoryBuffers {
-public:
-	CBoPCCommonMemoryBuffers mCommonBlock;
-	CBoPCGameMemoryBuffers2P mSwapBlock;
-};
-
-extern CBoPCMemoryBuffers _gMemoryBlock;
-extern CBoPCMemoryBuffers * _gpWholeMemoryBlock;
-
-enum class EGtGameUpdateState {
-	Constructed = 0,
-	Prepared = 1,
-	Released = 2,
-	Destructed = 3,
-	SimulationPrepare = 4,
-	SimulationUpdate = 5,
-	ChangeGameMode = 6,
-	RestartGameMode = 7,
-	RestartGameModeNewLevelInit = 8,
-	RestartGameModeNewLevelRestarting = 9,
-	RestartGameModeWithNewConfigInit = 10,
-	RestartGameModeWithNewConfigRestarting = 11,
-	StartReplay = 12
+enum class EGameUpdateState {
+    eGameUpdateStateConstructed = 0,
+    eGameUpdateStatePrepared = 1,
+    eGameUpdateStateReleased = 2,
+    eGameUpdateStateDestructed = 3,
+    eGameUpdateStateSimulationPrepare = 4,
+    eGameUpdateStateSimulationUpdate = 5,
+    eGameUpdateStateChangeGameMode = 6,
+    eGameUpdateStateRestartGameMode = 7,
+    eGameUpdateStateRestartGameModeNewLevelInit = 8,
+    eGameUpdateStateRestartGameModeNewLevelRestarting = 9,
+    eGameUpdateStateRestartGameModeWithNewConfigInit = 10,
+    eGameUpdateStateRestartGameModeWithNewConfigRestarting = 11,
+    eGameUpdateStateStartReplay = 12
 };
 
 class CBoSecondaryRewardsManager {
-public:
-	void Construct();
-};
 
-class CBoManagedMemoryBlock {
-public:
-	RwInt32 mnReferenceCount;
-	RwInt32 mnMemoryLayout;
-	RwInt32 mnSize;
-	void * mpMemoryBlock;
-
-	void Construct(void * lpMemoryBlock, RwInt32 lnMemoryLayout, RwInt32 lnSize);
 };
 
 class CBoGame {
 public:
-	char mpacDemoPath[256];
-	CBoVehicleList mVehicleList;
-	CBoTrackList mTrackList;
-	CGtRandom mNonDeterministicRNG;
-	CGtFramerateManager mFramerateManager;
-	CBoInputManager mInputManager;
-	CBoProgressionDataStruct * mpProgressionData;
-	bool mbQuitNow;
-	bool mbShutterClosed;
-	bool mbPlay;
-	bool mbDev9Loaded;
-	bool mbPowerOffTriggered;
-	bool mbRequestSimulationPause;
-	bool mbRequestSimulationUnpause;
-	bool mbGlobalTextureDictionaryLoaded;
-	void * mpGlobalTextureDictionary;
-	bool mbVehicleListLoaded;
-	bool mbTrackListLoaded;
-	bool mbRequestRestartGameModeWithNewConfig;
-	bool mbProgressionPage;
-	bool mbQuickWorldPrepare;
-	EGtFramerateType meFramerateType;
-	EGtFramerateType meDebugFramerateType;
-	bool mbClearFrameBufferDuringWorldPrepare;
-	RwInt32 mnGamePausedByPlayer;
-	RwInt32 mnRequestPause;
-	RwInt32 mnRequestResume;
-	RwInt32 mnSimulationUpdateCount;
-	bool mbWorldPrepared;
-	bool mbForceHalfFramerate;
-	bool mbInputManagerPrepared;
-	bool mbIsRoadRageMode;
-	RwReal mrCameraTimeStep;
-	bool mbIsTrafficAttackMode;
-	CGtRGBA mClearFrameBufferColour;
-	bool mbRequestForceHalfFramerate;
-	CBoGameMode * mpCurrentGameMode;
-	CBoGameMode * mpRequestedGameMode;
-	CBoFrontEnd mGameModeFrontEnd;
-	CBoSettings mSettings;
-	CBoOnePlayerStage mGameModeOnePlayerRace;
-	CBoTwoPlayerSplitScreenStage mGameModeTwoPlayerRace;
-	CBoOnlineStage mGameModeOnlineRace;
-	CBoSingleRaceLogic mOfflineSingleRaceLogic;
-	CBoCrashModeLogic mOfflineCrashModeLogic;
-	CBoSingleRevengeLogic mOfflineSingleRevengeLogic;
-	CBoBurningLapLogic mOfflineSingleBurningLapLogic;
-	CBoEliminatorLogic mOfflineSingleEliminatorLogic;
-	CBoSingleRoadRageLogic mOfflineSingleRoadRageLogic;
-	CBoMultiplayerRoadRageLogic mOfflineMultiplayerRoadRageLogic;
-	CBoOnlineSingleRaceLogic mOnlineSingleRaceLogic;
-	CBoOnlineCompCrashModeLogic mOnlineGolfCrashModeLogic;
-	CBoOnlineCompCrashModeLogic mOnlineCompCrashModeLogic;
-	CBoOnlinePartyCrashModeLogic mOnlinePartyCrashModeLogic;
-	CBoOnlineRevengeLogic mOnlineRevengeLogic;
-	CBoCarViewerLogic mCarViewerLogic;
-	CBoTurnBasedCrashParty mTurnBasedCrashPartyChallenge;
-	CBoTurnBasedCrashTour mTurnBasedCrashTourChallenge;
-	CBoSecondaryRewardsManager mSecondaryRewardsManager;
-	EGtPrepareState mePrepareState;
-	EGtGameUpdateState meUpdateState;
-	EGtGameUpdateState meRequestedUpdateState;
-	CBoTimer mTimer;
-	CBoPlayer maPlayers[2];
-	CBoPlayerCameraManager maPlayerCamera[2];
-	EGtPrepareState meHardwarePrepareState;
-	GtComms::CGtCommsToolBase mCommsManager;
-	CBoAsyncDataLoader mAsyncDataLoader;
+	CBoGame();
 
-	void Construct();
 	void ConstructHardware();
-	void PreparePowerOff();
-	bool PrepareWorld();
+	bool PrepareHardware();
 	void CheckPowerOff();
-	void Destruct();
-	void Release();
-	void Render();
-	bool Prepare();
-	bool IsSimulationPaused();
-	bool ResetGameMode();
-	void Update();
-	void DisplayInsertControllerMessage();
+	void PreparePowerOff();
+	bool CheckFatalDiskError();
+	void SetFrontendFrameRate(bool);
+	void BootNFLStreet2Demo();
+
+	void     Construct();
+	void     SetDemoPath(char *);
+	bool     Prepare();
+	void     Update();
+	bool     IsSimulationPaused();
+	bool     RestartGameModeUpdateCode();
+	bool     PrepareWorld();
+	void     SleepToAllowWorkerThreadsToRun();
+	void     UpdatePreSimulation();
+	void     UpdateSimulation();
+	void     UpdatePostSimulation();
+	RwInt32  GetNumSimulationUpdatesRequired();
+	void     Render();
+	void     DisplayInsertControllerMessage();
+	void     Release();
+	void     Destruct();
+	bool     ResetGameMode();
+	void     RequestNewGameMode(CBoGameMode *);
+	bool     IsTurnBasedCrash();
+	bool     Is2PlayerSplitScreen();
+	bool     IsMultiplayerMode();
+	void     CalculateSendRecvFigures();
+	void     DrawQuickLoadScreen();
 	RwChar * GetDemoPath();
-	void SetDemoPath(RwChar *);
-	void UpdatePreSimulation();
-	void UpdatePostSimulation();
-	bool RestartGameModeUpdateCode();
-	RwInt32 GetNumSimulationUpdatesRequired();
-	void UpdateSimulation();
-	void SleepToAllowWorkerThreadsToRun();
+
+private:
+    CBoSettings*            mSettings;
+    CBoTimer*               mTimer;
+    CBoInputManager*        mInputManager;
+    CGtFileSystem            mpFileSystem;
+    CGtValueDatabase         mValueDatabase;
+    CBoAsyncDataLoader       mAsyncDataLoader;
+    CGtCommsToolBase         mCommsManager;
+    CBoPlayer                maPlayers[2];
+    CBoPlayerCameraManager   maPlayerCamera[2];
+    CMemoryDeviceBase        mMemoryCard; // Originally CMemoryDevicePS2.
+    CGtRandom                mNonDeterministicRNG;
+    CGtTexture               mpGlobalTextureDictionary;
+    bool                     mbGlobalTextureDictionaryLoaded;
+    CBoProgressionDataStruct mpProgressionData;
+    bool                     mbProgressionDataLoaded;
+    CBoVehicleList           mVehicleList;
+    CBoTrackList             mTrackList;
+    bool                     mbVehicleListLoaded;
+    bool                     mbTrackListLoaded;
+    bool                     mbInputManagerPrepared;
+
+    CBoFrontEnd                  mGameModeFrontEnd;
+    CBoOnePlayerStage            mGameModeOnePlayerRace;
+    CBoTwoPlayerSplitScreenStage mGameModeTwoPlayerRace;
+    CBoOnlineStage               mGameModeOnlineRace;
+    CBoSingleRaceLogic           mOfflineSingleRaceLogic;
+    CBoCrashModeLogic            mOfflineCrashModeLogic;
+    CBoSingleRevengeLogic        mOfflineSingleRevengeLogic;
+    CBoSingleRoadRageLogic       mOfflineSingleRoadRageLogic;
+    CBoMultiplayerRoadRageLogic  mOfflineMultiplayerRoadRageLogic;
+    CBoBurningLapLogic           mOfflineSingleBurningLapLogic;
+    CBoEliminatorLogic           mOfflineSingleEliminatorLogic;
+    CBoCompCrashModeLogic        mOfflineCompCrashModeLogic;
+    CBoPartyCrashModeLogic       mOfflinePartyCrashModeLogic;
+    CBoTourCrashModeLogic        mOfflineTourCrashModeLogic;
+    CBoOnlineSingleRaceLogic     mOnlineSingleRaceLogic;
+    CBoOnlineRevengeLogic        mOnlineRevengeLogic;
+    CBoOnlineRoadRageLogic       mOnlineRoadRageModeLogic;
+    CBoOnlineGolfCrashModeLogic  mOnlineGolfCrashModeLogic;
+    CBoOnlineCompCrashModeLogic  mOnlineCompCrashModeLogic;
+    CBoOnlinePartyCrashModeLogic mOnlinePartyCrashModeLogic;
+    CBoCarViewerLogic            mCarViewerLogic;
+    CBoSingleChallenge           mSingleChallenge;
+    CBoChampionshipChallenge     mChampionshipChallenge;
+    CBoTurnBasedCrashParty       mTurnBasedCrashPartyChallenge;
+    CBoTurnBasedCrashTour        mTurnBasedCrashTourChallenge;
+    CBoSecondaryRewardsManager   mSecondaryRewardsManager;
+
+    void             SetQuitNow();
+    bool             WillQuitNow();
+    void             SetBootNFLStreet2DemoNow();
+    bool             WillBootNFLStreet2DemoNow();
+    CBoGameMode *    GetCurrentGameMode();
+    CBoStageLogic *  GetCurrentStageLogic();
+    CBoGameMode *    GetRequestedGameMode();
+    void             RequestPause(int);
+    void             RequestResume(int);
+    bool             IsPaused();
+    bool             IsPauseRequested();
+    bool             IsResumeRequested();
+    RwInt32          GetPausePlayerIndex();
+    void             RequestWorldPrepare(bool);
+    void             ClearFrameBufferDuringWorldPrepare(GtMathPC::CGtV4d);
+    bool             IsWorldPrepared();
+    void             RequestHalfFramerate(bool);
+    bool             GetHalfFramerate();
+    void             RequestFramerateType(EGtFramerateType);
+    EGtFramerateType GetFramerateType();
+    bool             OnlineUpdate();
+    bool             OfflineUpdate();
+    RwReal           GetNumSimulationUpdatesThisRenderFrame();
+    void             RequestGameUpdateState(EGameUpdateState);
+    EGameUpdateState GetRequestedGameUpdateState();
+    EGameUpdateState GetCurrentGameUpdateState();
+    bool             IsNewRequestedGameUpdateState();
+    bool             IsCrashMode();
+    void             SetIsCrashMode(bool);
+    void             SetIsLapEliminatorMode(bool);
+    bool             IsTrafficAttackMode();
+    void             SetIsTrafficAttackMode(bool);
+    bool             IsRoadRageMode();
+    void             SetIsRoadRageMode(bool);
+    bool             IsLapEliminatorMode();
+	bool             IsInChampionship();
+    RwReal           GetCameraTimeStep() const;
+    RwReal           GetCameraTimeStepNoSlowMo() const;
+    RwInt32          GetSimulationUpdateCount() const;
+    void             AttemptToInsertExtraSimulationUpdates(int);
+    void             RequestSimulationPause();
+    void             RequestSimulationUnpause();
+
+    void GetSendRecvFigures(
+        RwInt32 * lpnBytesSentToWireLastSecond, 
+        RwInt32 * lpnBytesRecvdFromWireLastSecond,
+        RwInt32 * lpnBytesSubmittedForSendLastSecond,
+        RwInt32 * lpnBytesPassedToAppByRecvLastSecond,
+        RwInt32 ** lppanAvgBytesSubmittedForSendMsgTypeThisSecond,
+        RwInt32 ** lppanAvgBytesPassedToAppByRecvMsgTypeThisSecond
+    );
+
+    void UpdateVideoCapture();
 };
-
-void __renderStuff(CBoGame * game);
-
-enum class EBoMemoryLayout {
-	Common = -1,
-	Frontend = 0,
-	Game1Player = 1,
-	Game2Player = 2,
-	Game2PlayerCrash = 3
-};
-
-class CBoPCFrontendMemoryBuffers {
-public:
-	static char maRaceCarBuffer[471040];
-	static char mFESunCoronaBuffer[34816];
-	static char mFEFlashTextureDicBuffer[2];
-	static char mFEStaticWorldBuffer[917504];
-	static char mFEFlashMoviesCafeCommonBuffer[1388544];
-	static char mFEFlashMoviesBuffer[8464384];
-	static char mFEAptDataBuffer[1994752];
-	static char mMPEGBuffer[5156864];
-	static char mStageHeadersBuffer[450560];
-	static char mFrontEndLobbyBuffer[512000];
-	static char mDNASElfOrRaceCarBuffer[1843200];
-};
-
-class CBoMemoryManager {
-public:
-	CBoManagedMemoryBlock mGlobalTexdicDataBuffer;
-	CBoManagedMemoryBlock mMainStringsBuffer;
-	CBoManagedMemoryBlock mProgressionDataBuffer;
-	CBoManagedMemoryBlock mSoundWaveObjectBuffer;
-	CBoManagedMemoryBlock mSoundRwaBuffer;
-	CBoManagedMemoryBlock mCameraBuffer;
-	CBoManagedMemoryBlock maCarIconsBuffer[6];
-	CBoManagedMemoryBlock mLoadingBackgroundBuffer;
-	CBoManagedMemoryBlock mGinsuDistillerBuffer;
-	CBoManagedMemoryBlock mBigFontBuffer;
-	CBoManagedMemoryBlock mSmallFontBuffer;
-	CBoManagedMemoryBlock mDigitalFontBuffer;
-	CBoManagedMemoryBlock mFlashMoviesLoadingScreensBuffer;
-	CBoManagedMemoryBlock mPersistentLobbyBuffer;
-	CBoManagedMemoryBlock ma1PRaceCarBuffer[6];
-	CBoManagedMemoryBlock m1PSunCoronaBuffer;
-	CBoManagedMemoryBlock m1PStaticTrackBuffer;
-	CBoManagedMemoryBlock m1PStreamedTrackHighBuffer[10];
-	CBoManagedMemoryBlock m1PStreamedTrackLODColBuffer[18];
-	CBoManagedMemoryBlock m1PGameDataBuffer;
-	CBoManagedMemoryBlock m1PPropManagerBuffer;
-	CBoManagedMemoryBlock ma1PTrafficCarBuffer[12];
-	CBoManagedMemoryBlock m1PInGameFlashMoviesBuffer;
-	CBoManagedMemoryBlock m1PInGameAptDataBuffer;
-	CBoManagedMemoryBlock ma2PRaceCarBuffer[2];
-	CBoManagedMemoryBlock m2PSunCoronaBuffer;
-	CBoManagedMemoryBlock m2PStaticTrackBuffer;
-	CBoManagedMemoryBlock m2PStreamedTrackHighBuffer[19];
-	CBoManagedMemoryBlock m2PStreamedTrackLODColBuffer[35];
-	CBoManagedMemoryBlock m2PGameDataBuffer;
-	CBoManagedMemoryBlock m2PPropManagerBuffer;
-	CBoManagedMemoryBlock ma2PTrafficCarBuffer[12];
-	CBoManagedMemoryBlock m2PInGameFlashMoviesBuffer;
-	CBoManagedMemoryBlock m2PInGameAptDataBuffer;
-	CBoManagedMemoryBlock ma2PCrashRaceCarBuffer[3];
-	CBoManagedMemoryBlock m2PCrashSunCoronaBuffer;
-	CBoManagedMemoryBlock m2PCrashStaticTrackBuffer;
-	CBoManagedMemoryBlock m2PCrashStreamedTrackHighBuffer[19];
-	CBoManagedMemoryBlock m2PCrashStreamedTrackLODColBuffer[35];
-	CBoManagedMemoryBlock m2PCrashGameDataBuffer;
-	CBoManagedMemoryBlock m2PCrashPropManagerBuffer;
-	CBoManagedMemoryBlock ma2PCrashTrafficCarBuffer[12];
-	CBoManagedMemoryBlock m2PCrashInGameFlashMoviesBuffer;
-	CBoManagedMemoryBlock m2PCrashInGameAptDataBuffer;
-	CBoManagedMemoryBlock maFERaceCarBuffer[3];
-	CBoManagedMemoryBlock mFESunCoronaBuffer;
-	CBoManagedMemoryBlock mFEEnvironmentDataBuffer;
-	CBoManagedMemoryBlock mFEStaticWorldBuffer;
-	CBoManagedMemoryBlock mFEFlashMoviesCafeCommonBuffer;
-	CBoManagedMemoryBlock mFEFlashMoviesBuffer;
-	CBoManagedMemoryBlock mFEFlashTextureDicBuffer;
-	CBoManagedMemoryBlock mFESaveGameBuffer;
-	CBoManagedMemoryBlock mFEAptDataBuffer;
-	CBoManagedMemoryBlock mMPEGBuffer;
-	CBoManagedMemoryBlock mStageHeadersBuffer;
-	EBoMemoryLayout meCurrentMemoryLayout;
-	RwInt32 mnMemoryLayoutCount;
-
-	void Update();
-	void Construct(void * lpMemoryBlock, RwInt32 lnMemoryLayout, RwInt32 lnSize);
-};
-
-class CBoMemoryManagerPC : public CBoMemoryManager {
-public:
-	CBoManagedMemoryBlock mSphereMapBuffer;
-	CBoManagedMemoryBlock mDNASElfOrRaceCarBuffer;
-	CBoManagedMemoryBlock mFrontEndLobbyBuffer;
-	CBoManagedMemoryBlock mDMABuffer;
-
-	void Construct();
-	void Destruct();
-};
-
-extern CBoGame gGame;
-extern CBoMemoryManagerPC gMemoryManager;

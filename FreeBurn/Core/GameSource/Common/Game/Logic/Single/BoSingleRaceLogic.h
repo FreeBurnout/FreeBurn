@@ -1,18 +1,18 @@
-#pragma once
+#ifndef BOSINGLERACELOGIC_H
+#define BOSINGLERACELOGIC_H
 
 #include "../BoStageLogic.h"
 
-class CBoSingleRaceLogic : protected CBoStageLogic {
-public:
-	void Construct();
+class CBoSingleRaceLogic : CBoStageLogic {
+
 };
 
 class CBoBurningLapLogic : CBoSingleRaceLogic {
-public:
-	void Construct();
-};
+
+}; 
 
 class CBoEliminatorLogic : CBoSingleRaceLogic {
-public:
-	void Construct();
-};
+
+}; 
+
+#endif // !BOSINGLERACELOGIC_H

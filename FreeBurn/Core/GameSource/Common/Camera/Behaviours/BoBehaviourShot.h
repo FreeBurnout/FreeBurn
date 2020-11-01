@@ -1,0 +1,4 @@
+class CBoBehaviourShot {
+public:
+	CBoBehaviourShot();
+};

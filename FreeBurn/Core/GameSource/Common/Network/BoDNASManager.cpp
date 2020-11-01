@@ -1,5 +1,1 @@
-#include "BoDNASManager.h"
-
-bool CBoDNASManager::UpdateDNASAquiringMemoryForData() {
-    return true;
-}
+char kacB4DNASEncodeKey[] = "12345BURNOUT6776REVENGE54321";

@@ -57,7 +57,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;DEBUG;TRACE;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;REVENGE;DEBUG;TRACE;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
       <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
       <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\spdlog\include;$(SolutionDir)ThirdParty\boost</AdditionalIncludeDirectories>
@@ -86,7 +86,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;REVENGE;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
       <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
       <AdditionalIncludeDirectories>$(RWGSDK)/include/opengl;$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\spdlog\include;$(SolutionDir)ThirdParty\boost</AdditionalIncludeDirectories>
@@ -447,7 +447,6 @@
     <ClInclude Include="Core\GameSource\Common\Physics\BoVehiclePhysics.h" />
     <ClInclude Include="Core\GameSource\Common\Physics\BoVehicleWorldTriangleCacheManager.h" />
     <ClInclude Include="Core\GameSource\Common\Physics\Deformation\BoVehicleDeform.h" />
-    <ClInclude Include="Core\GameSource\Common\Sound\BoSoundDSPBlock.h" />
     <ClInclude Include="Core\GameSource\Common\Sound\BoSoundManager.h" />
     <ClInclude Include="Core\GameSource\Common\Sound\BoSoundStaticPassManager.h" />
     <ClInclude Include="Core\GameSource\Common\Sound\Cars\BoSoundAICar.h" />
@@ -1244,7 +1243,6 @@
     <ClCompile Include="Core\GameSource\Common\Physics\Deformation\BoVehicleDeform.cpp" />
     <ClCompile Include="Core\GameSource\Common\Physics\Deformation\BoVehicleDeformBodyPart.cpp" />
     <ClCompile Include="Core\GameSource\Common\Physics\Deformation\BoVehicleDeformExtra.cpp" />
-    <ClCompile Include="Core\GameSource\Common\Sound\BoSoundDSPBlock.cpp" />
     <ClCompile Include="Core\GameSource\Common\Sound\BoSoundHelicopter.cpp" />
     <ClCompile Include="Core\GameSource\Common\Sound\BoSoundManager.cpp" />
     <ClCompile Include="Core\GameSource\Common\Sound\BoSoundStaticPass.cpp" />

@@ -1,15 +1,9 @@
-#pragma once
+#ifndef BOTIMER_H
+#define BOTIMER_H
 
-#include "../../../../GameShared/Common/System/GtTimer.h"
-
-class CBoTimer : public CGtTimer {
+class CBoTimer {
 public:
-	using CGtTimer::mrTimeStep;
-
-	using CGtTimer::PrepareTimerServices;
-	using CGtTimer::NextFrame;
-
-	void Construct();
-	void Update();
 	void SetAllowSlowMo(bool);
 };
+
+#endif // !#define BOTIMER_H

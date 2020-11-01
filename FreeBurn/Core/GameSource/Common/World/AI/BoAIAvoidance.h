@@ -1,3 +1,0 @@
-class CBoAIAvoidanceMap {
-	void Construct();
-};

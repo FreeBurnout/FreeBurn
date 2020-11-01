@@ -1,8 +1,10 @@
-#pragma once
-
 enum class EPlayerCarIndex {
-	Invalid = -1,
-	Zero = 0,
-	One = 1,
-	Count = 2
+	ePlayerCarInvalid = -1,
+	ePlayerCar0 = 0,
+	ePlayerCar1 = 1,
+	ePlayerCarCount = 2
+};
+
+class CBoPlayerCar {
+
 };

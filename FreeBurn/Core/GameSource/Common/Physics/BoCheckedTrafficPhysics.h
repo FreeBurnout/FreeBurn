@@ -1,3 +1,4 @@
 class CBoCheckedTrafficPhysics {
-
+public:
+	CBoCheckedTrafficPhysics();
 };

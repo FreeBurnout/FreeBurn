@@ -1,9 +1,12 @@
+#ifndef BODATALISTS_H
+#define BODATALISTS_H
+
 class CBoVehicleList {
-public:
-	int mnVehicleCount;
+
 };
 
 class CBoTrackList {
-public:
-	int mnTrackCount;
-};
+
+}; 
+
+#endif // !BODATALISTS_H

@@ -1,0 +1,4 @@
+class CBoWrongWayWall {
+public:
+	CBoWrongWayWall();
+};

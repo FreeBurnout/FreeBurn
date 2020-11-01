@@ -1,8 +1,11 @@
-#pragma once
+#ifndef GTV4DPC_H
+#define GTV4DPC_H
 
-#include <cstdint>
+namespace GtMathPC {
+	class CGtV4d {
+	public:
+		inline CGtV4d() {}
+	};
+}
 
-struct CGtV4d {
-public:
-	uint32_t mData[4];
-};
+#endif

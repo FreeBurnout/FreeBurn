@@ -1,0 +1,4 @@
+class CBoCrashModeCrashCameraDirector {
+public:
+	CBoCrashModeCrashCameraDirector();
+};

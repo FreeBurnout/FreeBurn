@@ -1,0 +1,4 @@
+class CBoBehaviourCluster {
+public:
+	CBoBehaviourCluster();
+};

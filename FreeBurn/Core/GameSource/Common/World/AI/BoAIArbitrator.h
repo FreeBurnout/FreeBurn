@@ -1,0 +1,4 @@
+class CBoAIArbitrator {
+public:
+	CBoAIArbitrator();
+};
