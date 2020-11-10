@@ -35,7 +35,7 @@ char * kpacHeadingStringFilenameFrench    = "Data/HeadFr.bin";
 char * kpacHeadingStringFilenameGerman    = "Data/HeadGe.bin";
 char * kpacHeadingStringFilenameItalian   = "Data/HeadIt.bin";
 
-CBoGame::CBoGame(void) {
+CBoGame::CBoGame() {
 
 }
 
@@ -43,7 +43,7 @@ void CBoGame::Construct() {
 
 }
 
-void CBoGame::SetDemoPath(char *) {
+void CBoGame::SetDemoPath(char * lpacPath) {
 
 }
 
@@ -107,7 +107,7 @@ bool CBoGame::ResetGameMode() {
 	return false;
 }
 
-void CBoGame::RequestNewGameMode(CBoGameMode *) {
+void CBoGame::RequestNewGameMode(CBoGameMode * lpNewGameMode) {
 
 }
 
@@ -147,11 +147,11 @@ CBoGameMode * CBoGame::GetRequestedGameMode() {
 	return nullptr;
 }
 
-void CBoGame::RequestPause(int) {
+void CBoGame::RequestPause(int param) {
 	 
 }	 
 	 
-void CBoGame::RequestResume(int) {
+void CBoGame::RequestResume(int param) {
 	 
 }	 
 	 
@@ -171,11 +171,11 @@ RwInt32 CBoGame::GetPausePlayerIndex() {
 	return 0;
 }
 	 
-void CBoGame::RequestWorldPrepare(bool) {
+void CBoGame::RequestWorldPrepare(bool param) {
 	 
 }	 
 	 
-void CBoGame::ClearFrameBufferDuringWorldPrepare(GtMathPC::CGtV4d) {
+void CBoGame::ClearFrameBufferDuringWorldPrepare(GtMathPC::CGtV4d param) {
 	 
 }	 
 	 
@@ -183,7 +183,7 @@ bool CBoGame::IsWorldPrepared() {
 	return false;
 }	 
 	 
-void CBoGame::RequestHalfFramerate(bool) {
+void CBoGame::RequestHalfFramerate(bool param) {
 	 
 }	 
 	 
@@ -191,7 +191,7 @@ bool CBoGame::GetHalfFramerate() {
 	return false;
 }	 
 	 
-void CBoGame::RequestFramerateType(EGtFramerateType) {
+void CBoGame::RequestFramerateType(EGtFramerateType param) {
 
 }
 
@@ -211,7 +211,7 @@ RwReal CBoGame::GetNumSimulationUpdatesThisRenderFrame() {
 	return 0;
 }
 
-void CBoGame::RequestGameUpdateState(EGameUpdateState) {
+void CBoGame::RequestGameUpdateState(EGameUpdateState param) {
 
 }
 
@@ -231,11 +231,11 @@ bool CBoGame::IsCrashMode() {
 	return false;
 }
 
-void CBoGame::SetIsCrashMode(bool) {
+void CBoGame::SetIsCrashMode(bool param) {
  
 }
 
-void CBoGame::SetIsLapEliminatorMode(bool) {
+void CBoGame::SetIsLapEliminatorMode(bool param) {
 
 }
 
@@ -243,7 +243,7 @@ bool CBoGame::IsTrafficAttackMode() {
 	return false;
 }
 
-void CBoGame::SetIsTrafficAttackMode(bool) {
+void CBoGame::SetIsTrafficAttackMode(bool param) {
 
 }
 
@@ -251,7 +251,7 @@ bool CBoGame::IsRoadRageMode() {
 	return false;
 }
 
-void CBoGame::SetIsRoadRageMode(bool) {
+void CBoGame::SetIsRoadRageMode(bool param) {
 
 }
 
@@ -275,7 +275,7 @@ RwInt32 CBoGame::GetSimulationUpdateCount() const {
 	return 0;
 }
 
-void CBoGame::AttemptToInsertExtraSimulationUpdates(int) {
+void CBoGame::AttemptToInsertExtraSimulationUpdates(int param) {
 	 
 }	 
 	 
@@ -303,7 +303,7 @@ void CBoGame::UpdateVideoCapture() {
 }
 
 template <>
-unsigned short * CGtUnicode::PrintStringN(RwInt32, GtUTF16 *, const GtUTF16 *, const int& lV1) {
+unsigned short * CGtUnicode::PrintStringN(RwInt32 lnBufferLength, GtUTF16 * lpTargetString, const GtUTF16 * lpFormatString, const int& lV1) {
 	return nullptr;
 }
 
@@ -327,10 +327,10 @@ CBoPlayerCameraManager::CBoPlayerCameraManager() {
 
 }
 
-void CGtRandom::SetSeed(unsigned int) {
+void CGtRandom::SetSeed(RwUInt32 luSeed) {
 
 }
 
-void CBoTimer::SetAllowSlowMo(bool) {
+void CBoTimer::SetAllowSlowMo(bool lbAllowSlowmo) {
 
 }

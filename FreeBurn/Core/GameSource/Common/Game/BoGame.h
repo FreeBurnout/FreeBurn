@@ -1,12 +1,13 @@
 #include <rwcore.h>
 
-#include "BoGameMode.h"
 #include "BoAsyncDataLoader.h"
+#include "BoGameMode.h"
 #include "BoPlayer.h"
 #include "BoSettings.h"
 #include "BoFrontEnd.h"
 #include "BoOnlineStage.h"
 #include "BoInputManager.h"
+#include "BoProgressionManager.h"
 #include "BoTimer.h"
 #include "Challenge/BoChallenge.h"
 #include "Challenge/BoTurnBasedCrashChallenge.h"
@@ -31,6 +32,8 @@
 #include "../../../../GameShared/Common/System/FileSystem/GTFileSystem.h"
 #include "../../../../GameShared/Common/System/GtMemoryCardManager.h"
 #include "../../../../GameShared/Common/Development/CommsTool/GtCommsDatabase.h"
+#include "../../../../GameShared/Common/Graphical/GtColour.h"
+#include "../../../../GameShared/Common/System/GtFSM.h"
 
 enum class EGameUpdateState {
     eGameUpdateStateConstructed = 0,
@@ -48,10 +51,6 @@ enum class EGameUpdateState {
     eGameUpdateStateStartReplay = 12
 };
 
-class CBoSecondaryRewardsManager {
-
-};
-
 class CBoGame {
 public:
 	CBoGame();
@@ -61,11 +60,11 @@ public:
 	void CheckPowerOff();
 	void PreparePowerOff();
 	bool CheckFatalDiskError();
-	void SetFrontendFrameRate(bool);
+	void SetFrontendFrameRate(bool param);
 	void BootNFLStreet2Demo();
 
 	void     Construct();
-	void     SetDemoPath(char *);
+	void     SetDemoPath(char * lpacPath);
 	bool     Prepare();
 	void     Update();
 	bool     IsSimulationPaused();
@@ -81,7 +80,7 @@ public:
 	void     Release();
 	void     Destruct();
 	bool     ResetGameMode();
-	void     RequestNewGameMode(CBoGameMode *);
+	void     RequestNewGameMode(CBoGameMode * lpNewGameMode);
 	bool     IsTurnBasedCrash();
 	bool     Is2PlayerSplitScreen();
 	bool     IsMultiplayerMode();
@@ -90,9 +89,9 @@ public:
 	RwChar * GetDemoPath();
 
 private:
-    CBoSettings*            mSettings;
-    CBoTimer*               mTimer;
-    CBoInputManager*        mInputManager;
+    CBoSettings*             mSettings;
+    CBoTimer*                mTimer;
+    CBoInputManager*         mInputManager;
     CGtFileSystem            mpFileSystem;
     CGtValueDatabase         mValueDatabase;
     CBoAsyncDataLoader       mAsyncDataLoader;
@@ -111,6 +110,7 @@ private:
     bool                     mbTrackListLoaded;
     bool                     mbInputManagerPrepared;
 
+#pragma region Logic
     CBoFrontEnd                  mGameModeFrontEnd;
     CBoOnePlayerStage            mGameModeOnePlayerRace;
     CBoTwoPlayerSplitScreenStage mGameModeTwoPlayerRace;
@@ -137,6 +137,49 @@ private:
     CBoTurnBasedCrashParty       mTurnBasedCrashPartyChallenge;
     CBoTurnBasedCrashTour        mTurnBasedCrashTourChallenge;
     CBoSecondaryRewardsManager   mSecondaryRewardsManager;
+#pragma endregion
+
+    bool                mbShutterClosed;
+    bool                mbProgressionPage;
+    bool                mbFrontEndFlow;
+    bool                mbLaunchedDemo;
+    CGtRGBA             mClearFrameBufferColour;
+    CGtFramerateManager mFramerateManager;
+    char                mpacDemoPath[256];
+    CBoGameMode *       mpCurrentGameMode;
+    CBoGameMode *       mpRequestedGameMode;
+    bool                mbQuitNow;
+    RwInt32             mnGamePausedByPlayer;
+    RwInt32             mnRequestPause;
+    RwInt32             mnRequestResume;
+    EGtPrepareState     mePrepareState;
+    bool                mbWorldPrepared;
+    bool                mbQuickWorldPrepare;
+    bool                mbClearFrameBufferDuringWorldPrepare;
+    bool                mbRequestForceHalfFramerate;
+    bool                mbForceHalfFramerate;
+    EGtFramerateType    meFramerateType;
+    EGtFramerateType    meDebugFramerateType;
+    EGtPrepareState     meHardwarePrepareState;
+    void *              mpProgressionDataBuffer;
+    bool                mbPowerOffTriggered;
+    bool                mbDev9Loaded;
+    bool                mbRequestRestartGameModeWithNewConfig;
+    bool                mbIsCrashMode;
+    bool                mbIsLapEliminatorMode;
+    bool                mbIsTrafficAttackMode;
+    bool                mbIsRoadRageMode;
+    RwInt32             mnSimulationUpdateCount;
+    RwReal              mrCameraTimeStep;
+    EGameUpdateState    meRequestedUpdateState;
+    EGameUpdateState    meUpdateState;
+    bool                mbPlay;
+    bool                mbRequestSimulationPause;
+    bool                mbRequestSimulationUnpause;
+    bool                mbBootNFLStreet2Demo;
+    char                macMainVDBBuffer[51200];
+    RwReal              mrGamePlayTime;
+    RwReal              mrMaxGamePlayTime;
 
     void             SetQuitNow();
     bool             WillQuitNow();
@@ -145,39 +188,39 @@ private:
     CBoGameMode *    GetCurrentGameMode();
     CBoStageLogic *  GetCurrentStageLogic();
     CBoGameMode *    GetRequestedGameMode();
-    void             RequestPause(int);
-    void             RequestResume(int);
+    void             RequestPause(int param);
+    void             RequestResume(int param);
     bool             IsPaused();
     bool             IsPauseRequested();
     bool             IsResumeRequested();
     RwInt32          GetPausePlayerIndex();
-    void             RequestWorldPrepare(bool);
-    void             ClearFrameBufferDuringWorldPrepare(GtMathPC::CGtV4d);
+    void             RequestWorldPrepare(bool param);
+    void             ClearFrameBufferDuringWorldPrepare(GtMathPC::CGtV4d param);
     bool             IsWorldPrepared();
-    void             RequestHalfFramerate(bool);
+    void             RequestHalfFramerate(bool param);
     bool             GetHalfFramerate();
-    void             RequestFramerateType(EGtFramerateType);
+    void             RequestFramerateType(EGtFramerateType param);
     EGtFramerateType GetFramerateType();
     bool             OnlineUpdate();
     bool             OfflineUpdate();
     RwReal           GetNumSimulationUpdatesThisRenderFrame();
-    void             RequestGameUpdateState(EGameUpdateState);
+    void             RequestGameUpdateState(EGameUpdateState param);
     EGameUpdateState GetRequestedGameUpdateState();
     EGameUpdateState GetCurrentGameUpdateState();
     bool             IsNewRequestedGameUpdateState();
     bool             IsCrashMode();
-    void             SetIsCrashMode(bool);
-    void             SetIsLapEliminatorMode(bool);
+    void             SetIsCrashMode(bool param);
+    void             SetIsLapEliminatorMode(bool param);
     bool             IsTrafficAttackMode();
-    void             SetIsTrafficAttackMode(bool);
+    void             SetIsTrafficAttackMode(bool param);
     bool             IsRoadRageMode();
-    void             SetIsRoadRageMode(bool);
+    void             SetIsRoadRageMode(bool param);
     bool             IsLapEliminatorMode();
 	bool             IsInChampionship();
     RwReal           GetCameraTimeStep() const;
     RwReal           GetCameraTimeStepNoSlowMo() const;
     RwInt32          GetSimulationUpdateCount() const;
-    void             AttemptToInsertExtraSimulationUpdates(int);
+    void             AttemptToInsertExtraSimulationUpdates(int param);
     void             RequestSimulationPause();
     void             RequestSimulationUnpause();
 

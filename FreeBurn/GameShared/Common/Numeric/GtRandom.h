@@ -3,7 +3,7 @@
 
 class CGtRandom {
 public:
-	void SetSeed(unsigned int);
+	void SetSeed(RwUInt32 luSeed);
 };
 
 #endif // !#define GTRANDOM_H

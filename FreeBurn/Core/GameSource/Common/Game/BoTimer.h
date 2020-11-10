@@ -3,7 +3,7 @@
 
 class CBoTimer {
 public:
-	void SetAllowSlowMo(bool);
+	void SetAllowSlowMo(bool lbAllowSlowmo);
 };
 
 #endif // !#define BOTIMER_H

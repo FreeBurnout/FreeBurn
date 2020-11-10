@@ -5,6 +5,4 @@ class CBoStageLogic {
 
 };
 
-
-
 #endif // !BOSTAGELOGIC_H
