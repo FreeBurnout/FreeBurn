@@ -1,6 +1,6 @@
 #include <rwcore.h>
 
-EBoSoundTakedownState {
+enum class EBoSoundTakedownState {
     eIdle = 0,
     eInTakedown = 1,
     eInTakedownFadeOut = 2
@@ -21,24 +21,24 @@ public:
     bool DoBastardStreamOverride();
 
 private:
-	EBoSoundTakedownState meState;
-	RwReal mrTotalPitcherTime;
-	RwReal mrPitcherTimer;
-	RwReal mrPitcherTimeLastFrame;
-	RwReal mrCamOutTime;
-	ERaceCarIndex meTakenDownCarIndex;
-	CGtSoundVoiceInterface mVoice;
-	CGtSoundWave * mpTakeWave;
-	CGtSoundWave * mpCameraCutWave;
-	CGtSoundWave * mpTDInWave;
-	CGtSoundWave * mpTDOutWave;
-	bool mbSpecialTakedown;
-	bool mbRevengeTakedown;
-	bool mbBastardTakedown;
-	bool mbTriggerTakedownStart;
-	bool mbWasInSloMo;
-	RwInt32 mnFlashdamper;
-
+    EBoSoundTakedownState meState;
+    RwReal mrTotalPitcherTime;
+    RwReal mrPitcherTimer;
+    RwReal mrPitcherTimeLastFrame;
+    RwReal mrCamOutTime;
+    ERaceCarIndex meTakenDownCarIndex;
+    CGtSoundVoiceInterface mVoice;
+    CGtSoundWave * mpTakeWave;
+    CGtSoundWave * mpCameraCutWave;
+    CGtSoundWave * mpTDInWave;
+    CGtSoundWave * mpTDOutWave;
+    bool mbSpecialTakedown;
+    bool mbRevengeTakedown;
+    bool mbBastardTakedown;
+    bool mbTriggerTakedownStart;
+    bool mbWasInSloMo;
+    RwInt32 mnFlashdamper;
+    
     bool IsInTakedown();
     void SetTakeDownIsSignature();
     bool IsInBastard();
