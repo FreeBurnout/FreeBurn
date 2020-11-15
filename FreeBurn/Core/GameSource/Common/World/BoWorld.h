@@ -7,13 +7,7 @@
 #include "../../../../GameShared/Common/Core/GtID.h"
 #include "../../../../GameShared/PC/Numeric/GtMathPC.h"
 
-extern char kacAIDriverOneString[];
-extern char kacAIDriverTwoString[];
-extern char kacAIDriverThreeString[];
-extern char kacAIDriverFourString[];
-extern char kacAIDriverFiveString[];
-
-extern char * kacpAIDriverString[5];
+using namespace GtMathPC;
 
 class CBoWorld {
 public:
@@ -41,6 +35,76 @@ public:
     void RenderFrontEnd(ERaceCarIndex);
 
 private:
+    CGtTimer mTimer;
+    CBoAILane maAILanes[128];
+    CBoTrafficLane maTrafficLanes[255];
+    CBoTrafficSystem mTrafficSystem;
+    CBoCrashPresentationDirector mCrashPresentationDirector;
+    CBoCrashActionDirector mCrashActionDirector;
+    CBoReplaySystem mReplaySystem;
+    CBoPhysicsManager mPhysicsManager;
+    CBoGameData mGameData;
+    CBoRacePosition mRacePositions;
+    CBoPropManager mPropManager;
+    CBoPayloadPropManager mPayloadPropManager;
+    CBoCrashAnalyser maPlayerCrashAnalysers[2];
+    CBoStaticTrack mStaticTrack;
+    CBoStreamedTrack mStreamedTrack[2];
+    CBoStreamManager mStreamManager;
+    CBoConvexHullPlane manStreamStartHull;
+    CBoCrashScore mCrashScore;
+    CBoRevengeScore mRevengeScore;
+    RwInt32 mnNumTrafficLanes;
+    CBoAISegmentStruct mpAIData;
+    CBoAILaneStruct * mpAILaneData;
+    CBoAICornerStruct * mpAICornersArray;
+    CBoAIDriverStruct mpAIDriversArray;
+    CBoAIRungStruct * mpAINodesArray; // TODO: confirm type.
+    RwInt32 mnAILaneCount;
+    RwInt32 mnAICornerCount;
+    RwInt32 mnAIDriverCount;
+    CBoSliceStruct * mpSlicesArray;
+    RwInt32 mnSliceCount;
+    RwInt32 mnNumCarsCrossedLine;
+    CGtRandom mRaceCarRand;
+    GtID mTrackID;
+    bool mbIsPointToPoint;
+    bool mbIsMarathon;
+    bool mbIsRightHandDrive;
+    RwInt32 mnNumRaceCars;
+    RwInt32 mnNumRaceCarsPrepared;
+    RwInt32 mnNumActiveRaceCars;
+    CBoRaceCar* mapRaceCars[6];
+    RwInt32 mnNumPlayerCars;
+    RwInt32 mnNumAICars;
+    RwInt32 mnNumNetworkCars;
+    RwInt32 mnBaseNumAdjustedAICars;
+    RwInt32 mnCurrentNumAdjustedAICars;
+    RwInt32 mnLeadingAdjustedAICar;
+    CBoPlayerCar maPlayerCars[2];
+    CBoAICar maAICars[5];
+    CBoNetworkCar maNetworkCars[5];
+    RwInt32 mnMaxRaceCarStreams;
+    CBoVehicleDataStream maRaceCarStreams[6];
+    bool mbPausedForNetworkSync;
+    bool mbPausedForStreamSync;
+    bool mbRequestReplay;
+    bool mbIsReplaying;
+    RwInt32 mnInitialWorldFrame;
+    RwInt32 mnSkyRenderMonitorID;
+    RwInt32 mnTrackRenderMonitorID;
+    RwInt32 mnTrafficRenderMonitorID;
+    RwInt32 mnRaceCarRenderMonitorID;
+    RwInt32 mnShadowRenderMonitorID;
+    RwReal mrPulseTime;
+    RwReal mrPulseDirection;
+    CGtV3d mTrackCentre;
+    CGtV3d mMinTrackPos;
+    CGtV3d mMaxTrackPos;
+    bool mbIsCrashIntro;
+    bool mbIsCrashAftermath;
+    EGtPrepareState mePrepareState;
+    
     void NetworkCatchupUpdate();
     void PauseForNetworkSync(bool);
     void PauseForStreamSync(bool);
@@ -66,8 +130,8 @@ private:
     bool IsPointToPoint();
     bool IsMarathon();
     bool IsRightHandDrive();
-    GtMathPC::CGtV3d GetTrackCentre();
-    void GetTrackExtents(GtMathPC::CGtV3d *, GtMathPC::CGtV3d *);
+    CGtV3d GetTrackCentre();
+    void GetTrackExtents(CGtV3d *, CGtV3d *);
     void SetNumActiveRaceCars(int);
     void DecrementNumActiveRaceCars();
     bool IsCrashIntro() const;
