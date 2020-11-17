@@ -1,0 +1,3 @@
+class CGtDictionary<class T> {
+
+};

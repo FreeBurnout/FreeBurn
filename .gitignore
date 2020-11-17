@@ -7,4 +7,5 @@ FreeBurn/x64
 x64/
 ThirdParty/boost/
 out/
+FreeBurn/Code/GameProjects/
 *.vcxproj.user
