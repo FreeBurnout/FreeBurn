@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FreeBurn", "Main\FreeBurn.vcxproj", "{C12115DA-3A6B-4F39-8D4B-61EB4A30414D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RW37", "Main\GameShared\CodeSDKs\rw37\build\RW37.vcxproj", "{96CC0925-B7EB-4FB6-8596-933F1C7ED87E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{C12115DA-3A6B-4F39-8D4B-61EB4A30414D}.Release|x64.Build.0 = Release|x64
 		{C12115DA-3A6B-4F39-8D4B-61EB4A30414D}.Release|x86.ActiveCfg = Release|Win32
 		{C12115DA-3A6B-4F39-8D4B-61EB4A30414D}.Release|x86.Build.0 = Release|Win32
+		{96CC0925-B7EB-4FB6-8596-933F1C7ED87E}.Debug|x64.ActiveCfg = Debug|x64
+		{96CC0925-B7EB-4FB6-8596-933F1C7ED87E}.Debug|x64.Build.0 = Debug|x64
+		{96CC0925-B7EB-4FB6-8596-933F1C7ED87E}.Debug|x86.ActiveCfg = Debug|Win32
+		{96CC0925-B7EB-4FB6-8596-933F1C7ED87E}.Debug|x86.Build.0 = Debug|Win32
+		{96CC0925-B7EB-4FB6-8596-933F1C7ED87E}.Release|x64.ActiveCfg = Release|x64
+		{96CC0925-B7EB-4FB6-8596-933F1C7ED87E}.Release|x64.Build.0 = Release|x64
+		{96CC0925-B7EB-4FB6-8596-933F1C7ED87E}.Release|x86.ActiveCfg = Release|Win32
+		{96CC0925-B7EB-4FB6-8596-933F1C7ED87E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
