@@ -1,0 +1,36 @@
+#include "BoHUDBoostBar.h"
+
+kBoHUDBoostBarSize
+kBoHUDBoostBarRecipSize
+kBoHUDBackgroundColour
+kBoHUDSmokeParticleParams
+kBoHUDFlameParticleParams
+kBoHUDBlueFlameColour
+kBoHUDFireColour
+kBoHUDGlowRGBACold
+kBoHUDGlowRGBAHot
+kBoHUDFireCoreColour
+kBoHUDFireOverColour
+kHUDBoostBarMessageSize
+kHUDBoostBarMessageRecipSize
+kHUDBoostBarMessageOutlineSize
+krHUDBoostBarMessageIndentX
+kBoBoostBarPercentageOffset
+kBoBoostBarTapTextPos
+kBoHUDHUDImageSize
+kBoHUDFireImageSize
+kBoHUDBoostBarEdgeSize
+kBoHUDBoostBarGradientOffset
+kBoHUDBoostBarGradientSize
+kBoHUDBoostBarDividerSize
+krBoHUDBoostBarFlamesOffsetY
+kBoHUDBoostBarCrashBarTileStartUVs
+kBoHUDBoostBarCrashBarTileEndUVs
+kBoHUDBoostBarCrashBarFillColour0
+kBoHUDBoostBarCrashBarFillColour1
+kBoHUDBoostBarCrashBarEmptyColour
+kBoHUDBoostBarCrashBarButtonHalfSizeScale
+kBoHUDBoostBarCrashBarButtonOffsetScale
+
+CBoHUDBackgroundGlowSegment kaBoostBarBackgroundSegments[10];
+char16_t kaBoostBarPercentageFormatString = u"%1%%";

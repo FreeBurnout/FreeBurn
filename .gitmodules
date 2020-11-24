@@ -1,0 +1,3 @@
+[submodule "RW37"]
+	path = Main/GameShared/CodeSDKs/RW37
+	url = https://github.com/GTAmodding/rw37.git

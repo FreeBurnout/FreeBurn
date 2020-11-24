@@ -1,3 +1,7 @@
+#include <rwcore.h>
+
+#include "../../Core/GtID.h"
+
 enum class EGtPrepareState {
 	eGtPSNone = 0,
 	eGtPSConstructed = 1,
@@ -57,4 +61,23 @@ enum class EGtPrepareState {
 	eGtPSReleasedFully = 55,
 	eGtPSReleased = 56,
 	eGtPSDestructed = 57
+};
+
+enum class EGtStateAction {
+	eGtStateActionConstruct = 0, 
+	eGtStateActionDestruct = 1, 
+	eGtStateActionLeave = 2, 
+	eGtStateActionEnter = 3, 
+	eGtStateActionUpdate = 4, 
+	eGtStateActionEvent = 5
+};
+
+class CGtState {
+public:
+	GtID mID;
+	RwReal mrTimeStateEntered;
+
+	GtID GetID();
+	RwReal GetStateEnteredTime();
+	virtual void Action(EGtStateAction leAction, void* param_2, void* param_3, void* param_4) = 0;
 };
