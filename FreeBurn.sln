@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FreeBurn", "Main\FreeBurn.vcxproj", "{C12115DA-3A6B-4F39-8D4B-61EB4A30414D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FreeBurn", "Projects/FreeBurn.vcxproj", "{C2281015-D47B-439B-9673-E9286A194201}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RW37", "Main\GameShared\CodeSDKs\rw37\build\RW37.vcxproj", "{96CC0925-B7EB-4FB6-8596-933F1C7ED87E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RW37", "CodeSDKs\rw37\build\RW37.vcxproj", "{96CC0925-B7EB-4FB6-8596-933F1C7ED87E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,14 +15,14 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C12115DA-3A6B-4F39-8D4B-61EB4A30414D}.Debug|x64.ActiveCfg = Debug|x64
-		{C12115DA-3A6B-4F39-8D4B-61EB4A30414D}.Debug|x64.Build.0 = Debug|x64
-		{C12115DA-3A6B-4F39-8D4B-61EB4A30414D}.Debug|x86.ActiveCfg = Debug|Win32
-		{C12115DA-3A6B-4F39-8D4B-61EB4A30414D}.Debug|x86.Build.0 = Debug|Win32
-		{C12115DA-3A6B-4F39-8D4B-61EB4A30414D}.Release|x64.ActiveCfg = Release|x64
-		{C12115DA-3A6B-4F39-8D4B-61EB4A30414D}.Release|x64.Build.0 = Release|x64
-		{C12115DA-3A6B-4F39-8D4B-61EB4A30414D}.Release|x86.ActiveCfg = Release|Win32
-		{C12115DA-3A6B-4F39-8D4B-61EB4A30414D}.Release|x86.Build.0 = Release|Win32
+		{C2281015-D47B-439B-9673-E9286A194201}.Debug|x64.ActiveCfg = Debug|x64
+		{C2281015-D47B-439B-9673-E9286A194201}.Debug|x64.Build.0 = Debug|x64
+		{C2281015-D47B-439B-9673-E9286A194201}.Debug|x86.ActiveCfg = Debug|Win32
+		{C2281015-D47B-439B-9673-E9286A194201}.Debug|x86.Build.0 = Debug|Win32
+		{C2281015-D47B-439B-9673-E9286A194201}.Release|x64.ActiveCfg = Release|x64
+		{C2281015-D47B-439B-9673-E9286A194201}.Release|x64.Build.0 = Release|x64
+		{C2281015-D47B-439B-9673-E9286A194201}.Release|x86.ActiveCfg = Release|Win32
+		{C2281015-D47B-439B-9673-E9286A194201}.Release|x86.Build.0 = Release|Win32
 		{96CC0925-B7EB-4FB6-8596-933F1C7ED87E}.Debug|x64.ActiveCfg = Debug|x64
 		{96CC0925-B7EB-4FB6-8596-933F1C7ED87E}.Debug|x64.Build.0 = Debug|x64
 		{96CC0925-B7EB-4FB6-8596-933F1C7ED87E}.Debug|x86.ActiveCfg = Debug|Win32
@@ -36,6 +36,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {06CF9DB4-053C-438D-9C71-F3E8A5EBF4A3}
+		SolutionGuid = {E9C9B5AB-3F75-4F92-8FF5-62D0845B3391}
 	EndGlobalSection
 EndGlobal
