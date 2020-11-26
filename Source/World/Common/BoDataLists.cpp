@@ -1,5 +1,5 @@
 #include <rwcore.h>
 
-RwChar * kapkacClassIDStrings[] = {
+RwChar* kapkacClassIDStrings[] = {
 	"NONE", "HIGH", "MEDI", "LOWR", ""
 };
