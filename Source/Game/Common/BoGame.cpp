@@ -1,13 +1,13 @@
 #include "BoGame.h"
-#include "../Game/BoTimer.h"
-#include "../Camera/BoPlayerCameraManager.h"
-#include "../Camera/Behaviours/BoBehaviourAttachCam.h"
-#include "../Camera/Behaviours/BoBehaviourShot.h"
-#include "../Camera/Behaviours/BoBehaviourCluster.h"
-#include "../Camera/Crash/Camera Directors/BoCrashModeCrashCameraDirector.h"
-#include "../../../../GameShared/Common/Numeric/GtRandom.h"
-#include "../../../../GameShared/Common/System/GtUnicode.h"
-#include "../../../../GameShared/PC/Numeric/GtMathPC.h"
+#include "BoTimer.h"
+#include "../../Camera/BoPlayerCameraManager.h"
+#include "../../Camera/Behaviours/BoBehaviourAttachCam.h"
+#include "../../Camera/Behaviours/BoBehaviourShot.h"
+#include "../../Camera/Behaviours/BoBehaviourCluster.h"
+#include "../../Camera/Crash/Camera Directors/BoCrashModeCrashCameraDirector.h"
+#include "../../../../Shared/Numeric/GtRandom.h"
+#include "../../../../Shared/System/Common/Unicode/GtUnicode.h"
+#include "../../../../Shared/Numeric/Math/PS2/GtMathPS2.h"
 
 CBoGame gGame;
 
@@ -175,7 +175,7 @@ void CBoGame::RequestWorldPrepare(bool param) {
 	 
 }	 
 	 
-void CBoGame::ClearFrameBufferDuringWorldPrepare(GtMathPC::CGtV4d param) {
+void CBoGame::ClearFrameBufferDuringWorldPrepare(GtMathPS2::CGtV4d param) {
 	 
 }	 
 	 

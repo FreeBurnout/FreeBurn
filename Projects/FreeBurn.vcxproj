@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{21edf934-760b-4af1-b79b-885353e69952}</ProjectGuid>
+    <ProjectGuid>{abdcdefb-ce8a-43e9-a859-ef2341dfd1eb}</ProjectGuid>
     <RootNamespace>FreeBurn</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -139,12 +139,8 @@
   <ItemGroup></ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets"></ImportGroup>
-  <ItemGroup></ItemGroup>
-  <ItemGroup></ItemGroup>
-  <ItemGroup></ItemGroup>
-  <ItemGroup></ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Source\BoMainPS2.cpp" />
+    <ClCompile Include="..\Source\BoMainPC.cpp" />
     <ClCompile Include="..\Source\Camera\BoCamComponentLooseTrack.cpp" />
     <ClCompile Include="..\Source\Camera\BoCameraAttribs.cpp" />
     <ClCompile Include="..\Source\Camera\BoCameraEditor.cpp" />
@@ -332,10 +328,10 @@
     <ClCompile Include="..\Source\Game\Common\BoTimer.cpp" />
     <ClCompile Include="..\Source\Game\Common\BoTrafficDebug.cpp" />
     <ClCompile Include="..\Source\Game\Common\BoTwoPlayerSplitScreenStage.cpp" />
-    <ClCompile Include="..\Source\Game\PS2\BoControllerMappingPS2.cpp" />
-    <ClCompile Include="..\Source\Game\PS2\BoGamePS2.cpp" />
-    <ClCompile Include="..\Source\Game\PS2\BoInputManagerPS2.cpp" />
-    <ClCompile Include="..\Source\Game\PS2\BoMemoryManagerPS2.cpp" />
+    <ClCompile Include="..\Source\Game\PC\BoControllerMappingPC.cpp" />
+    <ClCompile Include="..\Source\Game\PC\BoGamePC.cpp" />
+    <ClCompile Include="..\Source\Game\PC\BoInputManagerPC.cpp" />
+    <ClCompile Include="..\Source\Game\PC\BoMemoryManagerPC.cpp" />
     <ClCompile Include="..\Source\Graphics\Common\BoBezierSplineInterpolator.cpp" />
     <ClCompile Include="..\Source\Graphics\Common\BoBitmapFont.cpp" />
     <ClCompile Include="..\Source\Graphics\Common\BoBloom.cpp" />
@@ -364,32 +360,32 @@
     <ClCompile Include="..\Source\Graphics\Common\BoVideoCaptureFrame.cpp" />
     <ClCompile Include="..\Source\Graphics\Common\BoVideoCaptureSystem.cpp" />
     <ClCompile Include="..\Source\Graphics\Common\BoViewport.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoBloomPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoCoronaRendererPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoDebrisRendererPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoDebugMipMapsPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoDirectionalBlurPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoFogPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoGraphicsManagerPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoIm3DPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoLightTrailRendererPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoParticleRendererPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoPopcornRendererPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoPropParticleRendererPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoRadialBlurPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoRenderTargetManagerPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoRenderTargetPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoScanlineCameraFilterPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoScrapeRenderPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoShadowRendererPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoSkyDomeRendererPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoSparkRendererPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoSunRendererPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoTextureCollectionPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoTrackMaterialPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoTrackRendererRuntimePS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoTrailRenderPS2.cpp" />
-    <ClCompile Include="..\Source\Graphics\PS2\BoVehicleRendererRuntimePS2.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoBloomPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoCoronaRendererPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoDebrisRendererPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoDebugMipMapsPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoDirectionalBlurPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoFogPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoGraphicsManagerPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoIm3DPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoLightTrailRendererPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoParticleRendererPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoPopcornRendererPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoPropParticleRendererPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoRadialBlurPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoRenderTargetManagerPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoRenderTargetPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoScanlineCameraFilterPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoScrapeRenderPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoShadowRendererPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoSkyDomeRendererPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoSparkRendererPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoSunRendererPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoTextureCollectionPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoTrackMaterialPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoTrackRendererRuntimePC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoTrailRenderPC.cpp" />
+    <ClCompile Include="..\Source\Graphics\PC\BoVehicleRendererRuntimePC.cpp" />
     <ClCompile Include="..\Source\HUD\CustomObjects\BoDynamicImageObject.cpp" />
     <ClCompile Include="..\Source\HUD\CustomObjects\BoDynamicTextObject.cpp" />
     <ClCompile Include="..\Source\HUD\CustomObjects\BoHUDRecklessImage.cpp" />
@@ -428,11 +424,14 @@
     <ClCompile Include="..\Source\Menu\Services\BoMatchMakingService.cpp" />
     <ClCompile Include="..\Source\Menu\Services\BoMemoryCardService.cpp" />
     <ClCompile Include="..\Source\Menu\Services\BoMenuLocalisationService.cpp" />
+    <ClCompile Include="..\Source\Menu\Services\BoMenuScreenManagerService.cpp" />
+    <ClCompile Include="..\Source\Menu\Services\BoMenuSoundManagerService.cpp" />
     <ClCompile Include="..\Source\Menu\Services\BoMPPostEventService.cpp" />
     <ClCompile Include="..\Source\Menu\Services\BoMultiplayerService.cpp" />
     <ClCompile Include="..\Source\Menu\Services\BoMultiplayerServiceClasses.cpp" />
     <ClCompile Include="..\Source\Menu\Services\BoNetworkingService.cpp" />
     <ClCompile Include="..\Source\Menu\Services\BoOnlineResultsService.cpp" />
+    <ClCompile Include="..\Source\Menu\Services\BoOpenInterfaceService.cpp" />
     <ClCompile Include="..\Source\Menu\Services\BoOptionService.cpp" />
     <ClCompile Include="..\Source\Menu\Services\BoPauseMenuService.cpp" />
     <ClCompile Include="..\Source\Menu\Services\BoPlayListService.cpp" />
@@ -441,9 +440,6 @@
     <ClCompile Include="..\Source\Menu\Services\BoRecordService.cpp" />
     <ClCompile Include="..\Source\Menu\Services\BoWorldTourService.cpp" />
     <ClCompile Include="..\Source\Menu\Services\ConnectingService.cpp" />
-    <ClCompile Include="..\Source\Menu\Services\BoMenuScreenManagerService.cpp" />
-    <ClCompile Include="..\Source\Menu\Services\BoMenuSoundManagerService.cpp" />
-    <ClCompile Include="..\Source\Menu\Services\BoOpenInterfaceService.cpp" />
     <ClCompile Include="..\Source\Menu\States\BoCrashCarSelectState.cpp" />
     <ClCompile Include="..\Source\Menu\States\BoDebugDebugMenuState.cpp" />
     <ClCompile Include="..\Source\Menu\States\BoDemoMainMenuState.cpp" />
@@ -474,9 +470,9 @@
     <ClCompile Include="..\Source\Network\Common\BoNetworkServers.cpp" />
     <ClCompile Include="..\Source\Network\Common\BoNetworkWebhostScript.cpp" />
     <ClCompile Include="..\Source\Network\Common\BoRivalID.cpp" />
-    <ClCompile Include="..\Source\Network\PS2\BoEAConnectLauncherPS2.cpp" />
-    <ClCompile Include="..\Source\Network\PS2\BoSFIOCallbacksPS2.cpp" />
-    <ClCompile Include="..\Source\Network\PS2\BoSharedLoginExtPS2.cpp" />
+    <ClCompile Include="..\Source\Network\PC\BoEAConnectLauncherPC.cpp" />
+    <ClCompile Include="..\Source\Network\PC\BoSFIOCallbacksPC.cpp" />
+    <ClCompile Include="..\Source\Network\PC\BoSharedLoginExtPC.cpp" />
     <ClCompile Include="..\Source\Physics\Deformation\BoVehicleBodyPartParams.cpp" />
     <ClCompile Include="..\Source\Physics\Deformation\BoVehicleBoneRig.cpp" />
     <ClCompile Include="..\Source\Physics\Deformation\BoVehicleDeform.cpp" />
@@ -495,10 +491,10 @@
     <ClCompile Include="..\Source\Sound\Common\BoSoundStaticPass.cpp" />
     <ClCompile Include="..\Source\Sound\Common\BoSoundStaticPassManager.cpp" />
     <ClCompile Include="..\Source\Sound\Common\BoSoundWeatherManager.cpp" />
-    <ClCompile Include="..\Source\Sound\PS2\BoSoundCustomSoundTrackPS2.cpp" />
-    <ClCompile Include="..\Source\Sound\PS2\BoSoundDistPS2.cpp" />
-    <ClCompile Include="..\Source\Sound\PS2\BoSoundManagerPS2.cpp" />
-    <ClCompile Include="..\Source\Sound\PS2\BoSoundPS2.cpp" />
+    <ClCompile Include="..\Source\Sound\PC\BoSoundCustomSoundTrackPC.cpp" />
+    <ClCompile Include="..\Source\Sound\PC\BoSoundDistPC.cpp" />
+    <ClCompile Include="..\Source\Sound\PC\BoSoundManagerPC.cpp" />
+    <ClCompile Include="..\Source\Sound\PC\BoSoundPC.cpp" />
     <ClCompile Include="..\Source\World\Common\BoAudioEmitterData.cpp" />
     <ClCompile Include="..\Source\World\Common\BoBloomTrigger.cpp" />
     <ClCompile Include="..\Source\World\Common\BoBloomTriggerManager.cpp" />
@@ -560,11 +556,11 @@
     <ClCompile Include="..\Source\World\Common\BoWrongWayWall.cpp" />
     <ClCompile Include="..\Source\World\Common\BoZone.cpp" />
     <ClCompile Include="..\Source\World\Common\BoZoneManager.cpp" />
-    <ClCompile Include="..\Source\World\PS2\BoPropManagerPS2.cpp" />
-    <ClCompile Include="..\Source\World\PS2\BoStaticTrackPS2.cpp" />
-    <ClCompile Include="..\Source\World\PS2\BoStreamedTrackCollisionPS2.cpp" />
-    <ClCompile Include="..\Source\World\PS2\BoStreamedTrackPS2.cpp" />
-    <ClCompile Include="..\Source\World\PS2\BoWorldPS2.cpp" />
+    <ClCompile Include="..\Source\World\PC\BoPropManagerPC.cpp" />
+    <ClCompile Include="..\Source\World\PC\BoStaticTrackPC.cpp" />
+    <ClCompile Include="..\Source\World\PC\BoStreamedTrackCollisionPC.cpp" />
+    <ClCompile Include="..\Source\World\PC\BoStreamedTrackPC.cpp" />
+    <ClCompile Include="..\Source\World\PC\BoWorldPC.cpp" />
     <ClCompile Include="..\Source\Camera\Crash\Camera Directors\BoBaseCrashCameraDirector.cpp" />
     <ClCompile Include="..\Source\Camera\Crash\Camera Directors\BoCrashModeCrashCameraDirector.cpp" />
     <ClCompile Include="..\Source\Camera\Crash\Camera Directors\BoGenericCrashCameraDirector.cpp" />
@@ -955,18 +951,18 @@
     <ClInclude Include="..\Source\Graphics\Common\BoSparkRenderer.h" />
     <ClInclude Include="..\Source\Graphics\Common\BoTrailSystem.h" />
     <ClInclude Include="..\Source\Graphics\Common\BoVehicleRenderer.h" />
-    <ClInclude Include="..\Source\Graphics\PS2\BoCoronaRendererPS2.h" />
-    <ClInclude Include="..\Source\Graphics\PS2\BoDebrisRendererPS2.h" />
-    <ClInclude Include="..\Source\Graphics\PS2\BoGraphicsManagerPS2.h" />
-    <ClInclude Include="..\Source\Graphics\PS2\BoParticleRendererPS2.h" />
-    <ClInclude Include="..\Source\Graphics\PS2\BoPopcornRendererPS2.h" />
-    <ClInclude Include="..\Source\Graphics\PS2\BoRenderTargetPS2.h" />
-    <ClInclude Include="..\Source\Graphics\PS2\BoSparkRendererPS2.h" />
-    <ClInclude Include="..\Source\Graphics\PS2\BoTrackMeshPS2.h" />
-    <ClInclude Include="..\Source\Graphics\PS2\BoTrackRendererPS2.h" />
-    <ClInclude Include="..\Source\Graphics\PS2\BoTrailDataStructuresPS2.h" />
-    <ClInclude Include="..\Source\Graphics\PS2\BoVehicleMeshPS2.h" />
-    <ClInclude Include="..\Source\Graphics\PS2\BoVehicleObjectPS2.h" />
+    <ClInclude Include="..\Source\Graphics\PC\BoCoronaRendererPC.h" />
+    <ClInclude Include="..\Source\Graphics\PC\BoDebrisRendererPC.h" />
+    <ClInclude Include="..\Source\Graphics\PC\BoGraphicsManagerPC.h" />
+    <ClInclude Include="..\Source\Graphics\PC\BoParticleRendererPC.h" />
+    <ClInclude Include="..\Source\Graphics\PC\BoPopcornRendererPC.h" />
+    <ClInclude Include="..\Source\Graphics\PC\BoRenderTargetPC.h" />
+    <ClInclude Include="..\Source\Graphics\PC\BoSparkRendererPC.h" />
+    <ClInclude Include="..\Source\Graphics\PC\BoTrackMeshPC.h" />
+    <ClInclude Include="..\Source\Graphics\PC\BoTrackRendererPC.h" />
+    <ClInclude Include="..\Source\Graphics\PC\BoTrailDataStructuresPC.h" />
+    <ClInclude Include="..\Source\Graphics\PC\BoVehicleMeshPC.h" />
+    <ClInclude Include="..\Source\Graphics\PC\BoVehicleObjectPC.h" />
     <ClInclude Include="..\Source\HUD\CustomObjects\BoDynamicTextObject.h" />
     <ClInclude Include="..\Source\HUD\CustomObjects\BoHUDRecklessImage.h" />
     <ClInclude Include="..\Source\HUD\Messages\BoHUDMessageEventStack.h" />
@@ -1010,7 +1006,7 @@
     <ClInclude Include="..\Source\Sound\Common\BoSoundMusicManager.h" />
     <ClInclude Include="..\Source\Sound\Common\BoSoundRadio.h" />
     <ClInclude Include="..\Source\Sound\Common\BoSoundStaticPassManager.h" />
-    <ClInclude Include="..\Source\Sound\PS2\BoSoundCustomSoundtrackPS2.h" />
+    <ClInclude Include="..\Source\Sound\PC\BoSoundCustomSoundtrackPC.h" />
     <ClInclude Include="..\Source\World\Common\BoAudioEmitterData.h" />
     <ClInclude Include="..\Source\World\Common\BoBloomTriggerManager.h" />
     <ClInclude Include="..\Source\World\Common\BoBurn.h" />
