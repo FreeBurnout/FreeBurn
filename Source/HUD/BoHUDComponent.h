@@ -1,5 +1,9 @@
 #include <rwcore.h>
 
+#include "BoHUDManager.h"
+#include "../World/Common/BoPlayerCar.h"
+#include "../../Shared/Graphical/Common/2D/Gt2dScene.h"
+
 enum EBoHUDString {
 	eBoHUDStringSplitTime = 0,
 	eBoHUDStringDRIFT = 1,
@@ -78,6 +82,78 @@ enum EBoHUDString {
 	eBoHUDStringNum = 74
 };
 
+enum EOutlineDropShadow {
+	eODSSmallText = 0,
+	eODSMediumText = 1,
+	eODSLargeText = 2,
+	eODSNum = 3
+};
+
+enum EHUDTexture {
+	eHUDTextureSignAgressiveNeg = 0,
+	eHUDTextureSignAgressivePos = 1,
+	eHUDTextureSignTakeDownNeg = 2,
+	eHUDTextureSignTakeDownPos = 3,
+	eHUDTextureSignRatingDown = 4,
+	eHUDTextureSignRatingUp = 5,
+	eHUDTextureSignCrash = 6,
+	eHUDTextureSignCrashBreaker = 7,
+	eHUDTextureHeartbreaker = 8,
+	eHUDTextureSmallScore = 9,
+	eHUDTextureMediumScore = 10,
+	eHUDTextureLargeScore = 11,
+	eHUDTextureImpactTimeDPad = 12,
+	eHUDTextureImpactTimeStick = 13,
+	eHUDTextureImpactController = 14,
+	eHUDTextureSmallPanelTile = 15,
+	eHUDTextureSmallPanelChevron = 16,
+	eHUDTextureBorderRoad = 17,
+	eHUDTextureBorderChevron = 18,
+	eHUDTextureMessageBoxEnd = 19,
+	eHUDTextureMessageBoxTile = 20,
+	eHUDTextureGoldMedal = 21,
+	eHUDTextureSilverMedal = 22,
+	eHUDTextureBronzeMedal = 23,
+	eHUDTextureTrafficAttackBGEnd = 24,
+	eHUDTextureTrafficAttackBGTile = 25,
+	eHUDTextureTrafficAttackFuseGlow = 26,
+	eHUDTextureTrafficAttackFuseTile = 27,
+	eHUDTextureMessageStar = 28,
+	eHUDTextureMessageStarCorona = 29,
+	eHUDTextureBoostGlowBits = 30,
+	eHUDTextureCrashBar = 31,
+	eHUDTextureTalkIcon = 32,
+	eHUDTextureCrossIcon = 33,
+	eHUDTextureStarEmpty = 34,
+	eHUDTextureStarFull = 35,
+	eHUDTextureButtonL1 = 36,
+	eHUDTextureButtonL2 = 37,
+	eHUDTextureButtonR1 = 38,
+	eHUDTextureButtonR2 = 39,
+	eHUDTextureButtonCross = 40,
+	eHUDTextureNum = 41,
+	eHUDTextureButtonBoost = 38,
+	eHUDTextureButtonAftertouch = 38,
+	eHUDTextureButtonCrashbreaker = 39,
+	eHUDTextureButtonCrashBar = 40,
+	eHUDTextureButtonConfirm = 40,
+	eHUDTextureBad = 6,
+	eHUDTextureAwardPositive = 6,
+	eHUDTextureAwardNegative = 6,
+	eHUDTextureAwardStar = 6,
+	eHUDTextureAwardTakedown = 6,
+	eHUDTextureBoost = 6,
+	eHUDTextureSmallMultiplier = 6,
+	eHUDTextureLargeMultiplier = 6,
+	eHUDTextureCrashbreaker = 6,
+	eHUDTextureScoreStealer = 6,
+	eHUDTextureSignTimeBonus = 6
+};
+
+struct BoHUDParticleParamsTag {
+
+};
+
 class CBoHUDComponent {
 public:
     void Construct();
@@ -89,21 +165,20 @@ public:
     void SetAllLayerVisible(bool);
     void StartTransition(bool, EHUDMode, EHUDMode);
     void AdjustScalingForSplitScreen();
-    void UseClipFrame();
+	void UseClipFrame();
+	CGt2dScene* GetScene();
 
-private:
-    GetScene();
-    GetOutlineDropShadow(CBoHUDComponent, EOutlineDropShadow);
-    GetHUDTexture();
-    GetBoostFireCoreTexture();
-    GetBoostFireEdgeTexture();
-    GetBoostFireOverTexture();
-    GetBoostBitsTexture();
-    GetBoostBlueFlameTexture();
-    GetHUDTexture(CBoHUDComponent, EHUDTexture);
+	COutlineDropShadow* GetOutlineDropShadow(CBoHUDComponent, EOutlineDropShadow);
+	CGtTexture* GetHUDTexture();
+    CGtTexture* GetBoostFireCoreTexture();
+    CGtTexture* GetBoostFireEdgeTexture();
+    CGtTexture* GetBoostFireOverTexture();
+    CGtTexture* GetBoostBitsTexture();
+    CGtTexture* GetBoostBlueFlameTexture();
+	CGtTexture* GetHUDTexture(CBoHUDComponent, EHUDTexture);
     RwInt32 GetFlags();
-    GetAlign();
-    GetBoostStarsTexture();
-    GetHUDString(EBoHUDString leHUDString);
-    GetPlayerCarIndex();
+	EHUDAlign GetAlign();
+	CGtTexture* GetBoostStarsTexture();
+	GtUTF16* GetHUDString(EBoHUDString leHUDString);
+    EPlayerCarIndex GetPlayerCarIndex();
 };

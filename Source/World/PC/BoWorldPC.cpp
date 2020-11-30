@@ -3,7 +3,7 @@
 #include "../Common/BoWorld.h"
 #include "../../../../GameShared/GameClasses/Graphical/Common/GtColour.h"
 #include "../../../../GameShared/GameClasses/Numeric/Math/GtV2dGeneric.h"
-#include "../../../../GameShared/GameClasses/Numeric/Math/PS2/GtMathPS2.h"
+#include "../../../../GameShared/GameClasses/Numeric/Math/PC/GtMathPC.h"
 
 char kacAIDriverOneString[]   = "DRIVER1";
 char kacAIDriverTwoString[]   = "DRIVER2";
@@ -21,8 +21,8 @@ char * kacpAIDriverString[5] = {
 
 CGtRGBA kCarUnlockColour;
 CGtRGBA kCarSelectColour;
-GtMathPS2::CGtV2d kPolyPos;
-GtMathPS2::CGtV2d kPolyHandle;
+GtMathPC::CGtV2d kPolyPos;
+GtMathPC::CGtV2d kPolyHandle;
 CGtRGBA kRedPolyColour;
 CGtRGBA kRedPolyColour1;
 CGtRGBA kOrangePolyColour;

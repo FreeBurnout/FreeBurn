@@ -47,7 +47,7 @@ void CBoGame::BootNFLStreet2Demo() {
     }
     sceCdInit(5);
     sceSifExitCmd();
-    LoadExecPS2(0x48c488, 1, 0x54ad30);
+    LoadExecPC(0x48c488, 1, 0x54ad30);
 }
 
 void CBoGame::SetQuitNow() {

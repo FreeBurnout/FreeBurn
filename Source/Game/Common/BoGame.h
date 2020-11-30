@@ -25,8 +25,8 @@
 #include "Progression/BoProgressionDataStruct.h"
 #include "../../Camera/BoPlayerCameraManager.h"
 #include "../../World/Common/BoDataLists.h"
-#include "../../../../Shared/Numeric/Math/PS2/GtMathPS2.h"
-#include "../../../../Shared/Graphical/PS2/GtTexturePS2.h"
+#include "../../../../Shared/Numeric/Math/PC/GtMathPC.h"
+#include "../../../../Shared/Graphical/PC/GtTexturePC.h"
 #include "../../../../Shared/Numeric/GtRandom.h"
 #include "../../../../Shared/System/Common/GtFramerateManager.h"
 #include "../../../../Shared/System/Common/FileSystem/GTFileSystem.h"
@@ -35,7 +35,7 @@
 #include "../../../../Shared/Graphical/Common/GtColour.h"
 #include "../../../../Shared/System/Common/GtFSM.h"
 
-using namespace GtMathPS2;
+using namespace GtMathPC;
 
 enum class EGameUpdateState {
     eGameUpdateStateConstructed = 0,
@@ -95,7 +95,7 @@ private:
     CGtCommsToolBase mCommsManager;
     CBoPlayer maPlayers[2];
     CBoPlayerCameraManager maPlayerCamera[2];
-    CMemoryDeviceBase mMemoryCard; // Originally CMemoryDevicePS2.
+    CMemoryDeviceBase mMemoryCard; // Originally CMemoryDevicePC.
     CGtRandom mNonDeterministicRNG;
     CGtTexture mpGlobalTextureDictionary;
     bool mbGlobalTextureDictionaryLoaded;

@@ -1,4 +1,4 @@
-#include "BoSoundCustomSoundtrackPS2.h"
+#include "BoSoundCustomSoundtrackPC.h"
 
 void CBoSoundCustomSoundtrack::Construct() {
 	mnSoundtrackCount = 0;

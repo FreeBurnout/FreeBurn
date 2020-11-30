@@ -1,0 +1,3 @@
+class CGt2dScene {
+
+};

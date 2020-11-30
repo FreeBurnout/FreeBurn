@@ -163,7 +163,7 @@ class CBoStageLogicGameParams {
 	ERaceCarIndex meAssignStartPositionIndex[6];
 };
 
-using namespace GtMathPS2;
+using namespace GtMathPC;
 
 class CBoStageLogic {
 public:

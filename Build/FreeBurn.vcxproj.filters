@@ -178,8 +178,8 @@
     <ClCompile Include="..\Shared\Development\ValueDatabase\GtValueDatabase.cpp">
       <Filter>Shared\Development\ValueDatabase</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\Geometric\PS2\GtIntersectionPS2.cpp">
-      <Filter>Shared\Geometric\PS2</Filter>
+    <ClCompile Include="..\Shared\Geometric\PC\GtIntersectionPC.cpp">
+      <Filter>Shared\Geometric\PC</Filter>
     </ClCompile>
     <ClCompile Include="..\Shared\Graphical\Common\GtColour.cpp">
       <Filter>Shared\Graphical\Common</Filter>
@@ -190,20 +190,20 @@
     <ClCompile Include="..\Shared\Graphical\Common\GtWideLine.cpp">
       <Filter>Shared\Graphical\Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\Graphical\PS2\Gt2dRendererPS2.cpp">
-      <Filter>Shared\Graphical\PS2</Filter>
+    <ClCompile Include="..\Shared\Graphical\PC\Gt2dRendererPC.cpp">
+      <Filter>Shared\Graphical\PC</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\Graphical\PS2\GtCameraFrustumPS2.cpp">
-      <Filter>Shared\Graphical\PS2</Filter>
+    <ClCompile Include="..\Shared\Graphical\PC\GtCameraFrustumPC.cpp">
+      <Filter>Shared\Graphical\PC</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\Graphical\PS2\GtTextureCachePS2.cpp">
-      <Filter>Shared\Graphical\PS2</Filter>
+    <ClCompile Include="..\Shared\Graphical\PC\GtTextureCachePC.cpp">
+      <Filter>Shared\Graphical\PC</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\Graphical\PS2\GtTexturePS2.cpp">
-      <Filter>Shared\Graphical\PS2</Filter>
+    <ClCompile Include="..\Shared\Graphical\PC\GtTexturePC.cpp">
+      <Filter>Shared\Graphical\PC</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\Graphical\PS2\GtVideoDecoderPS2.cpp">
-      <Filter>Shared\Graphical\PS2</Filter>
+    <ClCompile Include="..\Shared\Graphical\PC\GtVideoDecoderPC.cpp">
+      <Filter>Shared\Graphical\PC</Filter>
     </ClCompile>
     <ClCompile Include="..\Shared\Networking\Common\GtDownloadableConfig.cpp">
       <Filter>Shared\Networking\Common</Filter>
@@ -214,20 +214,20 @@
     <ClCompile Include="..\Shared\Networking\Common\GtVoIPManager.cpp">
       <Filter>Shared\Networking\Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\Networking\PS2\GtLobbyDirtySockPS2.cpp">
-      <Filter>Shared\Networking\PS2</Filter>
+    <ClCompile Include="..\Shared\Networking\PC\GtLobbyDirtySockPC.cpp">
+      <Filter>Shared\Networking\PC</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\Networking\PS2\GtNATDataMangerPS2.cpp">
-      <Filter>Shared\Networking\PS2</Filter>
+    <ClCompile Include="..\Shared\Networking\PC\GtNATDataMangerPC.cpp">
+      <Filter>Shared\Networking\PC</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\Networking\PS2\GtPS2LibNet.cpp">
-      <Filter>Shared\Networking\PS2</Filter>
+    <ClCompile Include="..\Shared\Networking\PC\GtPCLibNet.cpp">
+      <Filter>Shared\Networking\PC</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\Networking\PS2\GtVoIPManagerPS2.cpp">
-      <Filter>Shared\Networking\PS2</Filter>
+    <ClCompile Include="..\Shared\Networking\PC\GtVoIPManagerPC.cpp">
+      <Filter>Shared\Networking\PC</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\Sound\PS2\GtSoundDSPManagerPS2.cpp">
-      <Filter>Shared\Sound\PS2</Filter>
+    <ClCompile Include="..\Shared\Sound\PC\GtSoundDSPManagerPC.cpp">
+      <Filter>Shared\Sound\PC</Filter>
     </ClCompile>
     <ClCompile Include="..\Shared\System\Common\GtFramerateManager.cpp">
       <Filter>Shared\System\Common</Filter>
@@ -247,29 +247,29 @@
     <ClCompile Include="..\Shared\System\Common\GtTimer.cpp">
       <Filter>Shared\System\Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\System\PS2\GtHiResSystemTimerPS2.cpp">
-      <Filter>Shared\System\PS2</Filter>
+    <ClCompile Include="..\Shared\System\PC\GtHiResSystemTimerPC.cpp">
+      <Filter>Shared\System\PC</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\System\PS2\GtMemoryCardManagerPS2.cpp">
-      <Filter>Shared\System\PS2</Filter>
+    <ClCompile Include="..\Shared\System\PC\GtMemoryCardManagerPC.cpp">
+      <Filter>Shared\System\PC</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\System\PS2\GTMemoryDevicePS2_MC2.cpp">
-      <Filter>Shared\System\PS2</Filter>
+    <ClCompile Include="..\Shared\System\PC\GTMemoryDevicePC_MC2.cpp">
+      <Filter>Shared\System\PC</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\System\PS2\GtSysConfigPS2.cpp">
-      <Filter>Shared\System\PS2</Filter>
+    <ClCompile Include="..\Shared\System\PC\GtSysConfigPC.cpp">
+      <Filter>Shared\System\PC</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\System\PS2\GtThreadMgrPS2.cpp">
-      <Filter>Shared\System\PS2</Filter>
+    <ClCompile Include="..\Shared\System\PC\GtThreadMgrPC.cpp">
+      <Filter>Shared\System\PC</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\System\PS2\GtVu0CodeManager.cpp">
-      <Filter>Shared\System\PS2</Filter>
+    <ClCompile Include="..\Shared\System\PC\GtVu0CodeManager.cpp">
+      <Filter>Shared\System\PC</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\Development\PerfMon\PS2\GtPerfMonGpuPS2.cpp">
-      <Filter>Shared\Development\PerfMon\PS2</Filter>
+    <ClCompile Include="..\Shared\Development\PerfMon\PC\GtPerfMonGpuPC.cpp">
+      <Filter>Shared\Development\PerfMon\PC</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\Development\PerfMon\PS2\GtPerfMonPS2.cpp">
-      <Filter>Shared\Development\PerfMon\PS2</Filter>
+    <ClCompile Include="..\Shared\Development\PerfMon\PC\GtPerfMonPC.cpp">
+      <Filter>Shared\Development\PerfMon\PC</Filter>
     </ClCompile>
     <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dBezierCurve.cpp">
       <Filter>Shared\Graphical\Common\2D</Filter>
@@ -412,35 +412,35 @@
     <ClCompile Include="..\Shared\System\Common\Unicode\GtUnicodeUtils.cpp">
       <Filter>Shared\System\Common\Unicode</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\System\PS2\FileSystem\GtFileSystemPS2ATMon.cpp">
-      <Filter>Shared\System\PS2\FileSystem</Filter>
+    <ClCompile Include="..\Shared\System\PC\FileSystem\GtFileSystemPCATMon.cpp">
+      <Filter>Shared\System\PC\FileSystem</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\System\PS2\FileSystem\GtFileSystemPS2DVD.cpp">
-      <Filter>Shared\System\PS2\FileSystem</Filter>
+    <ClCompile Include="..\Shared\System\PC\FileSystem\GtFileSystemPCDVD.cpp">
+      <Filter>Shared\System\PC\FileSystem</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\System\PS2\FileSystem\GtFileSystemPS2Host.cpp">
-      <Filter>Shared\System\PS2\FileSystem</Filter>
+    <ClCompile Include="..\Shared\System\PC\FileSystem\GtFileSystemPCHost.cpp">
+      <Filter>Shared\System\PC\FileSystem</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\System\PS2\Input\GtInputDevicePS2DualShock.cpp">
-      <Filter>Shared\System\PS2\Input</Filter>
+    <ClCompile Include="..\Shared\System\PC\Input\GtInputDevicePCDualShock.cpp">
+      <Filter>Shared\System\PC\Input</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\System\PS2\Input\GtInputDevicePS2DualShock2.cpp">
-      <Filter>Shared\System\PS2\Input</Filter>
+    <ClCompile Include="..\Shared\System\PC\Input\GtInputDevicePCDualShock2.cpp">
+      <Filter>Shared\System\PC\Input</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\System\PS2\Input\GtInputDevicePS2Keyboard.cpp">
-      <Filter>Shared\System\PS2\Input</Filter>
+    <ClCompile Include="..\Shared\System\PC\Input\GtInputDevicePCKeyboard.cpp">
+      <Filter>Shared\System\PC\Input</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\System\PS2\Input\GtInputDevicePS2LogitechWheel.cpp">
-      <Filter>Shared\System\PS2\Input</Filter>
+    <ClCompile Include="..\Shared\System\PC\Input\GtInputDevicePCLogitechWheel.cpp">
+      <Filter>Shared\System\PC\Input</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\System\PS2\Input\GtInputManagerPS2Keyboard.cpp">
-      <Filter>Shared\System\PS2\Input</Filter>
+    <ClCompile Include="..\Shared\System\PC\Input\GtInputManagerPCKeyboard.cpp">
+      <Filter>Shared\System\PC\Input</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\System\PS2\Input\GtInputManagerPS2LogitechWheel.cpp">
-      <Filter>Shared\System\PS2\Input</Filter>
+    <ClCompile Include="..\Shared\System\PC\Input\GtInputManagerPCLogitechWheel.cpp">
+      <Filter>Shared\System\PC\Input</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\System\PS2\Input\GtInputManagerPS2Pad2.cpp">
-      <Filter>Shared\System\PS2\Input</Filter>
+    <ClCompile Include="..\Shared\System\PC\Input\GtInputManagerPCPad2.cpp">
+      <Filter>Shared\System\PC\Input</Filter>
     </ClCompile>
     <ClCompile Include="..\Source\BoMainPC.cpp">
       <Filter>Source</Filter>
@@ -2620,17 +2620,17 @@
     <ClInclude Include="..\Shared\Development\PerfMon\GtPerfMon.h">
       <Filter>Shared\Development\PerfMon</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Geometric\PS2\GtLinePS2.h">
-      <Filter>Shared\Geometric\PS2</Filter>
+    <ClInclude Include="..\Shared\Geometric\PC\GtLinePC.h">
+      <Filter>Shared\Geometric\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Geometric\PS2\GtPlanePS2.h">
-      <Filter>Shared\Geometric\PS2</Filter>
+    <ClInclude Include="..\Shared\Geometric\PC\GtPlanePC.h">
+      <Filter>Shared\Geometric\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Geometric\PS2\GtSimpleOrientedBoxPS2.h">
-      <Filter>Shared\Geometric\PS2</Filter>
+    <ClInclude Include="..\Shared\Geometric\PC\GtSimpleOrientedBoxPC.h">
+      <Filter>Shared\Geometric\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Geometric\PS2\GtSpherePS2.h">
-      <Filter>Shared\Geometric\PS2</Filter>
+    <ClInclude Include="..\Shared\Geometric\PC\GtSpherePC.h">
+      <Filter>Shared\Geometric\PC</Filter>
     </ClInclude>
     <ClInclude Include="..\Shared\Graphical\Common\GtColour.h">
       <Filter>Shared\Graphical\Common</Filter>
@@ -2641,17 +2641,17 @@
     <ClInclude Include="..\Shared\Graphical\Common\GtTextureDictionary.h">
       <Filter>Shared\Graphical\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Graphical\PS2\GtCameraFrustumPS2.h">
-      <Filter>Shared\Graphical\PS2</Filter>
+    <ClInclude Include="..\Shared\Graphical\PC\GtCameraFrustumPC.h">
+      <Filter>Shared\Graphical\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Graphical\PS2\GtTextureCachePS2.h">
-      <Filter>Shared\Graphical\PS2</Filter>
+    <ClInclude Include="..\Shared\Graphical\PC\GtTextureCachePC.h">
+      <Filter>Shared\Graphical\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Graphical\PS2\GtTexturePS2.h">
-      <Filter>Shared\Graphical\PS2</Filter>
+    <ClInclude Include="..\Shared\Graphical\PC\GtTexturePC.h">
+      <Filter>Shared\Graphical\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Graphical\PS2\GtVideoDecoderPS2.h">
-      <Filter>Shared\Graphical\PS2</Filter>
+    <ClInclude Include="..\Shared\Graphical\PC\GtVideoDecoderPC.h">
+      <Filter>Shared\Graphical\PC</Filter>
     </ClInclude>
     <ClInclude Include="..\Shared\Networking\Common\GtNetworkHeadsetBase.h">
       <Filter>Shared\Networking\Common</Filter>
@@ -2665,17 +2665,17 @@
     <ClInclude Include="..\Shared\Networking\Common\GtVoIPManager.h">
       <Filter>Shared\Networking\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Networking\PS2\GtLobbyDirtySockPS2.h">
-      <Filter>Shared\Networking\PS2</Filter>
+    <ClInclude Include="..\Shared\Networking\PC\GtLobbyDirtySockPC.h">
+      <Filter>Shared\Networking\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Networking\PS2\GtNATDataMangerPS2.h">
-      <Filter>Shared\Networking\PS2</Filter>
+    <ClInclude Include="..\Shared\Networking\PC\GtNATDataMangerPC.h">
+      <Filter>Shared\Networking\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Networking\PS2\GtPS2LibNet.h">
-      <Filter>Shared\Networking\PS2</Filter>
+    <ClInclude Include="..\Shared\Networking\PC\GtPCLibNet.h">
+      <Filter>Shared\Networking\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Networking\PS2\GtVoIPManagerPS2.h">
-      <Filter>Shared\Networking\PS2</Filter>
+    <ClInclude Include="..\Shared\Networking\PC\GtVoIPManagerPC.h">
+      <Filter>Shared\Networking\PC</Filter>
     </ClInclude>
     <ClInclude Include="..\Shared\Numeric\Math\GtMath.h">
       <Filter>Shared\Numeric\Math</Filter>
@@ -2713,17 +2713,17 @@
     <ClInclude Include="..\Shared\System\Common\GtTimer.h">
       <Filter>Shared\System\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\System\PS2\GtHiResSystemTimerPS2.h">
-      <Filter>Shared\System\PS2</Filter>
+    <ClInclude Include="..\Shared\System\PC\GtHiResSystemTimerPC.h">
+      <Filter>Shared\System\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\System\PS2\GtThreadMgrPS2.h">
-      <Filter>Shared\System\PS2</Filter>
+    <ClInclude Include="..\Shared\System\PC\GtThreadMgrPC.h">
+      <Filter>Shared\System\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\System\PS2\GtVu0CodeManager.h">
-      <Filter>Shared\System\PS2</Filter>
+    <ClInclude Include="..\Shared\System\PC\GtVu0CodeManager.h">
+      <Filter>Shared\System\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Development\PerfMon\PS2\GtPerfMonPS2.h">
-      <Filter>Shared\Development\PerfMon\PS2</Filter>
+    <ClInclude Include="..\Shared\Development\PerfMon\PC\GtPerfMonPC.h">
+      <Filter>Shared\Development\PerfMon\PC</Filter>
     </ClInclude>
     <ClInclude Include="..\Shared\Graphical\Common\2D\Gt2dBezierCurve.h">
       <Filter>Shared\Graphical\Common\2D</Filter>
@@ -2797,50 +2797,50 @@
     <ClInclude Include="..\Shared\Networking\Common\SyncTime\GtSyncTime.h">
       <Filter>Shared\Networking\Common\SyncTime</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtMathPS2.h">
-      <Filter>Shared\Numeric\Math\PS2</Filter>
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtMathPC.h">
+      <Filter>Shared\Numeric\Math\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtMatrix3x3PS2.h">
-      <Filter>Shared\Numeric\Math\PS2</Filter>
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtMatrix3x3PC.h">
+      <Filter>Shared\Numeric\Math\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtMatrix3x3UtilsPS2.h">
-      <Filter>Shared\Numeric\Math\PS2</Filter>
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtMatrix3x3UtilsPC.h">
+      <Filter>Shared\Numeric\Math\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtMatrix3x4PS2.h">
-      <Filter>Shared\Numeric\Math\PS2</Filter>
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtMatrix3x4PC.h">
+      <Filter>Shared\Numeric\Math\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtMatrix3x4UtilsPS2.h">
-      <Filter>Shared\Numeric\Math\PS2</Filter>
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtMatrix3x4UtilsPC.h">
+      <Filter>Shared\Numeric\Math\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtMatrix4x4PS2.h">
-      <Filter>Shared\Numeric\Math\PS2</Filter>
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtMatrix4x4PC.h">
+      <Filter>Shared\Numeric\Math\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtMatrix4x4UtilsPS2.h">
-      <Filter>Shared\Numeric\Math\PS2</Filter>
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtMatrix4x4UtilsPC.h">
+      <Filter>Shared\Numeric\Math\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtQuatPS2.h">
-      <Filter>Shared\Numeric\Math\PS2</Filter>
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtQuatPC.h">
+      <Filter>Shared\Numeric\Math\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtQuatUtilsPS2.h">
-      <Filter>Shared\Numeric\Math\PS2</Filter>
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtQuatUtilsPC.h">
+      <Filter>Shared\Numeric\Math\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtV3dPlusPS2.h">
-      <Filter>Shared\Numeric\Math\PS2</Filter>
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtV3dPC.h">
+      <Filter>Shared\Numeric\Math\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtV3dPS2.h">
-      <Filter>Shared\Numeric\Math\PS2</Filter>
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtV3dPlusPC.h">
+      <Filter>Shared\Numeric\Math\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtV3dUtilsPS2.h">
-      <Filter>Shared\Numeric\Math\PS2</Filter>
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtV3dUtilsPC.h">
+      <Filter>Shared\Numeric\Math\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtV4dPS2.h">
-      <Filter>Shared\Numeric\Math\PS2</Filter>
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtV4dPC.h">
+      <Filter>Shared\Numeric\Math\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtV4dUtilsPS2.h">
-      <Filter>Shared\Numeric\Math\PS2</Filter>
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtV4dUtilsPC.h">
+      <Filter>Shared\Numeric\Math\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtVectorElementsPS2.h">
-      <Filter>Shared\Numeric\Math\PS2</Filter>
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtVectorElementsPC.h">
+      <Filter>Shared\Numeric\Math\PC</Filter>
     </ClInclude>
     <ClInclude Include="..\Shared\System\Common\FileSystem\GtFileSystem.h">
       <Filter>Shared\System\Common\FileSystem</Filter>
@@ -2866,20 +2866,20 @@
     <ClInclude Include="..\Shared\System\Common\Unicode\GtUnicodeBuffer.h">
       <Filter>Shared\System\Common\Unicode</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\System\PS2\FileSystem\GtFileSystemPS2DVD.h">
-      <Filter>Shared\System\PS2\FileSystem</Filter>
+    <ClInclude Include="..\Shared\System\PC\FileSystem\GtFileSystemPCDVD.h">
+      <Filter>Shared\System\PC\FileSystem</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\System\PS2\Input\GtInputDevicePS2LogitechWheel.h">
-      <Filter>Shared\System\PS2\Input</Filter>
+    <ClInclude Include="..\Shared\System\PC\Input\GtInputDevicePCLogitechWheel.h">
+      <Filter>Shared\System\PC\Input</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\System\PS2\Input\GtInputDevicePS2Pad2.h">
-      <Filter>Shared\System\PS2\Input</Filter>
+    <ClInclude Include="..\Shared\System\PC\Input\GtInputDevicePCPad2.h">
+      <Filter>Shared\System\PC\Input</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\System\PS2\Input\GtInputManagerPS2Keyboard.h">
-      <Filter>Shared\System\PS2\Input</Filter>
+    <ClInclude Include="..\Shared\System\PC\Input\GtInputManagerPCKeyboard.h">
+      <Filter>Shared\System\PC\Input</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\System\PS2\Input\GtInputManagerPS2LogitechWheel.h">
-      <Filter>Shared\System\PS2\Input</Filter>
+    <ClInclude Include="..\Shared\System\PC\Input\GtInputManagerPCLogitechWheel.h">
+      <Filter>Shared\System\PC\Input</Filter>
     </ClInclude>
     <ClInclude Include="..\Source\Camera\BoCamComponentLooseTrack.h">
       <Filter>Source\Camera</Filter>
@@ -3994,313 +3994,313 @@
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Shared">
-      <UniqueIdentifier>095af2d5-f50d-422d-be61-c3c780be87dd</UniqueIdentifier>
+      <UniqueIdentifier>b035a8e6-6cab-4b6a-9e4e-9f9f1f03c23b</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Containers">
-      <UniqueIdentifier>6f29bdf2-d453-48a8-a0fa-401fe280d519</UniqueIdentifier>
+      <UniqueIdentifier>cb0fc590-dd82-49d4-9c41-1da8460e9a69</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Core">
-      <UniqueIdentifier>1e93068c-7e74-4b00-94e0-b6a2918aba01</UniqueIdentifier>
+      <UniqueIdentifier>e63fce11-0333-43d7-b680-ae480061a285</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Development">
-      <UniqueIdentifier>881f2690-a8af-4bb6-90da-bf9429ef6ff9</UniqueIdentifier>
+      <UniqueIdentifier>caac84ab-e7b3-4762-b94a-ae7f3c9bae7e</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Development\AutomaticTest">
-      <UniqueIdentifier>a2aa160b-f38b-4f79-8931-0b5ce31fd901</UniqueIdentifier>
+      <UniqueIdentifier>d4c4e185-3202-47a2-8f12-22f4aac685cc</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Development\CommsTool">
-      <UniqueIdentifier>6cc6c7eb-c584-43fd-a023-4da522e01c74</UniqueIdentifier>
+      <UniqueIdentifier>8be1945a-c892-4b09-aae9-ceed345fef1b</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Development\PerfMon">
-      <UniqueIdentifier>53531d52-4fcb-40ed-873e-fd338f95af13</UniqueIdentifier>
+      <UniqueIdentifier>44f11db8-0432-4809-9c7e-087bc3ebc5ae</UniqueIdentifier>
     </Filter>
-    <Filter Include="Shared\Development\PerfMon\PS2">
-      <UniqueIdentifier>625acb67-36d5-4742-9058-8b5ebcba64a2</UniqueIdentifier>
+    <Filter Include="Shared\Development\PerfMon\PC">
+      <UniqueIdentifier>0f522f24-302e-4be5-9200-28c2a959f0d2</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Development\ValueDatabase">
-      <UniqueIdentifier>f9fbf87c-35ae-4391-b6cd-9ce03de6ba07</UniqueIdentifier>
+      <UniqueIdentifier>859913f2-3a79-432e-84f3-6fa4ce7402f7</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Geometric">
-      <UniqueIdentifier>ba0659f4-71ee-4fe8-a129-46b845b8e3e7</UniqueIdentifier>
+      <UniqueIdentifier>ab6fd7e2-a263-49b1-9064-eef6adbf6cfc</UniqueIdentifier>
     </Filter>
-    <Filter Include="Shared\Geometric\PS2">
-      <UniqueIdentifier>553c3a86-27ce-46c0-9a3d-24bf0a301a3d</UniqueIdentifier>
+    <Filter Include="Shared\Geometric\PC">
+      <UniqueIdentifier>c6815525-6ea1-4377-9d96-687ea343dc5d</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Memory">
-      <UniqueIdentifier>2c1d7a86-a6ca-41a7-a3e8-2c581e052aad</UniqueIdentifier>
+      <UniqueIdentifier>81c0644b-a370-40cd-bc3b-055ed511a403</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Numeric">
-      <UniqueIdentifier>3a0cb395-6eac-4e13-804a-9f5126df51e6</UniqueIdentifier>
+      <UniqueIdentifier>1082cde9-85e9-4e4a-b851-d016449e6d63</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Numeric\Math">
-      <UniqueIdentifier>92949b33-c2c0-4bac-a07b-b729c37c3e7d</UniqueIdentifier>
+      <UniqueIdentifier>0e82685b-2fb7-4dff-815c-898fe67ce7e2</UniqueIdentifier>
     </Filter>
-    <Filter Include="Shared\Numeric\Math\PS2">
-      <UniqueIdentifier>c3f63a9d-9af3-4568-879f-cb8048ac2355</UniqueIdentifier>
+    <Filter Include="Shared\Numeric\Math\PC">
+      <UniqueIdentifier>97d12e17-56e7-4aa3-a80f-748329e8c3e0</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Sound">
-      <UniqueIdentifier>b3e6a285-61b9-4316-bfe3-5d13c7eacbaf</UniqueIdentifier>
+      <UniqueIdentifier>f7d299f0-6ec4-4188-be78-e7342676b7c3</UniqueIdentifier>
     </Filter>
-    <Filter Include="Shared\Sound\PS2">
-      <UniqueIdentifier>6bd9553f-df5a-44ac-8edd-1b831b0a1ac9</UniqueIdentifier>
+    <Filter Include="Shared\Sound\PC">
+      <UniqueIdentifier>738b8f9b-30c0-4ce3-acab-40c5c87b6c40</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Graphical">
-      <UniqueIdentifier>f29a4c9e-8da0-47d6-8095-aec29e8d50c9</UniqueIdentifier>
+      <UniqueIdentifier>4c3ed857-e845-40e0-b02a-375ce273dcba</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Graphical\Common">
-      <UniqueIdentifier>afb9c06e-7631-4b60-a4dd-44f0ad69e962</UniqueIdentifier>
+      <UniqueIdentifier>bdb71bfc-6844-46bf-9780-dac59521da33</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Graphical\Common\2D">
-      <UniqueIdentifier>70b4c68d-62dd-42e4-90b9-b0885db29c7d</UniqueIdentifier>
+      <UniqueIdentifier>ec1a98ed-e1ed-4879-83b6-5acec1b8c155</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Graphical\Common\Camera">
-      <UniqueIdentifier>7c2c9a94-c1e1-4d8b-8cc2-65dd4bdd843e</UniqueIdentifier>
+      <UniqueIdentifier>81e83c5d-5a59-4ec8-8b48-9bfda516a2fd</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Graphical\Common\ScreenShot">
-      <UniqueIdentifier>8083fbce-8b30-4f89-8e47-e26f9d7eb56c</UniqueIdentifier>
+      <UniqueIdentifier>23b2d47d-1433-40cd-8674-2fe0b2a82cd3</UniqueIdentifier>
     </Filter>
-    <Filter Include="Shared\Graphical\PS2">
-      <UniqueIdentifier>5b8e469b-6c0f-4a73-b16e-929fbefc01d6</UniqueIdentifier>
+    <Filter Include="Shared\Graphical\PC">
+      <UniqueIdentifier>b47bbcb2-a100-4b52-b5e5-d636bc1571e7</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Networking">
-      <UniqueIdentifier>d7817f9e-2537-477d-8f99-7933f57485cb</UniqueIdentifier>
+      <UniqueIdentifier>2eb2dcde-79df-4e72-ac3a-5ed59afe880d</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Networking\Common">
-      <UniqueIdentifier>7025a450-79c9-4538-8e72-2fe04e4a4195</UniqueIdentifier>
+      <UniqueIdentifier>90d818f3-b259-49f5-91ef-d46c99660f5a</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Networking\Common\Buddies">
-      <UniqueIdentifier>3b5473b9-f60a-459f-ad4f-38090ce15d85</UniqueIdentifier>
+      <UniqueIdentifier>3953ca5f-c8d3-4f71-a4fe-0e2bf20e10b8</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Networking\Common\LobbyService">
-      <UniqueIdentifier>c6406a03-0a99-493d-884c-6e696ac4549f</UniqueIdentifier>
+      <UniqueIdentifier>33816f33-92df-48cd-945d-db95700f79ba</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Networking\Common\Packeting">
-      <UniqueIdentifier>2f3a6bf1-6964-4993-a78d-eba69301583a</UniqueIdentifier>
+      <UniqueIdentifier>6cba0a63-a111-4e9b-a500-e565b3bb38a2</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Networking\Common\Players">
-      <UniqueIdentifier>24367302-c116-483f-8266-013199243b3d</UniqueIdentifier>
+      <UniqueIdentifier>28c8b04b-cc1c-45b8-81a4-75143e7200db</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Networking\Common\SyncTime">
-      <UniqueIdentifier>f89b4e34-926c-4e5a-91c1-b34f2eeb4f82</UniqueIdentifier>
+      <UniqueIdentifier>df27ed0f-90c4-45ab-8dbf-feed0fbad06b</UniqueIdentifier>
     </Filter>
-    <Filter Include="Shared\Networking\PS2">
-      <UniqueIdentifier>d8f63536-dc54-4164-a1a1-200e62dd5329</UniqueIdentifier>
+    <Filter Include="Shared\Networking\PC">
+      <UniqueIdentifier>205da996-86b1-43d4-b06d-169305035bf0</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\System">
-      <UniqueIdentifier>4f64872b-0d3a-4eb1-81dd-cb1b476309d0</UniqueIdentifier>
+      <UniqueIdentifier>e7d30ecf-a7d0-4132-a82e-9e452b3ccb24</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\System\Common">
-      <UniqueIdentifier>d7d47e32-9dd5-42d5-9263-7b4552f3ced3</UniqueIdentifier>
+      <UniqueIdentifier>dacf0e89-69f6-4be8-9b11-ebfaf2655314</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\System\Common\FileSystem">
-      <UniqueIdentifier>ce60bff6-4075-4c65-9360-e0cdb06d5f68</UniqueIdentifier>
+      <UniqueIdentifier>3139ad18-881f-421a-8a15-a18d9b4957c9</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\System\Common\Headset">
-      <UniqueIdentifier>41fafdf2-8b42-48d0-b544-bbe387e55ef2</UniqueIdentifier>
+      <UniqueIdentifier>bb094eb8-f097-45bb-b410-4273c784a750</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\System\Common\Unicode">
-      <UniqueIdentifier>de205392-eb6b-44bd-94a4-4aec7061a77b</UniqueIdentifier>
+      <UniqueIdentifier>2bcbd609-95a2-47b1-8f70-6bdbd3679045</UniqueIdentifier>
     </Filter>
-    <Filter Include="Shared\System\PS2">
-      <UniqueIdentifier>2add796e-1266-4a2a-8b1c-37632925dad5</UniqueIdentifier>
+    <Filter Include="Shared\System\PC">
+      <UniqueIdentifier>88ca276b-5bff-4fa9-879a-abddfe8ddd8f</UniqueIdentifier>
     </Filter>
-    <Filter Include="Shared\System\PS2\FileSystem">
-      <UniqueIdentifier>eac714de-c36c-4c67-a39a-f831b6470c2a</UniqueIdentifier>
+    <Filter Include="Shared\System\PC\FileSystem">
+      <UniqueIdentifier>b52972b0-3b7c-43d6-bfe3-892194624b67</UniqueIdentifier>
     </Filter>
-    <Filter Include="Shared\System\PS2\Input">
-      <UniqueIdentifier>9d1609fb-845c-417d-bd4b-1055341d9f24</UniqueIdentifier>
+    <Filter Include="Shared\System\PC\Input">
+      <UniqueIdentifier>14a2b028-6df3-4826-a5d6-8f5aeb0c6e86</UniqueIdentifier>
     </Filter>
     <Filter Include="Source">
-      <UniqueIdentifier>2df76ec0-648e-4047-86ec-683c82dbf68c</UniqueIdentifier>
+      <UniqueIdentifier>24947950-8aaf-4646-ba17-bd28471f9591</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Camera">
-      <UniqueIdentifier>df99f497-9df6-48ba-85ea-29dd68a2979d</UniqueIdentifier>
+      <UniqueIdentifier>f5fbcdd6-bd9d-487c-af30-448fc7ee8b1c</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Camera\Behaviours">
-      <UniqueIdentifier>59f31b7d-8179-4593-bed6-4af657463242</UniqueIdentifier>
+      <UniqueIdentifier>bbc95384-ff78-4f1b-a4a6-e083ad64bddd</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Camera\Crash">
-      <UniqueIdentifier>037b1357-7d65-41cb-9184-8466747fb3fb</UniqueIdentifier>
+      <UniqueIdentifier>27a85d48-7ba1-4947-a49c-67a33ba12fdc</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Camera\Crash\Camera Directors">
-      <UniqueIdentifier>6e0b577c-7ed1-4b27-8076-fb683cb555f7</UniqueIdentifier>
+      <UniqueIdentifier>940f174c-64fa-4bb3-a28c-2d55ece95a1b</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Camera\Crash\Camera Directors\Child States">
-      <UniqueIdentifier>7b51cfc4-8f9f-4bbd-8ec0-5d3c8d73a910</UniqueIdentifier>
+      <UniqueIdentifier>2f9db3fd-f873-433c-b391-a38c017b99cc</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Camera\Crash\Position Finders">
-      <UniqueIdentifier>9a8113a0-ecb1-40df-858f-42e39e0d4102</UniqueIdentifier>
+      <UniqueIdentifier>813a29c2-cf7d-4e94-bef8-3ca39b627fa6</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Camera\KeyFrames">
-      <UniqueIdentifier>ba593ae7-3abb-402c-b63c-b35082694d9e</UniqueIdentifier>
+      <UniqueIdentifier>41068feb-cf1d-4265-828b-4972a1925abf</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Camera\States">
-      <UniqueIdentifier>9f46de0c-cea9-44c9-acf2-ca33b42890d2</UniqueIdentifier>
+      <UniqueIdentifier>b3cd77a2-3fbb-4d59-9711-e10bfe06d1b5</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\HUD">
-      <UniqueIdentifier>9c42cdfa-6945-4de3-b9d0-5f1849e9c6da</UniqueIdentifier>
+      <UniqueIdentifier>1bd71ca8-b723-4eb9-8025-fe1bc6537a15</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\HUD\CustomObjects">
-      <UniqueIdentifier>e6dcae97-adff-415e-ae2a-4f87d7a83632</UniqueIdentifier>
+      <UniqueIdentifier>00b8c5f7-6d9c-472b-813d-dd486a4f5d26</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\HUD\Messages">
-      <UniqueIdentifier>7359bcc6-31ea-4477-ad06-8f91f0c74948</UniqueIdentifier>
+      <UniqueIdentifier>82ec8efb-36cb-4552-b3ec-3b1a07bfa1f8</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu">
-      <UniqueIdentifier>9c852dd9-6bc3-4a44-bfa4-6e8f9a9455a4</UniqueIdentifier>
+      <UniqueIdentifier>38c86f81-1485-4b2c-a4d5-6ebc786a5bbe</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\Apt">
-      <UniqueIdentifier>18cbfc06-c36f-4369-8812-6175025949b7</UniqueIdentifier>
+      <UniqueIdentifier>4aeaa18f-b0c8-42aa-8ca1-9720bcc7213f</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\Apt\AptManager">
-      <UniqueIdentifier>8d6d2ccf-ed3b-40fc-9323-8e35ef958888</UniqueIdentifier>
+      <UniqueIdentifier>5d88794f-fbbb-4ed8-9535-bfb950efc016</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\Effects">
-      <UniqueIdentifier>cec52033-c6ca-416b-9928-5c9592fa6062</UniqueIdentifier>
+      <UniqueIdentifier>cf7d700d-36ed-4816-9474-c6d91ae658b0</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\Services">
-      <UniqueIdentifier>09b1f100-eea7-42dd-8cc4-fc7a4786bdd3</UniqueIdentifier>
+      <UniqueIdentifier>0b8dbcc1-6258-40e4-8643-3e2a4c1c412d</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\States">
-      <UniqueIdentifier>49b52ed4-f076-45b4-be8e-a1925dd486db</UniqueIdentifier>
+      <UniqueIdentifier>4126ead1-aae9-4c0c-8358-80bb20e979fc</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\States\Multiplayer">
-      <UniqueIdentifier>d4ceba55-5d13-46c8-a6ec-76415f4472d7</UniqueIdentifier>
+      <UniqueIdentifier>808cf805-de7a-46da-a8c6-a8e3d0987337</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\States\Offline">
-      <UniqueIdentifier>d45321c1-8504-478f-96f0-fefb74888d29</UniqueIdentifier>
+      <UniqueIdentifier>296018e7-2600-4472-b3f8-980a73e66143</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\States\Offline\DriverDetails">
-      <UniqueIdentifier>892bc4cc-1ff2-4a9c-a869-f2c3f17cdc38</UniqueIdentifier>
+      <UniqueIdentifier>8db46ace-3387-4b16-80fc-12fdc6ed7fe2</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\States\Offline\MemoryCard">
-      <UniqueIdentifier>7432a905-3624-4e4e-86e3-7c39f7d1f377</UniqueIdentifier>
+      <UniqueIdentifier>d1989a9b-7188-4f9a-a80e-5a7e0d7e4e40</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\States\Offline\BootFlow">
-      <UniqueIdentifier>86aa76e7-79f0-4526-873c-13bcee14b97f</UniqueIdentifier>
+      <UniqueIdentifier>f74374d3-a014-4434-80e5-69e6b74d95fe</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\States\Offline\Rewards">
-      <UniqueIdentifier>2e5c355c-782b-42ed-8070-d0af741b653c</UniqueIdentifier>
+      <UniqueIdentifier>31d9246e-e9a3-4269-86c2-39b07083d17d</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\States\Online">
-      <UniqueIdentifier>a7af971d-422e-45f5-aa20-caaa5e6146ed</UniqueIdentifier>
+      <UniqueIdentifier>f4ec86a4-0172-43d5-a05b-99320ac5501b</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\States\Online\DirtySock">
-      <UniqueIdentifier>039a3b1b-724b-48fe-9355-f4b7b850454b</UniqueIdentifier>
+      <UniqueIdentifier>ac33d52b-f8b1-4710-b3cf-673377f8a5b6</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\DebugMenu">
-      <UniqueIdentifier>da38cd41-0d39-4cf2-b7ea-b2336dcaab8a</UniqueIdentifier>
+      <UniqueIdentifier>0ca97720-c7f8-4237-8934-6f295b331a4d</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\DebugMenu\Components">
-      <UniqueIdentifier>6f03265a-6d80-4502-8bb9-da35eb6abcf5</UniqueIdentifier>
+      <UniqueIdentifier>fb5ff355-41c6-459e-a0bf-9a08944e6d10</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\DebugMenu\Pages">
-      <UniqueIdentifier>6bcfe3c9-9cc2-42dd-a694-0e658cb61576</UniqueIdentifier>
+      <UniqueIdentifier>17e5db00-d345-49a1-a9bc-c5a1727139e9</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\ExtensionObjects">
-      <UniqueIdentifier>f2bcf1e5-4b45-4629-8628-b28c711d616f</UniqueIdentifier>
+      <UniqueIdentifier>955d39a7-998b-4669-8aab-9f90184ed6e4</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\ExtensionObjects\Global">
-      <UniqueIdentifier>632615c7-def9-4889-8c35-d16bb8a9c3f7</UniqueIdentifier>
+      <UniqueIdentifier>81a1120f-3038-4ab8-aac0-4797e26535f5</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\ExtensionObjects\PageSpecific">
-      <UniqueIdentifier>863c89c5-e84e-408f-b270-4599d97bb502</UniqueIdentifier>
+      <UniqueIdentifier>404091b4-e5fa-4806-9267-756da168c5a2</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Physics">
-      <UniqueIdentifier>f5fd41eb-667e-4554-89b0-03670c9e58d8</UniqueIdentifier>
+      <UniqueIdentifier>ee0c19cb-f618-4326-b203-f6455582ce99</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Physics\Deformation">
-      <UniqueIdentifier>60efb19f-af9c-411f-bd1e-b1f7f5dc5ea7</UniqueIdentifier>
+      <UniqueIdentifier>4b3bc372-199c-4b63-b0a4-e04929a60abd</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Game">
-      <UniqueIdentifier>a4029c33-edbd-4bff-a952-71e15870b55d</UniqueIdentifier>
+      <UniqueIdentifier>6debc367-01a4-413a-835e-81bb8193ed97</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Game\Common">
-      <UniqueIdentifier>174e9efe-e284-4b7f-940f-1e87efdc44da</UniqueIdentifier>
+      <UniqueIdentifier>d8fa54a3-49e1-4b6d-ad1c-c730d09ea7b6</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Game\Common\Challenge">
-      <UniqueIdentifier>84d75c00-258f-491d-9307-4b5af57314ac</UniqueIdentifier>
+      <UniqueIdentifier>1672c141-e8c4-435f-93fd-fc5154bd0138</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Game\Common\Logic">
-      <UniqueIdentifier>af4b7f31-b745-40b4-ad1e-cc08b141bc1a</UniqueIdentifier>
+      <UniqueIdentifier>0f078263-9184-454e-88e0-4d62d2492409</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Game\Common\Logic\Online">
-      <UniqueIdentifier>06ba9ea4-5914-4ef5-a7b2-71b19b33829e</UniqueIdentifier>
+      <UniqueIdentifier>34d98108-e93e-4e59-918c-e7bb73883f5d</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Game\Common\Logic\Single">
-      <UniqueIdentifier>a3a30af0-94ad-4fd2-8669-89cac2a2b98f</UniqueIdentifier>
+      <UniqueIdentifier>dde98bdc-a4e9-42e1-9049-a4038a27da85</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Game\Common\Persistence">
-      <UniqueIdentifier>c062926d-dae3-4563-bff1-57c912aa4f32</UniqueIdentifier>
+      <UniqueIdentifier>dd0ddfeb-ed6a-413a-9cf6-5423c4e358e1</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Game\Common\Progression">
-      <UniqueIdentifier>a234f1e6-27c8-4909-a02d-d54913e33cd5</UniqueIdentifier>
+      <UniqueIdentifier>2312ec61-513f-4b91-a4e7-9ef766f4ffd3</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Game\PC">
-      <UniqueIdentifier>8344dfe6-3fdb-4bf1-aa52-10c93f54aeb3</UniqueIdentifier>
+      <UniqueIdentifier>55e41e14-9b91-4e67-8094-7186e0bef0dd</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Graphics">
-      <UniqueIdentifier>e9147d25-96ce-4b60-ba0b-87e186c352ae</UniqueIdentifier>
+      <UniqueIdentifier>dcd7cf84-d2df-406a-85d1-0cf6e0d86eb3</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Graphics\Common">
-      <UniqueIdentifier>5ea70388-4a24-4cb8-b85a-f2a4ab6f0906</UniqueIdentifier>
+      <UniqueIdentifier>0f4bab08-6dc6-4343-96e3-1decaada277f</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Graphics\PC">
-      <UniqueIdentifier>736a4b59-0c14-4b4b-9239-bdb59401b6a5</UniqueIdentifier>
+      <UniqueIdentifier>4e600f1c-2b02-499a-84de-3ddb31595ebb</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Network">
-      <UniqueIdentifier>13d9bf8f-5029-4b78-b551-dbb155ae1552</UniqueIdentifier>
+      <UniqueIdentifier>f9963e1f-4ffc-4dab-af08-79fd11cf4ab5</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Network\Common">
-      <UniqueIdentifier>2d3339e4-746c-4d71-a264-778441b50b2e</UniqueIdentifier>
+      <UniqueIdentifier>dbeb11e9-f3d1-4d80-bdd9-ea6a2fc58858</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Network\Common\BackEnd">
-      <UniqueIdentifier>99406efd-afe3-4c03-935d-fcec5d16845b</UniqueIdentifier>
+      <UniqueIdentifier>f2db8280-006b-4ee4-829e-799a9dccc3c0</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Network\Common\Messages">
-      <UniqueIdentifier>d336ab94-925b-4290-9078-4dd06ad47bd9</UniqueIdentifier>
+      <UniqueIdentifier>3b17523c-e160-4ec3-b7d6-e96690b19c8d</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Network\PC">
-      <UniqueIdentifier>bc8d71e9-7b92-4f49-8d5a-c4888dba7e35</UniqueIdentifier>
+      <UniqueIdentifier>71c5b098-dfbb-41f6-bfc0-14522830e614</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Sound">
-      <UniqueIdentifier>e0c153a8-f4d6-4df2-b75e-236afaeec75d</UniqueIdentifier>
+      <UniqueIdentifier>8745bba9-7f45-4592-8ea8-030d33ed0f6a</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Sound\Common">
-      <UniqueIdentifier>c6be651f-56d4-4213-bee8-9ad906c84c3d</UniqueIdentifier>
+      <UniqueIdentifier>ed2d3bb5-21d7-4e08-82b4-ccd3fb3270e7</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Sound\Common\Cars">
-      <UniqueIdentifier>cc8adf72-4ba9-4598-92f2-1acad4adeb49</UniqueIdentifier>
+      <UniqueIdentifier>9f59e2a3-5b5a-4957-9474-aef9ed6a9fb1</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Sound\Common\Crash">
-      <UniqueIdentifier>f877743d-d2b9-4417-803b-1f4a691eb055</UniqueIdentifier>
+      <UniqueIdentifier>f4a670b6-deec-4f6e-b8ef-d1867e7bcbbe</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Sound\Common\ESM">
-      <UniqueIdentifier>419e7d03-b48e-443e-935e-32e797931a46</UniqueIdentifier>
+      <UniqueIdentifier>1f94d9e5-f1d2-4bad-880b-423877d214bf</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Sound\Common\Traffic">
-      <UniqueIdentifier>eaf29fe8-2c80-443b-b925-5431e4ffe66a</UniqueIdentifier>
+      <UniqueIdentifier>47708bd7-b378-4a04-98b3-c35283e5db5a</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Sound\PC">
-      <UniqueIdentifier>89ab5a1d-60b2-4206-9a4d-45e978032ccb</UniqueIdentifier>
+      <UniqueIdentifier>6eeaaa05-7a31-4ecd-ad5b-f0bef26a36a5</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\World">
-      <UniqueIdentifier>8c29c409-9a76-482a-9b0a-cef6672b2013</UniqueIdentifier>
+      <UniqueIdentifier>8b41f88c-4afe-41c7-9ccc-55aee4d652ee</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\World\Common">
-      <UniqueIdentifier>3a681de3-6724-4c83-89ed-dd99422f4a4b</UniqueIdentifier>
+      <UniqueIdentifier>4561cd3a-4587-4736-a718-1b59db2ef585</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\World\Common\AI">
-      <UniqueIdentifier>c8c4c04b-ecb5-473a-9c9d-e96d85bc6527</UniqueIdentifier>
+      <UniqueIdentifier>dbf3be2b-3311-48b8-a410-175471412fff</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\World\Common\Track">
-      <UniqueIdentifier>78a43a2f-bd7e-4ebe-a7f2-01782fc5ad35</UniqueIdentifier>
+      <UniqueIdentifier>36c8ae14-d0a5-4703-b1c2-3d1cdac4565b</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\World\Common\Traffic">
-      <UniqueIdentifier>dec181fa-c89c-4d69-92d1-642427d00122</UniqueIdentifier>
+      <UniqueIdentifier>1dd46e6b-1200-4e1c-b618-d561d1d9c9ba</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\World\PC">
-      <UniqueIdentifier>9276ccec-4be4-48f1-b52b-3b6b285207e5</UniqueIdentifier>
+      <UniqueIdentifier>c989ed47-f73b-4ce3-947e-4df219ee41a1</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

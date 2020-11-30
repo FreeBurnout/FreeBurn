@@ -7,7 +7,7 @@
 #include "../../Camera/Crash/Camera Directors/BoCrashModeCrashCameraDirector.h"
 #include "../../../../Shared/Numeric/GtRandom.h"
 #include "../../../../Shared/System/Common/Unicode/GtUnicode.h"
-#include "../../../../Shared/Numeric/Math/PS2/GtMathPS2.h"
+#include "../../../../Shared/Numeric/Math/PC/GtMathPC.h"
 
 CBoGame gGame;
 
@@ -175,7 +175,7 @@ void CBoGame::RequestWorldPrepare(bool param) {
 	 
 }	 
 	 
-void CBoGame::ClearFrameBufferDuringWorldPrepare(GtMathPS2::CGtV4d param) {
+void CBoGame::ClearFrameBufferDuringWorldPrepare(GtMathPC::CGtV4d param) {
 	 
 }	 
 	 

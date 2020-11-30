@@ -1,7 +1,7 @@
-#ifndef GTV4DPS2_H
-#define GTV4DPS2_H
+#ifndef GTV4DPC_H
+#define GTV4DPC_H
 
-namespace GtMathPS2 {
+namespace GtMathPC {
 	class CGtV4d {
 	public:
 		inline CGtV4d() {}

@@ -1,6 +1,6 @@
-#ifndef GTV3DPS2_H
-#define GTV3DPS2_H
-namespace GtMathPS2 {
+#ifndef GTV3DPC_H
+#define GTV3DPC_H
+namespace GtMathPC {
     class CGtV3d {
 	public:
 		inline CGtV3d() {}

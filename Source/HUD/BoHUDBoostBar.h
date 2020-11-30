@@ -1,6 +1,11 @@
 #include "BoHUDComponent.h"
+#include "../World/Common/BoOffensiveDrivingManager.h"
+#include "../../Shared/Numeric/Math/PC/GtMathPC.h"
+#include "../../Shared/Graphical/Common/2D/Gt2dObject.h"
 
 char16_t gaaMultiplierStrings[4];
+
+using namespace GtMathPC;
 
 class CBoHUDBoostBar : CBoHUDComponent {
 	enum EMessageType {
@@ -21,20 +26,25 @@ class CBoHUDBoostBar : CBoHUDComponent {
 	};
 
 	class CBoostBarObjectData {
+	public:
 		class CParticle {
 			void Init();
 		};
 
-	public:
 		bool Prepare();
 	};
 
 	class C2dObjectBoostBar {
 	public:
+		struct C2dObjectBoostBarData {
+			CBoostBarObjectData* mpObjectData;
+			int maPad[5];
+		};
+
 		void Prepare(
-			const GtMathPs2::CGtV2d&, 
-			const GtMathPs2::CGtV2d&, 
-			GtMathPs2::CGtV4d, 
+			const CGtV2d&, 
+			const CGtV2d&, 
+			CGtV4d, 
 			CBoHUDBoostBar::CBoostBarObjectData*
 		);
 		void _Render(const CGt2dObject::CGt2dObjectSpace&, const void*);
@@ -45,12 +55,12 @@ class CBoHUDBoostBar : CBoHUDComponent {
 			float, 
 			float, 
 			bool, 
-			const C2dObjectBoostBar::C2dObjectBoostBarData*
+			const C2dObjectBoostBarData*
 		);
 		void _RenderParticles(
 			const BoHUDParticleParamsTag*, 
 			const CGt2dObject::CGt2dObjectSpace&, 
-			const CBoHUDBoostBar::CBoostBarObjectData::CParticle*, 
+			const CBoostBarObjectData::CParticle*, 
 			int, 
 			float, 
 			bool
@@ -59,18 +69,19 @@ class CBoHUDBoostBar : CBoHUDComponent {
 
 	class C2dObjectBoostBarMessage {
 	public:
-		void Prepare(
-			const GtMathPs2::CGtV2d&, 
-			const GtMathPs2::CGtV2d&, 
-			CBoHUDBoostBar::CBoostMessage*
-		);
+		struct C2dObjectBoostBarMessageData {
+			CBoostMessage* mpBoostMessage;
+		};
+
+		void Prepare(const CGtV2d&, const CGtV2d&, CBoHUDBoostBar::CBoostMessage*);
 		void _Render(const CGt2dObject::CGt2dObjectSpace&, const void*);
 		RwInt32 _BuildBatchData(
 			const CGt2dObject::CGt2dObjectSpace& lObjectSpace,
-			const GtMathPs2::CGtV2d&, 
-			const C2dObjectBoostBarMessage::C2dObjectBoostBarMessageData* lpBoostBarMessageData
+			const CGtV2d&, 
+			const C2dObjectBoostBarMessageData* lpBoostBarMessageData
 		);
 	};
+
 public:
 	void StaticConstruct();
 	bool Prepare(EPlayerCarIndex, EHUDAlign, int, bool, bool);

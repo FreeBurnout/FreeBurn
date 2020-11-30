@@ -1,5 +1,5 @@
-char16_t* kapcBoHUDTextureNames[] = {
-#ifdef REVENGE
+char* kapcBoHUDTextureNames[] = {
+//#ifdef REVENGE
 	"AgressiveNeg",
 	"AgressivePos",
 	"TakeDownNeg",
@@ -40,7 +40,7 @@ char16_t* kapcBoHUDTextureNames[] = {
 	"L2Button",
 	"R1Button",
 	"R2Button",
-	"CrossButton"
+	"CrossButton"/*
 #elif DOMINATOR
 	"Crash"
 	"analogueStick_direction"
@@ -94,5 +94,5 @@ char16_t* kapcBoHUDTextureNames[] = {
 	"R1Button"
 	"R2Button"
 	"CrossButton"
-#endif
+#endif*/
 };

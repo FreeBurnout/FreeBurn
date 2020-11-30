@@ -1,52 +1,85 @@
 #include <rwcore.h>
 
+#include "BoLapManager.h"
+
+enum EScoreCategoryType {
+	eCategoryAir = 0,
+	eCategoryOncoming = 1,
+	eCategoryDrifting = 2,
+	eCategoryRubbing = 3,
+	eCategoryTailgating = 4,
+	eCategoryGrinding = 5,
+	eCategoryNearMiss = 6,
+	eCategoryCheckedTraffic = 7,
+	eCategoryBoost = 8,
+	eCategoryCount = 9
+};
+
+class CBoScoreCategory {
+	CBoLapManager* mpLapManager;
+	RwReal mrValue;
+	RwReal mrPrevTime;
+	RwReal mrPrevValue;
+	RwReal* mprCategoryArray;
+	bool mbActive;
+	RwInt8 mn8Category;
+	RwInt8 mn8PrevCategory;
+	RwInt8 mn8MaxCategory;
+	EScoreCategoryType meType;
+
+	void Prepare(EScoreCategoryType, const float*, int, const CBoLapManager*);
+	void Stopped();
+	void UpdateValue(float);
+
+};
+
 class CBoOffensiveDrivingManager {
 public:
-	RwReal gmrAirMinimumDistanceValue             = 5.0;
-	RwReal gmrAirDistanceBurnValue                = 2.0;
-	RwReal gmrOncomingMinimumSpeed                = 30.0;
-	RwReal gmrOncomingMinimumDistanceValue        = 10.0;
-	RwReal gmrOncomingDistanceBurnValue           = 0.3;
-	RwReal gmrDriftMinimumSpeed                   = 30.0;
-	RwReal gmrDriftMinimumDistanceValue           = 10.0;
-	RwReal gmrDriftDistanceBurnValue              = 1.0;
-	RwReal gmrMaxNearMissDistance                 = 2.0;
-	RwReal gmrNearMissMinimumSpeed                = 30.0;
-	RwReal gmrNearMissMinimumChainSpeed           = 30.0;
-	RwReal gmrNearMissBurnValue                   = 60.0;
-	RwReal gmrNearMissChainTime                   = 5.0;
-	RwReal gmrCrashClassCheckingTrafficBurnValue  = 30.0;
-	RwReal gmrRaceClassCheckingTrafficBurnLoss    = 70.0;
-	RwReal gmrCheckingTrafficTime                 = 2.0;
-	RwReal gmrCrashEscapeRadius                   = 8.0;
-	RwReal gmrCrashNearMissChainTime              = 1.0;
-	RwReal gmrCrashEscapeMinClearTime             = 3.0;
-	RwReal gmrCrashEscapeMinimumSpeed             = 70.0;
-	RwReal gmrCrashEscapeBurnValue                = 120.0;
-	RwReal gmrBurnRatioLostInCrash                = 0.5;
-	RwReal gmrMaxSlamBurnValue                    = 360.0;
-	RwReal gmrRubbingMinTime                      = 0.3;
-	RwReal gmrRubbingBurnValue                    = 15.0;
-	RwReal gmrBoostStartBurnValue                 = 50.0;
-	RwReal gmrTakedownBurnValue                   = 720.0;
-	RwReal gmrTakedownWaitTime                    = 1.0;
-	RwReal gmrTakedownCrashTime                   = 1.0;
-	RwReal gmrTakedownCrashTimeOnline             = 3.0;
-	RwReal gmrTakedownCrashTimeNoSlam             = 0.5;
-	RwReal gmrTakedownCollideTimeNoSlam           = 0.5;
-	RwReal gmrTakedownCollideTimeNoSlamOnline     = 1.0;
-	RwReal gmrTakedownTimeAfterAfterSlam          = 0.5;
-	RwReal gmrDoubleTakedownTime                  = 1.0;
-	RwReal gmrSpreeTakedownTime                   = 30.0;
-	RwReal gmrDoubleRevengeTakedownTime           = 60.0;
-	RwReal gmrPropHitChainTime                    = 2.0;
-	RwReal gmrPropHitBurnValue                    = 3.0;
-	RwReal gmrTradingPaintBurnValue               = 3.0;
-	RwInt32 gmnPropHitBP                          = 10;
-	RwInt32 gmnRubbingBP                          = 5;
-	RwInt32 gmnTradingPaintBP                     = 25;
-	RwInt32 gmnBoostStartBP                       = 50;
-	RwInt32 gmnCrashEscapeBP                      = 100;
+	RwReal gmrAirMinimumDistanceValue            = 5.0;
+	RwReal gmrAirDistanceBurnValue               = 2.0;
+	RwReal gmrOncomingMinimumSpeed               = 30.0;
+	RwReal gmrOncomingMinimumDistanceValue       = 10.0;
+	RwReal gmrOncomingDistanceBurnValue          = 0.3;
+	RwReal gmrDriftMinimumSpeed                  = 30.0;
+	RwReal gmrDriftMinimumDistanceValue          = 10.0;
+	RwReal gmrDriftDistanceBurnValue             = 1.0;
+	RwReal gmrMaxNearMissDistance                = 2.0;
+	RwReal gmrNearMissMinimumSpeed               = 30.0;
+	RwReal gmrNearMissMinimumChainSpeed          = 30.0;
+	RwReal gmrNearMissBurnValue                  = 60.0;
+	RwReal gmrNearMissChainTime                  = 5.0;
+	RwReal gmrCrashClassCheckingTrafficBurnValue = 30.0;
+	RwReal gmrRaceClassCheckingTrafficBurnLoss   = 70.0;
+	RwReal gmrCheckingTrafficTime                = 2.0;
+	RwReal gmrCrashEscapeRadius                  = 8.0;
+	RwReal gmrCrashNearMissChainTime             = 1.0;
+	RwReal gmrCrashEscapeMinClearTime            = 3.0;
+	RwReal gmrCrashEscapeMinimumSpeed            = 70.0;
+	RwReal gmrCrashEscapeBurnValue               = 120.0;
+	RwReal gmrBurnRatioLostInCrash               = 0.5;
+	RwReal gmrMaxSlamBurnValue                   = 360.0;
+	RwReal gmrRubbingMinTime                     = 0.3;
+	RwReal gmrRubbingBurnValue                   = 15.0;
+	RwReal gmrBoostStartBurnValue                = 50.0;
+	RwReal gmrTakedownBurnValue                  = 720.0;
+	RwReal gmrTakedownWaitTime                   = 1.0;
+	RwReal gmrTakedownCrashTime                  = 1.0;
+	RwReal gmrTakedownCrashTimeOnline            = 3.0;
+	RwReal gmrTakedownCrashTimeNoSlam            = 0.5;
+	RwReal gmrTakedownCollideTimeNoSlam          = 0.5;
+	RwReal gmrTakedownCollideTimeNoSlamOnline    = 1.0;
+	RwReal gmrTakedownTimeAfterAfterSlam         = 0.5;
+	RwReal gmrDoubleTakedownTime                 = 1.0;
+	RwReal gmrSpreeTakedownTime                  = 30.0;
+	RwReal gmrDoubleRevengeTakedownTime          = 60.0;
+	RwReal gmrPropHitChainTime                   = 2.0;
+	RwReal gmrPropHitBurnValue                   = 3.0;
+	RwReal gmrTradingPaintBurnValue              = 3.0;
+	RwInt32 gmnPropHitBP                         = 10;
+	RwInt32 gmnRubbingBP                         = 5;
+	RwInt32 gmnTradingPaintBP                    = 25;
+	RwInt32 gmnBoostStartBP                      = 50;
+	RwInt32 gmnCrashEscapeBP                     = 100;
 
 	int gmanSlamBP[3] = {
 		20, 20, 50

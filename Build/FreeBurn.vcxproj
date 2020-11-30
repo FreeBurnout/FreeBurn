@@ -85,12 +85,20 @@
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\CodeSDKs\rw37\include\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>rw37.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\bin\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)" /y /s</Command>
+    </PostBuildEvent>
+    <PreLinkEvent>
+      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\lib\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)lib" /y /s</Command>
+    </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -99,26 +107,42 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\CodeSDKs\rw37\include\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>rw37.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\bin\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)" /y /s</Command>
+    </PostBuildEvent>
+    <PreLinkEvent>
+      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\lib\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)lib" /y /s</Command>
+    </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\CodeSDKs\rw37\include\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>rw37.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\bin\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)" /y /s</Command>
+    </PostBuildEvent>
+    <PreLinkEvent>
+      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\lib\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)lib" /y /s</Command>
+    </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -127,19 +151,174 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\CodeSDKs\rw37\include\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>rw37.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\bin\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)" /y /s</Command>
+    </PostBuildEvent>
+    <PreLinkEvent>
+      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\lib\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)lib" /y /s</Command>
+    </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup></ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets"></ImportGroup>
   <ItemGroup>
+    <ClCompile Include="..\Shared\Containers\GtArray.cpp" />
+    <ClCompile Include="..\Shared\Containers\GtDictionary.cpp" />
+    <ClCompile Include="..\Shared\Containers\GtFreeList.cpp" />
+    <ClCompile Include="..\Shared\Containers\GtSphereTree.cpp" />
+    <ClCompile Include="..\Shared\Core\GtAssert.cpp" />
+    <ClCompile Include="..\Shared\Core\GtCore.cpp" />
+    <ClCompile Include="..\Shared\Core\GtID.cpp" />
+    <ClCompile Include="..\Shared\Core\GtLogFile.cpp" />
+    <ClCompile Include="..\Shared\Development\GtDebugDisplay.cpp" />
+    <ClCompile Include="..\Shared\Development\GtExceptionHandler.cpp" />
+    <ClCompile Include="..\Shared\Development\GtStrStream.cpp" />
+    <ClCompile Include="..\Shared\Geometric\GtCollisionKDTree.cpp" />
+    <ClCompile Include="..\Shared\Geometric\GtCollisionQuadTree.cpp" />
+    <ClCompile Include="..\Shared\Geometric\GtFrustumBuilder.cpp" />
+    <ClCompile Include="..\Shared\Geometric\GtIntersection.cpp" />
+    <ClCompile Include="..\Shared\Geometric\GtOrientedBox.cpp" />
+    <ClCompile Include="..\Shared\Geometric\GtPolygonSoup.cpp" />
+    <ClCompile Include="..\Shared\Geometric\GtSimpleOrientedBox.cpp" />
+    <ClCompile Include="..\Shared\Memory\GtByteStream.cpp" />
+    <ClCompile Include="..\Shared\Memory\GtDebugMalloc.cpp" />
+    <ClCompile Include="..\Shared\Memory\GtLinearMalloc.cpp" />
+    <ClCompile Include="..\Shared\Memory\GtMalloc.cpp" />
+    <ClCompile Include="..\Shared\Numeric\GtFixedPoint.cpp" />
+    <ClCompile Include="..\Shared\Sound\GtSoundBank.cpp" />
+    <ClCompile Include="..\Shared\Sound\GtSoundBankManager.cpp" />
+    <ClCompile Include="..\Shared\Sound\GtSoundFlipFlopBank.cpp" />
+    <ClCompile Include="..\Shared\Sound\GtSoundGinsu.cpp" />
+    <ClCompile Include="..\Shared\Sound\GtSoundGinsuDistiller.cpp" />
+    <ClCompile Include="..\Shared\Sound\GtSoundGinsuMixMaster.cpp" />
+    <ClCompile Include="..\Shared\Sound\GtSoundGinsuStruct.cpp" />
+    <ClCompile Include="..\Shared\Sound\GtSoundListener.cpp" />
+    <ClCompile Include="..\Shared\Sound\GtSoundListenerManager.cpp" />
+    <ClCompile Include="..\Shared\Sound\GtSoundManager.cpp" />
+    <ClCompile Include="..\Shared\Sound\GtSoundRealVoice.cpp" />
+    <ClCompile Include="..\Shared\Sound\GtSoundRwaStream.cpp" />
+    <ClCompile Include="..\Shared\Sound\GtSoundStream.cpp" />
+    <ClCompile Include="..\Shared\Sound\GtSoundStreamManager.cpp" />
+    <ClCompile Include="..\Shared\Sound\GtSoundUtils.cpp" />
+    <ClCompile Include="..\Shared\Sound\GtSoundVirtualVoice.cpp" />
+    <ClCompile Include="..\Shared\Sound\GtSoundVoice.cpp" />
+    <ClCompile Include="..\Shared\Sound\GtSoundVoiceHandle.cpp" />
+    <ClCompile Include="..\Shared\Sound\GtSoundVoiceManager.cpp" />
+    <ClCompile Include="..\Shared\Sound\GtSoundVoiceParams.cpp" />
+    <ClCompile Include="..\Shared\Sound\GtSoundWave.cpp" />
+    <ClCompile Include="..\Shared\Development\AutomaticTest\GtAutoTestComms.cpp" />
+    <ClCompile Include="..\Shared\Development\AutomaticTest\GtAutoTestCommsBase.cpp" />
+    <ClCompile Include="..\Shared\Development\AutomaticTest\GtAutoTestMgr.cpp" />
+    <ClCompile Include="..\Shared\Development\AutomaticTest\GtAutoTestPad.cpp" />
+    <ClCompile Include="..\Shared\Development\CommsTool\GtCommsDatabase.cpp" />
+    <ClCompile Include="..\Shared\Development\CommsTool\GtCommsDatabaseGame.cpp" />
+    <ClCompile Include="..\Shared\Development\CommsTool\GtCommsToolBase.cpp" />
+    <ClCompile Include="..\Shared\Development\CommsTool\GtHash.cpp" />
+    <ClCompile Include="..\Shared\Development\PerfMon\GtPerfMon.cpp" />
+    <ClCompile Include="..\Shared\Development\PerfMon\GtPerfMonGpu.cpp" />
+    <ClCompile Include="..\Shared\Development\ValueDatabase\GtDbArray.cpp" />
+    <ClCompile Include="..\Shared\Development\ValueDatabase\GtDbCSVFile.cpp" />
+    <ClCompile Include="..\Shared\Development\ValueDatabase\GtDbValue.cpp" />
+    <ClCompile Include="..\Shared\Development\ValueDatabase\GtDbXMLWriter.cpp" />
+    <ClCompile Include="..\Shared\Development\ValueDatabase\GtValueDatabase.cpp" />
+    <ClCompile Include="..\Shared\Geometric\PC\GtIntersectionPC.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\GtColour.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\GtScreenCentre.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\GtWideLine.cpp" />
+    <ClCompile Include="..\Shared\Graphical\PC\Gt2dRendererPC.cpp" />
+    <ClCompile Include="..\Shared\Graphical\PC\GtCameraFrustumPC.cpp" />
+    <ClCompile Include="..\Shared\Graphical\PC\GtTextureCachePC.cpp" />
+    <ClCompile Include="..\Shared\Graphical\PC\GtTexturePC.cpp" />
+    <ClCompile Include="..\Shared\Graphical\PC\GtVideoDecoderPC.cpp" />
+    <ClCompile Include="..\Shared\Networking\Common\GtDownloadableConfig.cpp" />
+    <ClCompile Include="..\Shared\Networking\Common\GtPortTest.cpp" />
+    <ClCompile Include="..\Shared\Networking\Common\GtVoIPManager.cpp" />
+    <ClCompile Include="..\Shared\Networking\PC\GtLobbyDirtySockPC.cpp" />
+    <ClCompile Include="..\Shared\Networking\PC\GtNATDataMangerPC.cpp" />
+    <ClCompile Include="..\Shared\Networking\PC\GtPCLibNet.cpp" />
+    <ClCompile Include="..\Shared\Networking\PC\GtVoIPManagerPC.cpp" />
+    <ClCompile Include="..\Shared\Sound\PC\GtSoundDSPManagerPC.cpp" />
+    <ClCompile Include="..\Shared\System\Common\GtFramerateManager.cpp" />
+    <ClCompile Include="..\Shared\System\Common\GtFSM.cpp" />
+    <ClCompile Include="..\Shared\System\Common\GtHashIDStringArray.cpp" />
+    <ClCompile Include="..\Shared\System\Common\GtMemoryCardManager.cpp" />
+    <ClCompile Include="..\Shared\System\Common\GtSysConfig.cpp" />
+    <ClCompile Include="..\Shared\System\Common\GtTimer.cpp" />
+    <ClCompile Include="..\Shared\System\PC\GtHiResSystemTimerPC.cpp" />
+    <ClCompile Include="..\Shared\System\PC\GtMemoryCardManagerPC.cpp" />
+    <ClCompile Include="..\Shared\System\PC\GTMemoryDevicePC_MC2.cpp" />
+    <ClCompile Include="..\Shared\System\PC\GtSysConfigPC.cpp" />
+    <ClCompile Include="..\Shared\System\PC\GtThreadMgrPC.cpp" />
+    <ClCompile Include="..\Shared\System\PC\GtVu0CodeManager.cpp" />
+    <ClCompile Include="..\Shared\Development\PerfMon\PC\GtPerfMonGpuPC.cpp" />
+    <ClCompile Include="..\Shared\Development\PerfMon\PC\GtPerfMonPC.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dBezierCurve.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dFont.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dFrameHierarchy.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dGeometry.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dObject.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dObjectBox.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dObjectImage.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dObjectImageRotatable.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dObjectItalicText.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dObjectParagraph.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dObjectScrollingItalicTextBox.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dObjectTable.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dObjectText.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dObjectVideoImage.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dObjectVignette.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dScene.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\Camera\GtCamera.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\Camera\GtCameraBehaviour.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\Camera\GtCameraBehaviourAnimated.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\Camera\GtCameraBehaviourFlyAround.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\Camera\GtCameraFrustumBase.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\Camera\GtViewport.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\ScreenShot\GtScreenGrabber.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\ScreenShot\GtScreenGrabberAccumulation.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\ScreenShot\GtScreenGrabberAccumulation2x.cpp" />
+    <ClCompile Include="..\Shared\Graphical\Common\ScreenShot\GtScreenGrabberInterleaved.cpp" />
+    <ClCompile Include="..\Shared\Networking\Common\Buddies\GtBuddies.cpp" />
+    <ClCompile Include="..\Shared\Networking\Common\Buddies\GtBuddiesDirtySock.cpp" />
+    <ClCompile Include="..\Shared\Networking\Common\LobbyService\GtLobby.cpp" />
+    <ClCompile Include="..\Shared\Networking\Common\LobbyService\GtLobbyDirtySock.cpp" />
+    <ClCompile Include="..\Shared\Networking\Common\Packeting\GtNetworkAdapter.cpp" />
+    <ClCompile Include="..\Shared\Networking\Common\Packeting\GtNetworkConditions.cpp" />
+    <ClCompile Include="..\Shared\Networking\Common\Packeting\GtNetworkMessage.cpp" />
+    <ClCompile Include="..\Shared\Networking\Common\Packeting\GtSyncTimeMessage.cpp" />
+    <ClCompile Include="..\Shared\Networking\Common\Packeting\GtTextMessage.cpp" />
+    <ClCompile Include="..\Shared\Networking\Common\Players\GtNATDataManager.cpp" />
+    <ClCompile Include="..\Shared\Networking\Common\Players\GtNetworkPlayer.cpp" />
+    <ClCompile Include="..\Shared\Networking\Common\Players\GtNetworkPlayerManager.cpp" />
+    <ClCompile Include="..\Shared\Networking\Common\SyncTime\GtSyncTime.cpp" />
+    <ClCompile Include="..\Shared\Networking\Common\SyncTime\GtSyncTimeClient.cpp" />
+    <ClCompile Include="..\Shared\Networking\Common\SyncTime\GtSyncTimeHost.cpp" />
+    <ClCompile Include="..\Shared\System\Common\FileSystem\GtFileSystem.cpp" />
+    <ClCompile Include="..\Shared\System\Common\FileSystem\GtFileUtils.cpp" />
+    <ClCompile Include="..\Shared\System\Common\Headset\GtLogitechHeadset.cpp" />
+    <ClCompile Include="..\Shared\System\Common\Unicode\GtUnicode.cpp" />
+    <ClCompile Include="..\Shared\System\Common\Unicode\GtUnicodeBuffer.cpp" />
+    <ClCompile Include="..\Shared\System\Common\Unicode\GtUnicodeUtils.cpp" />
+    <ClCompile Include="..\Shared\System\PC\FileSystem\GtFileSystemPCATMon.cpp" />
+    <ClCompile Include="..\Shared\System\PC\FileSystem\GtFileSystemPCDVD.cpp" />
+    <ClCompile Include="..\Shared\System\PC\FileSystem\GtFileSystemPCHost.cpp" />
+    <ClCompile Include="..\Shared\System\PC\Input\GtInputDevicePCDualShock.cpp" />
+    <ClCompile Include="..\Shared\System\PC\Input\GtInputDevicePCDualShock2.cpp" />
+    <ClCompile Include="..\Shared\System\PC\Input\GtInputDevicePCKeyboard.cpp" />
+    <ClCompile Include="..\Shared\System\PC\Input\GtInputDevicePCLogitechWheel.cpp" />
+    <ClCompile Include="..\Shared\System\PC\Input\GtInputManagerPCKeyboard.cpp" />
+    <ClCompile Include="..\Shared\System\PC\Input\GtInputManagerPCLogitechWheel.cpp" />
+    <ClCompile Include="..\Shared\System\PC\Input\GtInputManagerPCPad2.cpp" />
     <ClCompile Include="..\Source\BoMainPC.cpp" />
     <ClCompile Include="..\Source\Camera\BoCamComponentLooseTrack.cpp" />
     <ClCompile Include="..\Source\Camera\BoCameraAttribs.cpp" />
@@ -823,6 +1002,136 @@
     <ClCompile Include="..\Source\Menu\States\Offline\Rewards\BoSignatureTDRewardState.cpp" />
     <ClCompile Include="..\Source\Menu\States\Online\DirtySock\BoConnectingMenuStateDS.cpp" />
     <ClCompile Include="..\Source\Menu\States\Online\DirtySock\BoOpenInterfaceMenuStateDS.cpp" />
+    <ClInclude Include="..\Shared\BoSharedConstants.h" />
+    <ClInclude Include="..\Shared\Containers\GtArray.h" />
+    <ClInclude Include="..\Shared\Containers\GtDictionary.h" />
+    <ClInclude Include="..\Shared\Containers\GtFreeList.h" />
+    <ClInclude Include="..\Shared\Containers\GtQueue.h" />
+    <ClInclude Include="..\Shared\Containers\GtSphereTree.h" />
+    <ClInclude Include="..\Shared\Containers\GtStack.h" />
+    <ClInclude Include="..\Shared\Core\GtCore.h" />
+    <ClInclude Include="..\Shared\Core\GtID.h" />
+    <ClInclude Include="..\Shared\Development\GtDebugDisplay.h" />
+    <ClInclude Include="..\Shared\Geometric\GtCollisionQuadTree.h" />
+    <ClInclude Include="..\Shared\Geometric\GtFrustum.h" />
+    <ClInclude Include="..\Shared\Geometric\GtIntersection.h" />
+    <ClInclude Include="..\Shared\Geometric\GtOrientedBox.h" />
+    <ClInclude Include="..\Shared\Geometric\GtPolygonSoup.h" />
+    <ClInclude Include="..\Shared\Memory\GtByteStream.h" />
+    <ClInclude Include="..\Shared\Memory\GtLinearMalloc.h" />
+    <ClInclude Include="..\Shared\Memory\GtMalloc.h" />
+    <ClInclude Include="..\Shared\Numeric\GtCurveFunctions.h" />
+    <ClInclude Include="..\Shared\Numeric\GtRandom.h" />
+    <ClInclude Include="..\Shared\Sound\GtSoundBank.h" />
+    <ClInclude Include="..\Shared\Sound\GtSoundBankManager.h" />
+    <ClInclude Include="..\Shared\Sound\GtSoundFlipFlopBank.h" />
+    <ClInclude Include="..\Shared\Sound\GtSoundGinsu.h" />
+    <ClInclude Include="..\Shared\Sound\GtSoundListener.h" />
+    <ClInclude Include="..\Shared\Sound\GtSoundManager.h" />
+    <ClInclude Include="..\Shared\Sound\GtSoundRealVoice.h" />
+    <ClInclude Include="..\Shared\Sound\GtSoundRwaStream.h" />
+    <ClInclude Include="..\Shared\Sound\GtSoundStream.h" />
+    <ClInclude Include="..\Shared\Sound\GtSoundStreamManager.h" />
+    <ClInclude Include="..\Shared\Sound\GtSoundUtils.h" />
+    <ClInclude Include="..\Shared\Sound\GtSoundVirtualVoice.h" />
+    <ClInclude Include="..\Shared\Sound\GtSoundVoice.h" />
+    <ClInclude Include="..\Shared\Sound\GtSoundVoiceGroup.h" />
+    <ClInclude Include="..\Shared\Sound\GtSoundVoiceHandle.h" />
+    <ClInclude Include="..\Shared\Sound\GtSoundVoiceManager.h" />
+    <ClInclude Include="..\Shared\Sound\GtSoundVoiceParams.h" />
+    <ClInclude Include="..\Shared\Sound\GtSoundWave.h" />
+    <ClInclude Include="..\Shared\Development\AutomaticTest\GtAutoTestChunks.h" />
+    <ClInclude Include="..\Shared\Development\AutomaticTest\GtAutoTestCommsBase.h" />
+    <ClInclude Include="..\Shared\Development\CommsTool\GtCommsDatabase.h" />
+    <ClInclude Include="..\Shared\Development\CommsTool\GtCommsDatabaseGame.h" />
+    <ClInclude Include="..\Shared\Development\PerfMon\GtPerfMon.h" />
+    <ClInclude Include="..\Shared\Geometric\PC\GtLinePC.h" />
+    <ClInclude Include="..\Shared\Geometric\PC\GtPlanePC.h" />
+    <ClInclude Include="..\Shared\Geometric\PC\GtSimpleOrientedBoxPC.h" />
+    <ClInclude Include="..\Shared\Geometric\PC\GtSpherePC.h" />
+    <ClInclude Include="..\Shared\Graphical\Common\GtColour.h" />
+    <ClInclude Include="..\Shared\Graphical\Common\GtIrradianceMap.h" />
+    <ClInclude Include="..\Shared\Graphical\Common\GtTextureDictionary.h" />
+    <ClInclude Include="..\Shared\Graphical\PC\GtCameraFrustumPC.h" />
+    <ClInclude Include="..\Shared\Graphical\PC\GtTextureCachePC.h" />
+    <ClInclude Include="..\Shared\Graphical\PC\GtTexturePC.h" />
+    <ClInclude Include="..\Shared\Graphical\PC\GtVideoDecoderPC.h" />
+    <ClInclude Include="..\Shared\Networking\Common\GtNetworkHeadsetBase.h" />
+    <ClInclude Include="..\Shared\Networking\Common\GtNetworkHeadsetThreaded.h" />
+    <ClInclude Include="..\Shared\Networking\Common\GtPortTest.h" />
+    <ClInclude Include="..\Shared\Networking\Common\GtVoIPManager.h" />
+    <ClInclude Include="..\Shared\Networking\PC\GtLobbyDirtySockPC.h" />
+    <ClInclude Include="..\Shared\Networking\PC\GtNATDataMangerPC.h" />
+    <ClInclude Include="..\Shared\Networking\PC\GtPCLibNet.h" />
+    <ClInclude Include="..\Shared\Networking\PC\GtVoIPManagerPC.h" />
+    <ClInclude Include="..\Shared\Numeric\Math\GtMath.h" />
+    <ClInclude Include="..\Shared\Numeric\Math\GtMatrix2x3Generic.h" />
+    <ClInclude Include="..\Shared\Numeric\Math\GtMatrix2x3UtilsGeneric.h" />
+    <ClInclude Include="..\Shared\Numeric\Math\GtV2dGeneric.h" />
+    <ClInclude Include="..\Shared\Numeric\Math\GtV2dUtilsGeneric.h" />
+    <ClInclude Include="..\Shared\System\Common\GtFramerateManager.h" />
+    <ClInclude Include="..\Shared\System\Common\GtFSM.h" />
+    <ClInclude Include="..\Shared\System\Common\GtInputDeviceKeyboard.h" />
+    <ClInclude Include="..\Shared\System\Common\GtLocalisation.h" />
+    <ClInclude Include="..\Shared\System\Common\GtMemoryCardManager.h" />
+    <ClInclude Include="..\Shared\System\Common\GtSysConfig.h" />
+    <ClInclude Include="..\Shared\System\Common\GtTimer.h" />
+    <ClInclude Include="..\Shared\System\PC\GtHiResSystemTimerPC.h" />
+    <ClInclude Include="..\Shared\System\PC\GtThreadMgrPC.h" />
+    <ClInclude Include="..\Shared\System\PC\GtVu0CodeManager.h" />
+    <ClInclude Include="..\Shared\Development\PerfMon\PC\GtPerfMonPC.h" />
+    <ClInclude Include="..\Shared\Graphical\Common\2D\Gt2dBezierCurve.h" />
+    <ClInclude Include="..\Shared\Graphical\Common\2D\Gt2dFont.h" />
+    <ClInclude Include="..\Shared\Graphical\Common\2D\Gt2dFrameHierarchy.h" />
+    <ClInclude Include="..\Shared\Graphical\Common\2D\Gt2dGeometry.h" />
+    <ClInclude Include="..\Shared\Graphical\Common\2D\Gt2dObject.h" />
+    <ClInclude Include="..\Shared\Graphical\Common\2D\Gt2dScene.h" />
+    <ClInclude Include="..\Shared\Graphical\Common\Camera\GtCamera.h" />
+    <ClInclude Include="..\Shared\Graphical\Common\Camera\GtCameraBehaviourFlyAround.h" />
+    <ClInclude Include="..\Shared\Graphical\Common\Camera\GtCameraFrustumBase.h" />
+    <ClInclude Include="..\Shared\Graphical\Common\Camera\GtViewport.h" />
+    <ClInclude Include="..\Shared\Networking\Common\Buddies\GtBuddies.h" />
+    <ClInclude Include="..\Shared\Networking\Common\Buddies\GtBuddiesDirtySock.h" />
+    <ClInclude Include="..\Shared\Networking\Common\LobbyService\GtLobby.h" />
+    <ClInclude Include="..\Shared\Networking\Common\LobbyService\GtLobbyDirtySock.h" />
+    <ClInclude Include="..\Shared\Networking\Common\Packeting\GtDataBufferManagerBase.h" />
+    <ClInclude Include="..\Shared\Networking\Common\Packeting\GtDataBufferReplaceOldest.h" />
+    <ClInclude Include="..\Shared\Networking\Common\Packeting\GtDataBufferRoundRobin.h" />
+    <ClInclude Include="..\Shared\Networking\Common\Packeting\GtHeadsetMessageTemplate.h" />
+    <ClInclude Include="..\Shared\Networking\Common\Packeting\GtNetworkAdapter.h" />
+    <ClInclude Include="..\Shared\Networking\Common\Packeting\GtNetworkMessage.h" />
+    <ClInclude Include="..\Shared\Networking\Common\Players\GtNATDataManager.h" />
+    <ClInclude Include="..\Shared\Networking\Common\Players\GtNetworkPlayer.h" />
+    <ClInclude Include="..\Shared\Networking\Common\Players\GtNetworkPlayerManager.h" />
+    <ClInclude Include="..\Shared\Networking\Common\SyncTime\GtSyncTime.h" />
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtMathPC.h" />
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtMatrix3x3PC.h" />
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtMatrix3x3UtilsPC.h" />
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtMatrix3x4PC.h" />
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtMatrix3x4UtilsPC.h" />
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtMatrix4x4PC.h" />
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtMatrix4x4UtilsPC.h" />
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtQuatPC.h" />
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtQuatUtilsPC.h" />
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtV3dPC.h" />
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtV3dPlusPC.h" />
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtV3dUtilsPC.h" />
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtV4dPC.h" />
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtV4dUtilsPC.h" />
+    <ClInclude Include="..\Shared\Numeric\Math\PC\GtVectorElementsPC.h" />
+    <ClInclude Include="..\Shared\System\Common\FileSystem\GtFileSystem.h" />
+    <ClInclude Include="..\Shared\System\Common\Headset\GtCodecBase.h" />
+    <ClInclude Include="..\Shared\System\Common\Headset\GtHeadsetBase.h" />
+    <ClInclude Include="..\Shared\System\Common\Headset\GtHeadsetManagerBase.h" />
+    <ClInclude Include="..\Shared\System\Common\Headset\GtLogitechHeadsetManager.h" />
+    <ClInclude Include="..\Shared\System\Common\Headset\GtNellyMoserCodec.h" />
+    <ClInclude Include="..\Shared\System\Common\Unicode\GtUnicode.h" />
+    <ClInclude Include="..\Shared\System\Common\Unicode\GtUnicodeBuffer.h" />
+    <ClInclude Include="..\Shared\System\PC\FileSystem\GtFileSystemPCDVD.h" />
+    <ClInclude Include="..\Shared\System\PC\Input\GtInputDevicePCLogitechWheel.h" />
+    <ClInclude Include="..\Shared\System\PC\Input\GtInputDevicePCPad2.h" />
+    <ClInclude Include="..\Shared\System\PC\Input\GtInputManagerPCKeyboard.h" />
+    <ClInclude Include="..\Shared\System\PC\Input\GtInputManagerPCLogitechWheel.h" />
     <ClInclude Include="..\Source\Camera\BoCamComponentLooseTrack.h" />
     <ClInclude Include="..\Source\Camera\BoCameraModeManager.h" />
     <ClInclude Include="..\Source\Camera\BoPlayerCameraManager.h" />
@@ -1194,283 +1503,8 @@
     <ClInclude Include="..\Source\Menu\States\Offline\MemoryCard\BoMemoryCardState.h" />
     <ClInclude Include="..\Source\Menu\States\Online\DirtySock\BoOpenInterfaceMenuStateDS.h" />
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\Shared\Containers\GtArray.cpp" />
-    <ClCompile Include="..\Shared\Containers\GtDictionary.cpp" />
-    <ClCompile Include="..\Shared\Containers\GtFreeList.cpp" />
-    <ClCompile Include="..\Shared\Containers\GtSphereTree.cpp" />
-    <ClCompile Include="..\Shared\Core\GtAssert.cpp" />
-    <ClCompile Include="..\Shared\Core\GtCore.cpp" />
-    <ClCompile Include="..\Shared\Core\GtID.cpp" />
-    <ClCompile Include="..\Shared\Core\GtLogFile.cpp" />
-    <ClCompile Include="..\Shared\Development\GtDebugDisplay.cpp" />
-    <ClCompile Include="..\Shared\Development\GtExceptionHandler.cpp" />
-    <ClCompile Include="..\Shared\Development\GtStrStream.cpp" />
-    <ClCompile Include="..\Shared\Geometric\GtCollisionKDTree.cpp" />
-    <ClCompile Include="..\Shared\Geometric\GtCollisionQuadTree.cpp" />
-    <ClCompile Include="..\Shared\Geometric\GtFrustumBuilder.cpp" />
-    <ClCompile Include="..\Shared\Geometric\GtIntersection.cpp" />
-    <ClCompile Include="..\Shared\Geometric\GtOrientedBox.cpp" />
-    <ClCompile Include="..\Shared\Geometric\GtPolygonSoup.cpp" />
-    <ClCompile Include="..\Shared\Geometric\GtSimpleOrientedBox.cpp" />
-    <ClCompile Include="..\Shared\Memory\GtByteStream.cpp" />
-    <ClCompile Include="..\Shared\Memory\GtDebugMalloc.cpp" />
-    <ClCompile Include="..\Shared\Memory\GtLinearMalloc.cpp" />
-    <ClCompile Include="..\Shared\Memory\GtMalloc.cpp" />
-    <ClCompile Include="..\Shared\Numeric\GtFixedPoint.cpp" />
-    <ClCompile Include="..\Shared\Sound\GtSoundBank.cpp" />
-    <ClCompile Include="..\Shared\Sound\GtSoundBankManager.cpp" />
-    <ClCompile Include="..\Shared\Sound\GtSoundFlipFlopBank.cpp" />
-    <ClCompile Include="..\Shared\Sound\GtSoundGinsu.cpp" />
-    <ClCompile Include="..\Shared\Sound\GtSoundGinsuDistiller.cpp" />
-    <ClCompile Include="..\Shared\Sound\GtSoundGinsuMixMaster.cpp" />
-    <ClCompile Include="..\Shared\Sound\GtSoundGinsuStruct.cpp" />
-    <ClCompile Include="..\Shared\Sound\GtSoundListener.cpp" />
-    <ClCompile Include="..\Shared\Sound\GtSoundListenerManager.cpp" />
-    <ClCompile Include="..\Shared\Sound\GtSoundManager.cpp" />
-    <ClCompile Include="..\Shared\Sound\GtSoundRealVoice.cpp" />
-    <ClCompile Include="..\Shared\Sound\GtSoundRwaStream.cpp" />
-    <ClCompile Include="..\Shared\Sound\GtSoundStream.cpp" />
-    <ClCompile Include="..\Shared\Sound\GtSoundStreamManager.cpp" />
-    <ClCompile Include="..\Shared\Sound\GtSoundUtils.cpp" />
-    <ClCompile Include="..\Shared\Sound\GtSoundVirtualVoice.cpp" />
-    <ClCompile Include="..\Shared\Sound\GtSoundVoice.cpp" />
-    <ClCompile Include="..\Shared\Sound\GtSoundVoiceHandle.cpp" />
-    <ClCompile Include="..\Shared\Sound\GtSoundVoiceManager.cpp" />
-    <ClCompile Include="..\Shared\Sound\GtSoundVoiceParams.cpp" />
-    <ClCompile Include="..\Shared\Sound\GtSoundWave.cpp" />
-    <ClCompile Include="..\Shared\Development\AutomaticTest\GtAutoTestComms.cpp" />
-    <ClCompile Include="..\Shared\Development\AutomaticTest\GtAutoTestCommsBase.cpp" />
-    <ClCompile Include="..\Shared\Development\AutomaticTest\GtAutoTestMgr.cpp" />
-    <ClCompile Include="..\Shared\Development\AutomaticTest\GtAutoTestPad.cpp" />
-    <ClCompile Include="..\Shared\Development\CommsTool\GtCommsDatabase.cpp" />
-    <ClCompile Include="..\Shared\Development\CommsTool\GtCommsDatabaseGame.cpp" />
-    <ClCompile Include="..\Shared\Development\CommsTool\GtCommsToolBase.cpp" />
-    <ClCompile Include="..\Shared\Development\CommsTool\GtHash.cpp" />
-    <ClCompile Include="..\Shared\Development\PerfMon\GtPerfMon.cpp" />
-    <ClCompile Include="..\Shared\Development\PerfMon\GtPerfMonGpu.cpp" />
-    <ClCompile Include="..\Shared\Development\ValueDatabase\GtDbArray.cpp" />
-    <ClCompile Include="..\Shared\Development\ValueDatabase\GtDbCSVFile.cpp" />
-    <ClCompile Include="..\Shared\Development\ValueDatabase\GtDbValue.cpp" />
-    <ClCompile Include="..\Shared\Development\ValueDatabase\GtDbXMLWriter.cpp" />
-    <ClCompile Include="..\Shared\Development\ValueDatabase\GtValueDatabase.cpp" />
-    <ClCompile Include="..\Shared\Geometric\PS2\GtIntersectionPS2.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\GtColour.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\GtScreenCentre.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\GtWideLine.cpp" />
-    <ClCompile Include="..\Shared\Graphical\PS2\Gt2dRendererPS2.cpp" />
-    <ClCompile Include="..\Shared\Graphical\PS2\GtCameraFrustumPS2.cpp" />
-    <ClCompile Include="..\Shared\Graphical\PS2\GtTextureCachePS2.cpp" />
-    <ClCompile Include="..\Shared\Graphical\PS2\GtTexturePS2.cpp" />
-    <ClCompile Include="..\Shared\Graphical\PS2\GtVideoDecoderPS2.cpp" />
-    <ClCompile Include="..\Shared\Networking\Common\GtDownloadableConfig.cpp" />
-    <ClCompile Include="..\Shared\Networking\Common\GtPortTest.cpp" />
-    <ClCompile Include="..\Shared\Networking\Common\GtVoIPManager.cpp" />
-    <ClCompile Include="..\Shared\Networking\PS2\GtLobbyDirtySockPS2.cpp" />
-    <ClCompile Include="..\Shared\Networking\PS2\GtNATDataMangerPS2.cpp" />
-    <ClCompile Include="..\Shared\Networking\PS2\GtPS2LibNet.cpp" />
-    <ClCompile Include="..\Shared\Networking\PS2\GtVoIPManagerPS2.cpp" />
-    <ClCompile Include="..\Shared\Sound\PS2\GtSoundDSPManagerPS2.cpp" />
-    <ClCompile Include="..\Shared\System\Common\GtFramerateManager.cpp" />
-    <ClCompile Include="..\Shared\System\Common\GtFSM.cpp" />
-    <ClCompile Include="..\Shared\System\Common\GtHashIDStringArray.cpp" />
-    <ClCompile Include="..\Shared\System\Common\GtMemoryCardManager.cpp" />
-    <ClCompile Include="..\Shared\System\Common\GtSysConfig.cpp" />
-    <ClCompile Include="..\Shared\System\Common\GtTimer.cpp" />
-    <ClCompile Include="..\Shared\System\PS2\GtHiResSystemTimerPS2.cpp" />
-    <ClCompile Include="..\Shared\System\PS2\GtMemoryCardManagerPS2.cpp" />
-    <ClCompile Include="..\Shared\System\PS2\GTMemoryDevicePS2_MC2.cpp" />
-    <ClCompile Include="..\Shared\System\PS2\GtSysConfigPS2.cpp" />
-    <ClCompile Include="..\Shared\System\PS2\GtThreadMgrPS2.cpp" />
-    <ClCompile Include="..\Shared\System\PS2\GtVu0CodeManager.cpp" />
-    <ClCompile Include="..\Shared\Development\PerfMon\PS2\GtPerfMonGpuPS2.cpp" />
-    <ClCompile Include="..\Shared\Development\PerfMon\PS2\GtPerfMonPS2.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dBezierCurve.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dFont.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dFrameHierarchy.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dGeometry.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dObject.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dObjectBox.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dObjectImage.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dObjectImageRotatable.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dObjectItalicText.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dObjectParagraph.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dObjectScrollingItalicTextBox.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dObjectTable.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dObjectText.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dObjectVideoImage.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dObjectVignette.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\2D\Gt2dScene.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\Camera\GtCamera.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\Camera\GtCameraBehaviour.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\Camera\GtCameraBehaviourAnimated.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\Camera\GtCameraBehaviourFlyAround.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\Camera\GtCameraFrustumBase.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\Camera\GtViewport.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\ScreenShot\GtScreenGrabber.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\ScreenShot\GtScreenGrabberAccumulation.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\ScreenShot\GtScreenGrabberAccumulation2x.cpp" />
-    <ClCompile Include="..\Shared\Graphical\Common\ScreenShot\GtScreenGrabberInterleaved.cpp" />
-    <ClCompile Include="..\Shared\Networking\Common\Buddies\GtBuddies.cpp" />
-    <ClCompile Include="..\Shared\Networking\Common\Buddies\GtBuddiesDirtySock.cpp" />
-    <ClCompile Include="..\Shared\Networking\Common\LobbyService\GtLobby.cpp" />
-    <ClCompile Include="..\Shared\Networking\Common\LobbyService\GtLobbyDirtySock.cpp" />
-    <ClCompile Include="..\Shared\Networking\Common\Packeting\GtNetworkAdapter.cpp" />
-    <ClCompile Include="..\Shared\Networking\Common\Packeting\GtNetworkConditions.cpp" />
-    <ClCompile Include="..\Shared\Networking\Common\Packeting\GtNetworkMessage.cpp" />
-    <ClCompile Include="..\Shared\Networking\Common\Packeting\GtSyncTimeMessage.cpp" />
-    <ClCompile Include="..\Shared\Networking\Common\Packeting\GtTextMessage.cpp" />
-    <ClCompile Include="..\Shared\Networking\Common\Players\GtNATDataManager.cpp" />
-    <ClCompile Include="..\Shared\Networking\Common\Players\GtNetworkPlayer.cpp" />
-    <ClCompile Include="..\Shared\Networking\Common\Players\GtNetworkPlayerManager.cpp" />
-    <ClCompile Include="..\Shared\Networking\Common\SyncTime\GtSyncTime.cpp" />
-    <ClCompile Include="..\Shared\Networking\Common\SyncTime\GtSyncTimeClient.cpp" />
-    <ClCompile Include="..\Shared\Networking\Common\SyncTime\GtSyncTimeHost.cpp" />
-    <ClCompile Include="..\Shared\System\Common\FileSystem\GtFileSystem.cpp" />
-    <ClCompile Include="..\Shared\System\Common\FileSystem\GtFileUtils.cpp" />
-    <ClCompile Include="..\Shared\System\Common\Headset\GtLogitechHeadset.cpp" />
-    <ClCompile Include="..\Shared\System\Common\Unicode\GtUnicode.cpp" />
-    <ClCompile Include="..\Shared\System\Common\Unicode\GtUnicodeBuffer.cpp" />
-    <ClCompile Include="..\Shared\System\Common\Unicode\GtUnicodeUtils.cpp" />
-    <ClCompile Include="..\Shared\System\PS2\FileSystem\GtFileSystemPS2ATMon.cpp" />
-    <ClCompile Include="..\Shared\System\PS2\FileSystem\GtFileSystemPS2DVD.cpp" />
-    <ClCompile Include="..\Shared\System\PS2\FileSystem\GtFileSystemPS2Host.cpp" />
-    <ClCompile Include="..\Shared\System\PS2\Input\GtInputDevicePS2DualShock.cpp" />
-    <ClCompile Include="..\Shared\System\PS2\Input\GtInputDevicePS2DualShock2.cpp" />
-    <ClCompile Include="..\Shared\System\PS2\Input\GtInputDevicePS2Keyboard.cpp" />
-    <ClCompile Include="..\Shared\System\PS2\Input\GtInputDevicePS2LogitechWheel.cpp" />
-    <ClCompile Include="..\Shared\System\PS2\Input\GtInputManagerPS2Keyboard.cpp" />
-    <ClCompile Include="..\Shared\System\PS2\Input\GtInputManagerPS2LogitechWheel.cpp" />
-    <ClCompile Include="..\Shared\System\PS2\Input\GtInputManagerPS2Pad2.cpp" />
-    <ClInclude Include="..\Shared\BoSharedConstants.h" />
-    <ClInclude Include="..\Shared\Containers\GtArray.h" />
-    <ClInclude Include="..\Shared\Containers\GtDictionary.h" />
-    <ClInclude Include="..\Shared\Containers\GtFreeList.h" />
-    <ClInclude Include="..\Shared\Containers\GtQueue.h" />
-    <ClInclude Include="..\Shared\Containers\GtSphereTree.h" />
-    <ClInclude Include="..\Shared\Containers\GtStack.h" />
-    <ClInclude Include="..\Shared\Core\GtCore.h" />
-    <ClInclude Include="..\Shared\Core\GtID.h" />
-    <ClInclude Include="..\Shared\Development\GtDebugDisplay.h" />
-    <ClInclude Include="..\Shared\Geometric\GtCollisionQuadTree.h" />
-    <ClInclude Include="..\Shared\Geometric\GtFrustum.h" />
-    <ClInclude Include="..\Shared\Geometric\GtIntersection.h" />
-    <ClInclude Include="..\Shared\Geometric\GtOrientedBox.h" />
-    <ClInclude Include="..\Shared\Geometric\GtPolygonSoup.h" />
-    <ClInclude Include="..\Shared\Memory\GtByteStream.h" />
-    <ClInclude Include="..\Shared\Memory\GtLinearMalloc.h" />
-    <ClInclude Include="..\Shared\Memory\GtMalloc.h" />
-    <ClInclude Include="..\Shared\Numeric\GtCurveFunctions.h" />
-    <ClInclude Include="..\Shared\Numeric\GtRandom.h" />
-    <ClInclude Include="..\Shared\Sound\GtSoundBank.h" />
-    <ClInclude Include="..\Shared\Sound\GtSoundBankManager.h" />
-    <ClInclude Include="..\Shared\Sound\GtSoundFlipFlopBank.h" />
-    <ClInclude Include="..\Shared\Sound\GtSoundGinsu.h" />
-    <ClInclude Include="..\Shared\Sound\GtSoundListener.h" />
-    <ClInclude Include="..\Shared\Sound\GtSoundManager.h" />
-    <ClInclude Include="..\Shared\Sound\GtSoundRealVoice.h" />
-    <ClInclude Include="..\Shared\Sound\GtSoundRwaStream.h" />
-    <ClInclude Include="..\Shared\Sound\GtSoundStream.h" />
-    <ClInclude Include="..\Shared\Sound\GtSoundStreamManager.h" />
-    <ClInclude Include="..\Shared\Sound\GtSoundUtils.h" />
-    <ClInclude Include="..\Shared\Sound\GtSoundVirtualVoice.h" />
-    <ClInclude Include="..\Shared\Sound\GtSoundVoice.h" />
-    <ClInclude Include="..\Shared\Sound\GtSoundVoiceGroup.h" />
-    <ClInclude Include="..\Shared\Sound\GtSoundVoiceHandle.h" />
-    <ClInclude Include="..\Shared\Sound\GtSoundVoiceManager.h" />
-    <ClInclude Include="..\Shared\Sound\GtSoundVoiceParams.h" />
-    <ClInclude Include="..\Shared\Sound\GtSoundWave.h" />
-    <ClInclude Include="..\Shared\Development\AutomaticTest\GtAutoTestChunks.h" />
-    <ClInclude Include="..\Shared\Development\AutomaticTest\GtAutoTestCommsBase.h" />
-    <ClInclude Include="..\Shared\Development\CommsTool\GtCommsDatabase.h" />
-    <ClInclude Include="..\Shared\Development\CommsTool\GtCommsDatabaseGame.h" />
-    <ClInclude Include="..\Shared\Development\PerfMon\GtPerfMon.h" />
-    <ClInclude Include="..\Shared\Geometric\PS2\GtLinePS2.h" />
-    <ClInclude Include="..\Shared\Geometric\PS2\GtPlanePS2.h" />
-    <ClInclude Include="..\Shared\Geometric\PS2\GtSimpleOrientedBoxPS2.h" />
-    <ClInclude Include="..\Shared\Geometric\PS2\GtSpherePS2.h" />
-    <ClInclude Include="..\Shared\Graphical\Common\GtColour.h" />
-    <ClInclude Include="..\Shared\Graphical\Common\GtIrradianceMap.h" />
-    <ClInclude Include="..\Shared\Graphical\Common\GtTextureDictionary.h" />
-    <ClInclude Include="..\Shared\Graphical\PS2\GtCameraFrustumPS2.h" />
-    <ClInclude Include="..\Shared\Graphical\PS2\GtTextureCachePS2.h" />
-    <ClInclude Include="..\Shared\Graphical\PS2\GtTexturePS2.h" />
-    <ClInclude Include="..\Shared\Graphical\PS2\GtVideoDecoderPS2.h" />
-    <ClInclude Include="..\Shared\Networking\Common\GtNetworkHeadsetBase.h" />
-    <ClInclude Include="..\Shared\Networking\Common\GtNetworkHeadsetThreaded.h" />
-    <ClInclude Include="..\Shared\Networking\Common\GtPortTest.h" />
-    <ClInclude Include="..\Shared\Networking\Common\GtVoIPManager.h" />
-    <ClInclude Include="..\Shared\Networking\PS2\GtLobbyDirtySockPS2.h" />
-    <ClInclude Include="..\Shared\Networking\PS2\GtNATDataMangerPS2.h" />
-    <ClInclude Include="..\Shared\Networking\PS2\GtPS2LibNet.h" />
-    <ClInclude Include="..\Shared\Networking\PS2\GtVoIPManagerPS2.h" />
-    <ClInclude Include="..\Shared\Numeric\Math\GtMath.h" />
-    <ClInclude Include="..\Shared\Numeric\Math\GtMatrix2x3Generic.h" />
-    <ClInclude Include="..\Shared\Numeric\Math\GtMatrix2x3UtilsGeneric.h" />
-    <ClInclude Include="..\Shared\Numeric\Math\GtV2dGeneric.h" />
-    <ClInclude Include="..\Shared\Numeric\Math\GtV2dUtilsGeneric.h" />
-    <ClInclude Include="..\Shared\System\Common\GtFramerateManager.h" />
-    <ClInclude Include="..\Shared\System\Common\GtFSM.h" />
-    <ClInclude Include="..\Shared\System\Common\GtInputDeviceKeyboard.h" />
-    <ClInclude Include="..\Shared\System\Common\GtLocalisation.h" />
-    <ClInclude Include="..\Shared\System\Common\GtMemoryCardManager.h" />
-    <ClInclude Include="..\Shared\System\Common\GtSysConfig.h" />
-    <ClInclude Include="..\Shared\System\Common\GtTimer.h" />
-    <ClInclude Include="..\Shared\System\PS2\GtHiResSystemTimerPS2.h" />
-    <ClInclude Include="..\Shared\System\PS2\GtThreadMgrPS2.h" />
-    <ClInclude Include="..\Shared\System\PS2\GtVu0CodeManager.h" />
-    <ClInclude Include="..\Shared\Development\PerfMon\PS2\GtPerfMonPS2.h" />
-    <ClInclude Include="..\Shared\Graphical\Common\2D\Gt2dBezierCurve.h" />
-    <ClInclude Include="..\Shared\Graphical\Common\2D\Gt2dFont.h" />
-    <ClInclude Include="..\Shared\Graphical\Common\2D\Gt2dFrameHierarchy.h" />
-    <ClInclude Include="..\Shared\Graphical\Common\2D\Gt2dGeometry.h" />
-    <ClInclude Include="..\Shared\Graphical\Common\2D\Gt2dObject.h" />
-    <ClInclude Include="..\Shared\Graphical\Common\2D\Gt2dScene.h" />
-    <ClInclude Include="..\Shared\Graphical\Common\Camera\GtCamera.h" />
-    <ClInclude Include="..\Shared\Graphical\Common\Camera\GtCameraBehaviourFlyAround.h" />
-    <ClInclude Include="..\Shared\Graphical\Common\Camera\GtCameraFrustumBase.h" />
-    <ClInclude Include="..\Shared\Graphical\Common\Camera\GtViewport.h" />
-    <ClInclude Include="..\Shared\Networking\Common\Buddies\GtBuddies.h" />
-    <ClInclude Include="..\Shared\Networking\Common\Buddies\GtBuddiesDirtySock.h" />
-    <ClInclude Include="..\Shared\Networking\Common\LobbyService\GtLobby.h" />
-    <ClInclude Include="..\Shared\Networking\Common\LobbyService\GtLobbyDirtySock.h" />
-    <ClInclude Include="..\Shared\Networking\Common\Packeting\GtDataBufferManagerBase.h" />
-    <ClInclude Include="..\Shared\Networking\Common\Packeting\GtDataBufferReplaceOldest.h" />
-    <ClInclude Include="..\Shared\Networking\Common\Packeting\GtDataBufferRoundRobin.h" />
-    <ClInclude Include="..\Shared\Networking\Common\Packeting\GtHeadsetMessageTemplate.h" />
-    <ClInclude Include="..\Shared\Networking\Common\Packeting\GtNetworkAdapter.h" />
-    <ClInclude Include="..\Shared\Networking\Common\Packeting\GtNetworkMessage.h" />
-    <ClInclude Include="..\Shared\Networking\Common\Players\GtNATDataManager.h" />
-    <ClInclude Include="..\Shared\Networking\Common\Players\GtNetworkPlayer.h" />
-    <ClInclude Include="..\Shared\Networking\Common\Players\GtNetworkPlayerManager.h" />
-    <ClInclude Include="..\Shared\Networking\Common\SyncTime\GtSyncTime.h" />
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtMathPS2.h" />
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtMatrix3x3PS2.h" />
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtMatrix3x3UtilsPS2.h" />
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtMatrix3x4PS2.h" />
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtMatrix3x4UtilsPS2.h" />
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtMatrix4x4PS2.h" />
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtMatrix4x4UtilsPS2.h" />
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtQuatPS2.h" />
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtQuatUtilsPS2.h" />
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtV3dPlusPS2.h" />
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtV3dPS2.h" />
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtV3dUtilsPS2.h" />
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtV4dPS2.h" />
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtV4dUtilsPS2.h" />
-    <ClInclude Include="..\Shared\Numeric\Math\PS2\GtVectorElementsPS2.h" />
-    <ClInclude Include="..\Shared\System\Common\FileSystem\GtFileSystem.h" />
-    <ClInclude Include="..\Shared\System\Common\Headset\GtCodecBase.h" />
-    <ClInclude Include="..\Shared\System\Common\Headset\GtHeadsetBase.h" />
-    <ClInclude Include="..\Shared\System\Common\Headset\GtHeadsetManagerBase.h" />
-    <ClInclude Include="..\Shared\System\Common\Headset\GtLogitechHeadsetManager.h" />
-    <ClInclude Include="..\Shared\System\Common\Headset\GtNellyMoserCodec.h" />
-    <ClInclude Include="..\Shared\System\Common\Unicode\GtUnicode.h" />
-    <ClInclude Include="..\Shared\System\Common\Unicode\GtUnicodeBuffer.h" />
-    <ClInclude Include="..\Shared\System\PS2\FileSystem\GtFileSystemPS2DVD.h" />
-    <ClInclude Include="..\Shared\System\PS2\Input\GtInputDevicePS2LogitechWheel.h" />
-    <ClInclude Include="..\Shared\System\PS2\Input\GtInputDevicePS2Pad2.h" />
-    <ClInclude Include="..\Shared\System\PS2\Input\GtInputManagerPS2Keyboard.h" />
-    <ClInclude Include="..\Shared\System\PS2\Input\GtInputManagerPS2LogitechWheel.h" />
-  </ItemGroup>
+<Import Project="../CodeSDKs/rw37/build/defaults.props" />
+<Import Condition="Exists('../CodeSDKs/_repoconfig/rw37.props')" Project="../CodeSDKs/_repoconfig/rw37.props" />
+<Import Condition="Exists('../CodeSDKs/rw37/build/rw37.vcxproj.user')" Project="../CodeSDKs/rw37/build/rw37.vcxproj.user" />
+<Import Project="../CodeSDKs/rw37/build/buildcfg.targets" />
 </Project>
