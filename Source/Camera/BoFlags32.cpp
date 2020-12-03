@@ -8,9 +8,9 @@ public:
 	bool Prepare();
 	void Destruct();
 	void Release();
-	bool IsBitSet(); const
+	bool IsBitSet() const;
 	void SetBit(unsigned int);
 	void UnSetBit(unsigned int);
-	bool IsZero(); const
+	bool IsZero() const;
 };
 

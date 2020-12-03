@@ -1,0 +1,7 @@
+struct CBoAICornerStruct {
+
+};
+
+struct CBoAIRungStruct {
+
+};

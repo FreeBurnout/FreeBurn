@@ -14,6 +14,26 @@ enum EScoreCategoryType {
 	eCategoryBoost = 8,
 	eCategoryCount = 9
 };
+enum EBoScoreFinishState {
+	eScoreFinishStateNotFinished = 0,
+	eScoreFinishStateCrossedLine = 1,
+	eScoreFinishStateTimedOut = 2,
+	eScoreFinishStateRetired = 3,
+	eScoreFinishStateDestroyed = 4,
+	eScoreFinishStateShutdown = 5,
+	eScoreFinishStateVictorious = 6,
+	eScoreFinishStateCrashed = 7,
+	eScoreFinishStateDisconnected = 8,
+	eScoreFinishStateEliminated = 9,
+	eScoreFinishStateLoser = 10,
+	eScoreFinishStateAIDidNotFinish = 11,
+};
+enum EBoScoreSlamType {
+	eScoreSlamNormal = 0,
+	eScoreSlamNoseToRear = 1,
+	eScoreSlamRearToSide = 2,
+	eScoreSlamCount = 3
+};
 
 class CBoScoreCategory {
 	CBoLapManager* mpLapManager;
@@ -35,6 +55,8 @@ class CBoScoreCategory {
 
 class CBoOffensiveDrivingManager {
 public:
+	RwReal krSlamChainMaxTimeBetweenSlams = 15.0;
+
 	RwReal gmrAirMinimumDistanceValue            = 5.0;
 	RwReal gmrAirDistanceBurnValue               = 2.0;
 	RwReal gmrOncomingMinimumSpeed               = 30.0;

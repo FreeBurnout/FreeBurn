@@ -1,4 +1,4 @@
-#include "../../../../GameShared/CodeSDKs/rw37/include/os/win/ostypes.h"
+#include <rwcore.h>
 
 enum EBoMusicManagerSoundtrackPlayMode {
 	eBoPlayModeNULL = 0, 

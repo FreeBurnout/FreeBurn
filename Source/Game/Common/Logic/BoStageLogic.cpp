@@ -1,3 +1,5 @@
+#include "BoStageLogic.h"
+
 char * kapcVehicleClassNames[12] = {
 	"Null",
 	nullptr,

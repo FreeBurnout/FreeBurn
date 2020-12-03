@@ -1,0 +1,6 @@
+#ifndef BODRIVABLEVEHICLEPHYSICS_H
+#define BODRIVABLEVEHICLEPHYSICS_H
+class CBoDrivableVehiclePhysics {
+
+};
+#endif // !#define BODRIVABLEVEHICLEPHYSICS_H

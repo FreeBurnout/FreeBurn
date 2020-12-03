@@ -1,0 +1,6 @@
+class CBoPropType {
+};
+
+class CBoPropInstance {
+
+};

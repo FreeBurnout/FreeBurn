@@ -1,10 +1,9 @@
 #include <rwcore.h>
-
-#include "../../../../GameShared/Common/System/GtLocalisation.h"
-#include "../../../../GameShared/Common/System/GtUnicode.h"
-#include "../../../../GameShared/Common/System/GtFSM.h"
-#include "../../../../GameShared/Common/Graphical/2D/Gt2dFont.h"
-#include "../../../../GameShared/Common/Core/GtID.h"
+#include "../../../Shared/System/Common/GtLocalisation.h"
+#include "../../../Shared/Core/GtID.h"
+#include "../../../Shared/System/Common/GtFSM.h"
+#include "../../../Shared/Graphical/Common/2D/Gt2dFont.h"
+#include "../../../Shared/System/Common/Unicode/GtUnicode.h"
 
 extern char * gaLanguageCodePostfix[];
 

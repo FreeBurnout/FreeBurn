@@ -1,6 +1,9 @@
+#ifndef BOSOUNDCUSTOMSOUNDTRACKPC_H
+#define BOSOUNDCUSTOMSOUNDTRACKPC_H
+
 #include <rwcore.h>
 #include "../Common/BoSoundMusicManager.h"
-#include "../../../../GameShared/GameClasses/System/Common/Unicode/GtUnicode.h"
+#include "../../../Shared/System/Common/Unicode/GtUnicode.h"
 
 class CBoSoundCustomSoundtrack {
 public:
@@ -28,3 +31,5 @@ private:
 
 	void Release();
 };
+
+#endif // !#define BOSOUNDCUSTOMSOUNDTRACKPC_H

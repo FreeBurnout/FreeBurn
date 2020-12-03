@@ -106,5 +106,5 @@ void GtIDConvertToString(GtID lID, char* lpcString) {
 }
 
 RwInt32 GtIDExtractTrailingNumber(GtID) {
-
+    return 0;
 }

@@ -1,7 +1,7 @@
 #ifndef GTCOLOUR_H
 #define GTCOLOUR_H
 
-#include "../../PC/Numeric/GtV4dPC.h"
+#include "../../Numeric/Math/PC/GtV4dPC.h"
 
 typedef GtMathPC::CGtV4d CGtRGBA;
 

@@ -1,7 +1,7 @@
 #ifndef GTFILESYSTEM_H
 #define GTFILESYSTEM_H
 
-class CGTFile {};
+class CGtFile {};
 
 class CGtFileSystem {
 

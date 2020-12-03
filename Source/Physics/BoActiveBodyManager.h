@@ -1,0 +1,8 @@
+#ifndef BOACTIVEBODYMANAGER_H
+#define BOACTIVEBODYMANAGER_H
+class CBoCollidingPair {
+
+};
+#endif // !BOACTIVEBODYMANAGER_H
+
+

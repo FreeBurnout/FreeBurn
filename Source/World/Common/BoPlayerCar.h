@@ -1,3 +1,6 @@
+#ifndef BOPLAYERCAR_H
+#define BOPLAYERCAR_H
+
 enum class EPlayerCarIndex {
 	ePlayerCarInvalid = -1,
 	ePlayerCar0 = 0,
@@ -7,4 +10,6 @@ enum class EPlayerCarIndex {
 
 class CBoPlayerCar {
 
-};
+}; 
+
+#endif // !BOPLAYERCAR_H

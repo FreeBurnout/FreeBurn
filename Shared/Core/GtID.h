@@ -1,3 +1,6 @@
+#ifndef GTID_H
+#define GTID_H
+
 #include <rwcore.h>
 
 typedef unsigned long GtID;
@@ -26,3 +29,5 @@ GtID GtIDConcatenate(GtID, GtID);
 RwInt32 GtIDGetLength(GtID);
 void GtIDConvertToString(GtID, char*);
 RwInt32 GtIDExtractTrailingNumber(GtID);
+
+#endif // !GTID_H

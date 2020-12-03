@@ -3,6 +3,9 @@
 #include "BoHUDManager.h"
 #include "../World/Common/BoPlayerCar.h"
 #include "../../Shared/Graphical/Common/2D/Gt2dScene.h"
+#include "../../Shared/Graphical/PC/GtTexturePC.h"
+#include "../../Shared/Graphical/Common/2D/Gt2dObject.h"
+#include "../../Shared/System/Common/Unicode/GtUnicode.h"
 
 enum EBoHUDString {
 	eBoHUDStringSplitTime = 0,

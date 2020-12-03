@@ -1,3 +1,7 @@
 struct CBoAILanesDataStruct {
 
 };
+
+struct CBoAILaneStruct {
+
+};

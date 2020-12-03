@@ -1,5 +1,5 @@
 #include <rwcore.h>
-#include "../../../../GameShared/Common/System/FileSystem/GTFileSystem.h"
+#include "../../../Shared/System/Common/FileSystem/GtFileSystem.h"
 
 class CBoPendingFileRequest {
 

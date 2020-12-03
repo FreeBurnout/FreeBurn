@@ -96,6 +96,4 @@ public:
 	void StartTakedownAnimation();
 	void StopTakedownAnimation();
 
-private:
-
 };

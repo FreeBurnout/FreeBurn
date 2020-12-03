@@ -1,5 +1,24 @@
 #include <rwcore.h>
 
+#include "BoActiveBody.h"
+#include "BoActiveBodyManager.h"
+#include "BoBodyPartPhysics.h"
+#include "BoCameraPhysics.h"
+#include "BoCheckedTrafficPhysics.h"
+#include "BoCollidingBody.h"
+#include "BoCollisionDetector.h"
+#include "BoDrivableVehiclePhysics.h"
+#include "BoInterval.h"
+#include "BoPropPhysics.h"
+#include "BoRaceCarPhysics.h"
+#include "BoTrafficPhysics.h"
+#include "BoVehicleParams.h"
+#include "../Camera/Behaviours/BoCameraBehaviour.h"
+#include "../World/Common/BoCrashCombo.h"
+#include "../World/Common/BoPropType.h"
+#include "../World/Common/Traffic/BoTrafficVehicle.h"
+#include "../../Shared/Numeric/Math/PC/GtMatrix3x4PC.h"
+
 RwInt32 _gnWorldCollisionPCID = -1;
 RwInt32 _gnBodyCollisionPCID = -1;
 RwInt32 _gnBodyUpdatePCID = -1;
@@ -25,6 +44,8 @@ RwInt32 _gnBodyUpdateRaceCarPCID = -1;
 RwInt32 _gnClipPolyWithAABBPCID = -1;
 RwInt32 gnWorldLineCost = -1;
 RwInt32 gnWorldSphereCost = -1;
+
+using namespace GtMathPC;
 
 enum EBoForceType {
 	eBoForceTypeAirRam = 0,
@@ -61,14 +82,12 @@ enum EBoForceType {
 	eBoForceTypeWrongWayWall = 31,
 	eBoForceTypeCount = 32
 };
-
 enum EPhysicsInteractionType {
 	ePhysicsInteractNormal = 0,
 	ePhysicsInteractAsWorld = 1,
 	ePhysicsInteractNone = 2,
 	ePhysicsInteractMax = 3
 };
-
 enum EShuntSlamType {
 	eSST_None = 0,
 	eSST_ASlammedIntoB = 1,
@@ -78,14 +97,16 @@ enum EShuntSlamType {
 	eSST_NumShuntSlamTypes = 5
 };
 
+#undef RemoveProp; // Mmhmm.
+
 class CBoPhysicsManager {
 public:
 	CBoPhysicsManager();
 	bool ActuallyCrashCheckedTrafficBody(CBoCheckedTrafficPhysics*, unsigned char);
-	AddBodyPart(CBoVehiclePhysics*, int, EBodyPartType);
-	AddCamera(EPlayerCarIndex, CBoCameraBehaviour*, CGtMatrix3x4*, CGtV3d, CGtV3d);
+	CBoBodyPartPhysics* AddBodyPart(CBoVehiclePhysics*, int, EBodyPartType);
+	CBoCameraPhysics* AddCamera(EPlayerCarIndex, CBoCameraBehaviour*, CGtMatrix3x4*, CGtV3d, CGtV3d);
 	void AddRaceCar(CBoRaceCar*, int);
-	AddStaticProp(CBoPropInstance*, CGtMatrix3x4*);
+	CBoActiveBody* AddStaticProp(CBoPropInstance*, CGtMatrix3x4*);
 	void AddTrafficVehicle(CBoTrafficVehicle*);
 	void ApplySafePositionedImpulse(CBoCollidingBody*, CGtV3d, CGtV3d, EBoForceType);
 	void ApplyShuntOrSlamReaction(CBoCollidingPair*, float*, float*, float*);
@@ -110,7 +131,7 @@ public:
 	void BodyTrafficResponse(CBoCollidingPair*);
 	void CalculateAndApplyCheckingImpulse(CBoVehiclePhysics*, CBoVehiclePhysics*, CBoCollidingPair*, CBoHullCollideParams*, bool);
 	bool CalculateAndApplyImpulse(CBoCollidingPair*, CBoHullCollideParams*, float*, float*);
-	CalculateShuntOrSlam(CBoCollidingPair*, float, float, float, float&, bool&, bool&);
+	EShuntSlamType CalculateShuntOrSlam(CBoCollidingPair*, float, float, float, float&, bool&, bool&);
 	bool CanCheckCheckedTraffic(CBoRaceCarPhysics*, CBoCheckedTrafficPhysics*);
 	bool CanCheckTraffic(CBoCollidingPair*, CBoRaceCarPhysics*, CBoTrafficVehicle*);
 	bool CanCrashTrafficBody();
@@ -132,7 +153,7 @@ public:
 	RwInt32 FindFreeTrafficBody();
 	CBoActiveBody* GetActiveBody(int);
 	void GetBodyProjectionsOfCollisionPoint(CBoCollidingPair*, float*, float*);
-	GetCheckedTrafficPhysics(int); const
+	CBoCheckedTrafficPhysics* GetCheckedTrafficPhysics(int); const
 	CBoInterval GetDynamicIntervalRange(float, float, int*); const
 	RwInt32 GetMaxNumBodies();
 	CBoRaceCarPhysics* GetRaceCarPhysics(ERaceCarIndex);
@@ -171,3 +192,5 @@ public:
 	void WorldSafeBodyTranslations(CBoCollidingPair*, CGtV3d*, CGtV3d*);
 
 };
+
+#define RemoveProp
