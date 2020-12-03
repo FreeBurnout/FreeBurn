@@ -1,9 +1,6 @@
 #include "../Common/BoPlayerCar.h"
 #include "../Common/BoRaceCar.h"
 #include "../Common/BoWorld.h"
-#include "../../../../GameShared/GameClasses/Graphical/Common/GtColour.h"
-#include "../../../../GameShared/GameClasses/Numeric/Math/GtV2dGeneric.h"
-#include "../../../../GameShared/GameClasses/Numeric/Math/PC/GtMathPC.h"
 
 char kacAIDriverOneString[]   = "DRIVER1";
 char kacAIDriverTwoString[]   = "DRIVER2";
@@ -18,58 +15,3 @@ char * kacpAIDriverString[5] = {
 	kacAIDriverFourString,
 	kacAIDriverFiveString
 };
-
-CGtRGBA kCarUnlockColour;
-CGtRGBA kCarSelectColour;
-GtMathPC::CGtV2d kPolyPos;
-GtMathPC::CGtV2d kPolyHandle;
-CGtRGBA kRedPolyColour;
-CGtRGBA kRedPolyColour1;
-CGtRGBA kOrangePolyColour;
-CGtRGBA kOrangePolyColour1;
-CGtRGBA kWhitePolyColour;
-CGtRGBA kBluePolyColour;
-
-void CBoWorld::RenderOnePlayer() {
-
-}
-
-void CBoWorld::Render(EPlayerCarIndex) {
-
-}
-
-void CBoWorld::RenderTwoPlayer() {
-
-}
-
-void CBoWorld::RenderFrontEnd(ERaceCarIndex) {
-
-}
-
-void CBoWorld::NetworkCatchupUpdate() {
-
-}
-
-void CBoWorld::PauseForNetworkSync(bool) {
-
-}
-
-void CBoWorld::PauseForStreamSync(bool) {
-
-}
-
-bool CBoWorld::WeArePausedForNetworkOrStreamSync() {
-	return false;
-}
-
-void CBoWorld::SetReplayRequestStatus(bool) {
-
-}
-
-bool CBoWorld::GetReplayRequestStatus() {
-	return false;
-}
-
-bool CBoWorld::IsReplaying() {
-	return false;
-}

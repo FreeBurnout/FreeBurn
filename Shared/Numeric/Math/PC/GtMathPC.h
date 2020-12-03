@@ -1,3 +1,6 @@
+#ifndef GTMATHPC_H
+#define GTMATHPC_H
+
 #include "GtV3dPC.h"
 #include "GtV4dPC.h"
 
@@ -6,3 +9,6 @@ namespace GtMathPC {
 
 	};
 }
+
+#endif // !#define GTMATHPC_H
+

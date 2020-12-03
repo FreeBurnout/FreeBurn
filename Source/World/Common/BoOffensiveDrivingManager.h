@@ -205,6 +205,4 @@ public:
 	RwReal gmrTailgateExtraBurnValue    = 15.0;
 	RwReal gmrTailgateInitialTime       = 0.5;
 	RwReal gmrGrindingExtraBurnValue    = 15.0;
-
-	RwReal krSlamChainMaxTimeBetweenSlams;
 };

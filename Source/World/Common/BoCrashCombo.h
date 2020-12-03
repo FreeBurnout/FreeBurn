@@ -87,21 +87,6 @@ eSlamShuntComboStateLevelOne = 1,
 eSlamShuntComboStateLevelTwo = 2,
 eSlamShuntCombeStateCount = 3
 };
-enum ETrafficVehicleCategories {
-	eVehicleCategoryNull = 0,
-	eVehicleCategoryCar = 1,
-	eVehicleCategoryVan = 2,
-	eVehicleCategoryLorry = 3,
-	eVehicleCategoryArticulatedCab = 4,
-	eVehicleCategoryBus = 5,
-	eVehicleCategorySpecialHelicopter = 6,
-	eVehicleCategorySpecialLTrain = 7,
-	eVehicleCategorySpecialTram = 8,
-	eVehicleCategorySpecialMonoRail = 9,
-	eVehicleCategorySpecialPlane = 10,
-	eVehicleCategoryArticulatedTrailer = 11,
-	eVehicleCategoriesNumber = 12
-};
 enum EBoPlayerVehicleClass {
 	eBoPlayerVehicleClassNone = 0, 
 	eBoPlayerVehicleClassRace = 1, 
