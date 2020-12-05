@@ -1,3 +1,10 @@
+enum EBoLoadingScreenTypes {
+	eBoLoadingScreenTypeBootup = 0, 
+	eBoLoadingScreenTypeSimple = 1, 
+	eBoLoadingScreenTypeTip = 2, 
+	eBoLoadingScreenTypeReplay = 3, 
+	eBoLoadingScreenTypeNum = 4
+};
 enum EBoMenuCarClasses {
 	eBoMenuCarClassCompact = 0,
 	eBoMenuCarClassMuscle = 1,
@@ -10,3 +17,10 @@ enum EBoMenuCarClasses {
 	eBoMenuCarClassTrafficSpecial = 8,
 	eBoMenuCarClassNumber = 9
 };
+
+class CBoMenuChoices {
+public:
+	EBoLoadingScreenTypes meBoLoadingScreenType;
+};
+
+extern CBoMenuChoices gMenuChoices;

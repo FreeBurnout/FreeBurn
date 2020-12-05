@@ -9,31 +9,29 @@
 #include "../../../../Shared/System/Common/Unicode/GtUnicode.h"
 #include "../../../../Shared/Numeric/Math/PC/GtMathPC.h"
 
-CBoGame gGame;
-
-RwReal lrTotalSleepTimeMs        = 0.6;
+RwReal lrTotalSleepTimeMs = 0.6;
 RwReal lrTotalSleepTimeMsLoading = 2.5;
-RwReal lrTotalSleepTimeMsMenus   = 1.8;
+RwReal lrTotalSleepTimeMsMenus = 1.8;
 
-char * kpacStringFilenameEnglish   = "Data/GlobalEn.bin";
-char * kpacStringFilenameDutch     = "Data/GlobalDu.bin";
-char * kpacStringFilenameSpanish   = "Data/GlobalSp.bin";
-char * kpacStringFilenameSwedish   = "Data/GlobalSw.bin";
-char * kpacStringFilenameUSEnglish = "Data/GlobalUs.bin";
-char * kpacStringFilenameJapanese  = "Data/GlobalJa.bin";
-char * kpacStringFilenameFrench    = "Data/GlobalFr.bin";
-char * kpacStringFilenameGerman    = "Data/GlobalGe.bin";
-char * kpacStringFilenameItalian   = "Data/GlobalIt.bin";
+char* kpacStringFilenameEnglish = "Data/GlobalEn.bin";
+char* kpacStringFilenameDutch = "Data/GlobalDu.bin";
+char* kpacStringFilenameSpanish = "Data/GlobalSp.bin";
+char* kpacStringFilenameSwedish = "Data/GlobalSw.bin";
+char* kpacStringFilenameUSEnglish = "Data/GlobalUs.bin";
+char* kpacStringFilenameJapanese = "Data/GlobalJa.bin";
+char* kpacStringFilenameFrench = "Data/GlobalFr.bin";
+char* kpacStringFilenameGerman = "Data/GlobalGe.bin";
+char* kpacStringFilenameItalian = "Data/GlobalIt.bin";
 
-char * kpacHeadingStringFilenameEnglish   = "Data/HeadEn.bin";
-char * kpacHeadingStringFilenameDutch     = "Data/HeadDu.bin";
-char * kpacHeadingStringFilenameSpanish   = "Data/HeadSp.bin";
-char * kpacHeadingStringFilenameSwedish   = "Data/HeadSw.bin";
-char * kpacHeadingStringFilenameUSEnglish = "Data/HeadUs.bin";
-char * kpacHeadingStringFilenameJapanese  = "Data/HeadJa.bin";
-char * kpacHeadingStringFilenameFrench    = "Data/HeadFr.bin";
-char * kpacHeadingStringFilenameGerman    = "Data/HeadGe.bin";
-char * kpacHeadingStringFilenameItalian   = "Data/HeadIt.bin";
+char* kpacHeadingStringFilenameEnglish = "Data/HeadEn.bin";
+char* kpacHeadingStringFilenameDutch = "Data/HeadDu.bin";
+char* kpacHeadingStringFilenameSpanish = "Data/HeadSp.bin";
+char* kpacHeadingStringFilenameSwedish = "Data/HeadSw.bin";
+char* kpacHeadingStringFilenameUSEnglish = "Data/HeadUs.bin";
+char* kpacHeadingStringFilenameJapanese = "Data/HeadJa.bin";
+char* kpacHeadingStringFilenameFrench = "Data/HeadFr.bin";
+char* kpacHeadingStringFilenameGerman = "Data/HeadGe.bin";
+char* kpacHeadingStringFilenameItalian = "Data/HeadIt.bin";
 
 CBoGame::CBoGame() {
 
@@ -43,7 +41,7 @@ void CBoGame::Construct() {
 
 }
 
-void CBoGame::SetDemoPath(char * lpacPath) {
+void CBoGame::SetDemoPath(char* lpacPath) {
 
 }
 
@@ -107,7 +105,7 @@ bool CBoGame::ResetGameMode() {
 	return false;
 }
 
-void CBoGame::RequestNewGameMode(CBoGameMode * lpNewGameMode) {
+void CBoGame::RequestNewGameMode(CBoGameMode* lpNewGameMode) {
 
 }
 
@@ -131,38 +129,38 @@ void CBoGame::DrawQuickLoadScreen() {
 
 }
 
-RwChar * CBoGame::GetDemoPath() {
+RwChar* CBoGame::GetDemoPath() {
 	return "";
 }
 
-CBoGameMode * CBoGame::GetCurrentGameMode() {
+CBoGameMode* CBoGame::GetCurrentGameMode() {
 	return nullptr;
 }
 
-CBoStageLogic * CBoGame::GetCurrentStageLogic() {
+CBoStageLogic* CBoGame::GetCurrentStageLogic() {
 	return nullptr;
 }
 
-CBoGameMode * CBoGame::GetRequestedGameMode() {
+CBoGameMode* CBoGame::GetRequestedGameMode() {
 	return nullptr;
 }
 
 void CBoGame::RequestPause(int param) {
-	 
-}	 
-	 
+
+}
+
 void CBoGame::RequestResume(int param) {
-	 
-}	 
-	 
+
+}
+
 bool CBoGame::IsPaused() {
 	return false;
-}	 
-	 
+}
+
 bool CBoGame::IsPauseRequested() {
 	return false;
-}	 
-	 
+}
+
 bool CBoGame::IsResumeRequested() {
 	return false;
 }
@@ -170,43 +168,43 @@ bool CBoGame::IsResumeRequested() {
 RwInt32 CBoGame::GetPausePlayerIndex() {
 	return 0;
 }
-	 
+
 void CBoGame::RequestWorldPrepare(bool param) {
-	 
-}	 
-	 
+
+}
+
 void CBoGame::ClearFrameBufferDuringWorldPrepare(GtMathPC::CGtV4d param) {
-	 
-}	 
-	 
+
+}
+
 bool CBoGame::IsWorldPrepared() {
 	return false;
-}	 
-	 
+}
+
 void CBoGame::RequestHalfFramerate(bool param) {
-	 
-}	 
-	 
+
+}
+
 bool CBoGame::GetHalfFramerate() {
 	return false;
-}	 
-	 
+}
+
 void CBoGame::RequestFramerateType(EGtFramerateType param) {
 
 }
 
 EGtFramerateType CBoGame::GetFramerateType() {
 	return EGtFramerateType::eGtFramerateConstant;
-}	   
-	   
+}
+
 bool CBoGame::OnlineUpdate() {
 	return false;
-}	   
-	   
+}
+
 bool CBoGame::OfflineUpdate() {
 	return false;
-}	   
-	   
+}
+
 RwReal CBoGame::GetNumSimulationUpdatesThisRenderFrame() {
 	return 0;
 }
@@ -232,7 +230,7 @@ bool CBoGame::IsCrashMode() {
 }
 
 void CBoGame::SetIsCrashMode(bool param) {
- 
+
 }
 
 void CBoGame::SetIsLapEliminatorMode(bool param) {
@@ -265,45 +263,45 @@ bool CBoGame::IsInChampionship() {
 
 RwReal CBoGame::GetCameraTimeStep() const {
 	return 0;
-}	    
-	    
+}
+
 RwReal CBoGame::GetCameraTimeStepNoSlowMo() const {
 	return 0;
-}	    
-	    
+}
+
 RwInt32 CBoGame::GetSimulationUpdateCount() const {
 	return 0;
 }
 
 void CBoGame::AttemptToInsertExtraSimulationUpdates(int param) {
-	 
-}	 
-	 
-void CBoGame::RequestSimulationPause() {
-	 
-}	 
-	 
-void CBoGame::RequestSimulationUnpause() {
-	 
+
 }
-	 
+
+void CBoGame::RequestSimulationPause() {
+
+}
+
+void CBoGame::RequestSimulationUnpause() {
+
+}
+
 void CBoGame::GetSendRecvFigures(
-	RwInt32 * lpnBytesSentToWireLastSecond, 
-	RwInt32 * lpnBytesRecvdFromWireLastSecond, 
-	RwInt32 * lpnBytesSubmittedForSendLastSecond, 
-	RwInt32 * lpnBytesPassedToAppByRecvLastSecond, 
-	RwInt32 ** lppanAvgBytesSubmittedForSendMsgTypeThisSecond, 
-	RwInt32 ** lppanAvgBytesPassedToAppByRecvMsgTypeThisSecond
+	RwInt32* lpnBytesSentToWireLastSecond,
+	RwInt32* lpnBytesRecvdFromWireLastSecond,
+	RwInt32* lpnBytesSubmittedForSendLastSecond,
+	RwInt32* lpnBytesPassedToAppByRecvLastSecond,
+	RwInt32** lppanAvgBytesSubmittedForSendMsgTypeThisSecond,
+	RwInt32** lppanAvgBytesPassedToAppByRecvMsgTypeThisSecond
 ) {
 
-}	 
-	 
+}
+
 void CBoGame::UpdateVideoCapture() {
 
 }
 
 template <>
-unsigned short * CGtUnicode::PrintStringN(RwInt32 lnBufferLength, GtUTF16 * lpTargetString, const GtUTF16 * lpFormatString, const int& lV1) {
+unsigned short* CGtUnicode::PrintStringN(RwInt32 lnBufferLength, GtUTF16* lpTargetString, const GtUTF16* lpFormatString, const int& lV1) {
 	return nullptr;
 }
 

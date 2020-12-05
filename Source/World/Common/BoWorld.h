@@ -1,3 +1,6 @@
+#ifndef GTWORLD_H
+#define GTWORLD_H
+
 #include <rwcore.h>
 
 #include "BoCrashScore.h"
@@ -174,3 +177,5 @@ public:
 };
 
 extern CBoWorld gWorld;
+
+#endif // !#define GTWORLD_H

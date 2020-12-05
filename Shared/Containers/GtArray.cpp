@@ -1,1 +1,17 @@
 #include "GtArray.h"
+
+unsigned long gaGtIDCharacterMasks[13] = {
+	0x1,
+	0x28,
+	0x640,
+	0xFA00,
+	0x271000,
+	0x61A8000,
+	0xF4240000,
+	0x2625A00000,
+	0x5F5E1000000,
+	0xEE6B28000000,
+	0x2540BE40000000,
+	0x5D21DBA00000000,
+	0xE8D4A51000000000
+};

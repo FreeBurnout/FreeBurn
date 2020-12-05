@@ -1,3 +1,6 @@
+#ifndef GTARRAY_H
+#define GTARRAY_H
+
 #include <rwcore.h>
 
 #include "../Core/GtID.h"
@@ -17,3 +20,5 @@ public:
 	RwInt32 GetNumEntries();
 	GtID GetArrayID();
 };
+
+#endif

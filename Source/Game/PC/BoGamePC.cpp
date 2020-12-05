@@ -12,7 +12,7 @@ void CBoGame::CheckPowerOff() {
 
 }
 
-void PowerOffHandler(void * lpArgs) {
+void PowerOffHandler(void* lpArgs) {
 
 }
 
@@ -36,3 +36,4 @@ bool CBoGame::WillQuitNow() {
 	return false;
 }
 
+CBoGame gGame;

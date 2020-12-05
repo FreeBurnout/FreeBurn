@@ -1,4 +1,7 @@
-enum class ERaceCarIndex {
+#ifndef BORACECAR_H
+#define BORACECAR_H
+
+enum ERaceCarIndex {
 	eRaceCarInvalid = -1,
 	eRaceCar0 = 0,
 	eRaceCar1 = 1,
@@ -13,3 +16,5 @@ class CBoRaceCar {
 public:
 	CBoRaceCar();
 };
+
+#endif // !#define BORACECAR_H

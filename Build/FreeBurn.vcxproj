@@ -73,20 +73,22 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)Build\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(Platform)\$(Configuration)\obj</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)Build\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(Platform)\$(Configuration)\obj</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)Build\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\obj</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)Build\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\obj</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -94,18 +96,21 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\CodeSDKs\rw37\include\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\CodeSDKs\rw37\include\src;$(ProjectDir)..\ThirdParty\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>rw37.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>rw37.lib;SDL2.lib;SDL2main.lib;SDL2test.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\bin\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)" /y /s</Command>
+      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\bin\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)" /y /s
+xcopy "$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\SDL2.dll" "$(OutDir)" /y /s</Command>
     </PostBuildEvent>
     <PreLinkEvent>
-      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\lib\$(Platform)\$(Configuration)\rw37.lib" "$(OutDir)" /y /s</Command>
+      <Command>
+      </Command>
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -116,20 +121,23 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\CodeSDKs\rw37\include\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\CodeSDKs\rw37\include\src;$(ProjectDir)..\ThirdParty\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>rw37.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>rw37.lib;SDL2.lib;SDL2main.lib;SDL2test.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\bin\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)" /y /s</Command>
+      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\bin\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)" /y /s
+xcopy "$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\SDL2.dll" "$(OutDir)" /y /s</Command>
     </PostBuildEvent>
     <PreLinkEvent>
-      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\lib\$(Platform)\$(Configuration)\rw37.lib" "$(OutDir)" /y /s</Command>
+      <Command>
+      </Command>
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -138,18 +146,21 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\CodeSDKs\rw37\include\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\CodeSDKs\rw37\include\src;$(ProjectDir)..\ThirdParty\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>rw37.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>rw37.lib;SDL2.lib;SDL2main.lib;SDL2test.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\bin\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)" /y /s</Command>
+      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\bin\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)" /y /s
+xcopy "$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\SDL2.dll" "$(OutDir)" /y /s</Command>
     </PostBuildEvent>
     <PreLinkEvent>
-      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\lib\$(Platform)\$(Configuration)\rw37.lib" "$(OutDir)" /y /s</Command>
+      <Command>
+      </Command>
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -160,20 +171,23 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\CodeSDKs\rw37\include\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\CodeSDKs\rw37\include\src;$(ProjectDir)..\ThirdParty\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>rw37.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>rw37.lib;SDL2.lib;SDL2main.lib;SDL2test.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\bin\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)" /y /s</Command>
+      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\bin\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)" /y /s
+xcopy "$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\SDL2.dll" "$(OutDir)" /y /s</Command>
     </PostBuildEvent>
     <PreLinkEvent>
-      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\lib\$(Platform)\$(Configuration)\rw37.lib" "$(OutDir)" /y /s</Command>
+      <Command>
+      </Command>
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
