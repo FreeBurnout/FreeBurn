@@ -1,6 +1,10 @@
 #include "BoGraphicsManagerPC.h"
 
-CBoGraphicsManager gGraphicsManager;
+
 
 void CBoGraphicsManager::PresentDrawBuffer() {
+}
+
+void CBoGraphicsManager::OpenViewport(EBoViewportSelection) {
+
 }

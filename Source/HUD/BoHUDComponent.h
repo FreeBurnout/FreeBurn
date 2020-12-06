@@ -84,14 +84,6 @@ enum EBoHUDString {
 	eBoHUDStringRoadRageTargetTitleBronze = 73,
 	eBoHUDStringNum = 74
 };
-
-enum EOutlineDropShadow {
-	eODSSmallText = 0,
-	eODSMediumText = 1,
-	eODSLargeText = 2,
-	eODSNum = 3
-};
-
 enum EHUDTexture {
 	eHUDTextureSignAgressiveNeg = 0,
 	eHUDTextureSignAgressivePos = 1,
@@ -152,10 +144,18 @@ enum EHUDTexture {
 	eHUDTextureScoreStealer = 6,
 	eHUDTextureSignTimeBonus = 6
 };
+enum EOutlineDropShadow {
+	eODSSmallText = 0,
+	eODSMediumText = 1,
+	eODSLargeText = 2,
+	eODSNum = 3
+};
 
 struct BoHUDParticleParamsTag {
 
 };
+
+CGtV2d kHUDV2d_HalfHalf;
 
 class CBoHUDComponent {
 public:

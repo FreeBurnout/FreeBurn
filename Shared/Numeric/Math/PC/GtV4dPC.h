@@ -4,7 +4,9 @@
 namespace GtMathPC {
 	class CGtV4d {
 	public:
-		inline CGtV4d() {}
+		float mData[4]; // Originally u_long128.
+
+		inline CGtV4d() { }
 	};
 }
 

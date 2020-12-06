@@ -31,8 +31,6 @@ int main(int argc, char ** argv) {
     gGraphicsManager.PresentDrawBuffer();
     */
 
-    
-
     while (/*!*/gGame.Prepare()) {
         CGtThreadMgr::SleepThreadTillVBlank();
         gGraphicsManager.DrawBootLoadingScreen(-1);

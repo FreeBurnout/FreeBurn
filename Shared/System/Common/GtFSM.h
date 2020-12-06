@@ -1,3 +1,6 @@
+#ifndef GTFSM_H
+#define GTFSM_H
+
 #include <rwcore.h>
 
 #include "../../Core/GtID.h"
@@ -62,13 +65,12 @@ enum class EGtPrepareState {
 	eGtPSReleased = 56,
 	eGtPSDestructed = 57
 };
-
 enum class EGtStateAction {
-	eGtStateActionConstruct = 0, 
-	eGtStateActionDestruct = 1, 
-	eGtStateActionLeave = 2, 
-	eGtStateActionEnter = 3, 
-	eGtStateActionUpdate = 4, 
+	eGtStateActionConstruct = 0,
+	eGtStateActionDestruct = 1,
+	eGtStateActionLeave = 2,
+	eGtStateActionEnter = 3,
+	eGtStateActionUpdate = 4,
 	eGtStateActionEvent = 5
 };
 
@@ -81,3 +83,5 @@ public:
 	RwReal GetStateEnteredTime();
 	virtual void Action(EGtStateAction leAction, void* param_2, void* param_3, void* param_4) = 0;
 };
+
+#endif // !#define GTFSM_H

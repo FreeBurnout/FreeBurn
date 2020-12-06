@@ -27,7 +27,7 @@ public:
 	
 	RwUInt32 GetVBlankCount();
 	void OpenRenderWare();
-	void OpenViewport(EBoViewportSelection);
+	void OpenViewport(EBoViewportSelection) override;
 	bool Prepare();
 	bool PrepareSpheremapWarpData();
 	void PresentDrawBuffer();

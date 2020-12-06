@@ -172,8 +172,8 @@ public:
 	CBoFrontEnd mGameModeFrontEnd;
 	CBoGameMode* mpCurrentGameMode;
 	CBoGameMode* mpRequestedGameMode;
-	CBoInputManager* mInputManager;
-	CBoMultiplayerRoadRageLogic  mOfflineMultiplayerRoadRageLogic;
+	CBoInputManager mInputManager;
+	CBoMultiplayerRoadRageLogic mOfflineMultiplayerRoadRageLogic;
 	CBoOnePlayerStage mGameModeOnePlayerRace;
 	CBoOnlineCompCrashModeLogic mOnlineCompCrashModeLogic;
 	CBoOnlineGolfCrashModeLogic mOnlineGolfCrashModeLogic;
