@@ -2,7 +2,8 @@
 #define BOPROGRESSIONMANAGER_H
 
 class CBoSecondaryRewardsManager {
-
+public:
+	void Construct();
 };
 
 #endif // !#define BOPROGRESSIONMANAGER_H

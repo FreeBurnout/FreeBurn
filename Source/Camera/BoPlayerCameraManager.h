@@ -4,6 +4,7 @@
 class CBoPlayerCameraManager {
 public:
 	CBoPlayerCameraManager();
+	void Construct();
 };
 
 class CBoCameraMovieManager {

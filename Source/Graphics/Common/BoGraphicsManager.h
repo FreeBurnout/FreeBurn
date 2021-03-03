@@ -24,6 +24,13 @@ enum EBoFullScreenPassBlendMode {
 	eBoFSPBM_Max = 4
 };
 
+class CBoEATraxDisplay {
+public:
+	void Construct();
+};
+
+extern CBoEATraxDisplay gEATraxDisplay;
+
 class CBoViewport : CGtViewport {
 public:
 	RwCamera* mpRwCamera;

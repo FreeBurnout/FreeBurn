@@ -1,18 +1,20 @@
+#ifndef BOCRASHCOMBO_H
+#define BOCRASHCOMBO_H
+
 #include <rwcore.h>
 
 #include "BoPlayerCar.h"
 #include "../../Physics/BoRaceCarPhysics.h"
 #include "../../Physics/BoVehiclePhysics.h"
-#include "../../../Shared/Numeric/Math/PC/GtV3dPC.h"
-#include "../../../Shared/Numeric/Math/PC/GtMatrix3x4PC.h"
+#include "../../../Shared/Numeric/Math/PC/GtMathPC.h"
 
 using namespace GtMathPC;
 
 enum ECrashComboCollisionType {
-	eComboEntryCollisionTypeUnknown = 0, 
-	eComboEntryCollisionTypeHeadOn = 1, 
-	eComboEntryCollisionTypeRearEnded = 2, 
-	eComboEntryCollisionTypeTBoned = 3, 
+	eComboEntryCollisionTypeUnknown = 0,
+	eComboEntryCollisionTypeHeadOn = 1,
+	eComboEntryCollisionTypeRearEnded = 2,
+	eComboEntryCollisionTypeTBoned = 3,
 	eComboEntryCollisionTypeCount = 4
 };
 enum EComboEntryType {
@@ -82,24 +84,24 @@ enum ECrashComboSideUp {
 	eComboSideUpCount = 7
 };
 enum ESlamShuntComboState {
-eSlamShuntComboStateNeutral = 0,
-eSlamShuntComboStateLevelOne = 1,
-eSlamShuntComboStateLevelTwo = 2,
-eSlamShuntCombeStateCount = 3
+	eSlamShuntComboStateNeutral = 0,
+	eSlamShuntComboStateLevelOne = 1,
+	eSlamShuntComboStateLevelTwo = 2,
+	eSlamShuntCombeStateCount = 3
 };
 enum EBoPlayerVehicleClass {
-	eBoPlayerVehicleClassNone = 0, 
-	eBoPlayerVehicleClassRace = 1, 
-	eBoPlayerVehicleClassMuscle = 2, 
-	eBoPlayerVehicleClassCrash = 3, 
-	eBoPlayerVehicleClassSuper = 4, 
+	eBoPlayerVehicleClassNone = 0,
+	eBoPlayerVehicleClassRace = 1,
+	eBoPlayerVehicleClassMuscle = 2,
+	eBoPlayerVehicleClassCrash = 3,
+	eBoPlayerVehicleClassSuper = 4,
 	eBoPlayerVehicleClassCount = 5
 };
 
 struct CBoCrashComboItem {
 	CBoVehiclePhysics* mpVehicle;
 	EComboEntryType meType;
-	RwInt32 mnValue; 
+	RwInt32 mnValue;
 	RwReal mrValue;
 };
 
@@ -112,16 +114,16 @@ class CBoCrashCombo {
 	RwInt32 mnComboQueueSize;
 	RwInt32 mnComboQueueHead;
 	RwInt32 mnComboQueueTail;
-	CBoCrashComboItem* mpNewComboItem; 
-	CBoCrashComboItem* mpLastSkidComboEntry; 
-	CBoCrashComboItem* mpLastAirComboEntry; 
+	CBoCrashComboItem* mpNewComboItem;
+	CBoCrashComboItem* mpLastSkidComboEntry;
+	CBoCrashComboItem* mpLastAirComboEntry;
 	bool mbAddedItemThisFrame;
 	bool mbFinishingCombo;
 	bool mbCrashing;
 	bool mbCrashCausedByWall;
 	RwReal mrCrashStartTime;
 	RwReal mrCrashFinishTime;
-	RwReal mrRampSkidIgnoreTime; 
+	RwReal mrRampSkidIgnoreTime;
 	EBoPlayerVehicleClass meVehicleClass;
 	CGtV3d mCrashStartPos;
 	CGtV3d mLastPosition;
@@ -130,7 +132,7 @@ class CBoCrashCombo {
 	int manCurrentSpins[3];
 	int manTotalSpins[3];
 	RwInt32 mnAllTotalSpins;
-	RwReal marTotalSpinTime[3]; 
+	RwReal marTotalSpinTime[3];
 	RwReal marSpins[3];
 	ECrashComboSideUp meSideUp;
 	int manTotalAxisSpins[7];
@@ -171,7 +173,7 @@ class CBoCrashCombo {
 	RwInt32 mnCarCount;
 	RwInt32 mnTruckCount;
 	RwInt32 mnRivalCount;
-	
+
 	void Construct();
 	void Destruct();
 	void Prepare(CBoPlayerCar*);
@@ -200,11 +202,13 @@ class CBoCrashCombo {
 	void UpdateExtras();
 	CBoCrashComboItem* AddUninitialisedItemToCombo();
 	void AddVehicleToCombo(CBoVehiclePhysics*, EComboEntryType, ECrashComboCollisionType);
-	void AddItemToCombo(EComboEntryType, int, CBoVehiclePhysics*); 
-	void AddItemToCombo(EComboEntryType, float, CBoVehiclePhysics*); 
+	void AddItemToCombo(EComboEntryType, int, CBoVehiclePhysics*);
+	void AddItemToCombo(EComboEntryType, float, CBoVehiclePhysics*);
 	void AddLanding();
 	ECrashComboCollisionType GetVehicleCollisionType(CBoVehiclePhysics);
 	ECrashComboSideUp GetSideFacingUp(const CGtMatrix3x4&);
 	void AddVehicle(CBoVehiclePhysics*);
 	void ResetData();
 };
+
+#endif // !#define BOCRASHCOMBO_H

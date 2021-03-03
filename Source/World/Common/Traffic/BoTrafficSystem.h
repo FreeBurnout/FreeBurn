@@ -1,5 +1,6 @@
 #ifndef BOTRAFFICSYSTEM_H
 #define BOTRAFFICSYSTEM_H
+
 struct CBoTrafficLanesStruct {
 
 };
@@ -12,5 +13,5 @@ class CBoTrafficSystem {
 public:
 	CBoTrafficSystem();
 };
-#endif // !#define BOTRAFFICSYSTEM_H
 
+#endif // !#define BOTRAFFICSYSTEM_H

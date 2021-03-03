@@ -1,13 +1,12 @@
 #ifndef GTV4DPC_H
 #define GTV4DPC_H
 
-namespace GtMathPC {
-	class CGtV4d {
-	public:
-		float mData[4]; // Originally u_long128.
+#include <glm.hpp>
 
-		inline CGtV4d() { }
-	};
+#include "VectorElementsPC.h"
+
+namespace GtMathPC {
+	typedef glm::vec4 CGtV4d;
 }
 
 #endif

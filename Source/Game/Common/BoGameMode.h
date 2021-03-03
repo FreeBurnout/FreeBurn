@@ -6,32 +6,34 @@
 
 class CBoGameMode {
 public:
-	CBoStageLogic * mpStageLogic;
-	CBoChallenge *  mpChallenge;
-	bool            mbDoFullPrepare;
+	CBoStageLogic* mpStageLogic;
+	CBoChallenge* mpChallenge;
+	bool mbDoFullPrepare;
 
-	void    Construct();
-	bool    Prepare();
-	void    Update();
-	void    Release();
-	void    Destruct();
-	bool    StartReplay();
+	void Construct();
+	bool Prepare();
+	void Update();
+	void Release();
+	void Destruct();
+	bool StartReplay();
 	RwInt32 GetNumLaps();
 
 private:
-	void            RequestResetWithFullPrepare();
-	void            SetStageLogic(CBoStageLogic * lpStageLogic);
-	CBoStageLogic * GetStageLogic();
-	void            SetChallenge(CBoChallenge * lpChallenge);
-	CBoChallenge *  GetChallenge();
+	void RequestResetWithFullPrepare();
+	void SetStageLogic(CBoStageLogic * lpStageLogic);
+	CBoStageLogic* GetStageLogic();
+	void SetChallenge(CBoChallenge * lpChallenge);
+	CBoChallenge* GetChallenge();
 };
 
 class CBoOnePlayerStage : CBoGameMode {
-
+public:
+	void Construct();
 };
 
 class CBoTwoPlayerSplitScreenStage : CBoGameMode {
-
+public:
+	void Construct();
 };
 
 #endif // !BOGAMEMODE_H

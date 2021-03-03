@@ -1,3 +1,6 @@
+#ifndef BOPHYSICSMANAGER_H
+#define BOPHYSICSMANAGER_H
+
 #include <rwcore.h>
 
 #include "BoActiveBody.h"
@@ -10,78 +13,42 @@
 #include "BoDrivableVehiclePhysics.h"
 #include "BoInterval.h"
 #include "BoPropPhysics.h"
+#include "../World/Common/BoRaceCar.h"
+#include "../World/Common/BoPropType.h"
 #include "BoRaceCarPhysics.h"
 #include "BoTrafficPhysics.h"
 #include "BoVehicleParams.h"
+#include "BoVehiclePhysics.h"
 #include "../Camera/Behaviours/BoCameraBehaviour.h"
-#include "../World/Common/BoCrashCombo.h"
-#include "../World/Common/BoPropType.h"
-#include "../World/Common/Traffic/BoTrafficVehicle.h"
-#include "../../Shared/Numeric/Math/PC/GtMatrix3x4PC.h"
-
-RwInt32 _gnWorldCollisionPCID = -1;
-RwInt32 _gnBodyCollisionPCID = -1;
-RwInt32 _gnBodyUpdatePCID = -1;
-RwInt32 _gnBodyUpdatePlayerCarPCID = -1;
-RwInt32 _gnBodyUpdateAICarPCID = -1;
-RwInt32 _gnBodyUpdateNetworkCarPCID = -1;
-RwInt32 _gnBodyUpdateTrafficCarPCID = -1;
-RwInt32 _gnBodyUpdatePropPCID = -1;
-RwInt32 _gnBodyUpdateBodyPartsPCID = -1;
-RwInt32 _gnVehicleDeformationPCID = -1;
-RwInt32 _gnClipPolyWithConvexHullPCID = -1;
-RwInt32 _gnBoxWorldCollisionPCID = -1;
-RwInt32 _gnBoxBoxCollisionPCID = -1;
-RwInt32 _gnHullWorldCollisionPCID = -1;
-RwInt32 _gnHullHullCollisionPCID = -1;
-RwInt32 _gnDoDrivingWorldCollisionPCID = -1;
-RwInt32 _gnCollideWheelsPCID = -1;
-RwInt32 _gnUpdateSuspensionPCID = -1;
-RwInt32 _gnApplyDrivingForcesPCID = -1;
-RwInt32 _gnCollidingBodyUpdatePCID = -1;
-RwInt32 _gnBodyUpdateVehiclePCID = -1;
-RwInt32 _gnBodyUpdateRaceCarPCID = -1;
-RwInt32 _gnClipPolyWithAABBPCID = -1;
-RwInt32 gnWorldLineCost = -1;
-RwInt32 gnWorldSphereCost = -1;
 
 using namespace GtMathPC;
 
-enum EBoForceType {
-	eBoForceTypeAirRam = 0,
-	eBoForceTypeAirResistance = 1,
-	eBoForceTypeBlowOut = 2,
-	eBoForceTypeBodyCollision = 3,
-	eBoForceTypeBoostStart = 4,
-	eBoForceTypeBrake = 5,
-	eBoForceTypeBraking = 6,
-	eBoForceTypeCrashbreaker = 7,
-	eBoForceTypeDrag = 8,
-	eBoForceTypeDrift = 9,
-	eBoForceTypeDrivingForces = 10,
-	eBoForceTypeExplosion = 11,
-	eBoForceTypeFriction = 12,
-	eBoForceTypeGravity = 13,
-	eBoForceTypeLowSpeedDriving = 14,
-	eBoForceTypeSlamReaction = 15,
-	eBoForceTypeStandingOnEnd = 16,
-	eBoForceTypeSuspension = 17,
-	eBoForceTypeSurfaceFriction = 18,
-	eBoForceTypeTrailer = 19,
-	eBoForceTypeTranslation = 20,
-	eBoForceTypeWheelCollision = 21,
-	eBoForceTypeWheelFriction = 22,
-	eBoForceTypeWheelLateral = 23,
-	eBoForceTypeWheelLongitudinal = 24,
-	eBoForceTypeWheelTurning = 25,
-	eBoForceTypeWind = 26,
-	eBoForceTypeWindDefiance = 27,
-	eBoForceTypeWindResistance = 28,
-	eBoForceTypeWorldFriction = 29,
-	eBoForceTypeWorldCollision = 30,
-	eBoForceTypeWrongWayWall = 31,
-	eBoForceTypeCount = 32
-};
+static RwInt32 _gnWorldCollisionPCID = -1;
+static RwInt32 _gnBodyCollisionPCID = -1;
+static RwInt32 _gnBodyUpdatePCID = -1;
+static RwInt32 _gnBodyUpdatePlayerCarPCID = -1;
+static RwInt32 _gnBodyUpdateAICarPCID = -1;
+static RwInt32 _gnBodyUpdateNetworkCarPCID = -1;
+static RwInt32 _gnBodyUpdateTrafficCarPCID = -1;
+static RwInt32 _gnBodyUpdatePropPCID = -1;
+static RwInt32 _gnBodyUpdateBodyPartsPCID = -1;
+static RwInt32 _gnVehicleDeformationPCID = -1;
+static RwInt32 _gnClipPolyWithConvexHullPCID = -1;
+static RwInt32 _gnBoxWorldCollisionPCID = -1;
+static RwInt32 _gnBoxBoxCollisionPCID = -1;
+static RwInt32 _gnHullWorldCollisionPCID = -1;
+static RwInt32 _gnHullHullCollisionPCID = -1;
+static RwInt32 _gnDoDrivingWorldCollisionPCID = -1;
+static RwInt32 _gnCollideWheelsPCID = -1;
+static RwInt32 _gnUpdateSuspensionPCID = -1;
+static RwInt32 _gnApplyDrivingForcesPCID = -1;
+static RwInt32 _gnCollidingBodyUpdatePCID = -1;
+static RwInt32 _gnBodyUpdateVehiclePCID = -1;
+static RwInt32 _gnBodyUpdateRaceCarPCID = -1;
+static RwInt32 _gnClipPolyWithAABBPCID = -1;
+static RwInt32 gnWorldLineCost = -1;
+static RwInt32 gnWorldSphereCost = -1;
+
 enum EPhysicsInteractionType {
 	ePhysicsInteractNormal = 0,
 	ePhysicsInteractAsWorld = 1,
@@ -97,11 +64,10 @@ enum EShuntSlamType {
 	eSST_NumShuntSlamTypes = 5
 };
 
-#undef RemoveProp; // Mmhmm.
+#undef RemoveProp // Mmhmm.
 
 class CBoPhysicsManager {
 public:
-	CBoPhysicsManager();
 	bool ActuallyCrashCheckedTrafficBody(CBoCheckedTrafficPhysics*, unsigned char);
 	CBoBodyPartPhysics* AddBodyPart(CBoVehiclePhysics*, int, EBodyPartType);
 	CBoCameraPhysics* AddCamera(EPlayerCarIndex, CBoCameraBehaviour*, CGtMatrix3x4*, CGtV3d, CGtV3d);
@@ -115,7 +81,7 @@ public:
 	void BodyBodyResponse(CBoCollidingPair*, bool);
 	void BodyBodyResponse_ApplyImpulse(CBoHullCollideParams*, CBoActiveBody*, CBoActiveBody*, CBoCollidingBody*, CBoCollidingBody*, CGtV3d, CGtV3d, CGtV3d, EPhysicsInteractionType, EPhysicsInteractionType);
 	void BodyBodyResponse_CalculateImpulse(CGtV3d*, CBoCollidingPair*, CBoHullCollideParams*, CBoActiveBody*, CBoActiveBody*, CBoCollidingBody*, CBoCollidingBody*);
-	bool BodyBodyResponse_CanCollide(CBoActiveBody*, CBoActiveBody*, EPhysicsInteractionType, EPhysicsInteractionType);
+	bool BodyBodyResponse_CanCollide(CBoActiveBody* lpBodyA, CBoActiveBody* lpBodyB);
 	void BodyBodyResponse_CheckForDynamicPropCrash(CBoActiveBody*, CBoActiveBody*);
 	void BodyBodyResponse_CheckForPropHitEvent(CBoActiveBody*, CBoActiveBody*, CBoCollidingBody*, CBoCollidingBody*);
 	void BodyBodyResponse_CheckForUnpausing(CBoActiveBody*, CBoActiveBody*);
@@ -176,7 +142,7 @@ public:
 	void RemoveCamera(CBoCameraPhysics*);
 	void RemoveFromCheckedTrafficArray(CBoCheckedTrafficPhysics*);
 	void RemoveOrphanBodyParts();
-	bool RemoveProp(CBoPropInstance*);
+	bool RemoveProp(CBoPropInstance*); 
 	void RemoveTrafficVehicle(CBoTrafficVehicle*);
 	void RemoveVehiclesDetachedBodyParts(CBoVehiclePhysics*);
 	void ResetCollisionBools();
@@ -193,4 +159,6 @@ public:
 
 };
 
-#define RemoveProp
+
+
+#endif // !#define BOPHYSICSMANAGER_H

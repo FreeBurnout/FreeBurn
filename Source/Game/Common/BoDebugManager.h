@@ -1,10 +1,17 @@
+#ifndef BODEBUGMANAGER_H
+#define BODEBUGMANAGER_H
+
 #include <rwcore.h>
+
+class CBoDebugManager {
+public:
+	void Construct();
+};
 
 class CBoNetworkCPUMonitors {
 public:
 	void Construct();
 
-private:
 	RwInt32 mnNetCarPhysicsUpdate;
 	RwInt32 mnBoNetManagerUpdate;
 	RwInt32 mnBoNetManagerPostUpdate;
@@ -31,8 +38,6 @@ private:
 class CBoCPUMonitors {
 public:
 	void Construct();
-
-private:
 	void Destruct();
 
 	RwInt32 mnFreeCPU;
@@ -54,7 +59,6 @@ class CBoGPUMonitors {
 public:
 	void Construct();
 
-private:
 	RwInt32 mnSky;
 	RwInt32 mnBackdrops;
 	RwInt32 mnChevrons;
@@ -69,5 +73,8 @@ private:
 	RwInt32 mnBlur;
 };
 
-CBoCPUMonitors gCPUMonitors;
-CBoGPUMonitors gGPUMonitors;
+static CBoDebugManager gDebugManager;
+static CBoCPUMonitors gCPUMonitors;
+static CBoGPUMonitors gGPUMonitors;
+
+#endif // !BODEBUGMANAGER_H

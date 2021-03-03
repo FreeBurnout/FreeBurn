@@ -1,5 +1,5 @@
-#ifndef GTWORLD_H
-#define GTWORLD_H
+#ifndef BOWORLD_H
+#define BOWORLD_H
 
 #include <rwcore.h>
 
@@ -178,4 +178,4 @@ public:
 
 extern CBoWorld gWorld;
 
-#endif // !#define GTWORLD_H
+#endif // !#define BOWORLD_H

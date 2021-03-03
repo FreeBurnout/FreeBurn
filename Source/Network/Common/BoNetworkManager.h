@@ -4,6 +4,8 @@
 class CBoNetworkManager {
 public:
 	bool mbUppingInterface;
+
+	void Construct();
 };
 
 extern CBoNetworkManager gNetworkManager;

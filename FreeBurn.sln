@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FreeBurn", "Build\FreeBurn.vcxproj", "{ABDCDEFB-CE8A-43E9-A859-EF2341DFD1EB}"
-	ProjectSection(ProjectDependencies) = postProject
-		{96CC0925-B7EB-4FB6-8596-933F1C7ED87E} = {96CC0925-B7EB-4FB6-8596-933F1C7ED87E}
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RW37", "CodeSDKs\rw37\build\RW37.vcxproj", "{96CC0925-B7EB-4FB6-8596-933F1C7ED87E}"
 EndProject
@@ -39,6 +36,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {EC084897-CC90-48AD-9FD2-83062E146EBD}
+		SolutionGuid = {31DBF263-E2BE-4321-B532-ECF417BF7D69}
 	EndGlobalSection
 EndGlobal

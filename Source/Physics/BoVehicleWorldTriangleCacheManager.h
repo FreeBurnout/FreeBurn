@@ -1,0 +1,13 @@
+#ifndef BOVEHICLEWORLDTRIANGLECACHEMANAGER_H
+#define BOVEHICLEWORLDTRIANGLECACHEMANAGER_H
+
+class CBoWorldTriangleCacheBase {
+
+};
+
+class CBoVehicleWorldTriangleCache {
+
+};
+
+#endif // !#define BOVEHICLEWORLDTRIANGLECACHEMANAGER_H
+

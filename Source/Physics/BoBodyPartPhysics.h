@@ -1,3 +1,5 @@
+#ifndef BOBODYPARTPHYSICS_H
+#define BOBODYPARTPHYSICS_H
 enum EBodyPartType {
 	eBPT_Wheel = 0, 
 	eBPT_BodyPart = 1, 
@@ -7,3 +9,4 @@ enum EBodyPartType {
 class CBoBodyPartPhysics {
 
 };
+#endif // !BOBODYPARTPHYSICS_H

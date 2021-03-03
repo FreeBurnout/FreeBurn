@@ -2,7 +2,8 @@
 #define BOPLAYER_H
 
 class CBoPlayer {
-
+public:
+	void Construct();
 };
 
-#endif
+#endif // !BOPLAYER_H

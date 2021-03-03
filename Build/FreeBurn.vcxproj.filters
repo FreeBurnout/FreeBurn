@@ -1099,9 +1099,6 @@
     <ClCompile Include="..\Source\Graphics\Common\BoVideoCaptureSystem.cpp">
       <Filter>Source\Graphics\Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\Source\Graphics\Common\BoViewport.cpp">
-      <Filter>Source\Graphics\Common</Filter>
-    </ClCompile>
     <ClCompile Include="..\Source\Graphics\PC\BoBloomPC.cpp">
       <Filter>Source\Graphics\PC</Filter>
     </ClCompile>
@@ -2491,9 +2488,6 @@
     <ClCompile Include="..\Source\Menu\States\Online\DirtySock\BoOpenInterfaceMenuStateDS.cpp">
       <Filter>Source\Menu\States\Online\DirtySock</Filter>
     </ClCompile>
-    <ClInclude Include="..\Shared\BoSharedConstants.h">
-      <Filter>Shared</Filter>
-    </ClInclude>
     <ClInclude Include="..\Shared\Containers\GtArray.h">
       <Filter>Shared\Containers</Filter>
     </ClInclude>
@@ -2839,9 +2833,6 @@
     <ClInclude Include="..\Shared\Numeric\Math\PC\GtV4dUtilsPC.h">
       <Filter>Shared\Numeric\Math\PC</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\Numeric\Math\PC\GtVectorElementsPC.h">
-      <Filter>Shared\Numeric\Math\PC</Filter>
-    </ClInclude>
     <ClInclude Include="..\Shared\System\Common\FileSystem\GtFileSystem.h">
       <Filter>Shared\System\Common\FileSystem</Filter>
     </ClInclude>
@@ -2880,6 +2871,12 @@
     </ClInclude>
     <ClInclude Include="..\Shared\System\PC\Input\GtInputManagerPCLogitechWheel.h">
       <Filter>Shared\System\PC\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\BoSharedConstants.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\FreeBurn.h">
+      <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="..\Source\Camera\BoCamComponentLooseTrack.h">
       <Filter>Source\Camera</Filter>
@@ -3991,316 +3988,324 @@
     <ClInclude Include="..\Source\Menu\States\Online\DirtySock\BoOpenInterfaceMenuStateDS.h">
       <Filter>Source\Menu\States\Online\DirtySock</Filter>
     </ClInclude>
+    <ClCompile Include="..\Source\Graphics\Common\BoViewport.cpp">
+      <Filter>Source\Graphics\PC</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Shared">
-      <UniqueIdentifier>b035a8e6-6cab-4b6a-9e4e-9f9f1f03c23b</UniqueIdentifier>
+      <UniqueIdentifier>049dfb58-6f50-4ba2-bf3e-4683e6cbe3f5</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Containers">
-      <UniqueIdentifier>cb0fc590-dd82-49d4-9c41-1da8460e9a69</UniqueIdentifier>
+      <UniqueIdentifier>d7af9280-4c80-44fe-af7e-86cc3b3a7ff3</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Core">
-      <UniqueIdentifier>e63fce11-0333-43d7-b680-ae480061a285</UniqueIdentifier>
+      <UniqueIdentifier>77fe7eb2-e05a-49b7-b244-e512bdff351d</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Development">
-      <UniqueIdentifier>caac84ab-e7b3-4762-b94a-ae7f3c9bae7e</UniqueIdentifier>
+      <UniqueIdentifier>3c04f3cc-cf3c-4b00-9cf5-137ef0df7368</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Development\AutomaticTest">
-      <UniqueIdentifier>d4c4e185-3202-47a2-8f12-22f4aac685cc</UniqueIdentifier>
+      <UniqueIdentifier>66f79a8c-3519-432f-a718-a08804b8c251</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Development\CommsTool">
-      <UniqueIdentifier>8be1945a-c892-4b09-aae9-ceed345fef1b</UniqueIdentifier>
+      <UniqueIdentifier>b2c69e0a-4835-481d-85c2-631e1a64ebb2</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Development\PerfMon">
-      <UniqueIdentifier>44f11db8-0432-4809-9c7e-087bc3ebc5ae</UniqueIdentifier>
+      <UniqueIdentifier>f5c15add-87d5-4371-a88a-a62924860ca4</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Development\PerfMon\PC">
-      <UniqueIdentifier>0f522f24-302e-4be5-9200-28c2a959f0d2</UniqueIdentifier>
+      <UniqueIdentifier>19e0c955-609d-426e-ab24-7280cc5807ca</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Development\ValueDatabase">
-      <UniqueIdentifier>859913f2-3a79-432e-84f3-6fa4ce7402f7</UniqueIdentifier>
+      <UniqueIdentifier>5cb4b28d-bb90-4b87-aa14-092ff2d063fa</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Geometric">
-      <UniqueIdentifier>ab6fd7e2-a263-49b1-9064-eef6adbf6cfc</UniqueIdentifier>
+      <UniqueIdentifier>a4fe62c7-3ba8-4bd4-b199-4e1a56ac84d3</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Geometric\PC">
-      <UniqueIdentifier>c6815525-6ea1-4377-9d96-687ea343dc5d</UniqueIdentifier>
+      <UniqueIdentifier>7917130b-b7fd-4679-bb81-7301358da623</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Memory">
-      <UniqueIdentifier>81c0644b-a370-40cd-bc3b-055ed511a403</UniqueIdentifier>
+      <UniqueIdentifier>010ef8d6-6cc8-45bd-b8e9-02a1d0f16c95</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Numeric">
-      <UniqueIdentifier>1082cde9-85e9-4e4a-b851-d016449e6d63</UniqueIdentifier>
+      <UniqueIdentifier>3e3eac56-ce77-4780-af09-06f1534237b9</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Numeric\Math">
-      <UniqueIdentifier>0e82685b-2fb7-4dff-815c-898fe67ce7e2</UniqueIdentifier>
+      <UniqueIdentifier>b0d0cd6e-1542-4ab4-8be4-879f877d4c27</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Numeric\Math\PC">
-      <UniqueIdentifier>97d12e17-56e7-4aa3-a80f-748329e8c3e0</UniqueIdentifier>
+      <UniqueIdentifier>1099366d-0f06-445f-ad63-05dec09516c6</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Sound">
-      <UniqueIdentifier>f7d299f0-6ec4-4188-be78-e7342676b7c3</UniqueIdentifier>
+      <UniqueIdentifier>0020d16b-560c-4334-93d6-e1e578805bf6</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Sound\PC">
-      <UniqueIdentifier>738b8f9b-30c0-4ce3-acab-40c5c87b6c40</UniqueIdentifier>
+      <UniqueIdentifier>3c7375c8-a8c2-488c-b01c-9d7abc9346c4</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Graphical">
-      <UniqueIdentifier>4c3ed857-e845-40e0-b02a-375ce273dcba</UniqueIdentifier>
+      <UniqueIdentifier>7961b89a-a57b-4433-b545-df35f747c572</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Graphical\Common">
-      <UniqueIdentifier>bdb71bfc-6844-46bf-9780-dac59521da33</UniqueIdentifier>
+      <UniqueIdentifier>fa245250-c245-4fd4-b30b-89f1cf3cdeec</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Graphical\Common\2D">
-      <UniqueIdentifier>ec1a98ed-e1ed-4879-83b6-5acec1b8c155</UniqueIdentifier>
+      <UniqueIdentifier>22b263f1-e7e6-4321-9a9c-ee081ce44705</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Graphical\Common\Camera">
-      <UniqueIdentifier>81e83c5d-5a59-4ec8-8b48-9bfda516a2fd</UniqueIdentifier>
+      <UniqueIdentifier>d29c442d-0989-4386-a4d3-cf7e55695eeb</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Graphical\Common\ScreenShot">
-      <UniqueIdentifier>23b2d47d-1433-40cd-8674-2fe0b2a82cd3</UniqueIdentifier>
+      <UniqueIdentifier>ef325331-25c6-4a47-aa45-0df2c9b359d3</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Graphical\PC">
-      <UniqueIdentifier>b47bbcb2-a100-4b52-b5e5-d636bc1571e7</UniqueIdentifier>
+      <UniqueIdentifier>71caea66-70a6-431b-a2f2-16f2611caacb</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Networking">
-      <UniqueIdentifier>2eb2dcde-79df-4e72-ac3a-5ed59afe880d</UniqueIdentifier>
+      <UniqueIdentifier>8c3a28fd-d0ad-4925-ba76-1d70ec43d421</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Networking\Common">
-      <UniqueIdentifier>90d818f3-b259-49f5-91ef-d46c99660f5a</UniqueIdentifier>
+      <UniqueIdentifier>149384aa-9242-4b43-b464-6557aedc6bc2</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Networking\Common\Buddies">
-      <UniqueIdentifier>3953ca5f-c8d3-4f71-a4fe-0e2bf20e10b8</UniqueIdentifier>
+      <UniqueIdentifier>9e239127-ee07-4e96-8b73-1b93e8c4eeff</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Networking\Common\LobbyService">
-      <UniqueIdentifier>33816f33-92df-48cd-945d-db95700f79ba</UniqueIdentifier>
+      <UniqueIdentifier>2e7c4f43-851e-4e7b-94bf-a01cf9deb959</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Networking\Common\Packeting">
-      <UniqueIdentifier>6cba0a63-a111-4e9b-a500-e565b3bb38a2</UniqueIdentifier>
+      <UniqueIdentifier>769e1dd4-d9a5-437a-b767-c050a168996d</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Networking\Common\Players">
-      <UniqueIdentifier>28c8b04b-cc1c-45b8-81a4-75143e7200db</UniqueIdentifier>
+      <UniqueIdentifier>6f6d7ca9-a0f5-4d73-852f-03909606019a</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Networking\Common\SyncTime">
-      <UniqueIdentifier>df27ed0f-90c4-45ab-8dbf-feed0fbad06b</UniqueIdentifier>
+      <UniqueIdentifier>ab54ee8e-48e6-49a4-bb95-50ee7e9f72d7</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\Networking\PC">
-      <UniqueIdentifier>205da996-86b1-43d4-b06d-169305035bf0</UniqueIdentifier>
+      <UniqueIdentifier>fefd4749-93b8-4d75-8ac1-b4f92a152835</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\System">
-      <UniqueIdentifier>e7d30ecf-a7d0-4132-a82e-9e452b3ccb24</UniqueIdentifier>
+      <UniqueIdentifier>f364e64b-634e-4104-9da7-bcf0a96cad80</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\System\Common">
-      <UniqueIdentifier>dacf0e89-69f6-4be8-9b11-ebfaf2655314</UniqueIdentifier>
+      <UniqueIdentifier>2f340d67-d2f8-4db8-b927-720b4ce92c13</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\System\Common\FileSystem">
-      <UniqueIdentifier>3139ad18-881f-421a-8a15-a18d9b4957c9</UniqueIdentifier>
+      <UniqueIdentifier>f3d39fcc-3688-4c31-bc13-96b1fa4115eb</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\System\Common\Headset">
-      <UniqueIdentifier>bb094eb8-f097-45bb-b410-4273c784a750</UniqueIdentifier>
+      <UniqueIdentifier>9e7a7765-b3e2-4c81-8dd8-38d1ce80cca6</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\System\Common\Unicode">
-      <UniqueIdentifier>2bcbd609-95a2-47b1-8f70-6bdbd3679045</UniqueIdentifier>
+      <UniqueIdentifier>93c91bcc-8615-4afc-bddc-3e4b7b697a8b</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\System\PC">
-      <UniqueIdentifier>88ca276b-5bff-4fa9-879a-abddfe8ddd8f</UniqueIdentifier>
+      <UniqueIdentifier>cedc3ae1-7ff1-47b3-a059-00029c26670e</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\System\PC\FileSystem">
-      <UniqueIdentifier>b52972b0-3b7c-43d6-bfe3-892194624b67</UniqueIdentifier>
+      <UniqueIdentifier>bc27a462-a2a4-4da0-b992-95ada479b3e5</UniqueIdentifier>
     </Filter>
     <Filter Include="Shared\System\PC\Input">
-      <UniqueIdentifier>14a2b028-6df3-4826-a5d6-8f5aeb0c6e86</UniqueIdentifier>
+      <UniqueIdentifier>2c518323-8367-4d2a-addc-670e574e539e</UniqueIdentifier>
     </Filter>
     <Filter Include="Source">
-      <UniqueIdentifier>24947950-8aaf-4646-ba17-bd28471f9591</UniqueIdentifier>
+      <UniqueIdentifier>915dc427-780c-4cb5-afa2-aab586dc4959</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Camera">
-      <UniqueIdentifier>f5fbcdd6-bd9d-487c-af30-448fc7ee8b1c</UniqueIdentifier>
+      <UniqueIdentifier>fc831bcd-7178-4ad4-b404-4404b0603fd3</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Camera\Behaviours">
-      <UniqueIdentifier>bbc95384-ff78-4f1b-a4a6-e083ad64bddd</UniqueIdentifier>
+      <UniqueIdentifier>9a6672da-3a3f-499e-808f-91b6b81da0a6</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Camera\Crash">
-      <UniqueIdentifier>27a85d48-7ba1-4947-a49c-67a33ba12fdc</UniqueIdentifier>
+      <UniqueIdentifier>e6d27244-5e35-40f8-983d-5a22b218b98a</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Camera\Crash\Camera Directors">
-      <UniqueIdentifier>940f174c-64fa-4bb3-a28c-2d55ece95a1b</UniqueIdentifier>
+      <UniqueIdentifier>fe4c2411-24b0-46d6-9480-db85ac412445</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Camera\Crash\Camera Directors\Child States">
-      <UniqueIdentifier>2f9db3fd-f873-433c-b391-a38c017b99cc</UniqueIdentifier>
+      <UniqueIdentifier>e7606d48-233b-428d-a75a-112e4a54cfce</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Camera\Crash\Position Finders">
-      <UniqueIdentifier>813a29c2-cf7d-4e94-bef8-3ca39b627fa6</UniqueIdentifier>
+      <UniqueIdentifier>950dc55f-2ee7-41e7-8b92-3c82952a37c4</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Camera\KeyFrames">
-      <UniqueIdentifier>41068feb-cf1d-4265-828b-4972a1925abf</UniqueIdentifier>
+      <UniqueIdentifier>789bfce5-8988-4935-b83f-58e9ce4852cc</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Camera\States">
-      <UniqueIdentifier>b3cd77a2-3fbb-4d59-9711-e10bfe06d1b5</UniqueIdentifier>
+      <UniqueIdentifier>930db6b7-23f8-440a-9032-d362aad39516</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\HUD">
-      <UniqueIdentifier>1bd71ca8-b723-4eb9-8025-fe1bc6537a15</UniqueIdentifier>
+      <UniqueIdentifier>76ef2076-47bc-4ce4-8e1c-a9b070eae07b</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\HUD\CustomObjects">
-      <UniqueIdentifier>00b8c5f7-6d9c-472b-813d-dd486a4f5d26</UniqueIdentifier>
+      <UniqueIdentifier>471ae6ca-cf1e-4234-8bbf-b4f51dfb7807</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\HUD\Messages">
-      <UniqueIdentifier>82ec8efb-36cb-4552-b3ec-3b1a07bfa1f8</UniqueIdentifier>
+      <UniqueIdentifier>1fd07f0e-3669-47f1-a6f9-5a505f4535aa</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu">
-      <UniqueIdentifier>38c86f81-1485-4b2c-a4d5-6ebc786a5bbe</UniqueIdentifier>
+      <UniqueIdentifier>af96917c-a544-443d-80f8-2d71bdb5cf1a</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\Apt">
-      <UniqueIdentifier>4aeaa18f-b0c8-42aa-8ca1-9720bcc7213f</UniqueIdentifier>
+      <UniqueIdentifier>91a2bf5f-d0f2-45e6-acb5-3a7d504bea39</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\Apt\AptManager">
-      <UniqueIdentifier>5d88794f-fbbb-4ed8-9535-bfb950efc016</UniqueIdentifier>
+      <UniqueIdentifier>4974b42f-e636-4d10-8d9d-94bd7876bffd</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\Effects">
-      <UniqueIdentifier>cf7d700d-36ed-4816-9474-c6d91ae658b0</UniqueIdentifier>
+      <UniqueIdentifier>23780432-5faa-4629-a6b6-60e0559a9387</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\Services">
-      <UniqueIdentifier>0b8dbcc1-6258-40e4-8643-3e2a4c1c412d</UniqueIdentifier>
+      <UniqueIdentifier>9f60645e-2f38-4ce3-9b14-d8c3e90be08c</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\States">
-      <UniqueIdentifier>4126ead1-aae9-4c0c-8358-80bb20e979fc</UniqueIdentifier>
+      <UniqueIdentifier>6b5cf587-65c4-4d8b-82d4-d6ce0ddfb5da</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\States\Multiplayer">
-      <UniqueIdentifier>808cf805-de7a-46da-a8c6-a8e3d0987337</UniqueIdentifier>
+      <UniqueIdentifier>43bed7cf-6203-4e48-a204-1b30bf284c4e</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\States\Offline">
-      <UniqueIdentifier>296018e7-2600-4472-b3f8-980a73e66143</UniqueIdentifier>
+      <UniqueIdentifier>fab41584-b802-49bb-bd99-f25e3812b9aa</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\States\Offline\DriverDetails">
-      <UniqueIdentifier>8db46ace-3387-4b16-80fc-12fdc6ed7fe2</UniqueIdentifier>
+      <UniqueIdentifier>100ac9df-179e-4528-81ab-1a298267c1d9</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\States\Offline\MemoryCard">
-      <UniqueIdentifier>d1989a9b-7188-4f9a-a80e-5a7e0d7e4e40</UniqueIdentifier>
+      <UniqueIdentifier>a8d8f1ca-d884-47e5-a902-db1e119d43e3</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\States\Offline\BootFlow">
-      <UniqueIdentifier>f74374d3-a014-4434-80e5-69e6b74d95fe</UniqueIdentifier>
+      <UniqueIdentifier>c84d41a8-4ac8-423a-aa49-c0dc7038ef0e</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\States\Offline\Rewards">
-      <UniqueIdentifier>31d9246e-e9a3-4269-86c2-39b07083d17d</UniqueIdentifier>
+      <UniqueIdentifier>44e070fa-40a3-4785-9689-dd7f8e3e47f3</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\States\Online">
-      <UniqueIdentifier>f4ec86a4-0172-43d5-a05b-99320ac5501b</UniqueIdentifier>
+      <UniqueIdentifier>8b5a141a-3f13-434f-9c04-b1540c4f5011</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\States\Online\DirtySock">
-      <UniqueIdentifier>ac33d52b-f8b1-4710-b3cf-673377f8a5b6</UniqueIdentifier>
+      <UniqueIdentifier>2da60c79-dbe6-47b1-8f30-efc8c45e2f29</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\DebugMenu">
-      <UniqueIdentifier>0ca97720-c7f8-4237-8934-6f295b331a4d</UniqueIdentifier>
+      <UniqueIdentifier>4ea88983-39ed-4295-82e1-b4ffa8cb74e1</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\DebugMenu\Components">
-      <UniqueIdentifier>fb5ff355-41c6-459e-a0bf-9a08944e6d10</UniqueIdentifier>
+      <UniqueIdentifier>18816ccf-7b90-4be0-87e6-5a2177737ec8</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\DebugMenu\Pages">
-      <UniqueIdentifier>17e5db00-d345-49a1-a9bc-c5a1727139e9</UniqueIdentifier>
+      <UniqueIdentifier>3ecb25d9-8868-4375-847b-80208fd264a1</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\ExtensionObjects">
-      <UniqueIdentifier>955d39a7-998b-4669-8aab-9f90184ed6e4</UniqueIdentifier>
+      <UniqueIdentifier>62b4d988-9c3e-4a04-b94f-cae794dabce1</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\ExtensionObjects\Global">
-      <UniqueIdentifier>81a1120f-3038-4ab8-aac0-4797e26535f5</UniqueIdentifier>
+      <UniqueIdentifier>cee1b299-a462-4026-ad7b-0fa61579e388</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Menu\ExtensionObjects\PageSpecific">
-      <UniqueIdentifier>404091b4-e5fa-4806-9267-756da168c5a2</UniqueIdentifier>
+      <UniqueIdentifier>329b29d2-b44f-42b5-8db8-64f30267b6bd</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Physics">
-      <UniqueIdentifier>ee0c19cb-f618-4326-b203-f6455582ce99</UniqueIdentifier>
+      <UniqueIdentifier>f0fc180d-cfe4-4771-976a-3c1875293837</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Physics\Deformation">
-      <UniqueIdentifier>4b3bc372-199c-4b63-b0a4-e04929a60abd</UniqueIdentifier>
+      <UniqueIdentifier>34aa1210-6a04-42a3-9644-5f318b4a50c9</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Game">
-      <UniqueIdentifier>6debc367-01a4-413a-835e-81bb8193ed97</UniqueIdentifier>
+      <UniqueIdentifier>0334e499-a2fe-4764-a4b4-b51fd649a425</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Game\Common">
-      <UniqueIdentifier>d8fa54a3-49e1-4b6d-ad1c-c730d09ea7b6</UniqueIdentifier>
+      <UniqueIdentifier>5dd8e72d-5f41-48e2-bb0e-a11e0fbffb37</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Game\Common\Challenge">
-      <UniqueIdentifier>1672c141-e8c4-435f-93fd-fc5154bd0138</UniqueIdentifier>
+      <UniqueIdentifier>fd158170-18ca-49bc-8f90-c6c0fec908ce</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Game\Common\Logic">
-      <UniqueIdentifier>0f078263-9184-454e-88e0-4d62d2492409</UniqueIdentifier>
+      <UniqueIdentifier>0e6f33fd-0057-4cfc-ba29-1032fbe30ffc</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Game\Common\Logic\Online">
-      <UniqueIdentifier>34d98108-e93e-4e59-918c-e7bb73883f5d</UniqueIdentifier>
+      <UniqueIdentifier>9fb07589-2a22-467b-89a3-891a035edd62</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Game\Common\Logic\Single">
-      <UniqueIdentifier>dde98bdc-a4e9-42e1-9049-a4038a27da85</UniqueIdentifier>
+      <UniqueIdentifier>f1504dcc-c5d5-47b4-842b-e0d171e93f79</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Game\Common\Persistence">
-      <UniqueIdentifier>dd0ddfeb-ed6a-413a-9cf6-5423c4e358e1</UniqueIdentifier>
+      <UniqueIdentifier>ba9ff08e-4526-4438-a685-6d860ab92074</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Game\Common\Progression">
-      <UniqueIdentifier>2312ec61-513f-4b91-a4e7-9ef766f4ffd3</UniqueIdentifier>
+      <UniqueIdentifier>88d636f2-d52c-4c83-bfe4-346dbabcf215</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Game\PC">
-      <UniqueIdentifier>55e41e14-9b91-4e67-8094-7186e0bef0dd</UniqueIdentifier>
+      <UniqueIdentifier>7dc47a37-3d47-461a-95e5-aa0cbb5d61c3</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Graphics">
-      <UniqueIdentifier>dcd7cf84-d2df-406a-85d1-0cf6e0d86eb3</UniqueIdentifier>
+      <UniqueIdentifier>80c9a0c4-f035-4d72-8770-1ac2e7445815</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Graphics\Common">
-      <UniqueIdentifier>0f4bab08-6dc6-4343-96e3-1decaada277f</UniqueIdentifier>
+      <UniqueIdentifier>ecdc7ba3-8a63-4f41-84fa-89ec1131981f</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Graphics\PC">
-      <UniqueIdentifier>4e600f1c-2b02-499a-84de-3ddb31595ebb</UniqueIdentifier>
+      <UniqueIdentifier>56a9d55c-bb87-4c48-8f82-b52b94dfdc1e</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Network">
-      <UniqueIdentifier>f9963e1f-4ffc-4dab-af08-79fd11cf4ab5</UniqueIdentifier>
+      <UniqueIdentifier>738034c7-c8f2-4c74-9f22-89c787a9fe67</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Network\Common">
-      <UniqueIdentifier>dbeb11e9-f3d1-4d80-bdd9-ea6a2fc58858</UniqueIdentifier>
+      <UniqueIdentifier>000de755-78ba-4c20-bd7d-144218eff994</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Network\Common\BackEnd">
-      <UniqueIdentifier>f2db8280-006b-4ee4-829e-799a9dccc3c0</UniqueIdentifier>
+      <UniqueIdentifier>017fc96e-32d3-4b93-902d-c74d31a48e9f</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Network\Common\Messages">
-      <UniqueIdentifier>3b17523c-e160-4ec3-b7d6-e96690b19c8d</UniqueIdentifier>
+      <UniqueIdentifier>6d8e6720-598f-4773-a7d6-46ed004f9a74</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Network\PC">
-      <UniqueIdentifier>71c5b098-dfbb-41f6-bfc0-14522830e614</UniqueIdentifier>
+      <UniqueIdentifier>a261f5ef-5d6d-4775-8364-0bfd137ab3e5</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Sound">
-      <UniqueIdentifier>8745bba9-7f45-4592-8ea8-030d33ed0f6a</UniqueIdentifier>
+      <UniqueIdentifier>252cbcc0-0358-4450-9aa1-045777891ead</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Sound\Common">
-      <UniqueIdentifier>ed2d3bb5-21d7-4e08-82b4-ccd3fb3270e7</UniqueIdentifier>
+      <UniqueIdentifier>9c82e315-a46b-42f4-bd9a-1ead9a0784d6</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Sound\Common\Cars">
-      <UniqueIdentifier>9f59e2a3-5b5a-4957-9474-aef9ed6a9fb1</UniqueIdentifier>
+      <UniqueIdentifier>d3a19cbb-63a3-44e6-ae62-952fc44428c0</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Sound\Common\Crash">
-      <UniqueIdentifier>f4a670b6-deec-4f6e-b8ef-d1867e7bcbbe</UniqueIdentifier>
+      <UniqueIdentifier>3ab2b3e4-d973-45dc-99da-de773bf39068</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Sound\Common\ESM">
-      <UniqueIdentifier>1f94d9e5-f1d2-4bad-880b-423877d214bf</UniqueIdentifier>
+      <UniqueIdentifier>b5bf8f05-74b7-42d6-863e-5f168cba2361</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Sound\Common\Traffic">
-      <UniqueIdentifier>47708bd7-b378-4a04-98b3-c35283e5db5a</UniqueIdentifier>
+      <UniqueIdentifier>375bfbaa-6850-4a35-b286-8070d37debfb</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Sound\PC">
-      <UniqueIdentifier>6eeaaa05-7a31-4ecd-ad5b-f0bef26a36a5</UniqueIdentifier>
+      <UniqueIdentifier>e0550c01-18f1-43d0-83fd-22ad005a7c68</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\World">
-      <UniqueIdentifier>8b41f88c-4afe-41c7-9ccc-55aee4d652ee</UniqueIdentifier>
+      <UniqueIdentifier>3eede529-7db2-42c5-b1d7-7871a5823fd7</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\World\Common">
-      <UniqueIdentifier>4561cd3a-4587-4736-a718-1b59db2ef585</UniqueIdentifier>
+      <UniqueIdentifier>e154ca9d-3bfd-4155-be94-20e536e77310</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\World\Common\AI">
-      <UniqueIdentifier>dbf3be2b-3311-48b8-a410-175471412fff</UniqueIdentifier>
+      <UniqueIdentifier>2e18f7a8-e41d-4c57-879d-790da85e38a7</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\World\Common\Track">
-      <UniqueIdentifier>36c8ae14-d0a5-4703-b1c2-3d1cdac4565b</UniqueIdentifier>
+      <UniqueIdentifier>a332b0a9-19ff-4702-8508-723415dbc43e</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\World\Common\Traffic">
-      <UniqueIdentifier>1dd46e6b-1200-4e1c-b618-d561d1d9c9ba</UniqueIdentifier>
+      <UniqueIdentifier>16aaaa3b-e90b-437b-81ea-940c200a5b2f</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\World\PC">
-      <UniqueIdentifier>c989ed47-f73b-4ce3-947e-4df219ee41a1</UniqueIdentifier>
+      <UniqueIdentifier>b56003f7-2297-4366-aef1-3f0729b647a7</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Shared\Numeric\Math\PC\VectorElementsPC.h">
+      <Filter>Shared\Numeric\Math\PC</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

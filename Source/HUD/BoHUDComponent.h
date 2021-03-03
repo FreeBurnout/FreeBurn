@@ -1,9 +1,12 @@
+#ifndef BOHUDCOMPONENT_H
+#define BOHUDCOMPONENT_H
+
 #include <rwcore.h>
 
 #include "BoHUDManager.h"
 #include "../World/Common/BoPlayerCar.h"
+#include "../../Shared/Numeric/Math/PC/GtMathPC.h"
 #include "../../Shared/Graphical/Common/2D/Gt2dScene.h"
-#include "../../Shared/Graphical/PC/GtTexturePC.h"
 #include "../../Shared/Graphical/Common/2D/Gt2dObject.h"
 #include "../../Shared/System/Common/Unicode/GtUnicode.h"
 
@@ -155,7 +158,27 @@ struct BoHUDParticleParamsTag {
 
 };
 
-CGtV2d kHUDV2d_HalfHalf;
+static CGtV2d kHUDV2d_ZeroZero;
+static CGtV2d kHUDV2d_ZeroHalf;
+static CGtV2d kHUDV2d_ZeroOne;
+static CGtV2d kHUDV2d_HalfZero;
+static CGtV2d kHUDV2d_HalfHalf;
+static CGtV2d kHUDV2d_HalfOne;
+static CGtV2d kHUDV2d_OneZero;
+static CGtV2d kHUDV2d_OneHalf;
+static CGtV2d kHUDV2d_OneOne;
+static CGtV4d kHUDV4d_White;
+static CGtV4d kHUDV4d_OffWhite;
+static CGtV4d kHUDV4d_Black;
+static CGtV4d kHUDV4d_Grey25;
+static CGtV4d kHUDV4d_Grey50;
+static CGtV4d kHUDV4d_Grey75;
+static CGtV4d kHUDV4d_TransparentBlack;
+static CGtV4d kHUDV4d_TransparentWhite;
+static CGtV4d kHUDV4d_Recip255RGB;
+static CGtV4d kHUDV4d_TimerGoodColour;
+static CGtV4d kHUDV4d_TimerBadColour;
+static CGtV2d kaHUDFullImageSpriteUVs;
 
 class CBoHUDComponent {
 public:
@@ -169,7 +192,7 @@ public:
     void StartTransition(bool, EHUDMode, EHUDMode);
     void AdjustScalingForSplitScreen();
 	void UseClipFrame();
-	CGt2dScene* GetScene();
+	Gt2dRenderer::CGt2dScene* GetScene();
 
 	COutlineDropShadow* GetOutlineDropShadow(CBoHUDComponent, EOutlineDropShadow);
 	CGtTexture* GetHUDTexture();
@@ -185,3 +208,5 @@ public:
 	GtUTF16* GetHUDString(EBoHUDString leHUDString);
     EPlayerCarIndex GetPlayerCarIndex();
 };
+
+#endif // !#define BOHUDCOMPONENT_H

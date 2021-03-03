@@ -55,48 +55,48 @@ class CBoScoreCategory {
 
 class CBoOffensiveDrivingManager {
 public:
-	RwReal krSlamChainMaxTimeBetweenSlams = 15.0;
+	RwReal krSlamChainMaxTimeBetweenSlams = 15.0f;
 
-	RwReal gmrAirMinimumDistanceValue            = 5.0;
-	RwReal gmrAirDistanceBurnValue               = 2.0;
-	RwReal gmrOncomingMinimumSpeed               = 30.0;
-	RwReal gmrOncomingMinimumDistanceValue       = 10.0;
-	RwReal gmrOncomingDistanceBurnValue          = 0.3;
-	RwReal gmrDriftMinimumSpeed                  = 30.0;
-	RwReal gmrDriftMinimumDistanceValue          = 10.0;
-	RwReal gmrDriftDistanceBurnValue             = 1.0;
-	RwReal gmrMaxNearMissDistance                = 2.0;
-	RwReal gmrNearMissMinimumSpeed               = 30.0;
-	RwReal gmrNearMissMinimumChainSpeed          = 30.0;
-	RwReal gmrNearMissBurnValue                  = 60.0;
-	RwReal gmrNearMissChainTime                  = 5.0;
-	RwReal gmrCrashClassCheckingTrafficBurnValue = 30.0;
-	RwReal gmrRaceClassCheckingTrafficBurnLoss   = 70.0;
-	RwReal gmrCheckingTrafficTime                = 2.0;
-	RwReal gmrCrashEscapeRadius                  = 8.0;
-	RwReal gmrCrashNearMissChainTime             = 1.0;
-	RwReal gmrCrashEscapeMinClearTime            = 3.0;
-	RwReal gmrCrashEscapeMinimumSpeed            = 70.0;
-	RwReal gmrCrashEscapeBurnValue               = 120.0;
-	RwReal gmrBurnRatioLostInCrash               = 0.5;
-	RwReal gmrMaxSlamBurnValue                   = 360.0;
-	RwReal gmrRubbingMinTime                     = 0.3;
-	RwReal gmrRubbingBurnValue                   = 15.0;
-	RwReal gmrBoostStartBurnValue                = 50.0;
-	RwReal gmrTakedownBurnValue                  = 720.0;
-	RwReal gmrTakedownWaitTime                   = 1.0;
-	RwReal gmrTakedownCrashTime                  = 1.0;
-	RwReal gmrTakedownCrashTimeOnline            = 3.0;
-	RwReal gmrTakedownCrashTimeNoSlam            = 0.5;
-	RwReal gmrTakedownCollideTimeNoSlam          = 0.5;
-	RwReal gmrTakedownCollideTimeNoSlamOnline    = 1.0;
-	RwReal gmrTakedownTimeAfterAfterSlam         = 0.5;
-	RwReal gmrDoubleTakedownTime                 = 1.0;
-	RwReal gmrSpreeTakedownTime                  = 30.0;
-	RwReal gmrDoubleRevengeTakedownTime          = 60.0;
-	RwReal gmrPropHitChainTime                   = 2.0;
-	RwReal gmrPropHitBurnValue                   = 3.0;
-	RwReal gmrTradingPaintBurnValue              = 3.0;
+	RwReal gmrAirMinimumDistanceValue            = 5.0f;
+	RwReal gmrAirDistanceBurnValue               = 2.0f;
+	RwReal gmrOncomingMinimumSpeed               = 30.0f;
+	RwReal gmrOncomingMinimumDistanceValue       = 10.0f;
+	RwReal gmrOncomingDistanceBurnValue          = 0.3f;
+	RwReal gmrDriftMinimumSpeed                  = 30.0f;
+	RwReal gmrDriftMinimumDistanceValue          = 10.0f;
+	RwReal gmrDriftDistanceBurnValue             = 1.0f;
+	RwReal gmrMaxNearMissDistance                = 2.0f;
+	RwReal gmrNearMissMinimumSpeed               = 30.0f;
+	RwReal gmrNearMissMinimumChainSpeed          = 30.0f;
+	RwReal gmrNearMissBurnValue                  = 60.0f;
+	RwReal gmrNearMissChainTime                  = 5.0f;
+	RwReal gmrCrashClassCheckingTrafficBurnValue = 30.0f;
+	RwReal gmrRaceClassCheckingTrafficBurnLoss   = 70.0f;
+	RwReal gmrCheckingTrafficTime                = 2.0f;
+	RwReal gmrCrashEscapeRadius                  = 8.0f;
+	RwReal gmrCrashNearMissChainTime             = 1.0f;
+	RwReal gmrCrashEscapeMinClearTime            = 3.0f;
+	RwReal gmrCrashEscapeMinimumSpeed            = 70.0f;
+	RwReal gmrCrashEscapeBurnValue               = 120.0f;
+	RwReal gmrBurnRatioLostInCrash               = 0.5f;
+	RwReal gmrMaxSlamBurnValue                   = 360.0f;
+	RwReal gmrRubbingMinTime                     = 0.3f;
+	RwReal gmrRubbingBurnValue                   = 15.0f;
+	RwReal gmrBoostStartBurnValue                = 50.0f;
+	RwReal gmrTakedownBurnValue                  = 720.0f;
+	RwReal gmrTakedownWaitTime                   = 1.0f;
+	RwReal gmrTakedownCrashTime                  = 1.0f;
+	RwReal gmrTakedownCrashTimeOnline            = 3.0f;
+	RwReal gmrTakedownCrashTimeNoSlam            = 0.5f;
+	RwReal gmrTakedownCollideTimeNoSlam          = 0.5f;
+	RwReal gmrTakedownCollideTimeNoSlamOnline    = 1.0f;
+	RwReal gmrTakedownTimeAfterAfterSlam         = 0.5f;
+	RwReal gmrDoubleTakedownTime                 = 1.0f;
+	RwReal gmrSpreeTakedownTime                  = 30.0f;
+	RwReal gmrDoubleRevengeTakedownTime          = 60.0f;
+	RwReal gmrPropHitChainTime                   = 2.0f;
+	RwReal gmrPropHitBurnValue                   = 3.0f;
+	RwReal gmrTradingPaintBurnValue              = 3.0f;
 	RwInt32 gmnPropHitBP                         = 10;
 	RwInt32 gmnRubbingBP                         = 5;
 	RwInt32 gmnTradingPaintBP                    = 25;
@@ -168,41 +168,41 @@ public:
 	};
 
 	float gmarMinAir[4] = {
-		15.0, 30.0, 60.0, 90.0
+		15.0f, 30.0f, 60.0f, 90.0f
 	};
 
 	float gmarMinOncoming[4] = {
-		50.0, 100.0, 200.0, 300.0
+		50.0f, 100.0f, 200.0f, 300.0f
 	};
 
 	float gmarMinDrift[4] = {
-		45.0, 90.0, 180.0, 270.0
+		45.0f, 90.0f, 180.0f, 270.0f
 	};
 
 	float gmarMinTailgate[3] = {
-		1.0, 5.0, 10.0
+		1.0f, 5.0, 10.0f
 	};
 
 	float gmarMinRubbing[3] = {
-		0.1, 4.0, 8.0
+		0.1f, 4.0f, 8.0f
 	};
 
 	float gmarMinGrinding[3] = {
-		0.1, 4.0, 8.0
+		0.1f, 4.0f, 8.0f
 	};
 
 	float gmarMinNearMiss[4] = {
-		999.0, 2.0, 5.0, 9.0
+		999.0f, 2.0f, 5.0f, 9.0f
 	};
 
 	float gmarMinCheckedTraffic[4] = {
-		1.0, 2.0, 3.0, 4.0
+		1.0f, 2.0f, 3.0f, 4.0f
 	};
 
-	RwReal gmrTailgateMaxDistance       = 15.0;
-	RwReal gmrTailgatePsycheOutDistance = 7.5;
-	RwReal gmrTailgateConeAngle         = 15.0;
-	RwReal gmrTailgateExtraBurnValue    = 15.0;
-	RwReal gmrTailgateInitialTime       = 0.5;
-	RwReal gmrGrindingExtraBurnValue    = 15.0;
+	RwReal gmrTailgateMaxDistance       = 15.0f;
+	RwReal gmrTailgatePsycheOutDistance = 7.5f;
+	RwReal gmrTailgateConeAngle         = 15.0f;
+	RwReal gmrTailgateExtraBurnValue    = 15.0f;
+	RwReal gmrTailgateInitialTime       = 0.5f;
+	RwReal gmrGrindingExtraBurnValue    = 15.0f;
 };

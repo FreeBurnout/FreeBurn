@@ -3,12 +3,11 @@
 
 #include <SDL.h>
 
-#include <src\bacamera.h>
+#include <bacamera.h>
 
 #include "../Common/BoGraphicsManager.h"
 #include "../../World/Common/BoRaceCar.h"
-#include "../../../Shared/Numeric/Math/PC/GtV3dPC.h"
-#include "../../../Shared/Numeric/Math/PC/GtV4dPC.h"
+#include "../../../Shared/Numeric/Math/PC/GtMathPC.h"
 
 extern SDL_Window* window;
 
@@ -24,7 +23,6 @@ public:
 	void Construct();
 	void CreateWorkBuffers();
 	void DistortEnvmapBuffersIntoSphereMap();
-	
 	RwUInt32 GetVBlankCount();
 	void OpenRenderWare();
 	void OpenViewport(EBoViewportSelection) override;

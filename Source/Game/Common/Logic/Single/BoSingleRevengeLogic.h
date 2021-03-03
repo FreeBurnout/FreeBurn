@@ -4,7 +4,8 @@
 #include "BoSingleRaceLogic.h"
 
 class CBoSingleRevengeLogic : CBoSingleRaceLogic {
-
+public:
+	void Construct();
 }; 
 
 #endif // !BOSINGLEREVENGELOGIC_H

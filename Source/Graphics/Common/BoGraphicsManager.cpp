@@ -1,9 +1,13 @@
 #include "../PC/BoGraphicsManagerPC.h"
+#include "../../HUD/BoHUDComponent.h"
+#include "../../HUD/BoHUDText2dObject.h"
 #include "../../Game/Common/BoGame.h"
 #include "../../Game/Common/BoLanguageManager.h"
-#include "../../HUD/BoHUDText2dObject.h"
 #include "../../Network/Common/BoNetworkManager.h"
+#include "../../../Shared/Numeric/Math/PC/GtMathPC.h"
 #include "../../../Shared/Graphical/Common/2D/Gt2dScene.h"
+
+using namespace GtMathPC;
 
 CBoGraphicsManager gGraphicsManager;
 
@@ -12,241 +16,201 @@ GtUTF16 kaaLoadingStrings[][8] = {
 };
 
 void CBoGraphicsManagerBase::Downsample(RwUInt32 luFrameBufferAddress, RwUInt32 luFrameBufferWidth, RwUInt32 luWorkspaceAddress, RwUInt32 luWorkspaceWidth, RwInt32 lnTopLeftX, RwInt32 lnTopLeftY, RwInt32 lnSizeX, RwInt32 lnSizeY) {
+
 }
 
+RwReal lrFull = 0;
 void CBoGraphicsManagerBase::DrawBootLoadingScreen(RwReal lrProgress) {
-    bool bVar1;
-    float fVar2;
-    int iVar3;
-    GtUTF16* pwVar4;
-    undefined8 unaff_s0;
-    undefined8 unaff_s1;
-    undefined8 unaff_s2;
-    undefined8 unaff_s3;
-    undefined8 unaff_s4;
-    undefined8 unaff_s5;
-    undefined8 unaff_s6;
-    undefined8 unaff_s7;
-    undefined8 unaff_s8;
-    float fVar5;
-    float fVar6;
-    float fVar7;
-    float fVar8;
-    float fVar9;
-    float fVar10;
-    float fVar11;
-    float fVar12;
-    undefined4 local_220;
-    undefined4 local_21c;
-    undefined4 local_218;
-    undefined4 local_214;
-    float local_210;
-    float local_20c;
-    float local_208;
-    float fStack516;
-    float local_200;
-    float local_1fc;
-    float local_1f8;
-    float fStack500;
-    float local_1f0;
-    float fStack492;
-    float fStack488;
-    float fStack484;
-    float local_1e0;
-    float fStack476;
-    float fStack472;
-    float fStack468;
-    float local_1d0;
-    float fStack460;
-    float fStack456;
-    float fStack452;
-    float local_1c0;
-    float fStack444;
-    float fStack440;
-    float fStack436;
-    CGtV4d local_1b0;
-    undefined4 local_1a8;
-    undefined4 local_1a4;
-    float local_1a0;
-    float fStack412;
-    float fStack408;
-    float fStack404;
-    float local_190;
-    float fStack396;
-    float fStack392;
-    float fStack388;
-    undefined auStack384[28];
-    code* local_164;
-    float local_160;
-    float local_15c;
-    float local_158;
-    float fStack340;
-    float local_150;
-    float fStack332;
-    float fStack328;
-    float fStack324;
-    undefined8 local_140;
-    float local_130;
-    float fStack300;
-    float fStack296;
-    float fStack292;
-    float* local_120;
-    float* local_11c;
-    float* local_118;
-    float local_110;
-    float fStack268;
-    float fStack264;
-    float fStack260;
-    float local_100;
-    float fStack252;
-    float fStack248;
-    float fStack244;
+	float fStack244;
+	float fStack248;
+	float fStack252;
+	float fStack260;
+	float fStack264;
+	float fStack268;
+	float fStack324;
+	float fStack328;
+	float fStack332;
+	float fStack340;
+	float fStack388;
+	float fStack392;
+	float fStack396;
+	float fStack404;
+	float fStack408;
+	float fStack412;
+	float fStack436;
+	float fStack440;
+	float fStack444;
+	float fStack452;
+	float fStack456;
+	float fStack460;
+	float fStack468;
+	float fStack472;
+	float fStack476;
+	float fStack500;
+	
+	float fVar2;
+	float fVar8;
+	float fVar12;
 
-    fVar5 = gGraphicsManager.mnScreenWidth * 0.0015625; // Ratio to 640, 
-    fVar6 = gGraphicsManager.mnScreenHeight * 0.00208333333; // Ratio to 480
-    local_218 = 0.5;
-    local_214 = 1.0;
-    local_220 = 0;
-    local_130 = 0.5;
-    fStack300 = 0.5;
-    fStack296 = 0.5;
-    fStack292 = 1.0;
-    local_11c = &local_1f8;
-    local_21c = 0;
-    local_118 = &local_1f0;
-    local_120 = &local_200;
+	float local_150;
+	float local_158;
+	float local_15c;
+	float local_160;
+	float local_190;
+	float local_1a0;
 
-    RwReal lrFull = 0;
+	float local_1f8;
+	float local_1fc;
+	float local_200;
 
-    if (lrFull < lrProgress) {
-        lrFull = lrProgress;
-    }
+	float scrnXScale = gGraphicsManager.mnScreenWidth / 640;
+	float scrnYScale = gGraphicsManager.mnScreenHeight / 480;
+	 
+	CGtV4d unkVec99 = CGtV4d(0, 0, 0.5, 1); 
+	CGtV4d unkVec0 = CGtV4d(0.5, 0.5, 0.5, 1.0);
 
-    if (gGame.mbInputManagerPrepared && !gNetworkManager.mbUppingInterface) {
-        gGame.mInputManager.Update();
-        gGame.mInputManager.UpdateFE();
-    }
+	CGtV4d unkVec1; // 1f0, 492, 488, 484
 
-    RwCameraClear(gGraphicsManager.mMainViewport.mpRwCamera, 0, 3);
-    OpenViewport(eBoViewportMain);
-    Gt2dRenderer::Begin();
-    if (gLanguageManager.mbIsBigFontLoaded) {
-        pwVar4 = kaaLoadingStrings[0];
-        local_1b0.mData[0] = 320.0;
-        local_1b0.mData[1] = 400.0;
-        for (int i = 0; i > -1; i--) {
-            if (*pwVar4 != u'\0') {
-                CBoHUDText2dObject::Prepare(0x41d00000, &local_1a0, &local_1b0, 0x1c2d740, CBoHUDText2dObject::eStyleBigMessage, pwVar4);
-                local_158 = fStack408 * fVar5;
-                fStack340 = fStack404 * fVar6;
-                local_160 = local_1a0 * fVar5;
-                local_15c = fStack412 * fVar6;
-                local_140 = CONCAT44(fStack340, local_158);
-                local_150 = local_190 * local_130;
-                fStack332 = fStack396 * fStack300;
-                fStack328 = fStack392 * fStack296;
-                fStack324 = fStack388 * fStack292;
-                (*local_164)(&local_160, auStack384);
-                local_1b0._4_4_ -= 34.0;
-            }
-            pwVar4 += 0x10;
-        }
-    }
-    local_1a8 = 0.91;
-    local_1a4 = 0.97;
-    fVar10 = 240.0;
-    fVar9 = 2.0;
-    local_208 = fVar5 * 400.0;
-    fStack516 = fVar6 * 435.0;
-    local_210 = fVar5 * 240.0;
-    fVar12 = 423.75;
-    local_20c = fVar6 * 420.0;
-    local_1b0 = CONCAT44(fStack516, local_208);
-    Gt2dRenderer::RenderSpritesUntex(0x3f4000003f800000, &local_220, 1, &local_210);
-    local_1a8 = 0;
-    local_1a4 = 1.0;
-    fVar11 = 160.0;
-    local_208 = (400.0 - 1.0 / fVar5) * fVar5;
-    fStack516 = (435.0 - 1.0 / fVar6) * fVar6;
-    local_210 = (1.0 / fVar5 + fVar10) * fVar5;
-    local_20c = (1.0 / fVar6 + 420.0) * fVar6;
-    local_1b0 = CONCAT44(fStack516, local_208);
-    Gt2dRenderer::RenderSpritesUntex(0, &local_220, 1, &local_210);
-    local_1f0 = _18CB4HUDText2dObject$mgDarkTextColour._0_4_ * local_130;
-    fStack492 = _18CB4HUDText2dObject$mgDarkTextColour._4_4_ * fStack300;
-    fStack488 = _18CB4HUDText2dObject$mgDarkTextColour._8_4_ * fStack296;
-    fStack484 = _18CB4HUDText2dObject$mgDarkTextColour._12_4_ * fStack292;
-    local_1e0 = _18CB4HUDText2dObject$mgLightTextColour._0_4_ * local_130;
-    fStack476 = _18CB4HUDText2dObject$mgLightTextColour._4_4_ * fStack300;
-    fStack472 = _18CB4HUDText2dObject$mgLightTextColour._8_4_ * fStack296;
-    fStack468 = _18CB4HUDText2dObject$mgLightTextColour._12_4_ * fStack292;
-    local_208 = fVar9 / fVar5 + fVar10;
-    local_1f8 = fVar9 / fVar5 + fVar10 + lrFull * (fVar11 - 4.0 / fVar5);
-    local_11c[1] = fVar12;
-    local_210 = local_208 * fVar5;
-    local_20c = (fVar9 / fVar6 + 420.0) * fVar6;
-    local_208 = local_208 * fVar5;
-    fStack516 = fVar12 * fVar6;
-    local_200 = local_1f8 * fVar5;
-    local_1fc = (fVar9 / fVar6 + 420.0) * fVar6;
-    local_1f8 = local_1f8 * fVar5;
-    fStack500 = fStack500 * fVar6;
-    local_1b0 = CONCAT44(fStack500, local_1f8);
-    local_1d0 = local_1f0;
-    fStack460 = fStack492;
-    fStack456 = fStack488;
-    fStack452 = fStack484;
-    local_1c0 = local_1e0;
-    fStack444 = fStack476;
-    fStack440 = fStack472;
-    fStack436 = fStack468;
-    local_110 = local_1e0;
-    fStack268 = fStack476;
-    fStack264 = fStack472;
-    fStack260 = fStack468;
-    local_100 = local_1f0;
-    fStack252 = fStack492;
-    fStack248 = fStack488;
-    fStack244 = fStack484;
+	float* local_120 = &local_200;
+	float* local_11c = &local_1f8;
+	CGtV2d* local_118 = &(CGtV2d)(unkVec1);
 
-    Gt2dRenderer::RenderTriStripGouraudUntex(&local_220, 4, &local_210, local_118);
-    fVar2 = lrFull;
-    local_1d0 = local_110;
-    fStack460 = fStack268;
-    fStack456 = fStack264;
-    fStack452 = fStack260;
-    local_1c0 = local_100;
-    fStack444 = fStack252;
-    fStack440 = fStack248;
-    fStack436 = fStack244;
-    local_1f0 = local_110;
-    fStack492 = fStack268;
-    fStack488 = fStack264;
-    fStack484 = fStack260;
-    local_1e0 = local_100;
-    fStack476 = fStack252;
-    fStack472 = fStack248;
-    fStack468 = fStack244;
-    fVar7 = fVar9 / fVar5 + fVar10;
-    fVar8 = lrFull * (fVar11 - 4.0 / fVar5);
-    local_120[1] = fVar12;
-    local_210 = (fVar9 / fVar5 + fVar10) * fVar5;
-    local_208 = fVar7 * fVar5;
-    local_20c = fVar12 * fVar6;
-    fStack516 = (435.0 - fVar9 / fVar6) * fVar6;
-    fStack500 = (435.0 - fVar9 / fVar6) * fVar6;
-    local_200 = (fVar7 + fVar8) * fVar5;
-    local_1fc = local_1fc * fVar6;
-    local_1f8 = (fVar9 / fVar5 + fVar10 + fVar2 * (fVar11 - 4.0 / fVar5)) * fVar5;
-    local_1b0 = CONCAT44(fStack500, local_1f8);
+	if (lrFull < lrProgress) {
+		lrFull = lrProgress;
+	}
 
-    Gt2dRenderer::RenderTriStripGouraudUntex(&local_220, 4, &local_210, local_118);
-    Gt2dRenderer::End();
-    if (lrFull < 1.0) {
-        lrFull += (1.0 - lrFull) * 0.009;
-    }
-    gGraphicsManager.CloseViewport();
+	if (gGame.mbInputManagerPrepared && !gNetworkManager.mbUppingInterface) {
+		gGame.mInputManager.Update();
+		gGame.mInputManager.UpdateFE();
+	}
+
+	CGtV4d local_1b0 = CGtV4d(0, 0, 0, 0);
+	RwCameraClear(gGraphicsManager.mMainViewport.mpRwCamera, (RwRGBA*)&local_1b0, 3);
+	gGraphicsManager.OpenViewport(eBoViewportMain);
+	Gt2dRenderer::Begin();
+
+	if (gLanguageManager.mbIsBigFontLoaded) {
+		local_1b0.x = 400;
+		local_1b0.y = 320;
+
+		for (int i = sizeof(kaaLoadingStrings) - 1; i > -1; i--) {
+			GtUTF16* pLoadStr = kaaLoadingStrings[i];
+
+			if (*pLoadStr == L'\0') {
+				continue;
+			}
+
+			CBoHUDText2dObject::Prepare(local_1b0, kHUDV2d_HalfHalf, 26.f, CBoHUDText2dObject::eStyleBigMessage, pLoadStr);
+
+			fStack340 = fStack404 * scrnYScale;
+			local_160 = local_1a0 * scrnXScale;
+			local_15c = fStack412 * scrnYScale;
+			local_158 = fStack408 * scrnXScale;
+
+			CGtV2d local_140 = CGtV2d(fStack340, local_158);
+
+			local_150 = local_190 * unkVec0[3];
+			fStack332 = fStack396 * unkVec0[2];
+			fStack328 = fStack392 * unkVec0[1];
+			fStack324 = fStack388 * unkVec0[0];
+
+			local_1b0[1] -= 34.0;
+		}
+	}
+
+	local_1b0.z = 0.91;
+	local_1b0.w = 0.97;
+
+	CGtV4d unkVec5 = CGtV4d(); // 516, 208, 20c, 210
+
+	unkVec5[0] = scrnXScale * 400.0;
+	unkVec5[1] = scrnYScale * 420.0;
+	unkVec5[2] = scrnXScale * 240.0;
+	unkVec5[3] = scrnYScale * 435.0;
+
+	fVar12 = 423.75;
+
+	local_1b0 = CGtV4d(unkVec5[0], unkVec5[3], 0, 1.0);
+
+	Gt2dRenderer::RenderSpritesUntex(unkVec99, CGtV2d(1.0, 0.5),  1, &CGtV2d(unkVec5));
+
+	unkVec5[0] = (400.0 - 1.0 / scrnXScale) * scrnXScale;
+	unkVec5[1] = (1.0 / scrnYScale + 420.0) * scrnYScale;
+	unkVec5[2] = (1.0 / scrnXScale + 240.0) * scrnXScale;
+	unkVec5[3] = (435.0 - 1.0 / scrnYScale) * scrnYScale;
+
+	local_1b0.x = unkVec5[3];
+	local_1b0.y = unkVec5[0];
+
+	Gt2dRenderer::RenderSpritesUntex((CGtV4d)0, unkVec99, 1, &(CGtV2d)unkVec5);
+
+	unkVec1[0] = CBoHUDText2dObject::mgDarkTextColour[0] * unkVec0[3];
+	unkVec1[1] = CBoHUDText2dObject::mgDarkTextColour[1] * unkVec0[2];
+	unkVec1[2] = CBoHUDText2dObject::mgDarkTextColour[2] * unkVec0[1];
+	unkVec1[3] = CBoHUDText2dObject::mgDarkTextColour[3] * unkVec0[0];
+
+	CGtV4d unkVec4; // 1e0, 476, 472, 468
+
+	unkVec4[0] = CBoHUDText2dObject::mgLightTextColour[0] * unkVec0[3];
+	unkVec4[1] = CBoHUDText2dObject::mgLightTextColour[1] * unkVec0[2];
+	unkVec4[2] = CBoHUDText2dObject::mgLightTextColour[2] * unkVec0[1];
+	unkVec4[3] = CBoHUDText2dObject::mgLightTextColour[3] * unkVec0[0];
+
+	unkVec5[0] = 2.0 / scrnXScale + 240.0;
+	local_1f8 = 2.0 / scrnXScale + 240.0 + lrFull * (160.0 - 4.0 / scrnXScale);
+	local_11c[1] = fVar12;
+
+	unkVec5[1] = (2.0 / scrnYScale + 420.0) * scrnYScale;
+	unkVec5[2] = unkVec5[0] * scrnXScale;
+	unkVec5[3] = fVar12 * scrnYScale;
+	unkVec5[0] *= scrnXScale;
+
+	local_200 = local_1f8 * scrnXScale;
+	local_1fc = (2.0 / scrnYScale + 420.0) * scrnYScale;
+	local_1f8 *= scrnXScale;
+	fStack500 *= scrnYScale;
+
+	local_1b0.x = fStack500;
+	local_1b0.y = local_1f8;
+
+	CGtV4d unkVec7 = unkVec1;
+	CGtV4d unkVec8 = unkVec4;
+	CGtV4d unkVec3 = unkVec4; // 110, 268, 264, 260
+	CGtV4d unkVec6 = unkVec1; // 100, 252, 248, 244
+
+	Gt2dRenderer::RenderTriStripGouraudUntex(unkVec99, 4, (CGtV2d*)&unkVec5[2], local_118);
+	fVar2 = lrFull;
+
+	unkVec7 = unkVec3;
+	unkVec8 = unkVec6;
+	unkVec1 = unkVec3;
+	unkVec4 = unkVec6;
+
+	float fVar7 = 2.0 / scrnXScale + 240.0;
+	fVar8 = lrFull * (160.0 - 4.0 / scrnXScale);
+	local_120[1] = fVar12;
+
+	unkVec5[0] = fVar7 * scrnXScale;
+	unkVec5[1] = fVar12 * scrnYScale;
+	unkVec5[2] = (2.0 / scrnXScale + 240.0) * scrnXScale;
+	unkVec5[3] = (435.0 - 2.0 / scrnYScale) * scrnYScale;
+
+	local_200 = (fVar7 + fVar8) * scrnXScale;
+	local_1fc *= scrnYScale;
+
+	local_1b0.x = unkVec5[3];
+	local_1b0.y = (2.0 / scrnXScale + 240.0 + fVar2 * (160.0 - 4.0 / scrnXScale)) * scrnXScale;
+
+	Gt2dRenderer::RenderTriStripGouraudUntex(unkVec99, 4, &CGtV2d(unkVec5), local_118);
+	Gt2dRenderer::End();
+
+	if (lrFull < 1.0) {
+		lrFull += (1.0 - lrFull) * 0.009;
+	}
+
+	gGraphicsManager.CloseViewport();
 }
 
 void CBoGraphicsManagerBase::OpenViewport(EBoViewportSelection) {
+
 }

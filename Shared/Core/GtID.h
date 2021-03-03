@@ -1,11 +1,12 @@
 #ifndef GTID_H
 #define GTID_H
 
+#include <cstdint>
 #include <rwcore.h>
 
-typedef unsigned long GtID;
+typedef uint64_t GtID;
 
-unsigned long gaGtIDCharacterMasks[];
+uint64_t gaGtIDCharacterMasks[];
 
 GtID GtIDCompress(const char* lcpString);
 void GtIDUnCompress(GtID, char*);

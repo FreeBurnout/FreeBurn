@@ -20,18 +20,7 @@ int main(int argc, char ** argv) {
 
     gGame.Construct();
 
-    /*
-    gGraphicsManager.DrawBootLoadingScreen(-1);
-    gGraphicsManager.PresentDrawBuffer();
-    gGraphicsManager.DrawBootLoadingScreen(-1);
-    gGraphicsManager.PresentDrawBuffer();
-    gGraphicsManager.DrawBootLoadingScreen(-1);
-    gGraphicsManager.PresentDrawBuffer();
-    gGraphicsManager.DrawBootLoadingScreen(-1);
-    gGraphicsManager.PresentDrawBuffer();
-    */
-
-    while (/*!*/gGame.Prepare()) {
+    while (!gGame.Prepare()) {
         CGtThreadMgr::SleepThreadTillVBlank();
         gGraphicsManager.DrawBootLoadingScreen(-1);
         gGraphicsManager.PresentDrawBuffer();

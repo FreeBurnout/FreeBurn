@@ -4,7 +4,8 @@
 #include "BoGameMode.h"
 
 class CBoOnlineStage : CBoGameMode {
-
+public:
+	void Construct();
 };
 
 #endif

@@ -1,5 +1,15 @@
-class Gt2dRenderer {
-public:
+#ifndef GT2DSCENE_H
+#define GT2DSCENE_H
+
+#include <rwcore.h>
+
+#include "../../../Numeric/Math/PC/GtMathPC.h"
+#include "../../PC/GtTexturePC.h"
+#include "../GtColour.h"
+
+using namespace GtMathPC;
+
+namespace Gt2dRenderer {
 	enum EGt2dRendererBlend {
 		eBlendNormal = 0,
 		eBlendAdditive = 1,
@@ -11,10 +21,10 @@ public:
 		eBlendWriteAlpha = 7,
 		eBlendNum = 8
 	};
-	enum EGt2dRendererFilter { 
-		eFilterBilinear = 0, 
-		eFilterNearest = 1, 
-		eFilterNum = 2 
+	enum EGt2dRendererFilter {
+		eFilterBilinear = 0,
+		eFilterNearest = 1,
+		eFilterNum = 2
 	};
 	enum EGt2dRendererTexAddress {
 		eTexAddressClamp = 0,
@@ -22,6 +32,10 @@ public:
 		eTexAddressClampUTileV = 2,
 		eTexAddressTileUClampV = 3,
 		eTexAddressNum = 4
+	};
+
+	class CGt2dScene {
+
 	};
 
 	static void Begin();
@@ -36,8 +50,8 @@ public:
 	static void RenderTriListGouraudUntex(const CGtV2d&, int, const CGtV2d*, const CGtV4d*);
 	static void RenderTriStripFlatTex(CGtV4d, const CGtV2d&, int, const CGtV2d*, const CGtV2d*);
 	static void RenderTriStripFlatUntex(CGtV4d, const CGtV2d&, int, const CGtV2d*);
-	static void RenderTriStripGouraudTex(const CGtV2d&, int, const CGtV2d*, const CGtV2d*, const CGtV4d*);
-	static void RenderTriStripGouraudUntex(const CGtV2d&, int, const CGtV2d*, const CGtV2d*, const CGtV4d*);
+	static void RenderTriStripGouraudTex(const CGtV2d&, int, const CGtV2d*, const CGtV2d*);
+	static void RenderTriStripGouraudUntex(const CGtV2d&, int, const CGtV2d*, const CGtV2d*);
 	static void ResetClipRegion();
 	static void Resume();
 	static void SetBlendMode(EGt2dRendererBlend);
@@ -50,3 +64,5 @@ public:
 	static void Suspend();
 	static void _Dispatch();
 };
+
+#endif // !#define GT2DSCENE_H

@@ -3,18 +3,18 @@
 
 #include <rwcore.h>
 
-#include "../../../Shared/System/Common/GtLocalisation.h"
 #include "../../../Shared/Core/GtID.h"
-#include "../../../Shared/System/Common/GtFSM.h"
 #include "../../../Shared/Graphical/Common/2D/Gt2dFont.h"
+#include "../../../Shared/System/Common/GtLocalisation.h"
+#include "../../../Shared/System/Common/GtFSM.h"
 #include "../../../Shared/System/Common/Unicode/GtUnicode.h"
 
 extern char* gaLanguageCodePostfix[];
 
-char16_t kaDollarString[] = u"$";
-char16_t kaDollarSpaceString[] = u"$ ";
-char16_t kaSpaceDollarString[] = u" $";
-char16_t kaEmptyString[] = u"";
+char16_t kaDollarString[];
+char16_t kaDollarSpaceString[];
+char16_t kaSpaceDollarString[];
+char16_t kaEmptyString[];
 
 class CBoLanguageManager {
 public:

@@ -51,3 +51,9 @@ void CBoGameMode::SetChallenge(CBoChallenge * lpChallenge) {
 CBoChallenge * CBoGameMode::GetChallenge() {
     return nullptr;
 }
+
+void CBoOnePlayerStage::Construct() {
+}
+
+void CBoTwoPlayerSplitScreenStage::Construct() {
+}

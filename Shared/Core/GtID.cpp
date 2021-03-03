@@ -1,5 +1,21 @@
 #include "GtID.h"
 
+uint64_t gaGtIDCharacterMasks[13] = {
+	0x1,
+	0x28,
+	0x640,
+	0xFA00,
+	0x271000,
+	0x61A8000,
+	0xF4240000,
+	0x2625A00000,
+	0x5F5E1000000,
+	0xEE6B28000000,
+	0x2540BE40000000,
+	0x5D21DBA00000000,
+	0xE8D4A51000000000
+};
+
 GtID GtIDCompress(const char* lcpString) {
     long lVar2 = 0;
     long lVar4 = 0;
@@ -62,6 +78,7 @@ void GtIDUnCompress(GtID lID, char* lcpString) {
         else {
             cVar2 = '\0';
         }
+
         *(char*)(lcpString + i) = cVar2;
         lID /= 0x28;
     }
@@ -70,10 +87,10 @@ void GtIDUnCompress(GtID lID, char* lcpString) {
 
 GtID GtIDMaskCharacters(GtID lID, RwInt32 lnStartIndex, RwInt32 lnEndIndex) {
 	if (lnStartIndex > 0) {
-		lID %= (unsigned long)(gaGtIDCharacterMasks + (12 - (int)lnStartIndex) * 8);
+		lID %= (unsigned long)(gaGtIDCharacterMasks[(12 - (int)lnStartIndex)] * 8);
 	}
 	if (lnEndIndex < 11) {
-		lID -= lID % (unsigned long)(gaGtIDCharacterMasks + (11 - (int)lnEndIndex) * 8);
+		lID -= lID % (unsigned long)(gaGtIDCharacterMasks[11 - (int)lnEndIndex] * 8);
 	}
 	return lID;
 }

@@ -96,7 +96,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\CodeSDKs\rw37\include\src;$(ProjectDir)..\ThirdParty\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\glm-stable\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -121,7 +121,7 @@ xcopy "$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\SDL2.dll" "$(OutDir
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\CodeSDKs\rw37\include\src;$(ProjectDir)..\ThirdParty\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\glm-stable\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -146,7 +146,7 @@ xcopy "$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\SDL2.dll" "$(OutDir
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\CodeSDKs\rw37\include\src;$(ProjectDir)..\ThirdParty\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\glm-stable\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -171,7 +171,7 @@ xcopy "$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\SDL2.dll" "$(OutDir
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\CodeSDKs\rw37\include\src;$(ProjectDir)..\ThirdParty\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)ThirdParty\SDL2\include;$(SolutionDir)ThirdParty\glm-stable\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -1026,7 +1026,7 @@ xcopy "$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\SDL2.dll" "$(OutDir
     <ClCompile Include="..\Source\Menu\States\Offline\Rewards\BoSignatureTDRewardState.cpp" />
     <ClCompile Include="..\Source\Menu\States\Online\DirtySock\BoConnectingMenuStateDS.cpp" />
     <ClCompile Include="..\Source\Menu\States\Online\DirtySock\BoOpenInterfaceMenuStateDS.cpp" />
-    <ClInclude Include="..\Shared\BoSharedConstants.h" />
+    <ClInclude Include="..\Source\BoSharedConstants.h" />
     <ClInclude Include="..\Shared\Containers\GtArray.h" />
     <ClInclude Include="..\Shared\Containers\GtDictionary.h" />
     <ClInclude Include="..\Shared\Containers\GtFreeList.h" />
@@ -1142,7 +1142,7 @@ xcopy "$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\SDL2.dll" "$(OutDir
     <ClInclude Include="..\Shared\Numeric\Math\PC\GtV3dUtilsPC.h" />
     <ClInclude Include="..\Shared\Numeric\Math\PC\GtV4dPC.h" />
     <ClInclude Include="..\Shared\Numeric\Math\PC\GtV4dUtilsPC.h" />
-    <ClInclude Include="..\Shared\Numeric\Math\PC\GtVectorElementsPC.h" />
+    <ClInclude Include="..\Shared\Numeric\Math\PC\VectorElementsPC.h" />
     <ClInclude Include="..\Shared\System\Common\FileSystem\GtFileSystem.h" />
     <ClInclude Include="..\Shared\System\Common\Headset\GtCodecBase.h" />
     <ClInclude Include="..\Shared\System\Common\Headset\GtHeadsetBase.h" />
@@ -1526,9 +1526,10 @@ xcopy "$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\SDL2.dll" "$(OutDir
     <ClInclude Include="..\Source\Menu\States\Offline\DriverDetails\BoDriverDetailsStatsState.h" />
     <ClInclude Include="..\Source\Menu\States\Offline\MemoryCard\BoMemoryCardState.h" />
     <ClInclude Include="..\Source\Menu\States\Online\DirtySock\BoOpenInterfaceMenuStateDS.h" />
+    <ClInclude Include="..\Source\FreeBurn.h" />
   </ItemGroup>
   <Import Project="../CodeSDKs/rw37/build/defaults.props" />
-  <Import Condition="Exists('../CodeSDKs/_repoconfig/rw37.props')" Project="../CodeSDKs/_repoconfig/rw37.props" />
+  <Import Condition="Exists('../../_repoconfig/rw37.props')" Project="../../_repoconfig/rw37.props" />
   <Import Condition="Exists('../CodeSDKs/rw37/build/rw37.vcxproj.user')" Project="../CodeSDKs/rw37/build/rw37.vcxproj.user" />
   <Import Project="../CodeSDKs/rw37/build/buildcfg.targets" />
 </Project>

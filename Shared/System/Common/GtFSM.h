@@ -84,4 +84,10 @@ public:
 	virtual void Action(EGtStateAction leAction, void* param_2, void* param_3, void* param_4) = 0;
 };
 
+struct CGtStateOffset {
+public:
+	GtID mID;
+	RwInt32 mnOffset;
+};
+
 #endif // !#define GTFSM_H
