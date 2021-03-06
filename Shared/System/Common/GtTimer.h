@@ -5,6 +5,10 @@
 
 class CGtTimer {
 public:
+	float mrTimeStep;
+
+	void NextFrame();
+	void Update();
 	static bool PrepareTimerServices(RwInt32 lnBaseFrameRate);
 };
 

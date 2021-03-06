@@ -5,7 +5,12 @@
 
 class CBoDebugManager {
 public:
+	bool mbPlay;
+
 	void Construct();
+	void RenderOverlays();
+	void UpdateStartOfFrame();
+	void Update();
 };
 
 class CBoNetworkCPUMonitors {

@@ -84,6 +84,11 @@ public:
 	virtual void Action(EGtStateAction leAction, void* param_2, void* param_3, void* param_4) = 0;
 };
 
+class CGtFSM {
+public:
+	CGtState* mpState;
+};
+
 struct CGtStateOffset {
 public:
 	GtID mID;

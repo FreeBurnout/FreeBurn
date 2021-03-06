@@ -3,7 +3,7 @@
 
 #include <rwcore.h>
 
-enum class EGtFramerateType {
+enum EGtFramerateType {
 	eGtFramerateConstant = 0,
 	eGtFramerateVariableRelative = 1,
 	eGtFramerateVariableAbsolute = 2,

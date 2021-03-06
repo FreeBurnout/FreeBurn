@@ -22,6 +22,7 @@
 #include "../../Physics/BoConvexHull.h"
 #include "../../Graphics/Common/BoVehicleRenderer.h"
 #include "../../Game/Common/BoAIDebug.h"
+#include "../../Game/Common/BoTimer.h"
 #include "../../Camera/Crash/BoCrashAnalyser.h"
 #include "../../../Shared/System/Common/GtTimer.h"
 #include "../../../Shared/Numeric/Math/PC/GtV3dPC.h"
@@ -44,7 +45,7 @@ class CBoStreamManager {
 
 class CBoWorld {
 public:
-	CGtTimer mTimer;
+	CBoTimer mTimer;
 	CBoAILane maAILanes[128];
 	CBoTrafficLane maTrafficLanes[255];
 	CBoTrafficSystem mTrafficSystem;

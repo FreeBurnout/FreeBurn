@@ -1,5 +1,7 @@
 #include "BoNetworkManager.h"
 
-CBoNetworkManager gNetworkManager;
-
 void CBoNetworkManager::Construct() {}
+
+void CBoNetworkManager::Update() {}
+
+void CBoNetworkManager::PostUpdate() {}

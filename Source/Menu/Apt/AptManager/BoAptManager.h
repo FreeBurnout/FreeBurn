@@ -3,7 +3,10 @@
 
 class CBoAptManager {
 public:
+	bool mbEnabled;
+
 	void Construct();
+	void Render(float param);
 };
 
 extern CBoAptManager gAptManager;

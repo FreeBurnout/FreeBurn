@@ -1,4 +1,5 @@
 #include "BoGraphicsManagerPC.h"
+#include "../../../Shared/Numeric/Math/PC/GtMathPC.h"
 
 void CBoGraphicsManager::PresentDrawBuffer() {
 }
@@ -37,9 +38,11 @@ void CBoGraphicsManager::BuildFrontEndSphereMapData() {}
 
 void CBoGraphicsManager::BuildInGameSphereMapData() {}
 
-void CBoGraphicsManager::ClearOffscreenBuffer(unsigned int) {}
+void CBoGraphicsManager::ClearOffscreenBuffer(RwUInt32 luBufferID) {}
 
-void CBoGraphicsManager::ClearScreen() {}
+void CBoGraphicsManager::ClearScreen() {
+
+}
 
 void CBoGraphicsManager::Construct() {}
 

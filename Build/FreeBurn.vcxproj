@@ -1026,6 +1026,7 @@ xcopy "$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\SDL2.dll" "$(OutDir
     <ClCompile Include="..\Source\Menu\States\Offline\Rewards\BoSignatureTDRewardState.cpp" />
     <ClCompile Include="..\Source\Menu\States\Online\DirtySock\BoConnectingMenuStateDS.cpp" />
     <ClCompile Include="..\Source\Menu\States\Online\DirtySock\BoOpenInterfaceMenuStateDS.cpp" />
+    <ClInclude Include="..\Shared\Graphical\Common\2D\Gt2dRenderer.h" />
     <ClInclude Include="..\Source\BoSharedConstants.h" />
     <ClInclude Include="..\Shared\Containers\GtArray.h" />
     <ClInclude Include="..\Shared\Containers\GtDictionary.h" />

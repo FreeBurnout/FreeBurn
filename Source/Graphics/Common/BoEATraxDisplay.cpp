@@ -1,7 +1,7 @@
 #include "BoGraphicsManager.h"
 
-CBoEATraxDisplay gEATraxDisplay;
-
 void CBoEATraxDisplay::Construct() {
 
 }
+
+void CBoEATraxDisplay::Render() {}

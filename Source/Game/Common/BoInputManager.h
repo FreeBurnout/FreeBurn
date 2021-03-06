@@ -5,6 +5,8 @@ class CBoInputManager {
 public:
 	void Update();
 	void UpdateFE();
+	void ResetState();
+	bool AreLockedPlayersConnected();
 };
 
 #endif

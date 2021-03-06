@@ -1,3 +1,5 @@
+#include <rwcore.h>
+
 #include "BoAsyncDataLoader.h"
 
 void CBoAsyncDataLoader::Construct() {
@@ -8,9 +10,7 @@ void CBoAsyncDataLoader::Destruct() {
 
 }
 
-void CBoAsyncDataLoader::Update() {
-
-}
+void CBoAsyncDataLoader::Update() {}
 
 RwUInt32 CBoAsyncDataLoader::QueueLoadRequest(const char * lpcName, bool * lpbCompletionReturn, void * lpBuffer, RwUInt32 luReadLen) {
 	return RwUInt32();

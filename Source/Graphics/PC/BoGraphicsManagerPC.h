@@ -18,7 +18,7 @@ public:
 	void BuildCustomCameraData(ERaceCarIndex);
 	void BuildFrontEndSphereMapData();
 	void BuildInGameSphereMapData();
-	void ClearOffscreenBuffer(unsigned int);
+	void ClearOffscreenBuffer(uint32_t);
 	void ClearScreen();
 	void Construct();
 	void CreateWorkBuffers();
@@ -39,6 +39,6 @@ public:
 	void SetVideoModeParams(RwVideoMode*);
 };
 
-extern CBoGraphicsManager gGraphicsManager;
+static CBoGraphicsManager gGraphicsManager;
 
 #endif // !#define BOGRAPHICSMANAGERPC_H

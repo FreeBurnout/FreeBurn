@@ -3,3 +3,5 @@
 void CBoMemoryManagerPC::Construct() {
 
 }
+
+void CBoMemoryManagerPC::Update() {}

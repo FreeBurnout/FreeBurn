@@ -37,7 +37,7 @@
 using namespace GtComms;
 using namespace GtMathPC;
 
-enum class EGameUpdateState {
+enum EGameUpdateState : int {
 	eGameUpdateStateConstructed = 0,
 	eGameUpdateStatePrepared = 1,
 	eGameUpdateStateReleased = 2,
@@ -126,6 +126,7 @@ class CBoMemoryManager {
 class CBoMemoryManagerPC : CBoMemoryManager {
 public:
 	void Construct();
+	void Update();
 };
 
 extern CBoMemoryManagerPC gMemoryManager;

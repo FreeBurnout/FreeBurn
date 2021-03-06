@@ -4307,5 +4307,8 @@
     <ClInclude Include="..\Shared\Numeric\Math\PC\VectorElementsPC.h">
       <Filter>Shared\Numeric\Math\PC</Filter>
     </ClInclude>
+    <ClInclude Include="..\Shared\Graphical\Common\2D\Gt2dRenderer.h">
+      <Filter>Shared\Graphical\Common\2D</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

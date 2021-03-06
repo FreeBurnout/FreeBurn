@@ -4,7 +4,9 @@
 class CBoPlayerCameraManager {
 public:
 	CBoPlayerCameraManager();
+
 	void Construct();
+	void SetCutThisFrame(bool lbCutThisFrame);
 };
 
 class CBoCameraMovieManager {

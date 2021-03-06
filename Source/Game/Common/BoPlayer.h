@@ -4,6 +4,7 @@
 class CBoPlayer {
 public:
 	void Construct();
+	void Update();
 };
 
 #endif // !BOPLAYER_H

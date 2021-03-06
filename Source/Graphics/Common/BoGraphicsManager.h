@@ -3,7 +3,11 @@
 
 #include <rwcore.h>
 
+#include "../../../Shared/Graphical/PC/GtTexturePC.h"
 #include "../../../Shared/Graphical/Common/Camera/GtViewport.h"
+#include "../../../Shared/Numeric/Math/PC/GtMathPC.h"
+
+using namespace GtMathPC;
 
 enum EBoViewportSelection {
 	eBoViewportMain = 0,
@@ -27,9 +31,10 @@ enum EBoFullScreenPassBlendMode {
 class CBoEATraxDisplay {
 public:
 	void Construct();
+	void Render();
 };
 
-extern CBoEATraxDisplay gEATraxDisplay;
+static CBoEATraxDisplay gEATraxDisplay;
 
 class CBoViewport : CGtViewport {
 public:

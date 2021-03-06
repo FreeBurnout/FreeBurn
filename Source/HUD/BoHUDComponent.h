@@ -6,6 +6,7 @@
 #include "BoHUDManager.h"
 #include "../World/Common/BoPlayerCar.h"
 #include "../../Shared/Numeric/Math/PC/GtMathPC.h"
+#include "../../Shared/Graphical/Common/2D/Gt2dRenderer.h"
 #include "../../Shared/Graphical/Common/2D/Gt2dScene.h"
 #include "../../Shared/Graphical/Common/2D/Gt2dObject.h"
 #include "../../Shared/System/Common/Unicode/GtUnicode.h"
@@ -210,3 +211,4 @@ public:
 };
 
 #endif // !#define BOHUDCOMPONENT_H
+

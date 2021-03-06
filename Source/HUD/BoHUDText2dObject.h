@@ -39,9 +39,11 @@ public:
 
 	static CGtV4d mgLightTextColour;
 	static CGtV4d mgDarkTextColour;
+
 	static CGtV4d mgaPlayerListColours[5];
 	static CGtV4d mgaVGradientEmbossGradientColours[4];
 
+	CBoHUDText2dObject(uint16_t param_1, uint16_t param_2);
 	static void Prepare(void);
 	static void Prepare(const CGtV2d&, const CGtV2d&, float, EStyle, const GtUTF16*);
 };

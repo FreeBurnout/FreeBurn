@@ -19,6 +19,8 @@
 #include "../../World/Common/BoWorld.h"
 #include "../../../Shared/System/PC/GtThreadMgrPC.h"
 #include "../../../Shared/System/PC/GtHiResSystemTimerPC.h"
+#include "../../Sound/Common/BoSoundManager.h"
+#include "BoSaveGameDataManager.h"
 
 RwReal lrTotalSleepTimeMs = 0.6f;
 RwReal lrTotalSleepTimeMsLoading = 2.5f;
@@ -192,8 +194,222 @@ bool CBoGame::Prepare() {
 	return true;
 }
 
+// Hell.
 void CBoGame::Update() {
+	char cVar1;
+	int iVar2;
 
+	mNonDeterministicRNG.mnHigh = (mNonDeterministicRNG.mnHigh << 0x10) + (mNonDeterministicRNG.mnHigh >> 0x10) + mNonDeterministicRNG.mnLow;
+	mNonDeterministicRNG.mnLow += mNonDeterministicRNG.mnHigh;
+
+	gDebugManager.UpdateStartOfFrame();
+
+	if (mbRequestSimulationPause) {
+		mbPlay = 0;
+	} else if (mbRequestSimulationUnpause) {
+		mbPlay = 1;
+	}
+
+	mbRequestSimulationPause = 0;
+	mbRequestSimulationUnpause = 0;
+
+	if (!IsSimulationPaused() && (meUpdateState != meRequestedUpdateState)) {
+		meUpdateState = meRequestedUpdateState;
+	}
+
+	mAsyncDataLoader.Update();
+	gMemoryManager.Update();
+	RwUInt32 vbCount = gGraphicsManager.GetVBlankCount();
+	CGtHiResSystemTimer::Update(vbCount);
+	CheckPowerOff();
+	gSaveGameDataManager.mrPlayingTimeSecsCounter += mTimer.mrTimeStep;
+
+	switch (meUpdateState) {
+	case eGameUpdateStatePrepared:
+		mTimer.NextFrame();
+		gNetworkManager.muFrameCount++;
+		mTimer.Update();
+		gWorld.mTimer.Update();
+		mpCurrentGameMode = mpRequestedGameMode;
+		mpRequestedGameMode = nullptr;
+		gMenuFlowManager.Update();
+		meRequestedUpdateState = eGameUpdateStateRestartGameMode;
+		break;
+	case 12:
+		/* TODO
+		iVar2 = *(int*)(*(int*)mpCurrentGameMode + 0xc);
+		(**(code**)(iVar2 + 0x34))(*(int*)mpCurrentGameMode + (int)*(short*)(iVar2 + 0x30));
+		*/
+		meUpdateState = eGameUpdateStateSimulationPrepare;
+		meRequestedUpdateState = eGameUpdateStateSimulationPrepare;
+	case 4:
+		mbWorldPrepared = PrepareWorld();
+		if (!mbWorldPrepared) {
+			mTimer.NextFrame();
+			gNetworkManager.muFrameCount++;
+			mTimer.Update();
+			gWorld.mTimer.Update();
+			gMenuFlowManager.Update();
+			if (!gNetworkManager.mbUppingInterface) {
+				mInputManager.ResetState();
+				mInputManager.Update();
+			}
+			gSoundManager.Update();
+			gNetworkManager.Update();
+			gNetworkManager.PostUpdate();
+			SleepToAllowWorkerThreadsToRun();
+		}
+		else {
+			mbQuickWorldPrepare = false;
+			mbClearFrameBufferDuringWorldPrepare = false;
+			if ((mpCurrentGameMode != nullptr) && (iVar2 = (int)mpCurrentGameMode->mpStageLogic, iVar2 != 0)) {
+				// (**(code**)(*(int*)(iVar2 + 0xd4) + 0x1dc)) (iVar2 + *(short*)(*(int*)(iVar2 + 0xd4) + 0x1d8)); // TODO
+			}
+			mFramerateManager.Prepare();
+			meUpdateState = eGameUpdateStateSimulationUpdate;
+			meRequestedUpdateState = eGameUpdateStateSimulationUpdate;
+			if (!gWorld.mbIsReplaying && !gWorld.mbRequestReplay) {
+				gMenuFlowManager.SetInitialMenuState();
+			}
+	case 5:
+			UpdatePreSimulation();
+
+			EGtFramerateType updateFpsType = meDebugFramerateType;
+			if (meDebugFramerateType == eGtFramerateVariableMax) {
+				updateFpsType = meFramerateType;
+			}
+
+			mFramerateManager.StartUpdateFrame(
+				updateFpsType, (mnGamePausedByPlayer == -1) && !IsSimulationPaused()
+			);
+
+			int i = 0;
+			if (mnSimulationUpdateCount > 0) {
+				while (mnRequestPause == -1) {
+					mTimer.NextFrame();
+					gNetworkManager.muFrameCount++;
+					mTimer.Update();
+					gWorld.mTimer.Update();
+
+					if (!gNetworkManager.mbUppingInterface) {
+						mInputManager.Update();
+						if (!mInputManager.AreLockedPlayersConnected() && gGame.mnGamePausedByPlayer == -1 && !gNetworkManager.mbIsOnline) {
+							// lVar5 = 0x6d6123044330fccf; // FSM_NOSTATE_
+							if (gMenuFlowManager.mpState != nullptr && gMenuFlowManager.mpState->mID == -0x6bb7c5da87bef9af) { // MF_GAMESTATE
+								gGame.mnRequestPause = 0;
+							}
+						}
+						if (!gAptManager.mbEnabled) {
+							mInputManager.UpdateFE();
+						}
+					}
+
+					maPlayers[0].Update();
+					maPlayers[1].Update();
+					gDebugManager.Update();
+
+					if (gDebugManager.mbPlay) {
+						if (mnGamePausedByPlayer == -1) {
+							UpdateSimulation();
+						}
+						gMenuFlowManager.Update();
+					}
+
+					gDebugMenuPageManager.Update();
+					if (
+						(
+							(meRequestedUpdateState != eGameUpdateStateSimulationUpdate) || (mbRequestSimulationPause)
+							) || 
+						(
+							(i++, mbRequestSimulationUnpause || (mnSimulationUpdateCount <= i))
+							)
+						) {
+						break;
+					}
+				};
+
+				if (mnRequestPause != -1) {
+					mFramerateManager.mnPrevNumSimulationStepsRequired = i;
+				}
+			}
+			UpdatePostSimulation();
+			// _rwDMAWaitQueue();
+			mnSimulationUpdateCount = GetNumSimulationUpdatesRequired();
+			Render();
+		}
+		break;
+	case eGameUpdateStateChangeGameMode:
+		mTimer.NextFrame(
+			// (&switchD_00103ce0::switchdataD_00489da0)[meUpdateState - 1] // what the fuck?
+		);
+		gNetworkManager.muFrameCount++;
+		mTimer.Update();
+		gWorld.mTimer.Update();
+		mnGamePausedByPlayer = -1;
+		mnRequestPause = -1;
+		mnRequestResume = -1;
+		if (!gNetworkManager.mbUppingInterface) {
+			mInputManager.ResetState();
+			mInputManager.Update();
+		}
+		gWorld.Release();
+		mbWorldPrepared = false;
+
+		mpCurrentGameMode->Release();
+
+		mbRequestForceHalfFramerate = false;
+		mpCurrentGameMode = mpRequestedGameMode;
+		mpRequestedGameMode = nullptr;
+		gMenuFlowManager.Update();
+		meRequestedUpdateState = eGameUpdateStateRestartGameMode;
+		break;
+	case 7:
+	case 9:
+	case 11:
+		if (RestartGameModeUpdateCode()) {
+			if (meUpdateState == eGameUpdateStateRestartGameModeWithNewConfigRestarting) {
+				meUpdateState = eGameUpdateStateStartReplay;
+			} else {
+				meUpdateState = eGameUpdateStateSimulationPrepare;
+			}
+			meRequestedUpdateState = meUpdateState;
+		}
+		break;
+	case 8:
+		mTimer.NextFrame();
+		gNetworkManager.muFrameCount++;
+		mTimer.Update();
+		gWorld.mTimer.Update();
+	case 10:
+		mnGamePausedByPlayer = -1;
+		mnRequestPause = -1;
+		mnRequestResume = -1;
+		mInputManager.ResetState();
+		gSoundManager.StopAll();
+		gWorld.Release();
+		mbWorldPrepared = false;
+		mpCurrentGameMode->mbDoFullPrepare = true;
+		meUpdateState = (EGameUpdateState)(meUpdateState + 1);
+		meRequestedUpdateState = meUpdateState;
+		break;
+	}
+
+	gGraphicsManager.OpenViewport(eBoViewportMain);
+	if (!mbWorldPrepared && mbClearFrameBufferDuringWorldPrepare) {
+		gGraphicsManager.RenderFullScreenPass(mClearFrameBufferColour, eBoFSPBM_Additive);
+	} else {
+		gDebugMenuPageManager.Render();
+		gAptManager.Render(gGame.mTimer.mrTimeStep * (float)gGame.mnSimulationUpdateCount);
+		gEATraxDisplay.Render();
+	}
+	if (!mInputManager.AreLockedPlayersConnected() && mbWorldPrepared) {
+		DisplayInsertControllerMessage();
+	}
+	gDebugManager.RenderOverlays();
+	gGraphicsManager.CloseViewport();
+	gGraphicsManager.PresentDrawBuffer();
+	maPlayerCamera[0].SetCutThisFrame(false);
+	maPlayerCamera[1].SetCutThisFrame(false);
 }
 
 bool CBoGame::IsSimulationPaused() {

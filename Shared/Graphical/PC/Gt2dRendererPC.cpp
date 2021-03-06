@@ -1,43 +1,44 @@
-#include "../Common/2D/Gt2dScene.h"
 #include "../../Numeric/Math/PC/GtMathPC.h"
 #include "GtTexturePC.h"
 
-static void Gt2dRenderer::Begin() {}
+using namespace GtMathPC;
 
-void Gt2dRenderer::Construct() {}
+void Begin() {}
 
-void Gt2dRenderer::EnableZTest(bool) {}
+void Construct() {}
 
-void Gt2dRenderer::End() {}
+void EnableZTest(bool) {}
 
-void Gt2dRenderer::RenderSpritesTex(CGtV4d, const CGtV2d&, int, const CGtV2d*, const CGtV2d*) {}
+void End() {}
 
-void Gt2dRenderer::RenderSpritesUntex(CGtV4d, const CGtV2d&, int, const CGtV2d*) {}
+void RenderSpritesTex(CGtV4d, const CGtV2d&, int, const CGtV2d*, const CGtV2d*) {}
 
-void Gt2dRenderer::RenderTriListFlatTex(CGtV4d, const CGtV2d&, int, const CGtV2d*, const CGtV2d*) {}
+void RenderSpritesUntex(CGtV4d, const CGtV2d&, int, const CGtV2d*) {}
 
-void Gt2dRenderer::RenderTriListFlatUntex(CGtV4d, const CGtV2d&, int, const CGtV2d*) {}
+void RenderTriListFlatTex(CGtV4d, const CGtV2d&, int, const CGtV2d*, const CGtV2d*) {}
 
-void Gt2dRenderer::RenderTriListGouraudTex(const CGtV2d&, int, const CGtV2d*, const CGtV2d*, const CGtV4d*) {}
+void RenderTriListFlatUntex(CGtV4d, const CGtV2d&, int, const CGtV2d*) {}
 
-void Gt2dRenderer::RenderTriListGouraudUntex(const CGtV2d&, int, const CGtV2d*, const CGtV4d*) {}
+void RenderTriListGouraudTex(const CGtV2d&, int, const CGtV2d*, const CGtV2d*, const CGtV4d*) {}
 
-void Gt2dRenderer::RenderTriStripFlatTex(CGtV4d, const CGtV2d&, int, const CGtV2d*, const CGtV2d*) {}
+void RenderTriListGouraudUntex(const CGtV2d&, int, const CGtV2d*, const CGtV4d*) {}
 
-void Gt2dRenderer::RenderTriStripFlatUntex(CGtV4d, const CGtV2d&, int, const CGtV2d*) {}
+void RenderTriStripFlatTex(CGtV4d, const CGtV2d&, int, const CGtV2d*, const CGtV2d*) {}
 
-void Gt2dRenderer::RenderTriStripGouraudTex(const CGtV2d&, int, const CGtV2d*, const CGtV2d*) {}
+void RenderTriStripFlatUntex(CGtV4d, const CGtV2d&, int, const CGtV2d*) {}
 
-void Gt2dRenderer::RenderTriStripGouraudUntex(const CGtV2d&, int, const CGtV2d*, const CGtV2d*) {}
+void RenderTriStripGouraudTex(const CGtV2d&, int, const CGtV2d*, const CGtV2d*) {}
 
-void Gt2dRenderer::ResetClipRegion() {}
+void RenderTriStripGouraudUntex(const CGtV2d&, int, const CGtV2d*, const CGtV2d*) {}
 
-void Gt2dRenderer::Resume() {}
+void ResetClipRegion() {}
 
-void Gt2dRenderer::SetTexture(CGtTexture*, int) {}
+void Resume() {}
 
-void Gt2dRenderer::SetZ(float, float, float) {}
+void SetTexture(CGtTexture*, int) {}
 
-void Gt2dRenderer::Suspend() {}
+void SetZ(float, float, float) {}
 
-void Gt2dRenderer::_Dispatch() {}
+void Suspend() {}
+
+void _Dispatch() {}

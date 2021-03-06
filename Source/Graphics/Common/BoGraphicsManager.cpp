@@ -5,7 +5,7 @@
 #include "../../Game/Common/BoLanguageManager.h"
 #include "../../Network/Common/BoNetworkManager.h"
 #include "../../../Shared/Numeric/Math/PC/GtMathPC.h"
-#include "../../../Shared/Graphical/Common/2D/Gt2dScene.h"
+#include "../../../Shared/Graphical/Common/2D/Gt2dRenderer.h"
 
 using namespace GtMathPC;
 
@@ -15,53 +15,55 @@ GtUTF16 kaaLoadingStrings[][8] = {
 	u"LOADING"
 };
 
+void CBoGraphicsManagerBase::CloseViewport() {}
+
 void CBoGraphicsManagerBase::Downsample(RwUInt32 luFrameBufferAddress, RwUInt32 luFrameBufferWidth, RwUInt32 luWorkspaceAddress, RwUInt32 luWorkspaceWidth, RwInt32 lnTopLeftX, RwInt32 lnTopLeftY, RwInt32 lnSizeX, RwInt32 lnSizeY) {
 
 }
 
 RwReal lrFull = 0;
 void CBoGraphicsManagerBase::DrawBootLoadingScreen(RwReal lrProgress) {
-	float fStack244;
-	float fStack248;
-	float fStack252;
-	float fStack260;
-	float fStack264;
-	float fStack268;
-	float fStack324;
-	float fStack328;
-	float fStack332;
-	float fStack340;
-	float fStack388;
-	float fStack392;
-	float fStack396;
-	float fStack404;
-	float fStack408;
-	float fStack412;
-	float fStack436;
-	float fStack440;
-	float fStack444;
-	float fStack452;
-	float fStack456;
-	float fStack460;
-	float fStack468;
-	float fStack472;
-	float fStack476;
-	float fStack500;
+	float fStack244 = 0;
+	float fStack248 = 0;
+	float fStack252 = 0;
+	float fStack260 = 0;
+	float fStack264 = 0;
+	float fStack268 = 0;
+	float fStack324 = 0;
+	float fStack328 = 0;
+	float fStack332 = 0;
+	float fStack340 = 0;
+	float fStack388 = 0;
+	float fStack392 = 0;
+	float fStack396 = 0;
+	float fStack404 = 0;
+	float fStack408 = 0;
+	float fStack412 = 0;
+	float fStack436 = 0;
+	float fStack440 = 0;
+	float fStack444 = 0;
+	float fStack452 = 0;
+	float fStack456 = 0;
+	float fStack460 = 0;
+	float fStack468 = 0;
+	float fStack472 = 0;
+	float fStack476 = 0;
+	float fStack500 = 0;
 	
 	float fVar2;
 	float fVar8;
 	float fVar12;
 
-	float local_150;
-	float local_158;
-	float local_15c;
-	float local_160;
-	float local_190;
-	float local_1a0;
+	float local_150 = 0;
+	float local_158 = 0;
+	float local_15c = 0;
+	float local_160 = 0;
+	float local_190 = 0;
+	float local_1a0 = 0;
 
-	float local_1f8;
-	float local_1fc;
-	float local_200;
+	float local_1f8 = 0;
+	float local_1fc = 0;
+	float local_200 = 0;
 
 	float scrnXScale = gGraphicsManager.mnScreenWidth / 640;
 	float scrnYScale = gGraphicsManager.mnScreenHeight / 480;
@@ -90,29 +92,26 @@ void CBoGraphicsManagerBase::DrawBootLoadingScreen(RwReal lrProgress) {
 	Gt2dRenderer::Begin();
 
 	if (gLanguageManager.mbIsBigFontLoaded) {
-		local_1b0.x = 400;
-		local_1b0.y = 320;
+		local_1b0 = CGtV4d(400, 320, 0, 0);
 
 		for (int i = sizeof(kaaLoadingStrings) - 1; i > -1; i--) {
-			GtUTF16* pLoadStr = kaaLoadingStrings[i];
-
-			if (*pLoadStr == L'\0') {
+			if (*kaaLoadingStrings[i] == L'\0') {
 				continue;
 			}
 
-			CBoHUDText2dObject::Prepare(local_1b0, kHUDV2d_HalfHalf, 26.f, CBoHUDText2dObject::eStyleBigMessage, pLoadStr);
+			CBoHUDText2dObject::Prepare(local_1b0, kHUDV2d_HalfHalf, 26.f, CBoHUDText2dObject::eStyleBigMessage, kaaLoadingStrings[i]);
 
-			fStack340 = fStack404 * scrnYScale;
-			local_160 = local_1a0 * scrnXScale;
-			local_15c = fStack412 * scrnYScale;
-			local_158 = fStack408 * scrnXScale;
+			float local_160 = local_1a0 * scrnXScale;
+			float local_15c = fStack412 * scrnYScale;
+			float local_158 = fStack408 * scrnXScale;
+			float fStack340 = fStack404 * scrnYScale;
 
-			CGtV2d local_140 = CGtV2d(fStack340, local_158);
+			CGtV2d local_140 = CGtV2d(local_158, fStack340);
 
-			local_150 = local_190 * unkVec0[3];
-			fStack332 = fStack396 * unkVec0[2];
-			fStack328 = fStack392 * unkVec0[1];
-			fStack324 = fStack388 * unkVec0[0];
+			float fStack324 = fStack388 * unkVec0[0];
+			float fStack328 = fStack392 * unkVec0[1];
+			float fStack332 = fStack396 * unkVec0[2];
+			float local_150 = local_190 * unkVec0[3];
 
 			local_1b0[1] -= 34.0;
 		}
