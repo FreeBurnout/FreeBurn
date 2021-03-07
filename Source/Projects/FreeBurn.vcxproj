@@ -102,11 +102,11 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>rw37.lib;SDL2.lib;SDL2main.lib;SDL2test.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)ThirdParty\SDL2\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\bin\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)" /y /s
-xcopy "$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\SDL2.dll" "$(OutDir)" /y /s</Command>
+      <Command>xcopy "$(SolutionDir)ThirdParty\rw37\bin\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)" /y /s
+xcopy "$(SolutionDir)ThirdParty\SDL2\lib\$(PlatformTarget)\SDL2.dll" "$(OutDir)" /y /s</Command>
     </PostBuildEvent>
     <PreLinkEvent>
       <Command>
@@ -129,11 +129,11 @@ xcopy "$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\SDL2.dll" "$(OutDir
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>rw37.lib;SDL2.lib;SDL2main.lib;SDL2test.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)ThirdParty\SDL2\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\bin\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)" /y /s
-xcopy "$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\SDL2.dll" "$(OutDir)" /y /s</Command>
+      <Command>xcopy "$(SolutionDir)ThirdParty\rw37\bin\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)" /y /s
+xcopy "$(SolutionDir)ThirdParty\SDL2\lib\$(PlatformTarget)\SDL2.dll" "$(OutDir)" /y /s</Command>
     </PostBuildEvent>
     <PreLinkEvent>
       <Command>
@@ -152,11 +152,11 @@ xcopy "$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\SDL2.dll" "$(OutDir
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>rw37.lib;SDL2.lib;SDL2main.lib;SDL2test.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)ThirdParty\SDL2\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\bin\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)" /y /s
-xcopy "$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\SDL2.dll" "$(OutDir)" /y /s</Command>
+      <Command>xcopy "$(SolutionDir)ThirdParty\rw37\bin\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)" /y /s
+xcopy "$(SolutionDir)ThirdParty\SDL2\lib\$(PlatformTarget)\SDL2.dll" "$(OutDir)" /y /s</Command>
     </PostBuildEvent>
     <PreLinkEvent>
       <Command>
@@ -179,11 +179,11 @@ xcopy "$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\SDL2.dll" "$(OutDir
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>rw37.lib;SDL2.lib;SDL2main.lib;SDL2test.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)ThirdParty\SDL2\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy "$(ProjectDir)..\CodeSDKs\rw37\bin\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)" /y /s
-xcopy "$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\SDL2.dll" "$(OutDir)" /y /s</Command>
+      <Command>xcopy "$(SolutionDir)ThirdParty\rw37\bin\$(Platform)\$(Configuration)\rw37.dll" "$(OutDir)" /y /s
+xcopy "$(SolutionDir)ThirdParty\SDL2\lib\$(PlatformTarget)\SDL2.dll" "$(OutDir)" /y /s</Command>
     </PostBuildEvent>
     <PreLinkEvent>
       <Command>
@@ -1529,8 +1529,8 @@ xcopy "$(ProjectDir)..\ThirdParty\SDL2\lib\$(PlatformTarget)\SDL2.dll" "$(OutDir
     <ClInclude Include="..\Source\Menu\States\Online\DirtySock\BoOpenInterfaceMenuStateDS.h" />
     <ClInclude Include="..\Source\FreeBurn.h" />
   </ItemGroup>
-  <Import Project="../CodeSDKs/rw37/build/defaults.props" />
+  <Import Project="../../ThirdParty/rw37/build/defaults.props" />
   <Import Condition="Exists('../../_repoconfig/rw37.props')" Project="../../_repoconfig/rw37.props" />
-  <Import Condition="Exists('../CodeSDKs/rw37/build/rw37.vcxproj.user')" Project="../CodeSDKs/rw37/build/rw37.vcxproj.user" />
-  <Import Project="../CodeSDKs/rw37/build/buildcfg.targets" />
+  <Import Condition="Exists('../../ThirdParty/rw37/build/rw37.vcxproj.user')" Project="../../ThirdParty/rw37/build/rw37.vcxproj.user" />
+  <Import Project="../../ThirdParty/rw37/build/buildcfg.targets" />
 </Project>

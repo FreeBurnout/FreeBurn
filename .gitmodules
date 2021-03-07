@@ -1,3 +1,3 @@
-[submodule "CodeSDKs/rw37"]
-	path = CodeSDKs/rw37
+[submodule "ThirdParty/rw37"]
+	path = ThirdParty/rw37
 	url = git@github.com:GTAmodding/rw37.git
